@@ -1,0 +1,9 @@
+node_modules/
+dist/
+.next/
+.turbo/
+build/
+out/
+.git/
+.gitignore
+.env.local
