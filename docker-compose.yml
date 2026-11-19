@@ -1,0 +1,115 @@
+# Self-contained stack for the Vehicle Template admin dashboard.
+# Builds both images from source on the VPS — no registry / CI required.
+#
+#   cp .env.example .env
+#   # edit SECRET_KEY and POSTGRES_PASSWORD in .env
+#   docker compose up -d --build
+#
+# Dashboard: http://<server-ip>:${HOST_PORT:-3000}/auth/login
+
+services:
+  db:
+    image: postgres:16-alpine
+    container_name: vehicle_template_db
+    restart: unless-stopped
+    environment:
+      POSTGRES_DB: ${POSTGRES_DB:-vehicle_template_db}
+      POSTGRES_USER: ${POSTGRES_USER:-vehicle_template}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:?set POSTGRES_PASSWORD in .env}
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    healthcheck:
+      test:
+        [
+          "CMD-SHELL",
+          "pg_isready -U ${POSTGRES_USER:-vehicle_template} -d ${POSTGRES_DB:-vehicle_template_db}",
+        ]
+      interval: 5s
+      timeout: 5s
+      retries: 10
+
+  backend:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    image: vehicle-template-backend:local
+    container_name: vehicle_template_backend
+    restart: unless-stopped
+    depends_on:
+      db:
+        condition: service_healthy
+    environment:
+      SECRET_KEY: ${SECRET_KEY:?set SECRET_KEY in .env}
+      DEBUG: ${DEBUG:-False}
+      ALLOWED_HOSTS: ${ALLOWED_HOSTS:-*}
+      DB_ENGINE: postgresql
+      POSTGRES_DB: ${POSTGRES_DB:-vehicle_template_db}
+      POSTGRES_USER: ${POSTGRES_USER:-vehicle_template}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:?set POSTGRES_PASSWORD in .env}
+      POSTGRES_HOST: db
+      POSTGRES_PORT: 5432
+      CORS_ALLOWED_ORIGINS: ${CORS_ALLOWED_ORIGINS:-http://localhost:3000}
+      COMPANY_NAME: ${COMPANY_NAME:-Vehicle Template}
+      COMPANY_TAGLINE: ${COMPANY_TAGLINE:-Commercial Vehicle and Fleet Solutions}
+      SEED_ON_START: ${SEED_ON_START:-true}
+      # Optional S3-compatible storage. Leave empty to store uploads on the local volume.
+      AWS_ACCESS_KEY_ID: ${AWS_ACCESS_KEY_ID:-}
+      AWS_SECRET_ACCESS_KEY: ${AWS_SECRET_ACCESS_KEY:-}
+      AWS_STORAGE_BUCKET_NAME: ${AWS_STORAGE_BUCKET_NAME:-}
+      AWS_S3_ENDPOINT_URL: ${AWS_S3_ENDPOINT_URL:-}
+      AWS_S3_REGION_NAME: ${AWS_S3_REGION_NAME:-us-east-1}
+      AWS_S3_ADDRESSING_STYLE: ${AWS_S3_ADDRESSING_STYLE:-path}
+      DB_BACKUP_ENABLED: "false"
+    volumes:
+      - media_data:/app/media
+      - private_media_data:/app/private_media
+      - static_data:/app/staticfiles
+    healthcheck:
+      test:
+        [
+          "CMD",
+          "python",
+          "-c",
+          "import urllib.request; urllib.request.urlopen('http://127.0.0.1:8000/health', timeout=3)",
+        ]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+      start_period: 30s
+
+  frontend:
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+      args:
+        NEXT_PUBLIC_API_URL: http://backend:8000
+    image: vehicle-template-frontend:local
+    container_name: vehicle_template_frontend
+    restart: unless-stopped
+    depends_on:
+      backend:
+        condition: service_healthy
+    environment:
+      NODE_ENV: production
+      NEXT_PUBLIC_API_URL: http://backend:8000
+      PORT: 3000
+    ports:
+      - "${HOST_PORT:-3000}:3000"
+    healthcheck:
+      test:
+        [
+          "CMD",
+          "node",
+          "-e",
+          "fetch('http://127.0.0.1:3000/dashboard').then(r=>process.exit(r.ok?0:1)).catch(()=>process.exit(1))",
+        ]
+      interval: 15s
+      timeout: 5s
+      retries: 5
+      start_period: 20s
+
+volumes:
+  postgres_data:
+  media_data:
+  private_media_data:
+  static_data:

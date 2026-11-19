@@ -1,0 +1,21 @@
+# Vehicle Template root .gitignore
+.env
+.env.prod
+*.env.local
+data_dump.json
+initial_data.json
+datadump_test.json
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Temporary testing & browser profiles
+temp-chrome-profile/
+*temp-chrome-profile*
+screenshot*.png
+*.log
+
+# Local agent configuration
+.codex/
+
