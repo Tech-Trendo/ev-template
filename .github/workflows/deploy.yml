@@ -97,11 +97,14 @@ jobs:
         env:
           BACKEND_IMAGE: ${{ env.BACKEND_IMAGE }}:latest
           FRONTEND_IMAGE: ${{ env.FRONTEND_IMAGE }}:latest
+          GHCR_DEPLOY_TOKEN: ${{ secrets.GHCR_DEPLOY_TOKEN }}
+          GHCR_DEPLOY_USERNAME: ${{ secrets.GHCR_DEPLOY_USERNAME }}
         with:
           host: ${{ secrets.VPS_HOST }}
           port: ${{ secrets.VPS_PORT || 22 }}
           username: ${{ secrets.VPS_USER }}
           key: ${{ secrets.VPS_SSH_KEY }}
-          envs: BACKEND_IMAGE,FRONTEND_IMAGE
+          envs: BACKEND_IMAGE,FRONTEND_IMAGE,GHCR_DEPLOY_TOKEN,GHCR_DEPLOY_USERNAME
           script: |
+            echo "$GHCR_DEPLOY_TOKEN" | docker login ghcr.io -u "$GHCR_DEPLOY_USERNAME" --password-stdin
             cd /opt/ev-template && docker compose -p ev-template pull && docker compose -p ev-template up -d
