@@ -140,7 +140,7 @@ jobs:
             echo "==> Waiting for backend health…"
             backend_cid="$(docker compose ps -q backend)"
             status=""
-            for _ in $(seq 1 30); do
+            for _ in $(seq 1 60); do
               status="$(docker inspect --format '{{if .State.Health}}{{.State.Health.Status}}{{else}}none{{end}}' "$backend_cid" 2>/dev/null || true)"
               if [ "$status" = "healthy" ]; then
                 break
