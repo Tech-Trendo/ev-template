@@ -107,7 +107,7 @@ jobs:
           envs: BACKEND_IMAGE,FRONTEND_IMAGE,GHCR_DEPLOY_TOKEN,GHCR_USERNAME
           script_stop: true
           script: |
-            set -euo pipefail
+            set -eu
             cd /opt/ev-template
 
             if [ ! -f .env ]; then
