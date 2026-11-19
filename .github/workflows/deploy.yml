@@ -67,7 +67,7 @@ jobs:
             ${{ env.FRONTEND_IMAGE }}:latest
             ${{ env.FRONTEND_IMAGE }}:${{ github.sha }}
           build-args: |
-            NEXT_PUBLIC_API_URL=http://backend:8000
+            NEXT_PUBLIC_API_URL=https://app.ev.techtrendo.com
           cache-from: type=gha,scope=frontend
           cache-to: type=gha,mode=max,scope=frontend
 
@@ -97,66 +97,11 @@ jobs:
         env:
           BACKEND_IMAGE: ${{ env.BACKEND_IMAGE }}:latest
           FRONTEND_IMAGE: ${{ env.FRONTEND_IMAGE }}:latest
-          GHCR_DEPLOY_TOKEN: ${{ secrets.GHCR_DEPLOY_TOKEN }}
-          GHCR_USERNAME: ${{ secrets.GHCR_USERNAME }}
         with:
           host: ${{ secrets.VPS_HOST }}
           port: ${{ secrets.VPS_PORT || 22 }}
           username: ${{ secrets.VPS_USER }}
           key: ${{ secrets.VPS_SSH_KEY }}
-          envs: BACKEND_IMAGE,FRONTEND_IMAGE,GHCR_DEPLOY_TOKEN,GHCR_USERNAME
-          script_stop: true
+          envs: BACKEND_IMAGE,FRONTEND_IMAGE
           script: |
-            set -eu
-            cd /opt/ev-template
-
-            if [ ! -f .env ]; then
-              echo "ERROR: /opt/ev-template/.env is missing. Copy .env.example to .env and edit it first."
-              exit 1
-            fi
-
-            # Load HOST_PORT, COMPOSE_PROJECT_NAME, etc. into this shell.
-            set -a
-            . ./.env
-            set +a
-
-            export BACKEND_IMAGE="${BACKEND_IMAGE:?}"
-            export FRONTEND_IMAGE="${FRONTEND_IMAGE:?}"
-            export COMPOSE_PROJECT_NAME="${COMPOSE_PROJECT_NAME:-ev-template}"
-
-            echo "==> Project: ${COMPOSE_PROJECT_NAME} | host port: ${HOST_PORT:-3001}"
-
-            if [ -n "${GHCR_DEPLOY_TOKEN:-}" ]; then
-              echo "==> Logging in to GHCR…"
-              echo "$GHCR_DEPLOY_TOKEN" | docker login ghcr.io -u "$GHCR_USERNAME" --password-stdin
-            fi
-
-            echo "==> Pulling images…"
-            docker compose pull
-
-            echo "==> Starting containers…"
-            docker compose up -d --remove-orphans
-
-            echo "==> Waiting for backend health…"
-            backend_cid="$(docker compose ps -q backend)"
-            status=""
-            for _ in $(seq 1 60); do
-              status="$(docker inspect --format '{{if .State.Health}}{{.State.Health.Status}}{{else}}none{{end}}' "$backend_cid" 2>/dev/null || true)"
-              if [ "$status" = "healthy" ]; then
-                break
-              fi
-              sleep 3
-            done
-            echo "Backend health: ${status:-unknown}"
-            if [ "${status:-}" != "healthy" ]; then
-              docker compose logs --tail 80 backend || true
-              exit 1
-            fi
-
-            echo "==> Frontend check…"
-            curl -fsS -o /dev/null -w 'HTTP %{http_code}\n' "http://127.0.0.1:${HOST_PORT:-3001}/auth/login" || true
-
-            echo "==> Pruning dangling images…"
-            docker image prune -f
-
-            echo "==> Deploy done."
+            cd /opt/ev-template && docker compose -p ev-template pull && docker compose -p ev-template up -d
