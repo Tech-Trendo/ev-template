@@ -98,7 +98,7 @@ jobs:
           BACKEND_IMAGE: ${{ env.BACKEND_IMAGE }}:latest
           FRONTEND_IMAGE: ${{ env.FRONTEND_IMAGE }}:latest
           GHCR_DEPLOY_TOKEN: ${{ secrets.GHCR_DEPLOY_TOKEN }}
-          GHCR_DEPLOY_USERNAME: ${{ secrets.GHCR_DEPLOY_USERNAME }}
+          GHCR_DEPLOY_USERNAME: ${{ secrets.GHCR_USERNAME }}
         with:
           host: ${{ secrets.VPS_HOST }}
           port: ${{ secrets.VPS_PORT || 22 }}
