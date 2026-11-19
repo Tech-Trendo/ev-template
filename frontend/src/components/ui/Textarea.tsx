@@ -15,10 +15,10 @@ export const Textarea = forwardRef<HTMLTextAreaElement, TextareaProps>(
         ref={ref}
         disabled={disabled}
         rows={rows}
-        className={`w-full rounded-lg border bg-white p-3 text-[12px] text-[#04314A] transition-colors placeholder:text-[#A3A39E] focus:outline-none focus:ring-1 disabled:bg-[#F7F7F5] disabled:cursor-not-allowed dark:bg-[#0B2538] dark:text-[#F7F7F5] dark:placeholder:text-[#64748B] dark:disabled:bg-[#061824] ${
+        className={`w-full rounded-lg border bg-white p-3 text-[12px] text-[#0B3D2B] transition-colors placeholder:text-[#A3A39E] focus:outline-none focus:ring-1 disabled:bg-[#F7F7F5] disabled:cursor-not-allowed dark:bg-[#0C2620] dark:text-[#F7F7F5] dark:placeholder:text-[#64748B] dark:disabled:bg-[#071713] ${
           hasError
             ? "border-[#DC2626] focus:border-[#DC2626] focus:ring-[#DC2626]"
-            : "border-[#E8E8E5] hover:border-[#D4D4CE] focus:border-[#00AAEB] focus:ring-[#00AAEB] dark:border-[#174261] dark:hover:border-[#20557B]"
+            : "border-[#E8E8E5] hover:border-[#D4D4CE] focus:border-[#10B981] focus:ring-[#10B981] dark:border-[#1B5039] dark:hover:border-[#20557B]"
         } ${className}`}
         {...props}
       />

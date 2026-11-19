@@ -1,5 +1,5 @@
 @echo off
-REM Vehicle Template periodic tasks runner (Windows)
+REM EV OS periodic tasks runner (Windows)
 REM Runs expire_reservations and generate_notifications sequentially.
 
 set SCRIPT_DIR=%~dp0

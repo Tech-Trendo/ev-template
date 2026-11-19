@@ -6,8 +6,8 @@ from django.urls import include, path
 from django.http import HttpResponse, JsonResponse
 from django.shortcuts import redirect
 
-admin.site.site_header = "Vehicle Template Administration"
-admin.site.site_title = "Vehicle Template Admin"
+admin.site.site_header = "EV OS Administration"
+admin.site.site_title = "EV OS Admin"
 admin.site.index_title = "Site administration"
 admin.site.site_url = "/dashboard"
 

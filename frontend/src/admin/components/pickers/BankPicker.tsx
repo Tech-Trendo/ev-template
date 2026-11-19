@@ -156,7 +156,7 @@ export function BankPicker({
       emptyMessage="No matching banks found."
       renderItem={(bank) => (
         <div className="py-0.5">
-          <div className="text-[12px] font-bold text-[#04314A] truncate">{bank.name}</div>
+          <div className="text-[12px] font-bold text-[#0B3D2B] truncate">{bank.name}</div>
           {(bank.category || bank.code) && (
             <div className="text-[10px] text-[#737373] truncate">
               {[bank.category, bank.code].filter(Boolean).join(" · ")}
@@ -224,7 +224,7 @@ export function BankBranchPicker({
       emptyMessage="No matching branches found."
       renderItem={(branch) => (
         <div className="py-0.5">
-          <div className="text-[12px] font-bold text-[#04314A] truncate">{branch.name}</div>
+          <div className="text-[12px] font-bold text-[#0B3D2B] truncate">{branch.name}</div>
           <div className="text-[10px] text-[#737373] truncate">
             {[branch.district, branch.address].filter(Boolean).join(" · ")}
           </div>

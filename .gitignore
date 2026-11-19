@@ -1,4 +1,4 @@
-# Vehicle Template root .gitignore
+# EV OS root .gitignore
 .env
 .env.prod
 *.env.local

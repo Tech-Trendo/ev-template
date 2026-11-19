@@ -342,11 +342,11 @@ export default function BatchDetail({
   if (!batch) {
     return (
       <div className="max-w-lg mx-auto mt-16 bg-white border border-[#E8E8E5] rounded-2xl p-8 text-center">
-        <p className="text-[15px] font-bold text-[#04314A] mb-2">Shipment not found</p>
+        <p className="text-[15px] font-bold text-[#0B3D2B] mb-2">Shipment not found</p>
         <p className="text-[13px] text-[#737373] mb-6">{error}</p>
         <button
           onClick={() => onNavigate("batches")}
-          className="px-6 py-3 rounded-full bg-[#04314A] text-white text-[12px] font-semibold hover:bg-[#00AAEB] transition-colors"
+          className="px-6 py-3 rounded-full bg-[#0B3D2B] text-white text-[12px] font-semibold hover:bg-[#10B981] transition-colors"
         >
           Back to Shipments
         </button>
@@ -355,7 +355,7 @@ export default function BatchDetail({
   }
 
   const cell =
-    "border border-[#E8E8E5] rounded-lg bg-white px-2 py-1.5 text-[12px] text-[#04314A] focus:outline-none focus:border-[#00AAEB] w-full min-w-0";
+    "border border-[#E8E8E5] rounded-lg bg-white px-2 py-1.5 text-[12px] text-[#0B3D2B] focus:outline-none focus:border-[#10B981] w-full min-w-0";
 
   return (
     <div className="space-y-6">
@@ -363,7 +363,7 @@ export default function BatchDetail({
       <div className="flex flex-wrap items-center justify-between gap-3 print:hidden">
         <button
           onClick={() => onNavigate("china-transport")}
-          className="flex items-center gap-1.5 text-[12px] font-semibold text-[#737373] hover:text-[#04314A]"
+          className="flex items-center gap-1.5 text-[12px] font-semibold text-[#737373] hover:text-[#0B3D2B]"
         >
           <ArrowLeft size={14} /> Back to Shipments
         </button>
@@ -371,14 +371,14 @@ export default function BatchDetail({
         <div className="flex items-center gap-2">
           <button
             onClick={handlePrintSummary}
-            className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg border border-[#E8E8E5] bg-white text-[12px] font-semibold text-[#04314A] hover:bg-[#F0F0ED] transition-colors"
+            className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg border border-[#E8E8E5] bg-white text-[12px] font-semibold text-[#0B3D2B] hover:bg-[#F0F0ED] transition-colors"
           >
             <Printer size={14} /> Print Summary
           </button>
           {canChangeStatus && (
             <button
               onClick={openStatusChange}
-              className="flex items-center gap-1.5 px-4 py-1.5 rounded-lg bg-[#04314A] text-white text-[12px] font-semibold hover:bg-[#00AAEB] transition-colors"
+              className="flex items-center gap-1.5 px-4 py-1.5 rounded-lg bg-[#0B3D2B] text-white text-[12px] font-semibold hover:bg-[#10B981] transition-colors"
             >
               Update Status
             </button>
@@ -400,22 +400,22 @@ export default function BatchDetail({
         <div className="flex flex-wrap items-start justify-between gap-4">
           <div>
             <div className="flex items-center gap-3 flex-wrap">
-              <h1 className="text-[24px] sm:text-[28px] font-bold text-[#04314A]">
+              <h1 className="text-[24px] sm:text-[28px] font-bold text-[#0B3D2B]">
                 {batch.shipment_no || batch.batch_no}
               </h1>
-              <span className="inline-block px-3 py-0.5 rounded text-[12px] font-bold bg-[#04314A] text-white">
+              <span className="inline-block px-3 py-0.5 rounded text-[12px] font-bold bg-[#0B3D2B] text-white">
                 {batch.status_display || SHIPMENT_STATUS_LABELS[batch.status] || batch.status}
               </span>
             </div>
             <p className="text-[13px] text-[#737373] mt-1">
-              Supplier: <span className="font-semibold text-[#04314A]">{batch.supplier_exporter || batch.origin || "China Factory"}</span>
+              Supplier: <span className="font-semibold text-[#0B3D2B]">{batch.supplier_exporter || batch.origin || "China Factory"}</span>
               {batch.container_bl_no && ` · BL/Container: ${batch.container_bl_no}`}
               {batch.carrier_name && ` · Carrier: ${batch.carrier_name}`}
             </p>
           </div>
 
           <div className="text-right text-[12px] text-[#737373]">
-            <div>Created by: <span className="font-semibold text-[#04314A]">{batch.created_by_name || "Head Office"}</span></div>
+            <div>Created by: <span className="font-semibold text-[#0B3D2B]">{batch.created_by_name || "Head Office"}</span></div>
             <div>Created on: {formatDate(batch.created_at)}</div>
           </div>
         </div>
@@ -424,23 +424,23 @@ export default function BatchDetail({
         <div className="grid grid-cols-2 sm:grid-cols-5 gap-3 mt-5 pt-5 border-t border-[#E8E8E5] text-[12px]">
           <div>
             <span className="block text-[11px] text-[#737373]">ETD Departure</span>
-            <span className="font-semibold text-[#04314A]">{formatDate(batch.etd || batch.shipped_date)}</span>
+            <span className="font-semibold text-[#0B3D2B]">{formatDate(batch.etd || batch.shipped_date)}</span>
           </div>
           <div>
             <span className="block text-[11px] text-[#737373]">ETA Border</span>
-            <span className="font-semibold text-[#04314A]">{formatDate(batch.eta || batch.eta_date)}</span>
+            <span className="font-semibold text-[#0B3D2B]">{formatDate(batch.eta || batch.eta_date)}</span>
           </div>
           <div>
             <span className="block text-[11px] text-[#737373]">Actual Arrival</span>
-            <span className="font-semibold text-[#04314A]">{formatDate(batch.actual_arrival_date || batch.arrived_date)}</span>
+            <span className="font-semibold text-[#0B3D2B]">{formatDate(batch.actual_arrival_date || batch.arrived_date)}</span>
           </div>
           <div>
             <span className="block text-[11px] text-[#737373]">Customs Cleared</span>
-            <span className="font-semibold text-[#04314A]">{formatDate(batch.customs_clearance_date)}</span>
+            <span className="font-semibold text-[#0B3D2B]">{formatDate(batch.customs_clearance_date)}</span>
           </div>
           <div>
             <span className="block text-[11px] text-[#737373]">Warehouse Received</span>
-            <span className="font-semibold text-[#04314A]">{formatDate(batch.warehouse_received_date)}</span>
+            <span className="font-semibold text-[#0B3D2B]">{formatDate(batch.warehouse_received_date)}</span>
           </div>
         </div>
       </div>
@@ -449,13 +449,13 @@ export default function BatchDetail({
       <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
         <div className="bg-white border border-[#E8E8E5] rounded-xl p-3.5">
           <div className="text-[11px] text-[#737373]">Units Expected / Added</div>
-          <div className="text-[22px] font-bold text-[#04314A] mt-0.5">
+          <div className="text-[22px] font-bold text-[#0B3D2B] mt-0.5">
             {batch.progress_summary?.units_expected ?? units.length}
           </div>
         </div>
         <div className="bg-white border border-[#E8E8E5] rounded-xl p-3.5">
           <div className="text-[11px] text-[#737373]">Units in Stockyard</div>
-          <div className="text-[22px] font-bold text-[#04314A] mt-0.5">
+          <div className="text-[22px] font-bold text-[#0B3D2B] mt-0.5">
             {batch.progress_summary?.units_received ?? batch.remaining_count}
           </div>
         </div>
@@ -478,8 +478,8 @@ export default function BatchDetail({
         <div className="bg-white border border-[#E8E8E5] rounded-2xl p-5">
           <div className="flex flex-wrap items-center justify-between gap-3 mb-4">
             <div>
-              <h3 className="text-[14px] font-bold text-[#04314A] flex items-center gap-2">
-                <DollarSign size={16} className="text-[#04314A]" /> Landed Cost Lines & Unit Average
+              <h3 className="text-[14px] font-bold text-[#0B3D2B] flex items-center gap-2">
+                <DollarSign size={16} className="text-[#0B3D2B]" /> Landed Cost Lines & Unit Average
               </h3>
               <p className="text-[12px] text-[#737373] mt-0.5">
                 Multi-currency freight, customs duty, and clearance cost allocation in NPR.
@@ -488,7 +488,7 @@ export default function BatchDetail({
             {canAddCost && (
               <button
                 onClick={openCostModal}
-                className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-[#04314A] text-white text-[12px] font-semibold hover:bg-[#00AAEB] transition-colors"
+                className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-[#0B3D2B] text-white text-[12px] font-semibold hover:bg-[#10B981] transition-colors"
               >
                 <Plus size={13} /> Add Cost Line
               </button>
@@ -499,13 +499,13 @@ export default function BatchDetail({
           <div className="grid grid-cols-2 gap-3 mb-4 p-3 bg-[#FAFAF8] rounded-xl border border-[#E8E8E5]">
             <div>
               <span className="block text-[11px] text-[#737373]">Total Landed Cost</span>
-              <span className="text-[18px] font-bold text-[#04314A]">
+              <span className="text-[18px] font-bold text-[#0B3D2B]">
                 {formatNPR(batch.total_landed_cost_npr || 0)}
               </span>
             </div>
             <div>
               <span className="block text-[11px] text-[#737373]">Average Cost Per Unit</span>
-              <span className="text-[18px] font-bold text-[#04314A]">
+              <span className="text-[18px] font-bold text-[#0B3D2B]">
                 {formatNPR(batch.average_cost_per_unit_npr || 0)}
               </span>
             </div>
@@ -531,12 +531,12 @@ export default function BatchDetail({
                 <tbody>
                   {batch.costs.map((c) => (
                     <tr key={c.id} className="border-b border-[#F0F0ED]">
-                      <td className="px-3 py-2.5 font-bold text-[#04314A]">{c.cost_type_name || c.cost_type_code}</td>
+                      <td className="px-3 py-2.5 font-bold text-[#0B3D2B]">{c.cost_type_name || c.cost_type_code}</td>
                       <td className="px-3 py-2.5 text-[#737373]">{c.description || "-"}</td>
-                      <td className="px-3 py-2.5 text-[#04314A]">{Number(c.amount).toLocaleString()}</td>
+                      <td className="px-3 py-2.5 text-[#0B3D2B]">{Number(c.amount).toLocaleString()}</td>
                       <td className="px-3 py-2.5 text-[#737373]">{c.currency}</td>
                       <td className="px-3 py-2.5 text-[#737373]">{Number(c.exchange_rate).toFixed(2)}</td>
-                      <td className="px-3 py-2.5 text-right font-bold text-[#04314A]">
+                      <td className="px-3 py-2.5 text-right font-bold text-[#0B3D2B]">
                         {formatNPR(c.amount_npr)}
                       </td>
                       {canDeleteCost && (
@@ -563,7 +563,7 @@ export default function BatchDetail({
       <div className="bg-white border border-[#E8E8E5] rounded-2xl p-5">
         <div className="flex flex-wrap items-center justify-between gap-3 mb-4">
           <div>
-            <h3 className="text-[14px] font-bold text-[#04314A]">
+            <h3 className="text-[14px] font-bold text-[#0B3D2B]">
               Units in Shipment ({units.length})
             </h3>
             <p className="text-[12px] text-[#737373] mt-0.5">
@@ -575,14 +575,14 @@ export default function BatchDetail({
             <div className="flex items-center gap-2 print:hidden">
               <button
                 onClick={openAttachExistingUnitsModal}
-                className="px-3 py-1.5 rounded-lg border border-[#E8E8E5] text-[12px] font-semibold text-[#04314A] hover:bg-[#F0F0ED] transition-colors"
+                className="px-3 py-1.5 rounded-lg border border-[#E8E8E5] text-[12px] font-semibold text-[#0B3D2B] hover:bg-[#F0F0ED] transition-colors"
               >
                 Attach Unassigned Units
               </button>
               <button
                 onClick={() => fileRef.current?.click()}
                 disabled={uploading}
-                className="px-3 py-1.5 rounded-lg border border-[#E8E8E5] text-[12px] font-semibold text-[#04314A] hover:bg-[#F0F0ED] transition-colors"
+                className="px-3 py-1.5 rounded-lg border border-[#E8E8E5] text-[12px] font-semibold text-[#0B3D2B] hover:bg-[#F0F0ED] transition-colors"
               >
                 <Upload size={13} className="inline mr-1" />
                 {uploading ? "Importing..." : "Import CSV"}
@@ -622,15 +622,15 @@ export default function BatchDetail({
               <tbody>
                 {units.map((u) => (
                   <tr key={u.id} className="border-b border-[#F0F0ED] hover:bg-[#FAFAF8]">
-                    <td className="px-3 py-2.5 font-bold text-[#04314A]">
+                    <td className="px-3 py-2.5 font-bold text-[#0B3D2B]">
                       <button
                         onClick={() => onNavigate(`units/${u.id}`)}
-                        className="hover:underline text-[#00AAEB]"
+                        className="hover:underline text-[#10B981]"
                       >
                         {u.vin_chassis_no}
                       </button>
                     </td>
-                    <td className="px-3 py-2.5 text-[#04314A]">
+                    <td className="px-3 py-2.5 text-[#0B3D2B]">
                       <div>{getModelDisplayName(u.model_detail, u.variant_name)}</div>
                     </td>
                     <td className="px-3 py-2.5 text-[#737373]">{u.color || "-"}</td>
@@ -642,14 +642,14 @@ export default function BatchDetail({
                       <Badge status={u.status.toLowerCase()} />
                     </td>
                     <td className="px-3 py-2.5">
-                      <span className="font-semibold text-[11px] text-[#04314A]">
+                      <span className="font-semibold text-[11px] text-[#0B3D2B]">
                         {u.pdi_status ? u.pdi_status.replace("_", " ") : "Pending VEI"}
                       </span>
                     </td>
                     <td className="px-3 py-2.5 text-right print:hidden">
                       <button
                         onClick={() => onNavigate(`units/${u.id}`)}
-                        className="text-[11px] font-semibold text-[#00AAEB] hover:underline"
+                        className="text-[11px] font-semibold text-[#10B981] hover:underline"
                       >
                         View &rarr;
                       </button>
@@ -664,7 +664,7 @@ export default function BatchDetail({
         {/* Add Units Rows Form */}
         {canAddUnits && (
           <div className="mt-6 pt-5 border-t border-[#E8E8E5] print:hidden">
-            <h4 className="text-[13px] font-bold text-[#04314A] mb-3">Add New Units</h4>
+            <h4 className="text-[13px] font-bold text-[#0B3D2B] mb-3">Add New Units</h4>
             <div className="overflow-x-auto">
               <table className="w-full text-left text-[11px]">
                 <thead>
@@ -765,14 +765,14 @@ export default function BatchDetail({
             <div className="flex items-center gap-2 mt-3">
               <button
                 onClick={() => setRows((rs) => [...rs, { ...EMPTY_ROW, model_id: models[0] ? String(models[0].id) : "" }])}
-                className="px-3 py-1.5 rounded-lg border border-[#E8E8E5] text-[12px] font-semibold text-[#04314A] hover:bg-[#F0F0ED]"
+                className="px-3 py-1.5 rounded-lg border border-[#E8E8E5] text-[12px] font-semibold text-[#0B3D2B] hover:bg-[#F0F0ED]"
               >
                 + Add Another Row
               </button>
               <button
                 onClick={saveRows}
                 disabled={saving}
-                className="px-4 py-1.5 rounded-lg bg-[#04314A] text-white text-[12px] font-semibold hover:bg-[#00AAEB] disabled:opacity-50"
+                className="px-4 py-1.5 rounded-lg bg-[#0B3D2B] text-white text-[12px] font-semibold hover:bg-[#10B981] disabled:opacity-50"
               >
                 {saving ? "Saving Units..." : "Save Vehicle Units"}
               </button>
@@ -821,7 +821,7 @@ export default function BatchDetail({
             </Field>
 
             {nextStatus === "RECEIVED" && (
-              <label className="flex items-center gap-2 text-[12px] font-medium text-[#04314A] cursor-pointer">
+              <label className="flex items-center gap-2 text-[12px] font-medium text-[#0B3D2B] cursor-pointer">
                 <input
                   type="checkbox"
                   checked={receiveStock}
@@ -846,7 +846,7 @@ export default function BatchDetail({
               <button
                 type="button"
                 onClick={() => setStatusModalOpen(false)}
-                className="px-4 py-2 rounded-lg border border-[#E8E8E5] text-[12px] font-semibold text-[#737373] hover:text-[#04314A]"
+                className="px-4 py-2 rounded-lg border border-[#E8E8E5] text-[12px] font-semibold text-[#737373] hover:text-[#0B3D2B]"
               >
                 Cancel
               </button>
@@ -854,7 +854,7 @@ export default function BatchDetail({
                 type="button"
                 onClick={handleStatusChangeSubmit}
                 disabled={statusChanging}
-                className="px-4 py-2 rounded-lg bg-[#04314A] text-white text-[12px] font-semibold hover:bg-[#00AAEB] disabled:opacity-50 transition-colors"
+                className="px-4 py-2 rounded-lg bg-[#0B3D2B] text-white text-[12px] font-semibold hover:bg-[#10B981] disabled:opacity-50 transition-colors"
               >
                 {statusChanging ? "Updating..." : "Confirm Status Change"}
               </button>
@@ -941,7 +941,7 @@ export default function BatchDetail({
               <button
                 type="button"
                 onClick={() => setCostModalOpen(false)}
-                className="px-4 py-2 rounded-lg border border-[#E8E8E5] text-[12px] font-semibold text-[#737373] hover:text-[#04314A]"
+                className="px-4 py-2 rounded-lg border border-[#E8E8E5] text-[12px] font-semibold text-[#737373] hover:text-[#0B3D2B]"
               >
                 Cancel
               </button>
@@ -949,7 +949,7 @@ export default function BatchDetail({
                 type="button"
                 onClick={handleAddCostSubmit}
                 disabled={costBusy || !costAmount}
-                className="px-4 py-2 rounded-lg bg-[#04314A] text-white text-[12px] font-semibold hover:bg-[#00AAEB] disabled:opacity-50 transition-colors"
+                className="px-4 py-2 rounded-lg bg-[#0B3D2B] text-white text-[12px] font-semibold hover:bg-[#10B981] disabled:opacity-50 transition-colors"
               >
                 {costBusy ? "Saving..." : "Add Cost"}
               </button>
@@ -996,7 +996,7 @@ export default function BatchDetail({
                             }}
                           />
                           <div>
-                            <span className="font-bold text-[#04314A]">{u.vin_chassis_no}</span>
+                            <span className="font-bold text-[#0B3D2B]">{u.vin_chassis_no}</span>
                             <span className="text-[#737373] ml-2">
                               {getModelDisplayName(u.model_detail, u.variant_name)}
                             </span>
@@ -1014,7 +1014,7 @@ export default function BatchDetail({
               <button
                 type="button"
                 onClick={() => setAttachUnitsModalOpen(false)}
-                className="px-4 py-2 rounded-lg border border-[#E8E8E5] text-[12px] font-semibold text-[#737373] hover:text-[#04314A]"
+                className="px-4 py-2 rounded-lg border border-[#E8E8E5] text-[12px] font-semibold text-[#737373] hover:text-[#0B3D2B]"
               >
                 Cancel
               </button>
@@ -1022,7 +1022,7 @@ export default function BatchDetail({
                 type="button"
                 onClick={handleAttachExistingUnitsSubmit}
                 disabled={attachingUnits || selectedUnitIds.length === 0}
-                className="px-4 py-2 rounded-lg bg-[#04314A] text-white text-[12px] font-semibold hover:bg-[#00AAEB] disabled:opacity-50 transition-colors"
+                className="px-4 py-2 rounded-lg bg-[#0B3D2B] text-white text-[12px] font-semibold hover:bg-[#10B981] disabled:opacity-50 transition-colors"
               >
                 {attachingUnits ? "Attaching..." : `Attach ${selectedUnitIds.length} Unit(s)`}
               </button>

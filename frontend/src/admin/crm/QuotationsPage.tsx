@@ -218,7 +218,7 @@ export default function QuotationsPage({ onNavigate }: { onNavigate: (page: stri
         <div className="overflow-x-auto">
           <table className="w-full text-left border-collapse min-w-[960px]">
             <thead>
-              <tr className="border-b border-[#E8E8E5] bg-[#FAFAF8] text-[11px] font-semibold text-[#04314A] tracking-[0.02em]">
+              <tr className="border-b border-[#E8E8E5] bg-[#FAFAF8] text-[11px] font-semibold text-[#0B3D2B] tracking-[0.02em]">
                 {cols.map((h) => (
                   <th
                     key={h}
@@ -274,7 +274,7 @@ export default function QuotationsPage({ onNavigate }: { onNavigate: (page: stri
                           onNavigate={onNavigate}
                         />
                       ) : (
-                        <span className="text-[13px] font-semibold text-[#04314A]">
+                        <span className="text-[13px] font-semibold text-[#0B3D2B]">
                           {q.customerName}
                         </span>
                       )}
@@ -283,7 +283,7 @@ export default function QuotationsPage({ onNavigate }: { onNavigate: (page: stri
                     <td className="px-5 py-3.5 text-[12px] text-[#737373] whitespace-nowrap">
                       {q.vehicle}
                     </td>
-                    <td className="px-5 py-3.5 text-[12px] font-semibold text-[#04314A] whitespace-nowrap">
+                    <td className="px-5 py-3.5 text-[12px] font-semibold text-[#0B3D2B] whitespace-nowrap">
                       {formatNpr(crm.quotationTotals(q.item).total)}
                     </td>
                     <td className="px-5 py-3.5">

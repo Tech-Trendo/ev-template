@@ -1,5 +1,5 @@
 /**
- * Vehicle Template Shared UI Primitives
+ * EV OS Shared UI Primitives
  * 
  * Reusable components conforming strictly to UI Guidelines:
  * Poppins typography, solid color tokens, no gradients, no emojis,

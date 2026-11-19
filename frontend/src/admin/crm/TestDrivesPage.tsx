@@ -54,7 +54,7 @@ function EditTestDriveModal({
     <Modal title={`Edit ${drive.displayId ?? drive.id}`} onClose={onClose}>
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
         <p className="sm:col-span-2 text-[13px] text-[#737373]">
-          <span className="font-bold text-[#04314A]">{drive.customerName}</span> · {drive.vehicle}
+          <span className="font-bold text-[#0B3D2B]">{drive.customerName}</span> · {drive.vehicle}
         </p>
         <Field label="Date" required><input type="date" value={form.date} onChange={(e) => set("date")(e.target.value)} className={inputCls} /></Field>
         <Field label="Time" required><input type="time" value={form.time} onChange={(e) => set("time")(e.target.value)} className={inputCls} /></Field>
@@ -68,7 +68,7 @@ function EditTestDriveModal({
         <div className="sm:col-span-2"><Field label="Notes"><textarea value={form.notes} onChange={(e) => set("notes")(e.target.value)} rows={2} className={inputCls} /></Field></div>
       </div>
       <div data-modal-actions className="mt-6 flex justify-end gap-3">
-        <button onClick={onClose} className="px-4 py-2.5 text-[12px] font-semibold uppercase tracking-[0.04em] text-[#737373] hover:text-[#04314A]">Cancel</button>
+        <button onClick={onClose} className="px-4 py-2.5 text-[12px] font-semibold uppercase tracking-[0.04em] text-[#737373] hover:text-[#0B3D2B]">Cancel</button>
         <button onClick={() => submit(true)} disabled={saving} className={ghostBtnCls}>Reschedule</button>
         <button onClick={() => submit(false)} disabled={saving} className={primaryBtnCls}>{saving ? "Saving…" : "Save"}</button>
       </div>
@@ -159,7 +159,7 @@ export default function TestDrivesPage({ onNavigate }: { onNavigate?: (page: str
       />
 
       {completedDrive && (
-        <div className="mb-5 flex items-center justify-between gap-4 px-4 py-3.5 bg-[#F0F8FF] border border-[#B3D9F0] rounded-xl text-[13px] text-[#04314A]">
+        <div className="mb-5 flex items-center justify-between gap-4 px-4 py-3.5 bg-[#F0F8FF] border border-[#B3D9F0] rounded-xl text-[13px] text-[#0B3D2B]">
           <span>
             Test drive completed. Ready to create a quotation for{" "}
             <strong>{completedDrive.vehicle}</strong>?
@@ -167,7 +167,7 @@ export default function TestDrivesPage({ onNavigate }: { onNavigate?: (page: str
           <div className="flex items-center gap-2 shrink-0">
             <button
               onClick={() => setCompletedDrive(null)}
-              className="px-3 py-1.5 text-[11px] font-semibold uppercase tracking-[0.04em] text-[#737373] hover:text-[#04314A] transition-colors"
+              className="px-3 py-1.5 text-[11px] font-semibold uppercase tracking-[0.04em] text-[#737373] hover:text-[#0B3D2B] transition-colors"
             >
               Dismiss
             </button>
@@ -178,7 +178,7 @@ export default function TestDrivesPage({ onNavigate }: { onNavigate?: (page: str
                 if (onNavigate) onNavigate(`/admin/crm/quotations/new?${params}`);
                 setCompletedDrive(null);
               }}
-              className="px-3.5 py-1.5 text-[11px] font-bold uppercase tracking-[0.04em] border border-[#00AAEB] text-[#00AAEB] rounded-xl hover:bg-[#00AAEB] hover:text-white transition-colors"
+              className="px-3.5 py-1.5 text-[11px] font-bold uppercase tracking-[0.04em] border border-[#10B981] text-[#10B981] rounded-xl hover:bg-[#10B981] hover:text-white transition-colors"
             >
               Create Quotation
             </button>
@@ -222,7 +222,7 @@ export default function TestDrivesPage({ onNavigate }: { onNavigate?: (page: str
               rows.map((t) => (
                 <tr key={t.id} className="border-b border-[#F0F0ED] last:border-0 hover:bg-[#FAFAF8]">
                   <td className="px-5 py-3.5 text-[12px] font-bold text-[#737373]">{t.displayId ?? t.id}</td>
-                  <td className="px-5 py-3.5 text-[13px] font-bold text-[#04314A] whitespace-nowrap">
+                  <td className="px-5 py-3.5 text-[13px] font-bold text-[#0B3D2B] whitespace-nowrap">
                     {t.customerId ? (
                       <EntityLink type="customer" id={t.customerId} label={t.customerName} onNavigate={onNavigate} />
                     ) : t.leadId ? (
@@ -248,15 +248,15 @@ export default function TestDrivesPage({ onNavigate }: { onNavigate?: (page: str
                     <div className="flex justify-end gap-2 whitespace-nowrap">
                       {["requested", "scheduled", "confirmed"].includes(t.status) && (
                         <>
-                          <button onClick={() => setEditing(t)} className="text-[10px] font-bold uppercase tracking-[0.06em] px-2.5 py-1.5 border border-[#E8E8E5] rounded-xl text-[#04314A] hover:border-[#00AAEB] hover:text-[#00AAEB] transition-colors">Edit</button>
-                          <button onClick={() => updateStatus(t, "completed")} className="text-[10px] font-bold uppercase tracking-[0.06em] px-2.5 py-1.5 border border-[#E8E8E5] rounded-xl text-[#04314A] hover:border-[#00AAEB] hover:text-[#00AAEB] transition-colors">Complete</button>
+                          <button onClick={() => setEditing(t)} className="text-[10px] font-bold uppercase tracking-[0.06em] px-2.5 py-1.5 border border-[#E8E8E5] rounded-xl text-[#0B3D2B] hover:border-[#10B981] hover:text-[#10B981] transition-colors">Edit</button>
+                          <button onClick={() => updateStatus(t, "completed")} className="text-[10px] font-bold uppercase tracking-[0.06em] px-2.5 py-1.5 border border-[#E8E8E5] rounded-xl text-[#0B3D2B] hover:border-[#10B981] hover:text-[#10B981] transition-colors">Complete</button>
                         </>
                       )}
                       {!["cancelled", "completed"].includes(t.status) && (
-                        <button onClick={() => updateStatus(t, "cancelled")} className="text-[10px] font-bold uppercase tracking-[0.06em] px-2.5 py-1.5 border border-[#E8E8E5] rounded-xl text-[#00AAEB] hover:border-[#00AAEB] transition-colors">Cancel</button>
+                        <button onClick={() => updateStatus(t, "cancelled")} className="text-[10px] font-bold uppercase tracking-[0.06em] px-2.5 py-1.5 border border-[#E8E8E5] rounded-xl text-[#10B981] hover:border-[#10B981] transition-colors">Cancel</button>
                       )}
                       {!["requested", "scheduled", "confirmed"].includes(t.status) && (
-                        <button onClick={() => setEditing(t)} className="text-[10px] font-bold uppercase tracking-[0.06em] px-2.5 py-1.5 border border-[#E8E8E5] rounded-xl text-[#04314A] hover:border-[#00AAEB] transition-colors">Edit</button>
+                        <button onClick={() => setEditing(t)} className="text-[10px] font-bold uppercase tracking-[0.06em] px-2.5 py-1.5 border border-[#E8E8E5] rounded-xl text-[#0B3D2B] hover:border-[#10B981] transition-colors">Edit</button>
                       )}
                     </div>
                   </td>
@@ -279,7 +279,7 @@ export default function TestDrivesPage({ onNavigate }: { onNavigate?: (page: str
 
       {drives.length === 0 && !loading && !error && (
         <div className="mt-6 flex items-center gap-3 text-[13px] text-[#737373] bg-white border border-[#E8E8E5] rounded-xl p-6">
-          <CalendarCheck size={18} className="text-[#00AAEB]" />
+          <CalendarCheck size={18} className="text-[#10B981]" />
           No test drives yet. Schedule the first one.
         </div>
       )}

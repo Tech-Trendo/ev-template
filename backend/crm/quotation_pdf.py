@@ -57,7 +57,7 @@ def _styles():
         fontName="Helvetica-Bold",
         fontSize=13,
         leading=15,
-        textColor=colors.HexColor("#04314A"),
+        textColor=colors.HexColor("#0B3D2B"),
     ))
     styles.add(ParagraphStyle(
         name="ExactMetaRight",
@@ -133,7 +133,7 @@ def build_quotation_pdf(quotation: Quotation, printed_by=None) -> bytes:
     s = _styles()
     story = []
 
-    # 1. Cyan Title
+    # 1. Green Title
     story.append(Paragraph("QUOTATION FOR COMMERCIAL ELECTRIC VEHICLES", s["ExactTitle"]))
     story.append(Spacer(1, 2.5 * mm))
 
@@ -193,9 +193,9 @@ def build_quotation_pdf(quotation: Quotation, printed_by=None) -> bytes:
     if bank_branch:
         client_html_parts.append(f'<font size="8" color="#374151">Branch: {bank_branch}</font>')
 
-    sp_name = getattr(quotation, "resolved_salesperson_name", None) or quotation.salesperson or "VehicleTemplate"
+    sp_name = getattr(quotation, "resolved_salesperson_name", None) or quotation.salesperson or "EVOS"
     sp_phone = getattr(quotation, "resolved_salesperson_phone", None) or getattr(quotation, "salesperson_phone", "") or "+977 9765022801"
-    sp_email = getattr(quotation, "resolved_salesperson_email", None) or getattr(quotation, "salesperson_email", "") or "info@vehicletemplate.example.com"
+    sp_email = getattr(quotation, "resolved_salesperson_email", None) or getattr(quotation, "salesperson_email", "") or "info@evos.example.com"
 
     sales_html_parts = [
         '<font size="7" color="#6B7280"><b>SALES DETAILS</b></font>',
@@ -295,7 +295,7 @@ def build_quotation_pdf(quotation: Quotation, printed_by=None) -> bytes:
     spec_chg = getattr(quotation, "charger_info", "") or "Support GB/T DC Fast Charger"
 
     specs_html = (
-        '<b><font size="8" color="#04314A">VEHICLE\'S SPECIFICATIONS:</font></b><br/>'
+        '<b><font size="8" color="#0B3D2B">VEHICLE\'S SPECIFICATIONS:</font></b><br/>'
         f'&bull; <b>Model :</b> {spec_model}<br/>'
         f'&bull; <b>Description :</b> {spec_desc}<br/>'
         f'&bull; <b>Battery :</b> {spec_batt}<br/>'
@@ -323,7 +323,7 @@ def build_quotation_pdf(quotation: Quotation, printed_by=None) -> bytes:
     t_reg = getattr(quotation, "registration_terms", "") or "1 Year Registration Included in Offered Price."
 
     terms_html = (
-        '<b><font size="8" color="#04314A">TERMS &amp; CONDITION:</font></b><br/>'
+        '<b><font size="8" color="#0B3D2B">TERMS &amp; CONDITION:</font></b><br/>'
         '&bull; <b>VAT :</b> Price is Inclusive of 13% VAT.<br/>'
         f'&bull; <b>Payment Terms :</b> {t_payment}<br/>'
         f'&bull; <b>Delivery :</b> {t_deliv}<br/>'
@@ -360,7 +360,7 @@ def build_quotation_pdf(quotation: Quotation, printed_by=None) -> bytes:
     bank_address = getattr(quotation, "bank_address", "") or "YOUR BRANCH"
     account_html = (
         '<u><b><font size="7.5" color="#111827">ACCOUNT DETAILS:</font></b></u><br/>'
-        '<b>VEHICLE TEMPLATE</b><br/>'
+        '<b>EV OS</b><br/>'
         f'<b>{bank_name}</b><br/>'
         f'<b>{bank_address}</b><br/>'
         '<b>A/C NO: 000000000000</b>'
@@ -377,7 +377,7 @@ def build_quotation_pdf(quotation: Quotation, printed_by=None) -> bytes:
     ]
 
     sig_elem = Paragraph(
-        '<b>Authorized Signature</b><br/><b>Vehicle Template</b>',
+        '<b>Authorized Signature</b><br/><b>EV OS</b>',
         s["ExactCellRight"],
     )
 
@@ -404,22 +404,22 @@ def build_quotation_pdf(quotation: Quotation, printed_by=None) -> bytes:
         # Watermark
         canvas.saveState()
         canvas.setFillAlpha(0.06)
-        canvas.setFillColor(colors.HexColor("#04314A"))
+        canvas.setFillColor(colors.HexColor("#0B3D2B"))
         canvas.setFont("Helvetica-Bold", 44)
-        canvas.drawCentredString(_WIDTH / 2.0, _HEIGHT / 2.0 - 10 * mm, "VEHICLE TEMPLATE")
+        canvas.drawCentredString(_WIDTH / 2.0, _HEIGHT / 2.0 - 10 * mm, "EV OS")
         canvas.restoreState()
 
         # Top header
-        canvas.setFillColor(colors.HexColor("#04314A"))
+        canvas.setFillColor(colors.HexColor("#0B3D2B"))
         canvas.rect(0, _HEIGHT - 4 * mm, _WIDTH, 4 * mm, stroke=0, fill=1)
-        canvas.setFillColor(colors.HexColor("#00AAEB"))
+        canvas.setFillColor(colors.HexColor("#10B981"))
         canvas.rect(left_margin, _HEIGHT - 16 * mm, 10 * mm, 8 * mm, stroke=0, fill=1)
         canvas.setFillColor(colors.white)
         canvas.setFont("Helvetica-Bold", 9)
-        canvas.drawCentredString(left_margin + 5 * mm, _HEIGHT - 13.5 * mm, "VT")
-        canvas.setFillColor(colors.HexColor("#04314A"))
+        canvas.drawCentredString(left_margin + 5 * mm, _HEIGHT - 13.5 * mm, "EV")
+        canvas.setFillColor(colors.HexColor("#0B3D2B"))
         canvas.setFont("Helvetica-Bold", 12)
-        canvas.drawString(left_margin + 13 * mm, _HEIGHT - 13 * mm, "VEHICLE TEMPLATE")
+        canvas.drawString(left_margin + 13 * mm, _HEIGHT - 13 * mm, "EV OS")
         canvas.setFillColor(colors.HexColor("#4B5563"))
         canvas.setFont("Helvetica", 7)
         canvas.drawRightString(
@@ -444,7 +444,7 @@ def build_quotation_pdf(quotation: Quotation, printed_by=None) -> bytes:
         )
         canvas.setFillColor(colors.HexColor("#6B7280"))
         canvas.setFont("Helvetica", 7)
-        canvas.drawString(left_margin, bottom_margin - 9 * mm, "Vehicle Template - Quotation")
+        canvas.drawString(left_margin, bottom_margin - 9 * mm, "EV OS - Quotation")
         canvas.drawRightString(_WIDTH - left_margin, bottom_margin - 9 * mm, "info@yourcompany.com")
 
         canvas.restoreState()

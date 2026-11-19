@@ -20,7 +20,7 @@ function InterestForm({
   });
   const [error, setError] = useState("");
   const [busy, setBusy] = useState(false);
-  const input = "w-full border border-[#E8E8E5] rounded-xl bg-white px-3 py-2.5 text-[13px] font-medium text-[#04314A] placeholder:text-[#B0B0AA] focus:outline-none focus:border-[#00AAEB] transition-colors";
+  const input = "w-full border border-[#E8E8E5] rounded-xl bg-white px-3 py-2.5 text-[13px] font-medium text-[#0B3D2B] placeholder:text-[#B0B0AA] focus:outline-none focus:border-[#10B981] transition-colors";
   const label = "text-[10px] font-semibold tracking-[0.12em] uppercase text-[#737373] block mb-1.5";
 
   const submit = async (e: React.FormEvent) => {
@@ -47,7 +47,7 @@ function InterestForm({
     <div className="fixed inset-0 z-50 bg-black/50 flex items-center justify-center p-4">
       <form onSubmit={submit} className="bg-white w-full max-w-[480px] border border-[#E8E8E5] rounded-xl overflow-hidden">
         <div className="flex items-center justify-between px-6 py-5 border-b border-[#E8E8E5]">
-          <h2 className="text-[16px] font-black text-[#04314A]">{initial ? "Edit Interest Level" : "Add Interest Level"}</h2>
+          <h2 className="text-[16px] font-black text-[#0B3D2B]">{initial ? "Edit Interest Level" : "Add Interest Level"}</h2>
           <button type="button" onClick={onClose} className="w-8 h-8 border border-[#E8E8E5] rounded-xl flex items-center justify-center hover:bg-[#F7F7F5]"><X size={14} /></button>
         </div>
         <div className="p-6 space-y-4">
@@ -57,14 +57,14 @@ function InterestForm({
           </div>
           <div className="flex items-center">
             <label className="flex items-center gap-2 cursor-pointer select-none">
-              <input type="checkbox" checked={form.is_active} onChange={(e) => setForm({ ...form, is_active: e.target.checked })} className="w-4 h-4 accent-[#00AAEB]" />
-              <span className="text-[13px] font-semibold text-[#04314A]">Active</span>
+              <input type="checkbox" checked={form.is_active} onChange={(e) => setForm({ ...form, is_active: e.target.checked })} className="w-4 h-4 accent-[#10B981]" />
+              <span className="text-[13px] font-semibold text-[#0B3D2B]">Active</span>
             </label>
           </div>
-          {error && <p className="text-[12px] text-[#00AAEB] bg-[#00AAEB]/5 border-l-2 border-[#00AAEB] px-3 py-2">{error}</p>}
+          {error && <p className="text-[12px] text-[#10B981] bg-[#10B981]/5 border-l-2 border-[#10B981] px-3 py-2">{error}</p>}
         </div>
         <div className="flex gap-3 p-5 bg-[#F7F7F5] border-t border-[#E8E8E5]">
-          <button type="submit" disabled={busy} className="flex-1 py-3 rounded-full bg-[#04314A] text-white text-[13px] font-semibold hover:bg-[#00AAEB] disabled:opacity-50">{busy ? "Saving…" : initial ? "Save Changes" : "Create Interest Level"}</button>
+          <button type="submit" disabled={busy} className="flex-1 py-3 rounded-full bg-[#0B3D2B] text-white text-[13px] font-semibold hover:bg-[#10B981] disabled:opacity-50">{busy ? "Saving…" : initial ? "Save Changes" : "Create Interest Level"}</button>
           <button type="button" onClick={onClose} className="px-6 py-3 border border-[#E8E8E5] rounded-full bg-white text-[13px] font-semibold text-[#737373]">Cancel</button>
         </div>
       </form>
@@ -111,15 +111,15 @@ export default function InterestLevelsManager() {
     <div>
       <div className="flex items-end justify-between mb-8">
         <div>
-          <h1 className="text-[36px] font-black tracking-tight text-[#04314A]">Interest Levels.</h1>
+          <h1 className="text-[36px] font-black tracking-tight text-[#0B3D2B]">Interest Levels.</h1>
           <p className="text-[13px] text-[#737373] mt-1">Manage visitor interest classifications. Defaults: Hot, Warm, Cold, Normal Inquiry.</p>
         </div>
-        <button onClick={() => setCreating(true)} className="flex items-center gap-2 px-5 py-3 rounded-full bg-[#04314A] text-white text-[12px] font-semibold tracking-[0.06em] uppercase hover:bg-[#00AAEB] transition-colors">
+        <button onClick={() => setCreating(true)} className="flex items-center gap-2 px-5 py-3 rounded-full bg-[#0B3D2B] text-white text-[12px] font-semibold tracking-[0.06em] uppercase hover:bg-[#10B981] transition-colors">
           <Plus size={14} /> Add Interest Level
         </button>
       </div>
 
-      {error && <p className="mb-4 text-[13px] text-[#00AAEB] bg-[#00AAEB]/5 border-l-2 border-[#00AAEB] px-3 py-2">{error}</p>}
+      {error && <p className="mb-4 text-[13px] text-[#10B981] bg-[#10B981]/5 border-l-2 border-[#10B981] px-3 py-2">{error}</p>}
 
       <div className="bg-white border border-[#E8E8E5] rounded-xl overflow-hidden">
         <div className="overflow-x-auto">
@@ -139,17 +139,17 @@ export default function InterestLevelsManager() {
               ) : (
                 levels.slice(page * INTEREST_PER_PAGE, (page + 1) * INTEREST_PER_PAGE).map((lvl) => (
                 <tr key={lvl.id} className="border-b border-[#F0F0ED] last:border-0 hover:bg-[#FAFAF8]">
-                  <td className="px-5 py-3.5 text-[13px] font-bold text-[#04314A]">{lvl.name}</td>
+                  <td className="px-5 py-3.5 text-[13px] font-bold text-[#0B3D2B]">{lvl.name}</td>
                   <td className="px-5 py-3.5">
-                    <button onClick={() => toggleActive(lvl)} className={`inline-flex items-center gap-1.5 px-2.5 py-1 text-[9px] font-bold tracking-[0.12em] uppercase ${lvl.is_active ? "rounded-full bg-[#04314A] text-white" : "rounded-full bg-[#F0F0ED] text-[#737373]"}`}>
+                    <button onClick={() => toggleActive(lvl)} className={`inline-flex items-center gap-1.5 px-2.5 py-1 text-[9px] font-bold tracking-[0.12em] uppercase ${lvl.is_active ? "rounded-full bg-[#0B3D2B] text-white" : "rounded-full bg-[#F0F0ED] text-[#737373]"}`}>
                       {lvl.is_active ? <Eye size={11} /> : <EyeOff size={11} />}{lvl.is_active ? "ACTIVE" : "INACTIVE"}
                     </button>
                   </td>
                   <td className="px-5 py-3.5">
                     <div className="flex justify-end gap-2">
-                      <button onClick={() => setEditing(lvl)} className="w-8 h-8 border border-[#E8E8E5] rounded-xl flex items-center justify-center text-[#04314A] hover:bg-[#04314A] hover:text-white transition-colors"><Pencil size={13} /></button>
-                      <button onClick={() => toggleActive(lvl)} className="hidden sm:inline-flex px-3 py-1.5 border border-[#E8E8E5] rounded-full text-[11px] font-semibold text-[#04314A] hover:border-[#00AAEB] hover:text-[#00AAEB]">{lvl.is_active ? "Deactivate" : "Activate"}</button>
-                      <button onClick={() => remove(lvl)} className="w-8 h-8 border border-[#E8E8E5] rounded-xl flex items-center justify-center text-[#00AAEB] hover:bg-[#00AAEB] hover:text-white transition-colors"><Trash2 size={13} /></button>
+                      <button onClick={() => setEditing(lvl)} className="w-8 h-8 border border-[#E8E8E5] rounded-xl flex items-center justify-center text-[#0B3D2B] hover:bg-[#0B3D2B] hover:text-white transition-colors"><Pencil size={13} /></button>
+                      <button onClick={() => toggleActive(lvl)} className="hidden sm:inline-flex px-3 py-1.5 border border-[#E8E8E5] rounded-full text-[11px] font-semibold text-[#0B3D2B] hover:border-[#10B981] hover:text-[#10B981]">{lvl.is_active ? "Deactivate" : "Activate"}</button>
+                      <button onClick={() => remove(lvl)} className="w-8 h-8 border border-[#E8E8E5] rounded-xl flex items-center justify-center text-[#10B981] hover:bg-[#10B981] hover:text-white transition-colors"><Trash2 size={13} /></button>
                     </div>
                   </td>
                 </tr>

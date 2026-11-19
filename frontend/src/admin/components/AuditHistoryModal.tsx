@@ -81,11 +81,11 @@ export default function AuditHistoryModal({
         {/* Header */}
         <div className="px-6 py-4 bg-[#FAFAF8] border-b border-[#E8E8E5] flex items-center justify-between flex-shrink-0">
           <div className="flex items-center gap-2.5">
-            <div className="w-8 h-8 rounded-lg bg-[#04314A] text-white flex items-center justify-center">
+            <div className="w-8 h-8 rounded-lg bg-[#0B3D2B] text-white flex items-center justify-center">
               <History size={16} />
             </div>
             <div>
-              <h3 id="audit-modal-title" className="text-[14px] font-bold text-[#04314A]">
+              <h3 id="audit-modal-title" className="text-[14px] font-bold text-[#0B3D2B]">
                 {title || `Change History: ${modelName} #${objectId}`}
               </h3>
               <p className="text-[11px] text-[#737373]">
@@ -95,7 +95,7 @@ export default function AuditHistoryModal({
           </div>
           <button
             onClick={onClose}
-            className="w-8 h-8 rounded-full flex items-center justify-center text-[#737373] hover:text-[#04314A] hover:bg-[#E8E8E5]/50 transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-[#00AAEB]"
+            className="w-8 h-8 rounded-full flex items-center justify-center text-[#737373] hover:text-[#0B3D2B] hover:bg-[#E8E8E5]/50 transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-[#10B981]"
             aria-label="Close change history modal"
           >
             <X size={16} />
@@ -106,12 +106,12 @@ export default function AuditHistoryModal({
         <div className="flex-1 overflow-y-auto p-6 space-y-4">
           {loading ? (
             <div className="py-12 text-center text-[13px] text-[#737373] flex items-center justify-center gap-2">
-              <Loader2 size={16} className="animate-spin text-[#00AAEB]" />
+              <Loader2 size={16} className="animate-spin text-[#10B981]" />
               Loading change history...
             </div>
           ) : logs.length === 0 ? (
             <div className="py-12 text-center">
-              <p className="text-[14px] font-bold text-[#04314A]">No changes recorded</p>
+              <p className="text-[14px] font-bold text-[#0B3D2B]">No changes recorded</p>
               <p className="text-[12px] text-[#737373] mt-1">
                 No audited modifications found for this record.
               </p>
@@ -131,10 +131,10 @@ export default function AuditHistoryModal({
                   <div key={log.id} className="p-4 bg-white hover:bg-[#FAFAF8] transition-colors">
                     <div className="flex items-center justify-between gap-3 mb-2">
                       <div className="flex items-center gap-2">
-                        <span className="text-[11px] font-bold tracking-[0.06em] uppercase px-2 py-0.5 rounded bg-[#04314A] text-white">
+                        <span className="text-[11px] font-bold tracking-[0.06em] uppercase px-2 py-0.5 rounded bg-[#0B3D2B] text-white">
                           {log.source}
                         </span>
-                        <span className="text-[12px] font-bold text-[#04314A]">
+                        <span className="text-[12px] font-bold text-[#0B3D2B]">
                           {log.field_name}
                         </span>
                       </div>
@@ -155,7 +155,7 @@ export default function AuditHistoryModal({
                     <div className="flex items-center gap-1.5 text-[11px] text-[#737373] mt-2">
                       <User size={12} className="text-[#737373]" />
                       <span>Changed by: </span>
-                      <strong className="text-[#04314A]">{log.changed_by_name}</strong>
+                      <strong className="text-[#0B3D2B]">{log.changed_by_name}</strong>
                       {log.changed_by_username && log.changed_by_username !== log.changed_by_name && (
                         <span>(@{log.changed_by_username})</span>
                       )}
@@ -171,7 +171,7 @@ export default function AuditHistoryModal({
         <div className="px-6 py-3 bg-[#FAFAF8] border-t border-[#E8E8E5] flex justify-end flex-shrink-0">
           <button
             onClick={onClose}
-            className="px-5 py-2 rounded-full border border-[#E8E8E5] text-[12px] font-semibold text-[#04314A] hover:bg-white transition-colors"
+            className="px-5 py-2 rounded-full border border-[#E8E8E5] text-[12px] font-semibold text-[#0B3D2B] hover:bg-white transition-colors"
           >
             Close
           </button>

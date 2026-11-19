@@ -161,7 +161,7 @@ export function TableState({
             {onRetry && (
               <button
                 onClick={onRetry}
-                className="px-4 py-2 border border-[#E8E8E5] rounded-lg text-[12px] font-semibold text-[#04314A] hover:border-[#04314A] transition-colors"
+                className="px-4 py-2 border border-[#E8E8E5] rounded-lg text-[12px] font-semibold text-[#0B3D2B] hover:border-[#0B3D2B] transition-colors"
               >
                 Retry
               </button>
@@ -205,9 +205,9 @@ export function Pagination({
     <div className="flex flex-wrap items-center justify-between gap-3 px-5 py-3 border-t border-[#E8E8E5] bg-[#FAFAF8]">
       <div className="flex flex-wrap items-center gap-3 text-[11px] text-[#737373]">
         <span>
-          Showing <strong className="text-[#04314A]">{startRecord}</strong> to{" "}
-          <strong className="text-[#04314A]">{endRecord}</strong> of{" "}
-          <strong className="text-[#04314A]">{total}</strong> records
+          Showing <strong className="text-[#0B3D2B]">{startRecord}</strong> to{" "}
+          <strong className="text-[#0B3D2B]">{endRecord}</strong> of{" "}
+          <strong className="text-[#0B3D2B]">{total}</strong> records
         </span>
         {onPageSizeChange ? (
           <label className="inline-flex items-center gap-1.5">
@@ -215,7 +215,7 @@ export function Pagination({
             <select
               value={pageSize}
               onChange={(event) => onPageSizeChange(Number(event.target.value))}
-              className="h-8 rounded-lg border border-[#E8E8E5] bg-white px-2 text-[11px] font-medium text-[#04314A] focus:outline-none focus:ring-1 focus:ring-[#00AAEB]"
+              className="h-8 rounded-lg border border-[#E8E8E5] bg-white px-2 text-[11px] font-medium text-[#0B3D2B] focus:outline-none focus:ring-1 focus:ring-[#10B981]"
               aria-label="Rows per page"
             >
               {pageSizeOptions.map((size) => (
@@ -238,7 +238,7 @@ export function Pagination({
         >
           Previous
         </Button>
-        <span className="min-w-[5.5rem] text-center text-[11px] font-medium tabular-nums text-[#04314A]">
+        <span className="min-w-[5.5rem] text-center text-[11px] font-medium tabular-nums text-[#0B3D2B]">
           Page {page + 1} of {displayPageCount}
         </span>
         <Button
@@ -283,15 +283,15 @@ export function useToast() {
 
 // ─── CSS class string constants (kept for screens that use them inline) ───────
 export const inputCls =
-  "border border-[#E8E8E5] rounded-xl bg-white px-3 py-2.5 text-[13px] font-medium text-[#04314A] placeholder:text-[#B0B0AA] focus:outline-none focus:border-[#00AAEB] transition-colors w-full";
+  "border border-[#E8E8E5] rounded-xl bg-white px-3 py-2.5 text-[13px] font-medium text-[#0B3D2B] placeholder:text-[#B0B0AA] focus:outline-none focus:border-[#10B981] transition-colors w-full";
 
 export const selectCls = `${inputCls} cursor-pointer appearance-none pr-9`;
 
 export const primaryBtnCls =
-  "inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-[#00AAEB] text-white text-[12px] font-bold tracking-[0.06em] uppercase hover:bg-[#04314A] transition-colors disabled:opacity-50 disabled:cursor-not-allowed";
+  "inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-[#10B981] text-white text-[12px] font-bold tracking-[0.06em] uppercase hover:bg-[#0B3D2B] transition-colors disabled:opacity-50 disabled:cursor-not-allowed";
 
 export const ghostBtnCls =
-  "inline-flex items-center gap-2 px-4 py-2.5 border border-[#E8E8E5] rounded-full text-[12px] font-semibold tracking-[0.04em] uppercase text-[#04314A] hover:border-[#04314A] transition-colors";
+  "inline-flex items-center gap-2 px-4 py-2.5 border border-[#E8E8E5] rounded-full text-[12px] font-semibold tracking-[0.04em] uppercase text-[#0B3D2B] hover:border-[#0B3D2B] transition-colors";
 
 // ─── exportCsv ────────────────────────────────────────────────────────────────
 export function exportCsv(filename: string, rows: Record<string, unknown>[]) {

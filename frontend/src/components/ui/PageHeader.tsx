@@ -19,11 +19,11 @@ export function PageHeader({
 }: PageHeaderProps) {
   return (
     <div
-      className={`flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3 pb-4 mb-6 border-b border-[#E8E8E5] dark:border-[#174261] ${className}`}
+      className={`flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3 pb-4 mb-6 border-b border-[#E8E8E5] dark:border-[#1B5039] ${className}`}
     >
       <div>
         <div className="flex items-center gap-2.5">
-          <h1 className="text-[20px] font-semibold text-[#04314A] dark:text-[#F7F7F5] tracking-tight">
+          <h1 className="text-[20px] font-semibold text-[#0B3D2B] dark:text-[#F7F7F5] tracking-tight">
             {title}
           </h1>
           {badge}

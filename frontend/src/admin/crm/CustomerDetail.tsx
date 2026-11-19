@@ -75,16 +75,16 @@ function ActivityTimeline({ activities }: { activities: Activity[] }) {
           <div className="border-l-2 border-[#F0F0ED] pl-4 flex flex-col gap-4">
             {items.map((a) => (
               <div key={a.id} className="relative">
-                <span className="absolute -left-[21px] top-1 w-2.5 h-2.5 rounded-full bg-[#00AAEB]" />
+                <span className="absolute -left-[21px] top-1 w-2.5 h-2.5 rounded-full bg-[#10B981]" />
                 <div className="flex items-center gap-2 mb-0.5">
-                  <span className={`text-[9px] font-bold tracking-[0.1em] uppercase px-2 py-0.5 rounded-full ${a.type === "status_change" || a.type === "lead_created" ? "bg-[#04314A] text-white" : "bg-[#F0F0ED] text-[#04314A]"}`}>
+                  <span className={`text-[9px] font-bold tracking-[0.1em] uppercase px-2 py-0.5 rounded-full ${a.type === "status_change" || a.type === "lead_created" ? "bg-[#0B3D2B] text-white" : "bg-[#F0F0ED] text-[#0B3D2B]"}`}>
                     {a.type === "lead_created" ? "Lead Created" : meta.activityLabels[a.type] ?? a.type}
                   </span>
                   <span className="text-[11px] text-[#737373]">
                     {new Date(a.datetime).toLocaleTimeString("en-US", { hour: "numeric", minute: "2-digit" })} · {a.user}
                   </span>
                 </div>
-                <p className="text-[13px] font-bold text-[#04314A]">{a.subject}</p>
+                <p className="text-[13px] font-bold text-[#0B3D2B]">{a.subject}</p>
                 {a.description && <p className="text-[12px] text-[#737373] leading-relaxed">{a.description}</p>}
               </div>
             ))}
@@ -226,13 +226,13 @@ export default function CustomerDetail({
         <button onClick={() => setModal("sale")} className={primaryBtnCls}><Car size={14} /> Record Vehicle Sale</button>
         <button onClick={() => onNavigate(`servicing?new=1&customer=${customer.id}`)} className={ghostBtnCls}><Wrench size={14} /> Book Service</button>
         <button onClick={() => setShowHistory(true)} className={ghostBtnCls}><History size={14} /> Change History</button>
-        <button onClick={handleDelete} className="inline-flex items-center gap-2 px-4 py-2.5 border border-[#E8E8E5] rounded-full text-[12px] font-semibold text-[#00AAEB] hover:bg-[#00AAEB] hover:text-white transition-colors">
+        <button onClick={handleDelete} className="inline-flex items-center gap-2 px-4 py-2.5 border border-[#E8E8E5] rounded-full text-[12px] font-semibold text-[#10B981] hover:bg-[#10B981] hover:text-white transition-colors">
           <Trash2 size={14} /> Delete Customer
         </button>
       </div>
 
       {toastMsg && (
-        <p className="mb-6 text-[12px] font-semibold text-white bg-[#04314A] border-l-2 border-[#00AAEB] px-4 py-3 inline-block">
+        <p className="mb-6 text-[12px] font-semibold text-white bg-[#0B3D2B] border-l-2 border-[#10B981] px-4 py-3 inline-block">
           {toastMsg}
         </p>
       )}
@@ -244,7 +244,7 @@ export default function CustomerDetail({
             key={t}
             onClick={() => setTab(t)}
             className={`px-5 py-3 text-[11px] font-bold tracking-[0.1em] uppercase whitespace-nowrap border-b-2 -mb-px transition-colors ${
-              tab === t ? "border-[#00AAEB] text-[#00AAEB]" : "border-transparent text-[#737373] hover:text-[#04314A]"
+              tab === t ? "border-[#10B981] text-[#10B981]" : "border-transparent text-[#737373] hover:text-[#0B3D2B]"
             }`}
           >
             {t}
@@ -266,14 +266,14 @@ export default function CustomerDetail({
               ].map(([label, value]) => (
                 <div key={label}>
                   <span className="block text-[10px] font-semibold tracking-[0.12em] uppercase text-[#737373] mb-1">{label}</span>
-                  <span className="text-[13px] font-medium text-[#04314A]">{value}</span>
+                  <span className="text-[13px] font-medium text-[#0B3D2B]">{value}</span>
                 </div>
               ))}
             </div>
             {customer.notes && (
               <div className="border-t border-[#F0F0ED] px-6 py-5">
                 <span className="block text-[10px] font-semibold tracking-[0.12em] uppercase text-[#737373] mb-2">Notes</span>
-                <p className="text-[13px] text-[#04314A] leading-relaxed whitespace-pre-line">{customer.notes}</p>
+                <p className="text-[13px] text-[#0B3D2B] leading-relaxed whitespace-pre-line">{customer.notes}</p>
               </div>
             )}
           </>
@@ -297,7 +297,7 @@ export default function CustomerDetail({
                 <tbody>
                   {purchasedUnits.map((u) => (
                     <tr key={u.id} className="border-b border-[#F0F0ED] last:border-0 hover:bg-[#FAFAF8]">
-                      <td className="px-5 py-3 text-[12px] font-bold text-[#04314A]">
+                      <td className="px-5 py-3 text-[12px] font-bold text-[#0B3D2B]">
                         <EntityLink type="unit" id={u.id} label={u.vin_chassis_no} onNavigate={onNavigate} />
                       </td>
                       <td className="px-5 py-3 text-[12px] text-[#737373]">
@@ -307,10 +307,10 @@ export default function CustomerDetail({
                       <td className="px-5 py-3 text-[12px] text-[#737373]">
                         {u.sold_date ? formatDate(u.sold_date) : "-"}
                       </td>
-                      <td className="px-5 py-3 text-[12px] font-bold text-[#04314A]">
+                      <td className="px-5 py-3 text-[12px] font-bold text-[#0B3D2B]">
                         {formatNPR(u.sold_price || u.selling_price || 0)}
                       </td>
-                      <td className="px-5 py-3 text-[12px] text-[#04314A]">
+                      <td className="px-5 py-3 text-[12px] text-[#0B3D2B]">
                         <span className="px-2 py-0.5 rounded-full text-[10px] font-bold bg-[#F0F0ED]">
                           {u.payment_mode ? u.payment_mode.replace(/_/g, " ") : "CASH"}
                         </span>
@@ -318,7 +318,7 @@ export default function CustomerDetail({
                       <td className="px-5 py-3 text-[12px] text-[#737373]">
                         {u.finance_bank_name ? (
                           <div>
-                            <span className="font-semibold text-[#04314A]">{u.finance_bank_name}</span>
+                            <span className="font-semibold text-[#0B3D2B]">{u.finance_bank_name}</span>
                           </div>
                         ) : (
                           "-"
@@ -334,7 +334,7 @@ export default function CustomerDetail({
                             Due Soon {u.next_service_due.due_date ? `(${u.next_service_due.due_date})` : ""}
                           </span>
                         ) : u.next_service_due?.due_date ? (
-                          <span className="text-[#04314A] text-[11px] font-medium">
+                          <span className="text-[#0B3D2B] text-[11px] font-medium">
                             {formatDate(u.next_service_due.due_date)}
                           </span>
                         ) : (
@@ -368,13 +368,13 @@ export default function CustomerDetail({
                                 created_at: u.created_at,
                               })
                             }
-                            className="text-[12px] font-bold text-[#04314A] hover:text-[#00AAEB]"
+                            className="text-[12px] font-bold text-[#0B3D2B] hover:text-[#10B981]"
                           >
                             Sale Receipt
                           </button>
                           <button
                             onClick={() => onNavigate(`units/${u.id}`)}
-                            className="text-[12px] font-bold text-[#00AAEB] hover:text-[#04314A]"
+                            className="text-[12px] font-bold text-[#10B981] hover:text-[#0B3D2B]"
                           >
                             Unit Profile
                           </button>
@@ -405,7 +405,7 @@ export default function CustomerDetail({
                 <tbody>
                   {serviceRecords.map((srv) => (
                     <tr key={srv.id} className="border-b border-[#F0F0ED] last:border-0 hover:bg-[#FAFAF8]">
-                      <td className="px-5 py-3 text-[12px] font-bold text-[#04314A]">
+                      <td className="px-5 py-3 text-[12px] font-bold text-[#0B3D2B]">
                         <EntityLink type="vro" id={srv.vro_no || `SRV-${srv.id}`} label={srv.vro_no || `SRV-${srv.id}`} onNavigate={onNavigate} />
                       </td>
                       <td className="px-5 py-3 text-[12px] text-[#737373]">
@@ -421,22 +421,22 @@ export default function CustomerDetail({
                       <td className="px-5 py-3 text-[12px] text-[#737373]">
                         {srv.actual_delivered_at ? formatDateTime(srv.actual_delivered_at) : "-"}
                       </td>
-                      <td className="px-5 py-3 text-[12px] font-semibold text-[#04314A]">
+                      <td className="px-5 py-3 text-[12px] font-semibold text-[#0B3D2B]">
                         {srv.duration_display || "-"}
                       </td>
                       <td className="px-5 py-3">
                         <Badge status={srv.status.toLowerCase()} />
                       </td>
-                      <td className="px-5 py-3 text-[12px] text-[#04314A] max-w-xs truncate">
+                      <td className="px-5 py-3 text-[12px] text-[#0B3D2B] max-w-xs truncate">
                         {srv.job_description || srv.notes || "-"}
                       </td>
-                      <td className="px-5 py-3 text-[12px] font-bold text-[#04314A]">
+                      <td className="px-5 py-3 text-[12px] font-bold text-[#0B3D2B]">
                         {formatNPR(srv.total_cost || 0)}
                       </td>
                       <td className="px-5 py-3 text-right">
                         <button
                           onClick={() => onNavigate(`servicing?vro=${srv.vro_no || srv.id}`)}
-                          className="text-[12px] font-bold text-[#00AAEB] hover:text-[#04314A]"
+                          className="text-[12px] font-bold text-[#10B981] hover:text-[#0B3D2B]"
                         >
                           Servicing →
                         </button>
@@ -456,7 +456,7 @@ export default function CustomerDetail({
               {testDrives.map((t) => (
                 <li key={t.id} className="flex flex-wrap items-center justify-between gap-2 px-6 py-4">
                   <div>
-                    <p className="text-[13px] font-bold text-[#04314A]">
+                    <p className="text-[13px] font-bold text-[#0B3D2B]">
                       {t.vehicle} · {t.date} at {t.time}
                       {t.unitVin && (
                         <span className="ml-2 font-normal text-[12px] text-[#737373]">
@@ -480,7 +480,7 @@ export default function CustomerDetail({
               {quotations.map((q) => (
                 <li key={q.id} className="flex flex-wrap items-center justify-between gap-2 px-6 py-4 hover:bg-[#FAFAF8]">
                   <div>
-                    <p className="text-[13px] font-bold text-[#04314A]">
+                    <p className="text-[13px] font-bold text-[#0B3D2B]">
                       <EntityLink type="quotation" id={q.id} label={q.id} onNavigate={onNavigate} />
                       <span className="ml-2 text-[#737373]">· {q.vehicle}</span>
                     </p>
@@ -490,7 +490,7 @@ export default function CustomerDetail({
                     <Badge status={q.status} />
                     <button
                       onClick={() => onNavigate(`crm-quotations/${q.id}`)}
-                      className="text-[11px] font-bold text-[#00AAEB] hover:text-[#04314A]"
+                      className="text-[11px] font-bold text-[#10B981] hover:text-[#0B3D2B]"
                     >
                       View Details
                     </button>
@@ -513,8 +513,8 @@ export default function CustomerDetail({
         {tab === "Activity Timeline" && (
           <>
             <div className="flex items-center justify-between px-6 py-4 border-b border-[#E8E8E5]">
-              <h2 className="text-[13px] font-black tracking-[0.12em] uppercase text-[#04314A]">Activity Timeline</h2>
-              <button onClick={() => setModal("activity")} className="text-[11px] font-semibold tracking-[0.08em] uppercase text-[#00AAEB] hover:text-[#04314A] transition-colors">
+              <h2 className="text-[13px] font-black tracking-[0.12em] uppercase text-[#0B3D2B]">Activity Timeline</h2>
+              <button onClick={() => setModal("activity")} className="text-[11px] font-semibold tracking-[0.08em] uppercase text-[#10B981] hover:text-[#0B3D2B] transition-colors">
                 + Add Activity
               </button>
             </div>

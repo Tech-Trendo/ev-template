@@ -57,7 +57,7 @@ function getNotificationIcon(type: InAppNotification["notification_type"]) {
     case "SERVICE_DUE_SOON":
       return <Wrench size={15} className="text-[#D97706]" />;
     case "WARRANTY_EXPIRING":
-      return <ShieldAlert size={15} className="text-[#00AAEB]" />;
+      return <ShieldAlert size={15} className="text-[#10B981]" />;
     case "RESERVATION_EXPIRED":
       return <CalendarX size={15} className="text-[#DC2626]" />;
     case "RESERVATION_EXPIRING":
@@ -170,7 +170,7 @@ export default function NotificationBell({
     <div ref={containerRef} className="relative">
       <button
         onClick={() => setIsOpen((prev) => !prev)}
-        className="relative w-9 h-9 rounded-lg flex items-center justify-center text-[#04314A] hover:bg-[#F0F0ED] transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-[#00AAEB]"
+        className="relative w-9 h-9 rounded-lg flex items-center justify-center text-[#0B3D2B] hover:bg-[#F0F0ED] transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-[#10B981]"
         aria-label="Notifications"
         aria-expanded={isOpen}
         aria-haspopup="true"
@@ -188,7 +188,7 @@ export default function NotificationBell({
           {/* Header */}
           <div className="px-4 py-3 bg-[#FAFAF8] border-b border-[#E8E8E5] flex items-center justify-between">
             <div className="flex items-center gap-2">
-              <span className="text-[13px] font-bold text-[#04314A]">Notifications</span>
+              <span className="text-[13px] font-bold text-[#0B3D2B]">Notifications</span>
               {unreadCount > 0 && (
                 <span className="text-[10px] font-bold px-1.5 py-0.5 rounded bg-[#DC2626] text-white">
                   {unreadCount} unread
@@ -198,7 +198,7 @@ export default function NotificationBell({
             {unreadCount > 0 && (
               <button
                 onClick={handleMarkAllRead}
-                className="text-[11px] font-semibold text-[#00AAEB] hover:text-[#04314A] flex items-center gap-1 transition-colors"
+                className="text-[11px] font-semibold text-[#10B981] hover:text-[#0B3D2B] flex items-center gap-1 transition-colors"
               >
                 <CheckCheck size={13} />
                 Mark all read
@@ -210,12 +210,12 @@ export default function NotificationBell({
           <div className="max-h-[380px] overflow-y-auto divide-y divide-[#F0F0ED]">
             {loading && notifications.length === 0 ? (
               <div className="py-8 text-center text-[12px] text-[#737373] flex items-center justify-center gap-2">
-                <Loader2 size={14} className="animate-spin text-[#00AAEB]" />
+                <Loader2 size={14} className="animate-spin text-[#10B981]" />
                 Loading notifications...
               </div>
             ) : notifications.length === 0 ? (
               <div className="py-8 text-center px-4">
-                <p className="text-[13px] font-semibold text-[#04314A]">All caught up</p>
+                <p className="text-[13px] font-semibold text-[#0B3D2B]">All caught up</p>
                 <p className="text-[11px] text-[#737373] mt-0.5">
                   No active service, warranty, or reservation alerts.
                 </p>
@@ -238,7 +238,7 @@ export default function NotificationBell({
                     <div className="flex items-center justify-between gap-2">
                       <span
                         className={`text-[12px] truncate ${
-                          n.is_read ? "font-semibold text-[#04314A]" : "font-bold text-[#04314A]"
+                          n.is_read ? "font-semibold text-[#0B3D2B]" : "font-bold text-[#0B3D2B]"
                         }`}
                       >
                         {n.title}
@@ -252,7 +252,7 @@ export default function NotificationBell({
                     </p>
                   </div>
                   {!n.is_read && (
-                    <span className="w-2 h-2 rounded-full bg-[#00AAEB] flex-shrink-0 mt-2" />
+                    <span className="w-2 h-2 rounded-full bg-[#10B981] flex-shrink-0 mt-2" />
                   )}
                 </button>
               ))

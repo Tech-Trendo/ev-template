@@ -39,9 +39,9 @@ import { uploadStoryImage } from "@/lib/stories";
  */
 
 const TOOLBTN =
-  "w-8 h-8 flex items-center justify-center rounded-lg text-[#04314A] hover:bg-[#F0F0ED] hover:text-[#00AAEB] active:bg-[#E8E8E5] transition-all disabled:opacity-30 disabled:cursor-not-allowed";
+  "w-8 h-8 flex items-center justify-center rounded-lg text-[#0B3D2B] hover:bg-[#F0F0ED] hover:text-[#10B981] active:bg-[#E8E8E5] transition-all disabled:opacity-30 disabled:cursor-not-allowed";
 const ACTIVE_TOOLBTN =
-  "w-8 h-8 flex items-center justify-center rounded-lg bg-[#04314A] text-white transition-all";
+  "w-8 h-8 flex items-center justify-center rounded-lg bg-[#0B3D2B] text-white transition-all";
 
 function escapeHtml(text: string): string {
   return text
@@ -442,7 +442,7 @@ export default function RichTextEditor({
   };
 
   return (
-    <div className="border border-[#E8E8E5] rounded-2xl bg-white shadow-xs overflow-hidden focus-within:border-[#00AAEB] focus-within:ring-2 focus-within:ring-[#00AAEB]/10 transition-all">
+    <div className="border border-[#E8E8E5] rounded-2xl bg-white shadow-xs overflow-hidden focus-within:border-[#10B981] focus-within:ring-2 focus-within:ring-[#10B981]/10 transition-all">
       {/* Sticky Toolbar */}
       <div className="flex flex-wrap items-center justify-between gap-y-1.5 px-3 py-2 border-b border-[#E8E8E5] bg-[#FAFAF8] sticky top-0 z-20">
         <div className="flex flex-wrap items-center gap-1">
@@ -651,15 +651,15 @@ export default function RichTextEditor({
 
       {/* Table Action Controls Ribbon (Appears when cursor is inside a table) */}
       {inTable && (
-        <div className="flex flex-wrap items-center gap-1 px-4 py-2 bg-[#04314A]/5 border-b border-[#04314A]/10 text-[11px] text-[#04314A]">
-          <span className="font-bold uppercase tracking-wider text-[10px] text-[#00AAEB] flex items-center gap-1.5 mr-2">
+        <div className="flex flex-wrap items-center gap-1 px-4 py-2 bg-[#0B3D2B]/5 border-b border-[#0B3D2B]/10 text-[11px] text-[#0B3D2B]">
+          <span className="font-bold uppercase tracking-wider text-[10px] text-[#10B981] flex items-center gap-1.5 mr-2">
             <TableIcon size={13} /> Table Tools:
           </span>
           <button
             type="button"
             onMouseDown={(e) => e.preventDefault()}
             onClick={() => tableOp("rowAbove")}
-            className="flex items-center gap-1 px-2.5 py-1 bg-white border border-[#E8E8E5] rounded-md font-medium hover:border-[#00AAEB] hover:text-[#00AAEB] transition-colors"
+            className="flex items-center gap-1 px-2.5 py-1 bg-white border border-[#E8E8E5] rounded-md font-medium hover:border-[#10B981] hover:text-[#10B981] transition-colors"
           >
             <ArrowUpToLine size={12} /> + Row Above
           </button>
@@ -667,7 +667,7 @@ export default function RichTextEditor({
             type="button"
             onMouseDown={(e) => e.preventDefault()}
             onClick={() => tableOp("rowBelow")}
-            className="flex items-center gap-1 px-2.5 py-1 bg-white border border-[#E8E8E5] rounded-md font-medium hover:border-[#00AAEB] hover:text-[#00AAEB] transition-colors"
+            className="flex items-center gap-1 px-2.5 py-1 bg-white border border-[#E8E8E5] rounded-md font-medium hover:border-[#10B981] hover:text-[#10B981] transition-colors"
           >
             <ArrowDownToLine size={12} /> + Row Below
           </button>
@@ -675,7 +675,7 @@ export default function RichTextEditor({
             type="button"
             onMouseDown={(e) => e.preventDefault()}
             onClick={() => tableOp("colLeft")}
-            className="flex items-center gap-1 px-2.5 py-1 bg-white border border-[#E8E8E5] rounded-md font-medium hover:border-[#00AAEB] hover:text-[#00AAEB] transition-colors"
+            className="flex items-center gap-1 px-2.5 py-1 bg-white border border-[#E8E8E5] rounded-md font-medium hover:border-[#10B981] hover:text-[#10B981] transition-colors"
           >
             <ArrowLeftToLine size={12} /> + Col Left
           </button>
@@ -683,7 +683,7 @@ export default function RichTextEditor({
             type="button"
             onMouseDown={(e) => e.preventDefault()}
             onClick={() => tableOp("colRight")}
-            className="flex items-center gap-1 px-2.5 py-1 bg-white border border-[#E8E8E5] rounded-md font-medium hover:border-[#00AAEB] hover:text-[#00AAEB] transition-colors"
+            className="flex items-center gap-1 px-2.5 py-1 bg-white border border-[#E8E8E5] rounded-md font-medium hover:border-[#10B981] hover:text-[#10B981] transition-colors"
           >
             <ArrowRightToLine size={12} /> + Col Right
           </button>
@@ -717,7 +717,7 @@ export default function RichTextEditor({
       {/* Link Dialog */}
       {dialog.kind === "link" && (
         <div className="flex items-center gap-2 px-4 py-3 border-b border-[#E8E8E5] bg-[#F7F7F5] animate-in fade-in slide-in-from-top-1 duration-150">
-          <div className="flex items-center gap-2 flex-1 bg-white border border-[#E8E8E5] rounded-xl px-3 py-1.5 focus-within:border-[#00AAEB]">
+          <div className="flex items-center gap-2 flex-1 bg-white border border-[#E8E8E5] rounded-xl px-3 py-1.5 focus-within:border-[#10B981]">
             <Globe size={15} className="text-[#B0B0AA]" />
             <input
               autoFocus
@@ -725,20 +725,20 @@ export default function RichTextEditor({
               onChange={(e) => setDialog({ ...dialog, url: e.target.value })}
               onKeyDown={(e) => e.key === "Enter" && applyLink()}
               placeholder="https://example.com"
-              className="w-full text-[13px] font-medium text-[#04314A] placeholder:text-[#B0B0AA] focus:outline-none"
+              className="w-full text-[13px] font-medium text-[#0B3D2B] placeholder:text-[#B0B0AA] focus:outline-none"
             />
           </div>
           <button
             type="button"
             onClick={applyLink}
-            className="px-4 py-2 rounded-xl bg-[#04314A] text-white text-[12px] font-semibold hover:bg-[#00AAEB] transition-colors shadow-xs"
+            className="px-4 py-2 rounded-xl bg-[#0B3D2B] text-white text-[12px] font-semibold hover:bg-[#10B981] transition-colors shadow-xs"
           >
             Insert Link
           </button>
           <button
             type="button"
             onClick={() => setDialog({ kind: "none" })}
-            className="w-8 h-8 flex items-center justify-center text-[#737373] hover:text-[#04314A] hover:bg-[#E8E8E5] rounded-lg transition-colors"
+            className="w-8 h-8 flex items-center justify-center text-[#737373] hover:text-[#0B3D2B] hover:bg-[#E8E8E5] rounded-lg transition-colors"
           >
             <X size={15} />
           </button>
@@ -754,7 +754,7 @@ export default function RichTextEditor({
                 type="button"
                 onClick={() => setDialog({ ...dialog, tab: "upload" })}
                 className={`flex items-center gap-1.5 px-3 py-1 text-[11px] font-semibold rounded-md transition-colors ${
-                  dialog.tab === "upload" ? "bg-[#04314A] text-white" : "text-[#737373] hover:text-[#04314A]"
+                  dialog.tab === "upload" ? "bg-[#0B3D2B] text-white" : "text-[#737373] hover:text-[#0B3D2B]"
                 }`}
               >
                 <Upload size={12} /> Upload File
@@ -763,7 +763,7 @@ export default function RichTextEditor({
                 type="button"
                 onClick={() => setDialog({ ...dialog, tab: "url" })}
                 className={`flex items-center gap-1.5 px-3 py-1 text-[11px] font-semibold rounded-md transition-colors ${
-                  dialog.tab === "url" ? "bg-[#04314A] text-white" : "text-[#737373] hover:text-[#04314A]"
+                  dialog.tab === "url" ? "bg-[#0B3D2B] text-white" : "text-[#737373] hover:text-[#0B3D2B]"
                 }`}
               >
                 <Globe size={12} /> Image URL
@@ -772,7 +772,7 @@ export default function RichTextEditor({
             <button
               type="button"
               onClick={() => setDialog({ kind: "none" })}
-              className="w-7 h-7 flex items-center justify-center text-[#737373] hover:text-[#04314A] hover:bg-[#E8E8E5] rounded-lg transition-colors"
+              className="w-7 h-7 flex items-center justify-center text-[#737373] hover:text-[#0B3D2B] hover:bg-[#E8E8E5] rounded-lg transition-colors"
             >
               <X size={14} />
             </button>
@@ -795,11 +795,11 @@ export default function RichTextEditor({
                 htmlFor="rich-image-upload"
                 className="flex flex-col items-center justify-center cursor-pointer gap-2"
               >
-                <div className="w-10 h-10 rounded-full bg-[#00AAEB]/10 text-[#00AAEB] flex items-center justify-center">
+                <div className="w-10 h-10 rounded-full bg-[#10B981]/10 text-[#10B981] flex items-center justify-center">
                   <Upload size={18} />
                 </div>
                 <div>
-                  <span className="text-[12px] font-bold text-[#04314A] hover:text-[#00AAEB]">
+                  <span className="text-[12px] font-bold text-[#0B3D2B] hover:text-[#10B981]">
                     Click to browse
                   </span>
                   <span className="text-[12px] text-[#737373]"> or drag image here</span>
@@ -812,12 +812,12 @@ export default function RichTextEditor({
               value={dialog.url}
               onChange={(e) => setDialog({ ...dialog, url: e.target.value })}
               placeholder="Paste direct image URL (https://...)"
-              className="w-full border border-[#E8E8E5] rounded-xl bg-white px-3 py-2 text-[13px] font-medium text-[#04314A] focus:outline-none focus:border-[#00AAEB]"
+              className="w-full border border-[#E8E8E5] rounded-xl bg-white px-3 py-2 text-[13px] font-medium text-[#0B3D2B] focus:outline-none focus:border-[#10B981]"
             />
           )}
 
           {dialog.uploading && (
-            <div className="flex items-center gap-2 text-[12px] font-semibold text-[#00AAEB]">
+            <div className="flex items-center gap-2 text-[12px] font-semibold text-[#10B981]">
               <Loader2 size={14} className="animate-spin" /> Uploading image to media library…
             </div>
           )}
@@ -837,13 +837,13 @@ export default function RichTextEditor({
               value={dialog.alt}
               onChange={(e) => setDialog({ ...dialog, alt: e.target.value })}
               placeholder="Alt text (for accessibility / SEO)"
-              className="w-full border border-[#E8E8E5] rounded-xl bg-white px-3 py-2 text-[12px] focus:outline-none focus:border-[#00AAEB]"
+              className="w-full border border-[#E8E8E5] rounded-xl bg-white px-3 py-2 text-[12px] focus:outline-none focus:border-[#10B981]"
             />
             <input
               value={dialog.caption}
               onChange={(e) => setDialog({ ...dialog, caption: e.target.value })}
               placeholder="Caption (shown below image, optional)"
-              className="w-full border border-[#E8E8E5] rounded-xl bg-white px-3 py-2 text-[12px] focus:outline-none focus:border-[#00AAEB]"
+              className="w-full border border-[#E8E8E5] rounded-xl bg-white px-3 py-2 text-[12px] focus:outline-none focus:border-[#10B981]"
             />
           </div>
 
@@ -851,7 +851,7 @@ export default function RichTextEditor({
             <button
               type="button"
               onClick={() => setDialog({ kind: "none" })}
-              className="px-4 py-2 text-[12px] font-semibold text-[#737373] hover:text-[#04314A]"
+              className="px-4 py-2 text-[12px] font-semibold text-[#737373] hover:text-[#0B3D2B]"
             >
               Cancel
             </button>
@@ -859,7 +859,7 @@ export default function RichTextEditor({
               type="button"
               disabled={!dialog.url || dialog.uploading}
               onClick={insertImage}
-              className="px-5 py-2 rounded-xl bg-[#04314A] text-white text-[12px] font-semibold hover:bg-[#00AAEB] transition-colors disabled:opacity-40 shadow-xs"
+              className="px-5 py-2 rounded-xl bg-[#0B3D2B] text-white text-[12px] font-semibold hover:bg-[#10B981] transition-colors disabled:opacity-40 shadow-xs"
             >
               Insert Image
             </button>
@@ -870,7 +870,7 @@ export default function RichTextEditor({
       {/* Table Dialog */}
       {dialog.kind === "table" && (
         <div className="flex items-center gap-4 px-4 py-3 border-b border-[#E8E8E5] bg-[#F7F7F5] flex-wrap animate-in fade-in slide-in-from-top-1 duration-150">
-          <label className="text-[12px] font-semibold text-[#04314A] flex items-center gap-2">
+          <label className="text-[12px] font-semibold text-[#0B3D2B] flex items-center gap-2">
             <span>Rows:</span>
             <input
               type="number"
@@ -881,7 +881,7 @@ export default function RichTextEditor({
               className="w-16 border border-[#E8E8E5] rounded-lg bg-white px-2 py-1 text-[13px] text-center"
             />
           </label>
-          <label className="text-[12px] font-semibold text-[#04314A] flex items-center gap-2">
+          <label className="text-[12px] font-semibold text-[#0B3D2B] flex items-center gap-2">
             <span>Columns:</span>
             <input
               type="number"
@@ -892,12 +892,12 @@ export default function RichTextEditor({
               className="w-16 border border-[#E8E8E5] rounded-lg bg-white px-2 py-1 text-[13px] text-center"
             />
           </label>
-          <label className="flex items-center gap-2 text-[12px] font-semibold text-[#04314A] cursor-pointer select-none">
+          <label className="flex items-center gap-2 text-[12px] font-semibold text-[#0B3D2B] cursor-pointer select-none">
             <input
               type="checkbox"
               checked={dialog.header}
               onChange={(e) => setDialog({ ...dialog, header: e.target.checked })}
-              className="w-4 h-4 rounded text-[#00AAEB] focus:ring-[#00AAEB]"
+              className="w-4 h-4 rounded text-[#10B981] focus:ring-[#10B981]"
             />
             Include header row
           </label>
@@ -905,14 +905,14 @@ export default function RichTextEditor({
             <button
               type="button"
               onClick={() => setDialog({ kind: "none" })}
-              className="px-3 py-1.5 text-[12px] font-semibold text-[#737373] hover:text-[#04314A]"
+              className="px-3 py-1.5 text-[12px] font-semibold text-[#737373] hover:text-[#0B3D2B]"
             >
               Cancel
             </button>
             <button
               type="button"
               onClick={insertTable}
-              className="px-4 py-1.5 rounded-xl bg-[#04314A] text-white text-[12px] font-semibold hover:bg-[#00AAEB] transition-colors shadow-xs"
+              className="px-4 py-1.5 rounded-xl bg-[#0B3D2B] text-white text-[12px] font-semibold hover:bg-[#10B981] transition-colors shadow-xs"
             >
               Insert Table
             </button>
@@ -943,7 +943,7 @@ export default function RichTextEditor({
       {/* Status Bar */}
       <div className="flex items-center justify-between px-5 py-2.5 border-t border-[#E8E8E5] bg-[#FAFAF8] text-[11px] text-[#737373]">
         <div className="flex items-center gap-3">
-          <span className="font-semibold text-[#04314A]">
+          <span className="font-semibold text-[#0B3D2B]">
             {words} {words === 1 ? "word" : "words"}
           </span>
           <span className="text-[#D0D0CB]">·</span>
@@ -952,7 +952,7 @@ export default function RichTextEditor({
           <span>{characters} characters</span>
         </div>
         <div className="flex items-center gap-1.5 text-[10px] font-semibold uppercase tracking-wider text-[#A0A09A]">
-          <Sparkles size={12} className="text-[#00AAEB]" />
+          <Sparkles size={12} className="text-[#10B981]" />
           <span>Rich Text & Media</span>
         </div>
       </div>

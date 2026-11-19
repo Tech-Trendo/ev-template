@@ -344,7 +344,7 @@ export default function DealersManager() {
                 dealers.map((d) => (
                   <tr key={d.id} className="hover:bg-[#FAFAF8] transition-colors">
                     <td className="px-5 py-3.5">
-                      <div className="font-semibold text-[#04314A]">{d.name}</div>
+                      <div className="font-semibold text-[#0B3D2B]">{d.name}</div>
                       {d.address && <div className="text-[11px] text-[#737373] mt-0.5">{d.address}</div>}
                     </td>
                     <td className="px-5 py-3.5 text-[#525252]">

@@ -11,7 +11,7 @@ Run this command periodically (e.g., once per hour) via your scheduler of choice
 
   cron (Linux/macOS)
   ------------------
-  0 * * * * /path/to/venv/bin/python /path/to/manage.py expire_reservations >> /var/log/vehicle_template_expire.log 2>&1
+  0 * * * * /path/to/venv/bin/python /path/to/manage.py expire_reservations >> /var/log/ev_os_expire.log 2>&1
 
   Windows Task Scheduler
   ----------------------

@@ -27,7 +27,7 @@ USER_SPECS = (
         "password": "admin123",
         "first_name": "Template",
         "last_name": "Admin",
-        "email": "admin@vehicletemplate.example.com",
+        "email": "admin@evos.example.com",
         "roles": ("Super Admin",),
         "designation": "System Administrator",
         "department": "Administration",
@@ -164,7 +164,7 @@ def ensure_roles() -> dict[str, Role]:
         role, _ = Role.objects.get_or_create(
             name=name,
             defaults={
-                "description": f"{name} role for the Vehicle Template demo.",
+                "description": f"{name} role for the EV OS demo.",
                 "is_protected": name == "Super Admin",
                 "is_dealer_role": name == "Dealer Staff",
             },

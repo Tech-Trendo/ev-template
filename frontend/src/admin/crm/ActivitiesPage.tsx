@@ -62,7 +62,7 @@ export default function ActivitiesPage({ onNavigate }: { onNavigate: (page: stri
             key={t}
             onClick={() => { setTypeF(t); setPage(0); }}
             className={`px-3.5 py-1.5 text-[10px] font-bold tracking-[0.08em] uppercase border transition-colors ${
-              typeF === t ? "rounded-full bg-[#00AAEB] text-white border-[#00AAEB]" : "border-[#E8E8E5] bg-white text-[#737373] hover:border-[#04314A]"
+              typeF === t ? "rounded-full bg-[#10B981] text-white border-[#10B981]" : "border-[#E8E8E5] bg-white text-[#737373] hover:border-[#0B3D2B]"
             }`}
           >
             {t === "all" ? "All" : meta.activityLabels[t as ActivityTypeCode] ?? t}
@@ -93,22 +93,22 @@ export default function ActivitiesPage({ onNavigate }: { onNavigate: (page: stri
               rows.map((a) => (
                 <tr key={a.id} className="border-b border-[#F0F0ED] last:border-0 hover:bg-[#FAFAF8]">
                   <td className="px-5 py-3.5 whitespace-nowrap">
-                    <span className="block text-[12px] font-semibold text-[#04314A]">{relativeDay(a.datetime)}</span>
+                    <span className="block text-[12px] font-semibold text-[#0B3D2B]">{relativeDay(a.datetime)}</span>
                     <span className="text-[11px] text-[#737373]">{formatDateTime(a.datetime).split(" · ")[1]}</span>
                   </td>
                   <td className="px-5 py-3.5">
-                    <span className={`inline-block px-2.5 py-1 text-[9px] font-bold tracking-[0.12em] uppercase ${a.type === "status_change" ? "rounded-full bg-[#04314A] text-white" : a.type === "quotation" || a.type === "test_drive" ? "rounded-full bg-[#00AAEB] text-white" : "rounded-full bg-[#F0F0ED] text-[#04314A]"}`}>
+                    <span className={`inline-block px-2.5 py-1 text-[9px] font-bold tracking-[0.12em] uppercase ${a.type === "status_change" ? "rounded-full bg-[#0B3D2B] text-white" : a.type === "quotation" || a.type === "test_drive" ? "rounded-full bg-[#10B981] text-white" : "rounded-full bg-[#F0F0ED] text-[#0B3D2B]"}`}>
                       {meta.activityLabels[a.type] ?? a.type}
                     </span>
                   </td>
-                  <td className="px-5 py-3.5 text-[13px] font-bold text-[#04314A] max-w-[280px]">{a.subject}</td>
+                  <td className="px-5 py-3.5 text-[13px] font-bold text-[#0B3D2B] max-w-[280px]">{a.subject}</td>
                   <td className="px-5 py-3.5">
                     {a.leadId ? (
-                      <button onClick={() => onNavigate(`crm-leads/${a.leadId}`)} className="text-[12px] text-[#00AAEB] font-semibold hover:text-[#04314A] transition-colors">
+                      <button onClick={() => onNavigate(`crm-leads/${a.leadId}`)} className="text-[12px] text-[#10B981] font-semibold hover:text-[#0B3D2B] transition-colors">
                         Lead {a.leadId}
                       </button>
                     ) : a.customerId ? (
-                      <button onClick={() => onNavigate(`crm-customers/${a.customerId}`)} className="text-[12px] text-[#00AAEB] font-semibold hover:text-[#04314A] transition-colors">
+                      <button onClick={() => onNavigate(`crm-customers/${a.customerId}`)} className="text-[12px] text-[#10B981] font-semibold hover:text-[#0B3D2B] transition-colors">
                         Customer {a.customerId}
                       </button>
                     ) : (

@@ -47,7 +47,7 @@ export default function DepartmentsPage() {
     <div className="space-y-4">
       <PageHeader title="Departments" subtitle="A department can have a parent and one head. The head sees everyone in it and in child departments." />
       {canManage ? (
-        <div className="grid gap-3 rounded-xl border border-[#E8E8E5] bg-white p-4 md:grid-cols-2 dark:border-[#174261] dark:bg-[#061824]">
+        <div className="grid gap-3 rounded-xl border border-[#E8E8E5] bg-white p-4 md:grid-cols-2 dark:border-[#1B5039] dark:bg-[#071713]">
           <FormField label="Name" htmlFor="dept-name" required><Input id="dept-name" value={name} onChange={(event) => setName(event.target.value)} /></FormField>
           <FormField label="Code" htmlFor="dept-code" required><Input id="dept-code" value={code} onChange={(event) => setCode(event.target.value)} /></FormField>
           <FormField label="Parent" htmlFor="dept-parent">

@@ -256,8 +256,8 @@ export default function DocumentAttachmentWidget({
       {/* Header */}
       <div className="px-5 py-4 border-b border-[#E8E8E5] flex flex-wrap items-center justify-between gap-3 bg-[#FAFAF8]">
         <div className="flex items-center gap-2">
-          <Paperclip size={16} className="text-[#04314A]" />
-          <h3 className="text-[14px] font-bold text-[#04314A]">
+          <Paperclip size={16} className="text-[#0B3D2B]" />
+          <h3 className="text-[14px] font-bold text-[#0B3D2B]">
             Attached Documents ({documents.length})
           </h3>
         </div>
@@ -266,13 +266,13 @@ export default function DocumentAttachmentWidget({
           <div className="flex items-center gap-2">
             <button
               onClick={openAttachExistingModal}
-              className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg border border-[#E8E8E5] bg-white text-[12px] font-semibold text-[#04314A] hover:bg-[#F0F0ED] transition-colors"
+              className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg border border-[#E8E8E5] bg-white text-[12px] font-semibold text-[#0B3D2B] hover:bg-[#F0F0ED] transition-colors"
             >
               <LinkIcon size={13} /> Link Existing
             </button>
             <button
               onClick={openUploadModal}
-              className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-[#04314A] text-[12px] font-semibold text-white hover:bg-[#00AAEB] transition-colors"
+              className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-[#0B3D2B] text-[12px] font-semibold text-white hover:bg-[#10B981] transition-colors"
             >
               <Plus size={13} /> Upload Document
             </button>
@@ -311,13 +311,13 @@ export default function DocumentAttachmentWidget({
                 const img = isImage(doc.file_type);
                 return (
                   <tr key={doc.id} className="border-b border-[#F0F0ED] hover:bg-[#FAFAF8]">
-                    <td className="px-4 py-3 text-[#04314A]">
+                    <td className="px-4 py-3 text-[#0B3D2B]">
                       <div className="flex items-center gap-2.5">
-                        <div className="w-7 h-7 rounded bg-[#F0F0ED] flex items-center justify-center text-[#04314A] shrink-0">
+                        <div className="w-7 h-7 rounded bg-[#F0F0ED] flex items-center justify-center text-[#0B3D2B] shrink-0">
                           {img ? <ImageIcon size={14} /> : <FileText size={14} />}
                         </div>
                         <div>
-                          <div className="font-semibold text-[#04314A]">{doc.title}</div>
+                          <div className="font-semibold text-[#0B3D2B]">{doc.title}</div>
                           {doc.notes && (
                             <div className="text-[11px] text-[#737373] line-clamp-1">{doc.notes}</div>
                           )}
@@ -325,7 +325,7 @@ export default function DocumentAttachmentWidget({
                       </div>
                     </td>
                     <td className="px-4 py-3 text-[#737373]">
-                      <span className="inline-block px-2 py-0.5 rounded bg-[#F0F0ED] text-[11px] font-medium text-[#04314A]">
+                      <span className="inline-block px-2 py-0.5 rounded bg-[#F0F0ED] text-[11px] font-medium text-[#0B3D2B]">
                         {doc.document_type_master_detail?.name || doc.category}
                       </span>
                     </td>
@@ -338,7 +338,7 @@ export default function DocumentAttachmentWidget({
                     <td className="px-4 py-3 whitespace-nowrap">
                       {doc.expiry_date ? (
                         <div>
-                          <div className="text-[11px] text-[#04314A]">{doc.expiry_date}</div>
+                          <div className="text-[11px] text-[#0B3D2B]">{doc.expiry_date}</div>
                           <span
                             className={`inline-block text-[10px] font-bold px-1.5 py-0.2 rounded ${
                               doc.expiry_status === "EXPIRED"
@@ -365,7 +365,7 @@ export default function DocumentAttachmentWidget({
                       <div className="inline-flex items-center gap-1.5 justify-end">
                         <button
                           onClick={() => setPreviewDoc(doc)}
-                          className="p-1.5 rounded hover:bg-[#F0F0ED] text-[#04314A]"
+                          className="p-1.5 rounded hover:bg-[#F0F0ED] text-[#0B3D2B]"
                           title="Preview document"
                         >
                           <Eye size={14} />
@@ -374,7 +374,7 @@ export default function DocumentAttachmentWidget({
                           href={doc.download_url}
                           target="_blank"
                           rel="noopener noreferrer"
-                          className="p-1.5 rounded hover:bg-[#F0F0ED] text-[#04314A]"
+                          className="p-1.5 rounded hover:bg-[#F0F0ED] text-[#0B3D2B]"
                           title="Download document"
                         >
                           <Download size={14} />
@@ -418,7 +418,7 @@ export default function DocumentAttachmentWidget({
             {file && (
               <div className="p-3 bg-[#FAFAF8] border border-[#E8E8E5] rounded-lg text-[12px] flex items-center justify-between">
                 <div>
-                  <span className="font-semibold text-[#04314A]">{file.name}</span>
+                  <span className="font-semibold text-[#0B3D2B]">{file.name}</span>
                   <span className="text-[#737373] ml-2">({formatFileSize(file.size)})</span>
                 </div>
               </div>
@@ -492,7 +492,7 @@ export default function DocumentAttachmentWidget({
               <button
                 type="button"
                 onClick={() => setUploadModalOpen(false)}
-                className="px-4 py-2 rounded-lg border border-[#E8E8E5] text-[12px] font-semibold text-[#737373] hover:text-[#04314A]"
+                className="px-4 py-2 rounded-lg border border-[#E8E8E5] text-[12px] font-semibold text-[#737373] hover:text-[#0B3D2B]"
               >
                 Cancel
               </button>
@@ -500,7 +500,7 @@ export default function DocumentAttachmentWidget({
                 type="button"
                 onClick={handleUploadSubmit}
                 disabled={submitting || (!!duplicateWarning && !forceDuplicate)}
-                className="px-4 py-2 rounded-lg bg-[#04314A] text-white text-[12px] font-semibold hover:bg-[#00AAEB] disabled:opacity-50 transition-colors"
+                className="px-4 py-2 rounded-lg bg-[#0B3D2B] text-white text-[12px] font-semibold hover:bg-[#10B981] disabled:opacity-50 transition-colors"
               >
                 {submitting ? "Uploading..." : "Upload & Attach"}
               </button>
@@ -552,7 +552,7 @@ export default function DocumentAttachmentWidget({
                           onChange={() => setSelectedDocId(d.id)}
                         />
                         <div>
-                          <div className="font-semibold text-[#04314A]">{d.title}</div>
+                          <div className="font-semibold text-[#0B3D2B]">{d.title}</div>
                           <div className="text-[11px] text-[#737373]">
                             {d.category} · {formatFileSize(d.file_size)} · {d.created_at?.slice(0, 10)}
                           </div>
@@ -571,7 +571,7 @@ export default function DocumentAttachmentWidget({
               <button
                 type="button"
                 onClick={() => setAttachExistingModalOpen(false)}
-                className="px-4 py-2 rounded-lg border border-[#E8E8E5] text-[12px] font-semibold text-[#737373] hover:text-[#04314A]"
+                className="px-4 py-2 rounded-lg border border-[#E8E8E5] text-[12px] font-semibold text-[#737373] hover:text-[#0B3D2B]"
               >
                 Cancel
               </button>
@@ -579,7 +579,7 @@ export default function DocumentAttachmentWidget({
                 type="button"
                 onClick={handleAttachExistingSubmit}
                 disabled={submitting || !selectedDocId}
-                className="px-4 py-2 rounded-lg bg-[#04314A] text-white text-[12px] font-semibold hover:bg-[#00AAEB] disabled:opacity-50 transition-colors"
+                className="px-4 py-2 rounded-lg bg-[#0B3D2B] text-white text-[12px] font-semibold hover:bg-[#10B981] disabled:opacity-50 transition-colors"
               >
                 {submitting ? "Attaching..." : "Link Document"}
               </button>
@@ -605,8 +605,8 @@ export default function DocumentAttachmentWidget({
                 />
               ) : (
                 <div className="p-8 text-center">
-                  <FileText size={48} className="mx-auto text-[#04314A] mb-3" />
-                  <p className="font-semibold text-[#04314A]">{previewDoc.title}</p>
+                  <FileText size={48} className="mx-auto text-[#0B3D2B] mb-3" />
+                  <p className="font-semibold text-[#0B3D2B]">{previewDoc.title}</p>
                   <p className="text-[12px] text-[#737373] mt-1 mb-4">
                     PDF / Document ({formatFileSize(previewDoc.file_size)})
                   </p>
@@ -614,7 +614,7 @@ export default function DocumentAttachmentWidget({
                     href={previewDoc.download_url}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="inline-flex items-center gap-1.5 px-4 py-2 rounded-lg bg-[#04314A] text-white text-[12px] font-semibold hover:bg-[#00AAEB] transition-colors"
+                    className="inline-flex items-center gap-1.5 px-4 py-2 rounded-lg bg-[#0B3D2B] text-white text-[12px] font-semibold hover:bg-[#10B981] transition-colors"
                   >
                     <Download size={14} /> Download Document
                   </a>
@@ -624,19 +624,19 @@ export default function DocumentAttachmentWidget({
 
             <div className="grid grid-cols-2 sm:grid-cols-4 gap-2 p-3 bg-[#FAFAF8] rounded-lg text-[11px] text-[#737373]">
               <div>
-                <span className="block font-medium text-[#04314A]">Category</span>
+                <span className="block font-medium text-[#0B3D2B]">Category</span>
                 {previewDoc.category}
               </div>
               <div>
-                <span className="block font-medium text-[#04314A]">File Size</span>
+                <span className="block font-medium text-[#0B3D2B]">File Size</span>
                 {formatFileSize(previewDoc.file_size)}
               </div>
               <div>
-                <span className="block font-medium text-[#04314A]">Uploaded</span>
+                <span className="block font-medium text-[#0B3D2B]">Uploaded</span>
                 {previewDoc.created_at?.slice(0, 10)}
               </div>
               <div>
-                <span className="block font-medium text-[#04314A]">SHA256 Hash</span>
+                <span className="block font-medium text-[#0B3D2B]">SHA256 Hash</span>
                 <span className="font-mono text-[10px] truncate block" title={previewDoc.file_hash}>
                   {previewDoc.file_hash ? previewDoc.file_hash.slice(0, 12) + "..." : "-"}
                 </span>
@@ -648,14 +648,14 @@ export default function DocumentAttachmentWidget({
                 href={previewDoc.download_url}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-1.5 text-[12px] font-semibold text-[#00AAEB] hover:underline"
+                className="inline-flex items-center gap-1.5 text-[12px] font-semibold text-[#10B981] hover:underline"
               >
                 <Download size={14} /> Download File
               </a>
               <button
                 type="button"
                 onClick={() => setPreviewDoc(null)}
-                className="px-4 py-2 rounded-lg bg-[#04314A] text-white text-[12px] font-semibold hover:bg-[#00AAEB] transition-colors"
+                className="px-4 py-2 rounded-lg bg-[#0B3D2B] text-white text-[12px] font-semibold hover:bg-[#10B981] transition-colors"
               >
                 Close Preview
               </button>

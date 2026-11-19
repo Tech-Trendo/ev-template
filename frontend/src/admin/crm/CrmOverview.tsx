@@ -21,14 +21,14 @@ function StatCard({
   accent?: boolean;
 }) {
   return (
-    <div className={`bg-white border ${accent ? "border-[#00AAEB]" : "border-[#E8E8E5]"} p-6`}>
+    <div className={`bg-white border ${accent ? "border-[#10B981]" : "border-[#E8E8E5]"} p-6`}>
       <div className="flex items-center justify-between mb-4">
         <span className="text-[10px] font-semibold tracking-[0.14em] uppercase text-[#737373]">{label}</span>
-        <div className={`w-8 h-8 flex items-center justify-center ${accent ? "rounded-full bg-[#00AAEB] text-white" : "bg-[#F7F7F5] text-[#04314A]"}`}>
+        <div className={`w-8 h-8 flex items-center justify-center ${accent ? "rounded-full bg-[#10B981] text-white" : "bg-[#F7F7F5] text-[#0B3D2B]"}`}>
           {icon}
         </div>
       </div>
-      <div className="text-[40px] font-black leading-none text-[#04314A]">{value}</div>
+      <div className="text-[40px] font-black leading-none text-[#0B3D2B]">{value}</div>
     </div>
   );
 }
@@ -52,10 +52,10 @@ export default function CrmOverview({ onNavigate }: { onNavigate: (page: string)
 
   return (
     <div>
-      <PageHeader eyebrow="CRM" title="CRM." subtitle="Manage Vehicle Template's leads, customers and sales pipeline." />
+      <PageHeader eyebrow="CRM" title="CRM." subtitle="Manage EV OS's leads, customers and sales pipeline." />
 
       {error && (
-        <p className="text-[13px] text-[#00AAEB] bg-[#00AAEB]/5 border-l-2 border-[#00AAEB] px-3 py-2 mb-6">{error}</p>
+        <p className="text-[13px] text-[#10B981] bg-[#10B981]/5 border-l-2 border-[#10B981] px-3 py-2 mb-6">{error}</p>
       )}
 
       <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-5">
@@ -70,7 +70,7 @@ export default function CrmOverview({ onNavigate }: { onNavigate: (page: string)
       {/* Lead Pipeline Stages */}
       <div className="bg-white border border-[#E8E8E5] rounded-xl mt-8">
         <div className="flex items-center justify-between px-6 py-4 border-b border-[#E8E8E5]">
-          <h2 className="text-[13px] font-black tracking-[0.12em] uppercase text-[#04314A]">Lead Pipeline Stages</h2>
+          <h2 className="text-[13px] font-black tracking-[0.12em] uppercase text-[#0B3D2B]">Lead Pipeline Stages</h2>
           <span className="text-[11px] font-semibold text-[#737373]">
             Prospect stages derived from test drives, quotations, and sales
           </span>
@@ -87,10 +87,10 @@ export default function CrmOverview({ onNavigate }: { onNavigate: (page: string)
                 <span className="block text-[9px] font-bold tracking-[0.14em] uppercase text-[#737373] mb-2">
                   {meta.pipelineStageLabels[stage] ?? stage}
                 </span>
-                <span className="block text-[26px] font-black leading-none text-[#04314A]">{count}</span>
+                <span className="block text-[26px] font-black leading-none text-[#0B3D2B]">{count}</span>
                 <div className="mt-3 h-1 bg-[#F0F0ED] w-full">
                   <div
-                    className={`h-full ${stage === "won" ? "bg-[#04314A]" : stage === "lost" ? "bg-[#B0B0AA]" : "bg-[#00AAEB]"}`}
+                    className={`h-full ${stage === "won" ? "bg-[#0B3D2B]" : stage === "lost" ? "bg-[#B0B0AA]" : "bg-[#10B981]"}`}
                     style={{ width: `${(count / maxCount) * 100}%` }}
                   />
                 </div>
@@ -103,7 +103,7 @@ export default function CrmOverview({ onNavigate }: { onNavigate: (page: string)
       {/* Opportunity Pipeline snapshot */}
       <div className="bg-white border border-[#E8E8E5] rounded-xl mt-8">
         <div className="flex items-center justify-between px-6 py-4 border-b border-[#E8E8E5]">
-          <h2 className="text-[13px] font-black tracking-[0.12em] uppercase text-[#04314A]">Opportunity Pipeline Snapshot</h2>
+          <h2 className="text-[13px] font-black tracking-[0.12em] uppercase text-[#0B3D2B]">Opportunity Pipeline Snapshot</h2>
           {data && (
             <span className="text-[11px] font-semibold text-[#737373]">
               Open pipeline value: {formatNpr(data.openPipelineValue)}
@@ -119,10 +119,10 @@ export default function CrmOverview({ onNavigate }: { onNavigate: (page: string)
               <span className="block text-[9px] font-bold tracking-[0.14em] uppercase text-[#737373] mb-2">
                 {meta.stageLabels[stage] ?? stage}
               </span>
-              <span className="block text-[26px] font-black leading-none text-[#04314A]">{data?.stageCounts[stage as Stage] ?? 0}</span>
+              <span className="block text-[26px] font-black leading-none text-[#0B3D2B]">{data?.stageCounts[stage as Stage] ?? 0}</span>
               <div className="mt-3 h-1 bg-[#F0F0ED] w-full">
                 <div
-                  className={`h-full ${stage === "won" ? "bg-[#04314A]" : stage === "lost" ? "bg-[#B0B0AA]" : "bg-[#00AAEB]"}`}
+                  className={`h-full ${stage === "won" ? "bg-[#0B3D2B]" : stage === "lost" ? "bg-[#B0B0AA]" : "bg-[#10B981]"}`}
                   style={{ width: `${((data?.stageCounts[stage as Stage] ?? 0) / maxOppStage) * 100}%` }}
                 />
               </div>
@@ -142,10 +142,10 @@ export default function CrmOverview({ onNavigate }: { onNavigate: (page: string)
           <button
             key={`${a.page}-${idx}`}
             onClick={a.action}
-            className="bg-white border border-[#E8E8E5] rounded-xl p-5 text-left hover:border-[#04314A] transition-colors group flex items-center justify-between"
+            className="bg-white border border-[#E8E8E5] rounded-xl p-5 text-left hover:border-[#0B3D2B] transition-colors group flex items-center justify-between"
           >
-            <span className="flex items-center gap-3 text-[13px] font-semibold text-[#04314A]">
-              <span className="w-8 h-8 flex items-center justify-center bg-[#F7F7F5] text-[#00AAEB] group-hover:bg-[#00AAEB] group-hover:text-white transition-colors">
+            <span className="flex items-center gap-3 text-[13px] font-semibold text-[#0B3D2B]">
+              <span className="w-8 h-8 flex items-center justify-center bg-[#F7F7F5] text-[#10B981] group-hover:bg-[#10B981] group-hover:text-white transition-colors">
                 {a.icon}
               </span>
               {a.label}

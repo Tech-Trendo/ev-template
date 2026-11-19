@@ -253,7 +253,7 @@ def seed_crm_pipeline(catalog: dict, crm: dict, stock: dict, users: dict, dealer
             "unit": unit,
             "vehicle": f"{model.brand} {model.model_name}",
             "salesperson": "Rohan Gurung",
-            "salesperson_email": "rohan.gurung@vehicletemplate.example.com",
+            "salesperson_email": "rohan.gurung@evos.example.com",
             "salesperson_phone": "+977-9800000020",
             "vehicle_price": dec(spec["price"]),
             "accessories": dec("25000"),

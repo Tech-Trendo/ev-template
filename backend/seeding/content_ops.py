@@ -70,7 +70,7 @@ def _logo_svg(white: bool = False) -> bytes:
     return f"""<svg xmlns="http://www.w3.org/2000/svg" width="260" height="72" viewBox="0 0 260 72">
   <rect width="260" height="72" rx="12" fill="{'transparent' if white else '#f8fafc'}"/>
   <rect x="10" y="12" width="48" height="48" rx="10" fill="{accent}"/>
-  <text x="34" y="46" text-anchor="middle" fill="#ffffff" font-family="Segoe UI, Arial, sans-serif" font-size="24" font-weight="800">VT</text>
+  <text x="34" y="46" text-anchor="middle" fill="#ffffff" font-family="Segoe UI, Arial, sans-serif" font-size="24" font-weight="800">EV</text>
   <text x="72" y="34" fill="{foreground}" font-family="Segoe UI, Arial, sans-serif" font-size="17" font-weight="700">VEHICLE</text>
   <text x="72" y="55" fill="{foreground}" font-family="Segoe UI, Arial, sans-serif" font-size="17" font-weight="700">TEMPLATE</text>
 </svg>""".encode("utf-8")
@@ -174,7 +174,7 @@ def _cms_pages(catalog: dict) -> dict[str, dict]:
                 "line1": "ELECTRIC",
                 "line2": "FLEET.",
                 "line3": "",
-                "footer": "Vehicle Template · Electric Commercial Vehicles",
+                "footer": "EV OS · Electric Commercial Vehicles",
                 "background_image": cityvan_image,
             },
             "technology": {
@@ -397,14 +397,14 @@ def _cms_pages(catalog: dict) -> dict[str, dict]:
                 "phone_label": "Sales & Service",
                 "phone": "+977-9800000001",
                 "email_label": "Email",
-                "email": "info@vehicletemplate.example.com",
+                "email": "info@evos.example.com",
             },
             "map": {
                 "badge": "Visit Us",
                 "heading": "Find us in Kathmandu.",
                 "subtext": "Walk in for a closer look at the electric fleet and workshop.",
                 "embed_url": "",
-                "caption": "Vehicle Template showroom and service centre, Kathmandu",
+                "caption": "EV OS showroom and service centre, Kathmandu",
             },
         },
         "quote": {
@@ -438,9 +438,9 @@ def _cms_pages(catalog: dict) -> dict[str, dict]:
                 "description": "Electric commercial vehicles engineered for demanding routes and lower operating costs.",
                 "contact_heading": "Contact",
                 "contact_subtext": "Questions about vehicles, test drives or service? Get in touch with our team.",
-                "bottom_brand_text": "VEHICLE TEMPLATE",
+                "bottom_brand_text": "EV OS",
                 "created_by_label": "Built with",
-                "created_by_name": "Vehicle Template",
+                "created_by_name": "EV OS",
                 "created_by_url": "",
             },
         },
@@ -479,7 +479,7 @@ def seed_content(stock: dict, crm: dict, catalog: dict, users: dict, dealers: di
                     "<p>Electric operation shifts cost from fuel and maintenance to "
                     "energy planning and driver training. Route planning and depot "
                     "charging are the two biggest levers.</p>"
-                    "<p>Vehicle Template provides the vehicle, service and reporting "
+                    "<p>EV OS provides the vehicle, service and reporting "
                     "tools needed to run a measurable pilot.</p>"
                 ),
                 "category": spec["category"],
@@ -487,7 +487,7 @@ def seed_content(stock: dict, crm: dict, catalog: dict, users: dict, dealers: di
                 "alt_text": spec["title"],
                 "author": default_author,
                 "author_role": "Fleet Insights Team",
-                "author_bio": "Notes from the Vehicle Template operations and engineering team.",
+                "author_bio": "Notes from the EV OS operations and engineering team.",
                 "published_date": day(spec["published"]),
                 "status": "published",
                 "is_featured": spec["featured"],

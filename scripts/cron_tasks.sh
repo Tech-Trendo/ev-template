@@ -1,9 +1,9 @@
 #!/usr/bin/env bash
-# Vehicle Template periodic tasks runner (Docker Compose / local virtualenv)
+# EV OS periodic tasks runner (Docker Compose / local virtualenv)
 # Runs expire_reservations, generate_notifications and activity-log cleanup.
 #
 # Crontab setup (every 15 minutes):
-# */15 * * * * /path/to/vehicle-template/scripts/cron_tasks.sh >> /var/log/vehicle_template_cron.log 2>&1
+# */15 * * * * /path/to/vehicle-template/scripts/cron_tasks.sh >> /var/log/ev_os_cron.log 2>&1
 
 set -euo pipefail
 

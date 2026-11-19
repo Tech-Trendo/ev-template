@@ -74,13 +74,13 @@ export function EntityLink({
     <Link
       href={href}
       onClick={handleClick}
-      className={`inline-flex flex-col group focus:outline-none focus-visible:ring-2 focus-visible:ring-[#00AAEB] rounded-sm ${className}`}
+      className={`inline-flex flex-col group focus:outline-none focus-visible:ring-2 focus-visible:ring-[#10B981] rounded-sm ${className}`}
     >
-      <span className="text-[12px] font-bold text-[#04314A] group-hover:text-[#00AAEB] transition-colors">
+      <span className="text-[12px] font-bold text-[#0B3D2B] group-hover:text-[#10B981] transition-colors">
         {label}
       </span>
       {sublabel && (
-        <span className="text-[11px] text-[#737373] group-hover:text-[#04314A] transition-colors">
+        <span className="text-[11px] text-[#737373] group-hover:text-[#0B3D2B] transition-colors">
           {sublabel}
         </span>
       )}

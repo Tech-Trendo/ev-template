@@ -203,7 +203,7 @@ export default function TeamPerformancePage({
           <span className="text-[10px] font-bold tracking-[0.14em] uppercase text-[#737373] block mb-1">
             Productivity & Operational Audit
           </span>
-          <h1 className="text-[24px] sm:text-[28px] font-black tracking-tight text-[#04314A]">
+          <h1 className="text-[24px] sm:text-[28px] font-black tracking-tight text-[#0B3D2B]">
             Team Performance
           </h1>
           <p className="text-[13px] text-[#737373] mt-1">
@@ -243,8 +243,8 @@ export default function TeamPerformancePage({
               onClick={() => setMode("daily")}
               className={`px-4 py-2 rounded-lg text-[12px] font-bold uppercase tracking-wider transition-colors ${
                 mode === "daily"
-                  ? "bg-[#04314A] text-white"
-                  : "bg-[#F7F7F5] text-[#737373] hover:text-[#04314A]"
+                  ? "bg-[#0B3D2B] text-white"
+                  : "bg-[#F7F7F5] text-[#737373] hover:text-[#0B3D2B]"
               }`}
             >
               Daily View
@@ -253,8 +253,8 @@ export default function TeamPerformancePage({
               onClick={() => setMode("range")}
               className={`px-4 py-2 rounded-lg text-[12px] font-bold uppercase tracking-wider transition-colors ${
                 mode === "range"
-                  ? "bg-[#04314A] text-white"
-                  : "bg-[#F7F7F5] text-[#737373] hover:text-[#04314A]"
+                  ? "bg-[#0B3D2B] text-white"
+                  : "bg-[#F7F7F5] text-[#737373] hover:text-[#0B3D2B]"
               }`}
             >
               Date Range View
@@ -270,7 +270,7 @@ export default function TeamPerformancePage({
                   setRangeFrom(new Date(Date.now() - 7 * 86400000).toISOString().slice(0, 10));
                   setRangeTo(todayStr);
                 }}
-                className="px-2 py-1 bg-[#F7F7F5] hover:bg-[#E8E8E5] rounded text-[#04314A]"
+                className="px-2 py-1 bg-[#F7F7F5] hover:bg-[#E8E8E5] rounded text-[#0B3D2B]"
               >
                 Last 7d
               </button>
@@ -279,7 +279,7 @@ export default function TeamPerformancePage({
                   setRangeFrom(thirtyDaysAgoStr);
                   setRangeTo(todayStr);
                 }}
-                className="px-2 py-1 bg-[#F7F7F5] hover:bg-[#E8E8E5] rounded text-[#04314A]"
+                className="px-2 py-1 bg-[#F7F7F5] hover:bg-[#E8E8E5] rounded text-[#0B3D2B]"
               >
                 Last 30d
               </button>
@@ -290,7 +290,7 @@ export default function TeamPerformancePage({
                   setRangeFrom(firstDay);
                   setRangeTo(todayStr);
                 }}
-                className="px-2 py-1 bg-[#F7F7F5] hover:bg-[#E8E8E5] rounded text-[#04314A]"
+                className="px-2 py-1 bg-[#F7F7F5] hover:bg-[#E8E8E5] rounded text-[#0B3D2B]"
               >
                 This Month
               </button>
@@ -344,7 +344,7 @@ export default function TeamPerformancePage({
               <select
                 value={selectedDealer}
                 onChange={(e) => setSelectedDealer(e.target.value)}
-                className="w-full h-9 rounded-lg border border-[#E8E8E5] bg-white px-3 text-[12px] font-medium text-[#04314A] focus:outline-none focus:ring-2 focus:ring-[#00AAEB]"
+                className="w-full h-9 rounded-lg border border-[#E8E8E5] bg-white px-3 text-[12px] font-medium text-[#0B3D2B] focus:outline-none focus:ring-2 focus:ring-[#10B981]"
               >
                 <option value="">All Dealerships</option>
                 {dealers.map((d) => (
@@ -367,7 +367,7 @@ export default function TeamPerformancePage({
                 placeholder="Filter by name or role…"
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
-                className="w-full h-9 pl-9 pr-3 rounded-lg border border-[#E8E8E5] bg-white text-[12px] font-medium text-[#04314A] focus:outline-none focus:ring-2 focus:ring-[#00AAEB]"
+                className="w-full h-9 pl-9 pr-3 rounded-lg border border-[#E8E8E5] bg-white text-[12px] font-medium text-[#0B3D2B] focus:outline-none focus:ring-2 focus:ring-[#10B981]"
               />
             </div>
           </div>
@@ -379,9 +379,9 @@ export default function TeamPerformancePage({
         <div className="bg-white border border-[#E8E8E5] rounded-xl p-5">
           <div className="flex items-center justify-between text-[#737373] mb-2">
             <span className="text-[10px] font-bold tracking-wider uppercase">Total Actions Logged</span>
-            <ActivityIcon size={16} className="text-[#00AAEB]" />
+            <ActivityIcon size={16} className="text-[#10B981]" />
           </div>
-          <div className="text-[24px] font-black text-[#04314A]">{totalActions.toLocaleString()}</div>
+          <div className="text-[24px] font-black text-[#0B3D2B]">{totalActions.toLocaleString()}</div>
           <span className="text-[11px] text-[#737373] mt-1 block">
             {mode === "daily" ? `On ${dailyDate}` : `Across selected ${trend.length} days`}
           </span>
@@ -390,21 +390,21 @@ export default function TeamPerformancePage({
         <div className="bg-white border border-[#E8E8E5] rounded-xl p-5">
           <div className="flex items-center justify-between text-[#737373] mb-2">
             <span className="text-[10px] font-bold tracking-wider uppercase">Active Staff Members</span>
-            <Users size={16} className="text-[#04314A]" />
+            <Users size={16} className="text-[#0B3D2B]" />
           </div>
-          <div className="text-[24px] font-black text-[#04314A]">{employees.length}</div>
+          <div className="text-[24px] font-black text-[#0B3D2B]">{employees.length}</div>
           <span className="text-[11px] text-[#737373] mt-1 block">Recorded operations</span>
         </div>
 
         <div className="bg-white border border-[#E8E8E5] rounded-xl p-5">
           <div className="flex items-center justify-between text-[#737373] mb-2">
             <span className="text-[10px] font-bold tracking-wider uppercase">Top Contributor</span>
-            <TrendingUp size={16} className="text-[#04314A]" />
+            <TrendingUp size={16} className="text-[#0B3D2B]" />
           </div>
-          <div className="text-[16px] font-black text-[#04314A] truncate">
+          <div className="text-[16px] font-black text-[#0B3D2B] truncate">
             {topPerformer ? topPerformer.full_name : "-"}
           </div>
-          <span className="text-[11px] text-[#00AAEB] font-semibold mt-1 block">
+          <span className="text-[11px] text-[#10B981] font-semibold mt-1 block">
             {topPerformer ? `${topPerformer.total_actions} actions (${topPerformer.role})` : "No activity"}
           </span>
         </div>
@@ -414,7 +414,7 @@ export default function TeamPerformancePage({
             <span className="text-[10px] font-bold tracking-wider uppercase">Dealerships Scoped</span>
             <Building2 size={16} className="text-[#737373]" />
           </div>
-          <div className="text-[18px] font-black text-[#04314A] truncate">
+          <div className="text-[18px] font-black text-[#0B3D2B] truncate">
             {selectedDealer
               ? dealers.find((d) => String(d.id) === String(selectedDealer))?.name || "Filtered"
               : "All Assigned"}
@@ -428,14 +428,14 @@ export default function TeamPerformancePage({
         <div className="bg-white border border-[#E8E8E5] rounded-xl p-5">
           <div className="flex items-center justify-between mb-4">
             <div>
-              <h3 className="text-[12px] font-bold tracking-[0.1em] uppercase text-[#04314A]">
+              <h3 className="text-[12px] font-bold tracking-[0.1em] uppercase text-[#0B3D2B]">
                 Activity Velocity Trend
               </h3>
               <p className="text-[11px] text-[#737373]">
                 Daily aggregate actions performed across the network.
               </p>
             </div>
-            <span className="text-[11px] font-bold text-[#00AAEB] bg-[#00AAEB]/10 px-2.5 py-1 rounded">
+            <span className="text-[11px] font-bold text-[#10B981] bg-[#10B981]/10 px-2.5 py-1 rounded">
               {trend.length} Days Tracked
             </span>
           </div>
@@ -452,12 +452,12 @@ export default function TeamPerformancePage({
                     className="flex-1 min-w-[12px] flex flex-col items-center group relative cursor-pointer"
                   >
                     {/* Tooltip */}
-                    <div className="hidden group-hover:block absolute bottom-full mb-1 z-20 bg-[#04314A] text-white text-[10px] font-bold py-1 px-2 rounded shadow-md whitespace-nowrap">
+                    <div className="hidden group-hover:block absolute bottom-full mb-1 z-20 bg-[#0B3D2B] text-white text-[10px] font-bold py-1 px-2 rounded shadow-md whitespace-nowrap">
                       {t.date}: {t.count} actions
                     </div>
                     <div
                       style={{ height: `${heightPercent}%` }}
-                      className="w-full bg-[#00AAEB] rounded-t hover:bg-[#04314A] transition-colors"
+                      className="w-full bg-[#10B981] rounded-t hover:bg-[#0B3D2B] transition-colors"
                     />
                   </div>
                 );
@@ -475,7 +475,7 @@ export default function TeamPerformancePage({
       <div className="bg-white border border-[#E8E8E5] rounded-xl overflow-hidden">
         <div className="px-5 py-4 border-b border-[#E8E8E5] flex items-center justify-between bg-[#FAFAF8]">
           <div>
-            <h3 className="text-[13px] font-bold text-[#04314A]">Staff Productivity Matrix</h3>
+            <h3 className="text-[13px] font-bold text-[#0B3D2B]">Staff Productivity Matrix</h3>
             <p className="text-[11px] text-[#737373]">
               Breakdown of business entity creations, revisions, inspections, and customer engagements.
             </p>
@@ -528,7 +528,7 @@ export default function TeamPerformancePage({
                       className="border-b border-[#F0F0ED] last:border-0 hover:bg-[#FAFAF8] transition-colors"
                     >
                       <td className="px-4 py-3">
-                        <div className="font-bold text-[12px] text-[#04314A]">{emp.full_name}</div>
+                        <div className="font-bold text-[12px] text-[#0B3D2B]">{emp.full_name}</div>
                         <div className="text-[11px] text-[#737373] flex items-center gap-1.5 mt-0.5">
                           <span>{emp.role}</span>
                           <span>·</span>
@@ -536,21 +536,21 @@ export default function TeamPerformancePage({
                         </div>
                       </td>
 
-                      <td className="px-3 py-3 text-center text-[12px] font-semibold text-[#04314A]">
-                        {leads > 0 ? <span className="text-[#04314A]">{leads}</span> : <span className="text-[#B0B0AA]">-</span>}
+                      <td className="px-3 py-3 text-center text-[12px] font-semibold text-[#0B3D2B]">
+                        {leads > 0 ? <span className="text-[#0B3D2B]">{leads}</span> : <span className="text-[#B0B0AA]">-</span>}
                       </td>
 
-                      <td className="px-3 py-3 text-center text-[12px] font-semibold text-[#04314A]">
-                        {customers > 0 ? <span className="text-[#04314A]">{customers}</span> : <span className="text-[#B0B0AA]">-</span>}
+                      <td className="px-3 py-3 text-center text-[12px] font-semibold text-[#0B3D2B]">
+                        {customers > 0 ? <span className="text-[#0B3D2B]">{customers}</span> : <span className="text-[#B0B0AA]">-</span>}
                       </td>
 
-                      <td className="px-3 py-3 text-center text-[12px] font-semibold text-[#04314A]">
-                        {quotes > 0 ? <span className="text-[#04314A]">{quotes}</span> : <span className="text-[#B0B0AA]">-</span>}
+                      <td className="px-3 py-3 text-center text-[12px] font-semibold text-[#0B3D2B]">
+                        {quotes > 0 ? <span className="text-[#0B3D2B]">{quotes}</span> : <span className="text-[#B0B0AA]">-</span>}
                       </td>
 
-                      <td className="px-3 py-3 text-center text-[12px] font-semibold text-[#04314A]">
+                      <td className="px-3 py-3 text-center text-[12px] font-semibold text-[#0B3D2B]">
                         {sales > 0 ? (
-                          <span className="px-2 py-0.5 rounded bg-[#00AAEB]/10 text-[#00AAEB] font-bold">
+                          <span className="px-2 py-0.5 rounded bg-[#10B981]/10 text-[#10B981] font-bold">
                             {sales}
                           </span>
                         ) : (
@@ -558,19 +558,19 @@ export default function TeamPerformancePage({
                         )}
                       </td>
 
-                      <td className="px-3 py-3 text-center text-[12px] font-semibold text-[#04314A]">
+                      <td className="px-3 py-3 text-center text-[12px] font-semibold text-[#0B3D2B]">
                         {testDrives > 0 ? testDrives : <span className="text-[#B0B0AA]">-</span>}
                       </td>
 
-                      <td className="px-3 py-3 text-center text-[12px] font-semibold text-[#04314A]">
+                      <td className="px-3 py-3 text-center text-[12px] font-semibold text-[#0B3D2B]">
                         {service > 0 ? service : <span className="text-[#B0B0AA]">-</span>}
                       </td>
 
-                      <td className="px-3 py-3 text-center text-[12px] font-semibold text-[#04314A]">
+                      <td className="px-3 py-3 text-center text-[12px] font-semibold text-[#0B3D2B]">
                         {inspections > 0 ? inspections : <span className="text-[#B0B0AA]">-</span>}
                       </td>
 
-                      <td className="px-3 py-3 text-center text-[12px] font-semibold text-[#04314A]">
+                      <td className="px-3 py-3 text-center text-[12px] font-semibold text-[#0B3D2B]">
                         {units > 0 ? units : <span className="text-[#B0B0AA]">-</span>}
                       </td>
 
@@ -579,7 +579,7 @@ export default function TeamPerformancePage({
                       </td>
 
                       <td className="px-4 py-3 text-right">
-                        <span className="text-[13px] font-black text-[#04314A]">
+                        <span className="text-[13px] font-black text-[#0B3D2B]">
                           {emp.total_actions}
                         </span>
                       </td>
@@ -588,7 +588,7 @@ export default function TeamPerformancePage({
                         {mode === "daily" && (
                           <button
                             onClick={() => openDrilldown(emp)}
-                            className="inline-flex items-center gap-1 text-[11px] font-bold text-[#00AAEB] hover:text-[#04314A]"
+                            className="inline-flex items-center gap-1 text-[11px] font-bold text-[#10B981] hover:text-[#0B3D2B]"
                           >
                             Drilldown <ChevronRight size={13} />
                           </button>
@@ -615,7 +615,7 @@ export default function TeamPerformancePage({
                 <span className="text-[10px] font-bold tracking-wider uppercase text-[#737373] block">
                   Employee
                 </span>
-                <span className="text-[13px] font-bold text-[#04314A]">
+                <span className="text-[13px] font-bold text-[#0B3D2B]">
                   {drilldownUser.full_name} ({drilldownUser.username})
                 </span>
               </div>
@@ -623,7 +623,7 @@ export default function TeamPerformancePage({
                 <span className="text-[10px] font-bold tracking-wider uppercase text-[#737373] block">
                   Dealership
                 </span>
-                <span className="text-[12px] font-semibold text-[#04314A]">
+                <span className="text-[12px] font-semibold text-[#0B3D2B]">
                   {drilldownUser.dealer_name || "Central Office"}
                 </span>
               </div>
@@ -644,14 +644,14 @@ export default function TeamPerformancePage({
                   >
                     <div>
                       <div className="flex items-center gap-2 mb-1">
-                        <span className="px-2 py-0.5 rounded text-[9px] font-bold bg-[#04314A] text-white uppercase">
+                        <span className="px-2 py-0.5 rounded text-[9px] font-bold bg-[#0B3D2B] text-white uppercase">
                           {item.action}
                         </span>
                         <span className="text-[10px] font-bold uppercase text-[#737373]">
                           {item.object_type} #{item.object_id}
                         </span>
                       </div>
-                      <p className="text-[#04314A] font-medium">{item.summary}</p>
+                      <p className="text-[#0B3D2B] font-medium">{item.summary}</p>
                     </div>
                     <div className="text-right text-[11px] text-[#737373] whitespace-nowrap">
                       {new Date(item.timestamp).toLocaleTimeString("en-US", {

@@ -126,7 +126,7 @@ export default function CustomersPage({ onNavigate }: { onNavigate: (page: strin
         <div className="overflow-x-auto">
           <table className="w-full text-left border-collapse min-w-[920px]">
             <thead>
-              <tr className="border-b border-[#E8E8E5] bg-[#FAFAF8] text-[11px] font-semibold text-[#04314A] tracking-[0.02em]">
+              <tr className="border-b border-[#E8E8E5] bg-[#FAFAF8] text-[11px] font-semibold text-[#0B3D2B] tracking-[0.02em]">
                 {cols.map((h) => (
                   <th
                     key={h}
@@ -162,7 +162,7 @@ export default function CustomersPage({ onNavigate }: { onNavigate: (page: strin
                     <td className="px-5 py-3.5 text-[12px] font-semibold text-[#737373] whitespace-nowrap">
                       {c.displayId ?? `CS-${c.id}`}
                     </td>
-                    <td className="px-5 py-3.5 text-[13px] font-semibold text-[#04314A]">
+                    <td className="px-5 py-3.5 text-[13px] font-semibold text-[#0B3D2B]">
                       <EntityLink type="customer" id={c.id} label={c.name} />
                     </td>
                     <td className="px-5 py-3.5 text-[12px] text-[#737373]">{c.company || "-"}</td>
@@ -174,7 +174,7 @@ export default function CustomersPage({ onNavigate }: { onNavigate: (page: strin
                         ? `${c.vehicles.length} vehicle${c.vehicles.length === 1 ? "" : "s"}`
                         : "-"}
                     </td>
-                    <td className="px-5 py-3.5 text-[12px] font-semibold text-[#04314A] whitespace-nowrap">
+                    <td className="px-5 py-3.5 text-[12px] font-semibold text-[#0B3D2B] whitespace-nowrap">
                       {formatNpr(c.totalPurchases)}
                     </td>
                     <td className="px-5 py-3.5">

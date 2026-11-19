@@ -72,7 +72,7 @@ export function SaleReceiptModal({
         {/* Modal Controls (Hidden in print) */}
         <div className="flex items-center justify-between pb-4 border-b border-[#E8E8E5] no-print">
           <div className="flex items-center gap-2">
-            <span className="text-[12px] font-bold tracking-wider uppercase text-[#04314A]">
+            <span className="text-[12px] font-bold tracking-wider uppercase text-[#0B3D2B]">
               Official Sale Receipt Preview
             </span>
           </div>
@@ -87,7 +87,7 @@ export function SaleReceiptModal({
             </Button>
             <button
               onClick={onClose}
-              className="p-1.5 rounded-lg text-[#737373] hover:text-[#04314A] hover:bg-[#F0F0ED] transition-colors"
+              className="p-1.5 rounded-lg text-[#737373] hover:text-[#0B3D2B] hover:bg-[#F0F0ED] transition-colors"
             >
               <X size={18} />
             </button>
@@ -95,28 +95,28 @@ export function SaleReceiptModal({
         </div>
 
         {/* Printable Receipt Content */}
-        <div className="printable-receipt pt-6 text-[#04314A]">
+        <div className="printable-receipt pt-6 text-[#0B3D2B]">
           {/* Header */}
-          <div className="border-b-2 border-[#04314A] pb-4 mb-6">
+          <div className="border-b-2 border-[#0B3D2B] pb-4 mb-6">
             <div className="flex justify-between items-start">
               <div>
-                <h1 className="text-[20px] font-black tracking-tight text-[#04314A]">
-                  VEHICLE TEMPLATE
+                <h1 className="text-[20px] font-black tracking-tight text-[#0B3D2B]">
+                  EV OS
                 </h1>
                 <p className="text-[11px] text-[#737373] font-medium">
-                  Vehicle Template
+                  EV OS
                 </p>
                 <p className="text-[10px] text-[#737373]">
                   Authorized Distributor of VT Commercial Electric Vehicles
                 </p>
                 {sale.dealer_name && (
-                  <p className="text-[11px] font-semibold text-[#04314A] mt-1">
+                  <p className="text-[11px] font-semibold text-[#0B3D2B] mt-1">
                     Dealership: {sale.dealer_name}
                   </p>
                 )}
               </div>
               <div className="text-right">
-                <span className="inline-block bg-[#04314A] text-white text-[11px] font-bold uppercase tracking-wider px-3 py-1 rounded">
+                <span className="inline-block bg-[#0B3D2B] text-white text-[11px] font-bold uppercase tracking-wider px-3 py-1 rounded">
                   Official Sale Receipt
                 </span>
                 <div className="mt-2 text-[12px]">
@@ -144,14 +144,14 @@ export function SaleReceiptModal({
               <h3 className="text-[10px] font-bold uppercase tracking-[0.12em] text-[#737373] mb-2">
                 Customer Information
               </h3>
-              <p className="text-[14px] font-bold text-[#04314A]">
+              <p className="text-[14px] font-bold text-[#0B3D2B]">
                 {sale.customer_name || "Valued Customer"}
               </p>
               {sale.customer_company && (
                 <p className="text-[#737373]">{sale.customer_company}</p>
               )}
               {sale.customer_phone && (
-                <p className="text-[#04314A]">Phone: {sale.customer_phone}</p>
+                <p className="text-[#0B3D2B]">Phone: {sale.customer_phone}</p>
               )}
               {sale.customer_address && (
                 <p className="text-[#737373] text-[11px]">
@@ -164,11 +164,11 @@ export function SaleReceiptModal({
               <h3 className="text-[10px] font-bold uppercase tracking-[0.12em] text-[#737373] mb-2">
                 Vehicle Specifications
               </h3>
-              <p className="text-[14px] font-bold text-[#04314A]">
+              <p className="text-[14px] font-bold text-[#0B3D2B]">
                 {sale.unit_model_name || "VT Electric Commercial Vehicle"}
                 {sale.unit_variant_name ? ` (${sale.unit_variant_name})` : ""}
               </p>
-              <p className="font-mono text-[12px] text-[#04314A] font-semibold mt-1">
+              <p className="font-mono text-[12px] text-[#0B3D2B] font-semibold mt-1">
                 VIN / Chassis: {sale.unit_vin || "-"}
               </p>
               {sale.color && (
@@ -186,7 +186,7 @@ export function SaleReceiptModal({
           <div className="border border-[#E8E8E5] rounded-xl overflow-hidden mb-6">
             <table className="w-full text-left border-collapse text-[12px]">
               <thead>
-                <tr className="bg-[#F0F0ED] text-[11px] font-bold uppercase tracking-wider text-[#04314A]">
+                <tr className="bg-[#F0F0ED] text-[11px] font-bold uppercase tracking-wider text-[#0B3D2B]">
                   <th className="p-3">Payment Component</th>
                   <th className="p-3 text-right">Details / Amount</th>
                 </tr>
@@ -194,7 +194,7 @@ export function SaleReceiptModal({
               <tbody className="divide-y divide-[#E8E8E5]">
                 <tr>
                   <td className="p-3 font-medium">Selling Agreed Price</td>
-                  <td className="p-3 text-right font-bold text-[#04314A]">
+                  <td className="p-3 text-right font-bold text-[#0B3D2B]">
                     {formatNpr(sale.selling_price)}
                   </td>
                 </tr>
@@ -208,7 +208,7 @@ export function SaleReceiptModal({
                 )}
                 <tr>
                   <td className="p-3 font-medium">Payment Mode</td>
-                  <td className="p-3 text-right uppercase font-semibold text-[#04314A]">
+                  <td className="p-3 text-right uppercase font-semibold text-[#0B3D2B]">
                     {sale.payment_mode
                       ? String(sale.payment_mode).replace(/_/g, " ")
                       : "CASH"}
@@ -217,7 +217,7 @@ export function SaleReceiptModal({
                 {Number(sale.down_payment || 0) > 0 && (
                   <tr>
                     <td className="p-3 text-[#737373]">Down Payment Received</td>
-                    <td className="p-3 text-right font-bold text-[#04314A]">
+                    <td className="p-3 text-right font-bold text-[#0B3D2B]">
                       {formatNpr(sale.down_payment)}
                     </td>
                   </tr>
@@ -227,7 +227,7 @@ export function SaleReceiptModal({
                     <td className="p-3 text-[#737373]">
                       Financed Amount ({sale.bank || "Partner Bank"})
                     </td>
-                    <td className="p-3 text-right font-medium text-[#04314A]">
+                    <td className="p-3 text-right font-medium text-[#0B3D2B]">
                       {formatNpr(sale.loan_amount)}
                     </td>
                   </tr>
@@ -249,7 +249,7 @@ export function SaleReceiptModal({
           <div className="bg-[#F9F9F7] p-3 rounded-lg border border-[#E8E8E5] text-[11px] text-[#737373] mb-8 flex justify-between items-center">
             <span>
               Entered by:{" "}
-              <strong className="text-[#04314A]">
+              <strong className="text-[#0B3D2B]">
                 {sale.created_by_name || "Authorized Staff"}
               </strong>
               {sale.created_at &&
@@ -258,7 +258,7 @@ export function SaleReceiptModal({
             {sale.salesperson_name && (
               <span>
                 Sales Executive:{" "}
-                <strong className="text-[#04314A]">
+                <strong className="text-[#0B3D2B]">
                   {sale.salesperson_name}
                 </strong>
               </span>
@@ -268,12 +268,12 @@ export function SaleReceiptModal({
           {/* Signatures */}
           <div className="grid grid-cols-2 gap-12 pt-8 border-t border-[#E8E8E5] text-[11px]">
             <div className="text-center">
-              <div className="border-t border-[#04314A] w-48 mx-auto pt-1 font-semibold">
+              <div className="border-t border-[#0B3D2B] w-48 mx-auto pt-1 font-semibold">
                 Customer Signature
               </div>
             </div>
             <div className="text-center">
-              <div className="border-t border-[#04314A] w-48 mx-auto pt-1 font-semibold">
+              <div className="border-t border-[#0B3D2B] w-48 mx-auto pt-1 font-semibold">
                 Authorized Signatory / Cashier
               </div>
             </div>

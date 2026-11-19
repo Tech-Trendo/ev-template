@@ -105,19 +105,19 @@ function RecordAttendanceCard({
   return (
     <div className="bg-white border border-[#E8E8E5] rounded-2xl p-6 mb-6">
       <div className="flex items-center gap-3 mb-4">
-        <span className="w-10 h-10 rounded-full bg-[#00AAEB] text-white flex items-center justify-center shrink-0">
+        <span className="w-10 h-10 rounded-full bg-[#10B981] text-white flex items-center justify-center shrink-0">
           <Clock size={18} />
         </span>
         <div>
-          <h2 className="text-[16px] font-black text-[#04314A]">Record attendance</h2>
+          <h2 className="text-[16px] font-black text-[#0B3D2B]">Record attendance</h2>
           <p className="text-[12px] text-[#737373]">HR records check-in and check-out for staff. Staff cannot mark their own attendance.</p>
         </div>
       </div>
 
-      {error && <p className="mb-3 text-[12px] text-[#04314A] bg-[#F7F7F5] border-l-2 border-[#00AAEB] px-3.5 py-2.5 rounded-r-xl">{error}</p>}
+      {error && <p className="mb-3 text-[12px] text-[#0B3D2B] bg-[#F7F7F5] border-l-2 border-[#10B981] px-3.5 py-2.5 rounded-r-xl">{error}</p>}
       {message && (
-        <p className="mb-3 text-[12px] text-[#04314A] bg-white border border-[#E8E8E5] px-3.5 py-2.5 rounded-xl flex items-center gap-2 font-medium">
-          <CheckCircle2 size={14} className="text-[#00AAEB]" /> {message}
+        <p className="mb-3 text-[12px] text-[#0B3D2B] bg-white border border-[#E8E8E5] px-3.5 py-2.5 rounded-xl flex items-center gap-2 font-medium">
+          <CheckCircle2 size={14} className="text-[#10B981]" /> {message}
         </p>
       )}
 
@@ -157,7 +157,7 @@ function RecordAttendanceCard({
       <button
         onClick={save}
         disabled={working}
-        className="mt-4 inline-flex items-center justify-center gap-2 px-5 py-3 rounded-full bg-[#04314A] text-white text-[12px] font-bold tracking-[0.06em] uppercase hover:bg-[#00AAEB] transition-colors disabled:opacity-50"
+        className="mt-4 inline-flex items-center justify-center gap-2 px-5 py-3 rounded-full bg-[#0B3D2B] text-white text-[12px] font-bold tracking-[0.06em] uppercase hover:bg-[#10B981] transition-colors disabled:opacity-50"
       >
         {working ? "Saving…" : "Save attendance"}
       </button>
@@ -237,7 +237,7 @@ export default function AttendanceManager() {
   if (!canManage) {
     return (
       <div className="max-w-lg bg-white border border-[#E8E8E5] rounded-2xl p-8">
-        <h1 className="text-[22px] font-black text-[#04314A]">Attendance</h1>
+        <h1 className="text-[22px] font-black text-[#0B3D2B]">Attendance</h1>
         <p className="text-[13px] text-[#737373] mt-2 leading-relaxed">
           Attendance is recorded by HR. You cannot add your own check-in or check-out.
         </p>
@@ -249,14 +249,14 @@ export default function AttendanceManager() {
     <div>
       <div className="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-4 mb-6">
         <div>
-          <h1 className="text-[36px] font-black tracking-tight text-[#04314A] leading-none">Attendance.</h1>
+          <h1 className="text-[36px] font-black tracking-tight text-[#0B3D2B] leading-none">Attendance.</h1>
           <p className="text-[13px] text-[#737373] mt-2">
             HR records check-in and check-out for staff. Face attendance is not used.
           </p>
         </div>
         <button
           onClick={exportCsv}
-          className="inline-flex items-center gap-2 px-5 py-3 rounded-full bg-[#04314A] text-white text-[12px] font-semibold tracking-[0.06em] uppercase hover:bg-[#00AAEB] transition-colors shrink-0"
+          className="inline-flex items-center gap-2 px-5 py-3 rounded-full bg-[#0B3D2B] text-white text-[12px] font-semibold tracking-[0.06em] uppercase hover:bg-[#10B981] transition-colors shrink-0"
         >
           <Download size={14} /> Export CSV
         </button>
@@ -265,9 +265,9 @@ export default function AttendanceManager() {
       <RecordAttendanceCard users={users} onMarked={loadLogs} />
 
       {error && (
-        <p className="mb-4 text-[13px] text-[#00AAEB] bg-[#00AAEB]/5 border-l-2 border-[#00AAEB] px-3 py-2 rounded-r-lg flex items-center justify-between gap-3">
+        <p className="mb-4 text-[13px] text-[#10B981] bg-[#10B981]/5 border-l-2 border-[#10B981] px-3 py-2 rounded-r-lg flex items-center justify-between gap-3">
           <span>{error}</span>
-          <button onClick={() => setError("")} className="w-7 h-7 flex items-center justify-center text-[#737373] hover:text-[#04314A] shrink-0">
+          <button onClick={() => setError("")} className="w-7 h-7 flex items-center justify-center text-[#737373] hover:text-[#0B3D2B] shrink-0">
             <X size={14} />
           </button>
         </p>
@@ -281,7 +281,7 @@ export default function AttendanceManager() {
               value={searchInput}
               onChange={(e) => setSearchInput(e.target.value)}
               placeholder="Filter by name or location…"
-              className="w-full border border-[#E8E8E5] rounded-xl bg-white pl-10 pr-4 py-2.5 text-[13px] font-medium text-[#04314A] placeholder:text-[#B0B0AA] focus:outline-none focus:border-[#00AAEB] transition-colors"
+              className="w-full border border-[#E8E8E5] rounded-xl bg-white pl-10 pr-4 py-2.5 text-[13px] font-medium text-[#0B3D2B] placeholder:text-[#B0B0AA] focus:outline-none focus:border-[#10B981] transition-colors"
             />
           </div>
           <div className="w-full sm:w-48">
@@ -342,7 +342,7 @@ export default function AttendanceManager() {
                 filteredRows.map((r) => (
                   <tr key={r.id} className="border-b border-[#F0F0ED] last:border-0 hover:bg-[#FAFAF8]">
                     <td className="px-5 py-3.5">
-                      <div className="text-[13px] font-bold text-[#04314A]">{r.full_name}</div>
+                      <div className="text-[13px] font-bold text-[#0B3D2B]">{r.full_name}</div>
                       <div className="text-[11px] text-[#737373]">@{r.username}</div>
                     </td>
                     <td className="px-5 py-3.5 text-[12px] text-[#737373] whitespace-nowrap">

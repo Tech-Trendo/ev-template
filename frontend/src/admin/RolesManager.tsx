@@ -204,9 +204,9 @@ function RoleForm({
             type="checkbox"
             checked={isDealerRole}
             onChange={(e) => setIsDealerRole(e.target.checked)}
-            className="w-4 h-4 accent-[#00AAEB]"
+            className="w-4 h-4 accent-[#10B981]"
           />
-          <span className="text-[12px] font-semibold text-[#04314A]">
+          <span className="text-[12px] font-semibold text-[#0B3D2B]">
             Dealer-scoped role (requires assigned home dealership)
           </span>
         </label>
@@ -215,7 +215,7 @@ function RoleForm({
         <div className="pt-2 border-t border-[#E8E8E5]">
           <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2 mb-3">
             <div>
-              <span className="text-[12px] font-semibold text-[#04314A] block">
+              <span className="text-[12px] font-semibold text-[#0B3D2B] block">
                 Assign Permissions
               </span>
               <span className="text-[11px] text-[#737373]">
@@ -243,8 +243,8 @@ function RoleForm({
                 onClick={() => setActiveModule(m)}
                 className={`px-2.5 py-1 rounded-md text-[11px] font-semibold tracking-wide whitespace-nowrap transition-colors ${
                   activeModule === m
-                    ? "bg-[#04314A] text-white"
-                    : "bg-[#F7F7F5] text-[#737373] hover:text-[#04314A] hover:bg-[#E8E8E5]"
+                    ? "bg-[#0B3D2B] text-white"
+                    : "bg-[#F7F7F5] text-[#737373] hover:text-[#0B3D2B] hover:bg-[#E8E8E5]"
                 }`}
               >
                 {m === "all" ? "All Modules" : m}
@@ -267,7 +267,7 @@ function RoleForm({
                   <div key={mod} className="bg-[#FAFAF8] rounded-lg p-3 border border-[#E8E8E5]">
                     <div className="flex items-center justify-between pb-2 mb-2 border-b border-[#E8E8E5]">
                       <div className="flex items-center gap-2">
-                        <span className="text-[12px] font-bold text-[#04314A]">{mod}</span>
+                        <span className="text-[12px] font-bold text-[#0B3D2B]">{mod}</span>
                         <span className="text-[11px] text-[#737373]">
                           ({selectedInGroup} of {perms.length} selected)
                         </span>
@@ -298,7 +298,7 @@ function RoleForm({
                             key={p.label}
                             className={`flex items-start gap-2.5 p-2 rounded-md border cursor-pointer transition-colors ${
                               checked
-                                ? "border-[#00AAEB] bg-white shadow-xs"
+                                ? "border-[#10B981] bg-white shadow-xs"
                                 : "border-[#E8E8E5] bg-white hover:border-[#D4D4CE]"
                             }`}
                           >
@@ -306,11 +306,11 @@ function RoleForm({
                               type="checkbox"
                               checked={checked}
                               onChange={() => toggle(p.label)}
-                              className="w-4 h-4 mt-0.5 accent-[#00AAEB] shrink-0"
+                              className="w-4 h-4 mt-0.5 accent-[#10B981] shrink-0"
                             />
                             <div className="flex-1 min-w-0">
                               <div className="flex items-center gap-1.5">
-                                <span className="text-[11px] font-semibold text-[#04314A]">
+                                <span className="text-[11px] font-semibold text-[#0B3D2B]">
                                   {p.human_title || p.name}
                                 </span>
                                 {p.action && (
@@ -341,7 +341,7 @@ function RoleForm({
                 type="checkbox"
                 checked={showSystem}
                 onChange={(e) => setShowSystem(e.target.checked)}
-                className="w-3.5 h-3.5 accent-[#00AAEB]"
+                className="w-3.5 h-3.5 accent-[#10B981]"
               />
               <span>Show internal system permissions</span>
             </label>
@@ -455,7 +455,7 @@ export default function RolesManager() {
         <div className="overflow-x-auto">
           <table className="w-full text-left border-collapse">
             <thead>
-              <tr className="border-b border-[#E8E8E5] bg-[#FAFAF8] text-[11px] font-semibold text-[#04314A] tracking-[0.02em]">
+              <tr className="border-b border-[#E8E8E5] bg-[#FAFAF8] text-[11px] font-semibold text-[#0B3D2B] tracking-[0.02em]">
                 <th className="px-5 py-3">Role Name</th>
                 <th className="px-5 py-3">Scope</th>
                 <th className="px-5 py-3">Granted Permissions</th>
@@ -489,7 +489,7 @@ export default function RolesManager() {
                     <tr key={r.id} className="hover:bg-[#FAFAF8] transition-colors">
                       <td className="px-5 py-3.5">
                         <div className="flex items-center gap-2">
-                          <span className="text-[13px] font-semibold text-[#04314A]">{r.name}</span>
+                          <span className="text-[13px] font-semibold text-[#0B3D2B]">{r.name}</span>
                           {isProtected && (
                             <Badge variant="info" size="sm">
                               Protected
@@ -507,7 +507,7 @@ export default function RolesManager() {
                           {r.is_dealer_role ? "Dealer Scoped" : "Head Office / Global"}
                         </Badge>
                       </td>
-                      <td className="px-5 py-3.5 text-[12px] text-[#04314A]">
+                      <td className="px-5 py-3.5 text-[12px] text-[#0B3D2B]">
                         {isProtected ? (
                           <span className="font-medium text-[#737373]">All system permissions</span>
                         ) : (

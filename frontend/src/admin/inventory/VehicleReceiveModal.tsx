@@ -96,7 +96,7 @@ export default function VehicleReceiveModal({
     rep_signature:
       initialChecklist?.rep_signature ??
       (me ? [me.first_name, me.last_name].filter(Boolean).join(" ") || me.username : ""),
-    ev_company: initialChecklist?.ev_company ?? "Vehicle Template",
+    ev_company: initialChecklist?.ev_company ?? "EV OS",
     vehicle_run_km: String(initialChecklist?.vehicle_run_km ?? initialUnit?.odometer_km ?? ""),
     ev_seater: initialChecklist?.ev_seater ?? "",
     battery_power_kw: String(
@@ -276,7 +276,7 @@ export default function VehicleReceiveModal({
             type="button"
             disabled={busy || printMode}
             onClick={save}
-            className="px-5 py-2 rounded-lg bg-[#04314A] text-white text-[12px] font-semibold hover:bg-[#00AAEB] transition-colors disabled:opacity-50"
+            className="px-5 py-2 rounded-lg bg-[#0B3D2B] text-white text-[12px] font-semibold hover:bg-[#10B981] transition-colors disabled:opacity-50"
           >
             {busy ? "Saving..." : initialChecklist ? "Update Receive Checklist" : "Save Receive Checklist"}
           </button>
@@ -296,7 +296,7 @@ export default function VehicleReceiveModal({
                 });
                 window.print();
               }}
-              className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-[#04314A] text-white text-[11px] font-bold hover:bg-[#00AAEB] transition-colors"
+              className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-[#0B3D2B] text-white text-[11px] font-bold hover:bg-[#10B981] transition-colors"
             >
               <Printer size={13} /> Print Checklist
             </button>
@@ -304,7 +304,7 @@ export default function VehicleReceiveModal({
           <button
             type="button"
             onClick={() => setPrintMode(!printMode)}
-            className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg border border-[#E8E8E5] text-[11px] font-semibold text-[#04314A] hover:bg-[#FAFAF8]"
+            className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg border border-[#E8E8E5] text-[11px] font-semibold text-[#0B3D2B] hover:bg-[#FAFAF8]"
           >
             <Printer size={13} /> {printMode ? "Form Editor" : "Official Paper View"}
           </button>
@@ -322,7 +322,7 @@ export default function VehicleReceiveModal({
         <div className="print-document bg-white border border-[#222] p-4 sm:p-6 text-[#111] font-sans text-[12px] print:border-none print:p-0">
           <div className="text-center mb-5 pb-3 border-b border-[#222]">
             <h2 className="text-[15px] sm:text-[17px] font-bold tracking-wide">
-              Vehicle Template &amp; Investment Pvt.Ltd.
+              EV OS &amp; Investment Pvt.Ltd.
             </h2>
             <p className="text-[11px] sm:text-[12px] mt-0.5">Your Address, Your City Â· +1 555 0100</p>
             <h3 className="text-[14px] sm:text-[16px] font-black underline mt-2 tracking-wide">
@@ -555,7 +555,7 @@ export default function VehicleReceiveModal({
 
           <div className="border border-[#E8E8E5] rounded-lg overflow-hidden">
             <div className="bg-[#FAFAF8] px-3 py-2 border-b border-[#E8E8E5]">
-              <span className="text-[12px] font-bold text-[#04314A]">Entity Conditions</span>
+              <span className="text-[12px] font-bold text-[#0B3D2B]">Entity Conditions</span>
             </div>
             <div className="overflow-x-auto">
               <table className="w-full text-left text-[12px] min-w-[640px]">
@@ -574,13 +574,13 @@ export default function VehicleReceiveModal({
                     return (
                       <tr key={ent.id ?? idx} className="border-b border-[#F0F0ED] last:border-0">
                         <td className="px-3 py-2 text-[#737373]">{idx + 1}</td>
-                        <td className="px-3 py-2 font-semibold text-[#04314A]">{ent.entity}</td>
+                        <td className="px-3 py-2 font-semibold text-[#0B3D2B]">{ent.entity}</td>
                         <td className="px-3 py-2 text-center">
                           <input
                             type="checkbox"
                             checked={isGood}
                             onChange={() => updateEntity(idx, { condition: "Good" })}
-                            className="w-4 h-4 accent-[#04314A]"
+                            className="w-4 h-4 accent-[#0B3D2B]"
                             aria-label={`${ent.entity} Good`}
                           />
                         </td>
@@ -589,7 +589,7 @@ export default function VehicleReceiveModal({
                             type="checkbox"
                             checked={!isGood}
                             onChange={() => updateEntity(idx, { condition: "Bad" })}
-                            className="w-4 h-4 accent-[#04314A]"
+                            className="w-4 h-4 accent-[#0B3D2B]"
                             aria-label={`${ent.entity} Bad`}
                           />
                         </td>
@@ -597,7 +597,7 @@ export default function VehicleReceiveModal({
                           <input
                             value={ent.remarks || ""}
                             onChange={(e) => updateEntity(idx, { remarks: e.target.value })}
-                            className="w-full border border-[#E8E8E5] rounded px-2 py-1 text-[11px] text-[#04314A]"
+                            className="w-full border border-[#E8E8E5] rounded px-2 py-1 text-[11px] text-[#0B3D2B]"
                             placeholder="Remarks..."
                           />
                         </td>

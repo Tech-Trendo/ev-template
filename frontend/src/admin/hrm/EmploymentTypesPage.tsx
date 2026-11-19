@@ -30,7 +30,7 @@ export default function EmploymentTypesPage() {
         title="Employment types"
         subtitle="Seeded with Full-time, Part-time, Contract, Probation, Intern, and Daily wage. Add more when the company needs them."
       />
-      <div className="grid gap-3 rounded-xl border border-[#E8E8E5] bg-white p-4 md:grid-cols-3 dark:border-[#174261] dark:bg-[#061824]">
+      <div className="grid gap-3 rounded-xl border border-[#E8E8E5] bg-white p-4 md:grid-cols-3 dark:border-[#1B5039] dark:bg-[#071713]">
         <FormField label="Name" htmlFor="type-name" required><Input id="type-name" value={name} onChange={(event) => setName(event.target.value)} /></FormField>
         <FormField label="Code" htmlFor="type-code" required><Input id="type-code" value={code} onChange={(event) => setCode(event.target.value)} /></FormField>
         <div className="flex items-end">

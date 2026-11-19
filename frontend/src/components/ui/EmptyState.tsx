@@ -20,10 +20,10 @@ export function EmptyState({
 }: EmptyStateProps) {
   return (
     <div
-      className={`flex flex-col items-center justify-center p-8 text-center bg-white rounded-xl border border-[#E8E8E5] dark:bg-[#0B2538] dark:border-[#174261] ${className}`}
+      className={`flex flex-col items-center justify-center p-8 text-center bg-white rounded-xl border border-[#E8E8E5] dark:bg-[#0C2620] dark:border-[#1B5039] ${className}`}
     >
       <div className="mb-3 flex items-center justify-center">{icon}</div>
-      <h3 className="text-[13px] font-semibold text-[#04314A] dark:text-[#F7F7F5]">{title}</h3>
+      <h3 className="text-[13px] font-semibold text-[#0B3D2B] dark:text-[#F7F7F5]">{title}</h3>
       {description && (
         <p className="mt-1 text-[11px] text-[#737373] dark:text-[#94A3B8] max-w-sm">
           {description}

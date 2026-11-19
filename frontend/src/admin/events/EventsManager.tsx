@@ -7,8 +7,8 @@ import { fetchEvents, deleteEvent, createEvent, updateEvent } from "@/lib/events
 
 function statusBadge(status: string) {
   const styles: Record<string, string> = {
-    upcoming: "rounded-full bg-[#00AAEB] text-white",
-    ongoing: "rounded-full bg-[#04314A] text-white",
+    upcoming: "rounded-full bg-[#10B981] text-white",
+    ongoing: "rounded-full bg-[#0B3D2B] text-white",
     completed: "rounded-full bg-[#F0F0ED] text-[#737373]",
   };
   return (
@@ -47,7 +47,7 @@ function EventForm({
   const [fieldErrors, setFieldErrors] = useState<Record<string, string>>({});
 
   const input =
-    "w-full border border-[#E8E8E5] rounded-xl bg-white px-3 py-2.5 text-[13px] font-medium text-[#04314A] placeholder:text-[#B0B0AA] focus:outline-none focus:border-[#00AAEB] transition-colors";
+    "w-full border border-[#E8E8E5] rounded-xl bg-white px-3 py-2.5 text-[13px] font-medium text-[#0B3D2B] placeholder:text-[#B0B0AA] focus:outline-none focus:border-[#10B981] transition-colors";
   const label = "text-[10px] font-semibold tracking-[0.12em] uppercase text-[#737373] block mb-1.5";
 
   const submit = async (e: React.FormEvent) => {
@@ -96,7 +96,7 @@ function EventForm({
     <div className="fixed inset-0 z-50 bg-black/50 flex items-center justify-center p-4 overflow-y-auto">
       <form onSubmit={submit} className="bg-white w-full max-w-[560px] border border-[#E8E8E5] rounded-xl overflow-hidden">
         <div className="flex items-center justify-between px-6 py-5 border-b border-[#E8E8E5]">
-          <h2 className="text-[18px] font-black tracking-tight text-[#04314A]">{initial ? "Edit Event" : "Create Event"}</h2>
+          <h2 className="text-[18px] font-black tracking-tight text-[#0B3D2B]">{initial ? "Edit Event" : "Create Event"}</h2>
           <button type="button" onClick={onClose} className="w-9 h-9 border border-[#E8E8E5] rounded-xl flex items-center justify-center hover:bg-[#F7F7F5] transition-colors">
             <X size={15} />
           </button>
@@ -105,49 +105,49 @@ function EventForm({
           <div>
             <label className={label}>Event Name *</label>
             <input
-              className={`${input} ${fieldErrors.name ? "border-[#00AAEB]" : ""}`}
+              className={`${input} ${fieldErrors.name ? "border-[#10B981]" : ""}`}
               value={form.name}
               onChange={(e) => setForm({ ...form, name: e.target.value })}
               placeholder="VT EV Experience Kathmandu"
               required
             />
-            {fieldErrors.name && <p className="mt-1 text-[11px] text-[#00AAEB]">{fieldErrors.name}</p>}
+            {fieldErrors.name && <p className="mt-1 text-[11px] text-[#10B981]">{fieldErrors.name}</p>}
           </div>
           <div className="grid grid-cols-2 gap-4">
             <div>
               <label className={label}>Start Date *</label>
               <input
                 type="date"
-                className={`${input} ${fieldErrors.start_date ? "border-[#00AAEB]" : ""}`}
+                className={`${input} ${fieldErrors.start_date ? "border-[#10B981]" : ""}`}
                 value={form.start_date}
                 onChange={(e) => setForm({ ...form, start_date: e.target.value })}
                 required
               />
-              {fieldErrors.start_date && <p className="mt-1 text-[11px] text-[#00AAEB]">{fieldErrors.start_date}</p>}
+              {fieldErrors.start_date && <p className="mt-1 text-[11px] text-[#10B981]">{fieldErrors.start_date}</p>}
             </div>
             <div>
               <label className={label}>End Date *</label>
               <input
                 type="date"
-                className={`${input} ${fieldErrors.end_date ? "border-[#00AAEB]" : ""}`}
+                className={`${input} ${fieldErrors.end_date ? "border-[#10B981]" : ""}`}
                 value={form.end_date}
                 onChange={(e) => setForm({ ...form, end_date: e.target.value })}
                 required
               />
-              {fieldErrors.end_date && <p className="mt-1 text-[11px] text-[#00AAEB]">{fieldErrors.end_date}</p>}
+              {fieldErrors.end_date && <p className="mt-1 text-[11px] text-[#10B981]">{fieldErrors.end_date}</p>}
             </div>
           </div>
-          {fieldErrors.dates && <p className="text-[11px] text-[#00AAEB]">{fieldErrors.dates}</p>}
-          {fieldErrors.non_field_errors && <p className="text-[11px] text-[#00AAEB]">{fieldErrors.non_field_errors}</p>}
+          {fieldErrors.dates && <p className="text-[11px] text-[#10B981]">{fieldErrors.dates}</p>}
+          {fieldErrors.non_field_errors && <p className="text-[11px] text-[#10B981]">{fieldErrors.non_field_errors}</p>}
           {error && !Object.keys(fieldErrors).length && (
-            <p className="text-[12px] font-medium text-[#00AAEB] bg-[#00AAEB]/5 border-l-2 border-[#00AAEB] px-3 py-2">{error}</p>
+            <p className="text-[12px] font-medium text-[#10B981] bg-[#10B981]/5 border-l-2 border-[#10B981] px-3 py-2">{error}</p>
           )}
         </div>
         <div className="flex gap-3 p-5 bg-[#F7F7F5] border-t border-[#E8E8E5]">
-          <button type="submit" disabled={busy} className="flex-1 py-3.5 rounded-full bg-[#04314A] text-white text-[13px] font-semibold tracking-[0.06em] hover:bg-[#00AAEB] transition-colors disabled:opacity-50">
+          <button type="submit" disabled={busy} className="flex-1 py-3.5 rounded-full bg-[#0B3D2B] text-white text-[13px] font-semibold tracking-[0.06em] hover:bg-[#10B981] transition-colors disabled:opacity-50">
             {busy ? "Saving…" : initial ? "Save Changes" : "Create Event"}
           </button>
-          <button type="button" onClick={onClose} className="px-8 py-3.5 border border-[#E8E8E5] rounded-full bg-white text-[13px] font-semibold text-[#737373] hover:border-[#04314A] hover:text-[#04314A] transition-colors">
+          <button type="button" onClick={onClose} className="px-8 py-3.5 border border-[#E8E8E5] rounded-full bg-white text-[13px] font-semibold text-[#737373] hover:border-[#0B3D2B] hover:text-[#0B3D2B] transition-colors">
             Cancel
           </button>
         </div>
@@ -194,16 +194,16 @@ export default function EventsManager({ onNavigate }: { onNavigate: (p: string) 
     <div>
       <div className="flex items-end justify-between mb-8">
         <div>
-          <h1 className="text-[36px] font-black tracking-tight text-[#04314A]">Events.</h1>
+          <h1 className="text-[36px] font-black tracking-tight text-[#0B3D2B]">Events.</h1>
           <p className="text-[13px] text-[#737373] mt-1">Manage events and track visitors across all VT experiences.</p>
         </div>
-        <button onClick={() => setCreating(true)} className="flex items-center gap-2 px-5 py-3 rounded-full bg-[#04314A] text-white text-[12px] font-semibold tracking-[0.06em] uppercase hover:bg-[#00AAEB] transition-colors">
+        <button onClick={() => setCreating(true)} className="flex items-center gap-2 px-5 py-3 rounded-full bg-[#0B3D2B] text-white text-[12px] font-semibold tracking-[0.06em] uppercase hover:bg-[#10B981] transition-colors">
           <Plus size={14} /> Create Event
         </button>
       </div>
 
       {error && (
-        <p className="mb-4 text-[13px] text-[#00AAEB] bg-[#00AAEB]/5 border-l-2 border-[#00AAEB] px-3 py-2">{error}</p>
+        <p className="mb-4 text-[13px] text-[#10B981] bg-[#10B981]/5 border-l-2 border-[#10B981] px-3 py-2">{error}</p>
       )}
 
       <div className="bg-white border border-[#E8E8E5] rounded-xl overflow-hidden">
@@ -225,23 +225,23 @@ export default function EventsManager({ onNavigate }: { onNavigate: (p: string) 
                 paginatedEvents.map((ev) => (
                 <tr key={ev.id} className="border-b border-[#F0F0ED] last:border-0 hover:bg-[#FAFAF8]">
                   <td className="px-5 py-3.5">
-                    <button onClick={() => onNavigate(`events/${ev.id}`)} className="text-[13px] font-bold text-[#04314A] hover:text-[#00AAEB] text-left">
+                    <button onClick={() => onNavigate(`events/${ev.id}`)} className="text-[13px] font-bold text-[#0B3D2B] hover:text-[#10B981] text-left">
                       {ev.name}
                     </button>
                   </td>
                   <td className="px-5 py-3.5 text-[12px] text-[#737373] whitespace-nowrap">{formatDateShort(ev.start_date)}</td>
                   <td className="px-5 py-3.5 text-[12px] text-[#737373] whitespace-nowrap">{formatDateShort(ev.end_date)}</td>
                   <td className="px-5 py-3.5">
-                    <span className="inline-flex items-center gap-1.5 text-[13px] font-bold text-[#04314A]"><Users size={13} className="text-[#B0B0AA]" />{ev.visitors_count ?? 0}</span>
+                    <span className="inline-flex items-center gap-1.5 text-[13px] font-bold text-[#0B3D2B]"><Users size={13} className="text-[#B0B0AA]" />{ev.visitors_count ?? 0}</span>
                   </td>
                   <td className="px-5 py-3.5">{statusBadge(ev.status)}</td>
                   <td className="px-5 py-3.5 text-[12px] text-[#737373] whitespace-nowrap">{formatDateShort(ev.created_at.slice(0, 10))}</td>
                   <td className="px-5 py-3.5">
                     <div className="flex justify-end gap-2">
-                      <button onClick={() => onNavigate(`events/${ev.id}`)} title="View" className="w-8 h-8 border border-[#E8E8E5] rounded-xl flex items-center justify-center text-[#00AAEB] hover:bg-[#00AAEB] hover:text-white transition-colors"><Eye size={13} /></button>
-                      <button onClick={() => setEditing(ev)} title="Edit" className="w-8 h-8 border border-[#E8E8E5] rounded-xl flex items-center justify-center text-[#04314A] hover:bg-[#04314A] hover:text-white transition-colors"><Pencil size={13} /></button>
-                      <button onClick={() => remove(ev)} title="Delete" className="w-8 h-8 border border-[#E8E8E5] rounded-xl flex items-center justify-center text-[#00AAEB] hover:bg-[#00AAEB] hover:text-white transition-colors"><Trash2 size={13} /></button>
-                      <button onClick={() => onNavigate(`events/${ev.id}`)} title="Add Visitor" className="hidden sm:inline-flex items-center gap-1.5 px-3 py-1.5 border border-[#E8E8E5] rounded-full text-[11px] font-semibold text-[#04314A] hover:border-[#00AAEB] hover:text-[#00AAEB] transition-colors">
+                      <button onClick={() => onNavigate(`events/${ev.id}`)} title="View" className="w-8 h-8 border border-[#E8E8E5] rounded-xl flex items-center justify-center text-[#10B981] hover:bg-[#10B981] hover:text-white transition-colors"><Eye size={13} /></button>
+                      <button onClick={() => setEditing(ev)} title="Edit" className="w-8 h-8 border border-[#E8E8E5] rounded-xl flex items-center justify-center text-[#0B3D2B] hover:bg-[#0B3D2B] hover:text-white transition-colors"><Pencil size={13} /></button>
+                      <button onClick={() => remove(ev)} title="Delete" className="w-8 h-8 border border-[#E8E8E5] rounded-xl flex items-center justify-center text-[#10B981] hover:bg-[#10B981] hover:text-white transition-colors"><Trash2 size={13} /></button>
+                      <button onClick={() => onNavigate(`events/${ev.id}`)} title="Add Visitor" className="hidden sm:inline-flex items-center gap-1.5 px-3 py-1.5 border border-[#E8E8E5] rounded-full text-[11px] font-semibold text-[#0B3D2B] hover:border-[#10B981] hover:text-[#10B981] transition-colors">
                         <Plus size={12} /> Visitor
                       </button>
                     </div>

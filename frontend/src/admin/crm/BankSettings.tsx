@@ -7,12 +7,12 @@ import { Modal, Pagination, TableState, ghostBtnCls, primaryBtnCls, useToast } f
 
 import { DEFAULT_PAGE_SIZE } from "@/lib/pagination";
 const input =
-  "w-full border border-[#E8E8E5] rounded-xl bg-white px-3 py-2.5 text-[13px] font-medium text-[#04314A] placeholder:text-[#B0B0AA] focus:outline-none focus:border-[#00AAEB] transition-colors";
+  "w-full border border-[#E8E8E5] rounded-xl bg-white px-3 py-2.5 text-[13px] font-medium text-[#0B3D2B] placeholder:text-[#B0B0AA] focus:outline-none focus:border-[#10B981] transition-colors";
 const labelCls = "text-[10px] font-semibold tracking-[0.12em] uppercase text-[#737373] block mb-1.5";
 
 function ActiveBadge({ active }: { active: boolean }) {
   return (
-    <span className={`inline-flex items-center gap-1 px-2.5 py-1 text-[9px] font-bold tracking-[0.12em] uppercase rounded-full ${active ? "bg-[#00AAEB] text-white" : "bg-[#F0F0ED] text-[#737373]"}`}>
+    <span className={`inline-flex items-center gap-1 px-2.5 py-1 text-[9px] font-bold tracking-[0.12em] uppercase rounded-full ${active ? "bg-[#10B981] text-white" : "bg-[#F0F0ED] text-[#737373]"}`}>
       {active ? <CheckCircle size={10} /> : <XCircle size={10} />}
       {active ? "Active" : "Inactive"}
     </span>
@@ -76,10 +76,10 @@ function BankForm({
           <input className={input} value={form.category} onChange={(e) => setForm({ ...form, category: e.target.value })} placeholder="e.g. Commercial Bank (Class A)" />
         </div>
         <label className="flex items-center gap-2 cursor-pointer select-none">
-          <input type="checkbox" checked={form.is_active} onChange={(e) => setForm({ ...form, is_active: e.target.checked })} className="w-4 h-4 accent-[#00AAEB]" />
-          <span className="text-[13px] font-semibold text-[#04314A]">Active</span>
+          <input type="checkbox" checked={form.is_active} onChange={(e) => setForm({ ...form, is_active: e.target.checked })} className="w-4 h-4 accent-[#10B981]" />
+          <span className="text-[13px] font-semibold text-[#0B3D2B]">Active</span>
         </label>
-        {error && <p className="text-[12px] text-[#00AAEB] bg-[#00AAEB]/5 border-l-2 border-[#00AAEB] px-3 py-2">{error}</p>}
+        {error && <p className="text-[12px] text-[#10B981] bg-[#10B981]/5 border-l-2 border-[#10B981] px-3 py-2">{error}</p>}
         <div data-modal-actions className="mt-6 flex justify-end gap-3">
           <button type="button" onClick={onClose} className={ghostBtnCls}>Cancel</button>
           <button type="submit" disabled={busy} className={primaryBtnCls}>{busy ? "Saving…" : initial ? "Save Changes" : "Add Bank"}</button>
@@ -167,10 +167,10 @@ function BranchForm({
           <input className={input} value={form.address} onChange={(e) => setForm({ ...form, address: e.target.value })} />
         </div>
         <label className="flex items-center gap-2 cursor-pointer select-none">
-          <input type="checkbox" checked={form.is_active} onChange={(e) => setForm({ ...form, is_active: e.target.checked })} className="w-4 h-4 accent-[#00AAEB]" />
-          <span className="text-[13px] font-semibold text-[#04314A]">Active</span>
+          <input type="checkbox" checked={form.is_active} onChange={(e) => setForm({ ...form, is_active: e.target.checked })} className="w-4 h-4 accent-[#10B981]" />
+          <span className="text-[13px] font-semibold text-[#0B3D2B]">Active</span>
         </label>
-        {error && <p className="text-[12px] text-[#00AAEB] bg-[#00AAEB]/5 border-l-2 border-[#00AAEB] px-3 py-2">{error}</p>}
+        {error && <p className="text-[12px] text-[#10B981] bg-[#10B981]/5 border-l-2 border-[#10B981] px-3 py-2">{error}</p>}
         <div data-modal-actions className="mt-6 flex justify-end gap-3">
           <button type="button" onClick={onClose} className={ghostBtnCls}>Cancel</button>
           <button type="submit" disabled={busy} className={primaryBtnCls}>{busy ? "Saving…" : initial ? "Save Changes" : "Add Branch"}</button>
@@ -226,19 +226,19 @@ export function BanksPanel() {
     <div>
       <div className="flex items-center justify-between mb-5">
         <div className="flex items-center gap-4">
-          <div className="flex items-center gap-2.5 text-[#04314A]">
+          <div className="flex items-center gap-2.5 text-[#0B3D2B]">
             <Building2 size={18} />
             <span className="text-[13px] font-semibold">Banks</span>
           </div>
           <div className="h-5 w-px bg-[#E8E8E5]" />
           <div className="flex items-center gap-4 text-[12px] text-[#737373]">
-            <span className="flex items-center gap-1.5"><span className="w-2.5 h-2.5 rounded-full bg-[#00AAEB]" />{banks.filter((b) => b.is_active).length} Active</span>
+            <span className="flex items-center gap-1.5"><span className="w-2.5 h-2.5 rounded-full bg-[#10B981]" />{banks.filter((b) => b.is_active).length} Active</span>
             <span className="flex items-center gap-1.5"><span className="w-2.5 h-2.5 rounded-full bg-[#F0F0ED] border border-[#D0D0CC]" />{banks.filter((b) => !b.is_active).length} Inactive</span>
           </div>
         </div>
         <button onClick={() => setCreating(true)} className={primaryBtnCls}><Plus size={14} /> Add Bank</button>
       </div>
-      {error && <div className="mb-3 text-[12px] text-[#00AAEB] bg-[#00AAEB]/5 border-l-2 border-[#00AAEB] px-3 py-2 rounded-r-lg">{error}</div>}
+      {error && <div className="mb-3 text-[12px] text-[#10B981] bg-[#10B981]/5 border-l-2 border-[#10B981] px-3 py-2 rounded-r-lg">{error}</div>}
       <div className="border border-[#E8E8E5] rounded-2xl bg-white overflow-hidden">
         <table className="w-full">
           <thead>
@@ -252,15 +252,15 @@ export function BanksPanel() {
             <TableState colSpan={6} loading={loading} empty={!loading && banks.length === 0} />
             {visible.map((bank) => (
               <tr key={bank.id} className="border-b border-[#F0F0ED] last:border-0 hover:bg-[#FAFAF8] transition-colors">
-                <td className="px-5 py-3.5 text-[13px] font-semibold text-[#04314A]">{bank.name}</td>
+                <td className="px-5 py-3.5 text-[13px] font-semibold text-[#0B3D2B]">{bank.name}</td>
                 <td className="px-5 py-3.5 text-[12px] text-[#737373]">{bank.code || "—"}</td>
                 <td className="px-5 py-3.5 text-[12px] text-[#737373]">{bank.category || "—"}</td>
                 <td className="px-5 py-3.5 text-[12px] text-[#737373] font-semibold">{bank.branch_count}</td>
                 <td className="px-5 py-3.5"><ActiveBadge active={bank.is_active} /></td>
                 <td className="px-5 py-3.5 text-right">
                   <div className="flex items-center justify-end gap-1">
-                    <button onClick={() => setEditing(bank)} title="Edit" className="p-1.5 rounded-lg text-[#737373] hover:text-[#04314A] hover:bg-[#F0F0ED] transition-colors"><Pencil size={14} /></button>
-                    <button onClick={() => toggle(bank)} title={bank.is_active ? "Deactivate" : "Activate"} className="p-1.5 rounded-lg text-[#737373] hover:text-[#04314A] hover:bg-[#F0F0ED] transition-colors">{bank.is_active ? <EyeOff size={14} /> : <Eye size={14} />}</button>
+                    <button onClick={() => setEditing(bank)} title="Edit" className="p-1.5 rounded-lg text-[#737373] hover:text-[#0B3D2B] hover:bg-[#F0F0ED] transition-colors"><Pencil size={14} /></button>
+                    <button onClick={() => toggle(bank)} title={bank.is_active ? "Deactivate" : "Activate"} className="p-1.5 rounded-lg text-[#737373] hover:text-[#0B3D2B] hover:bg-[#F0F0ED] transition-colors">{bank.is_active ? <EyeOff size={14} /> : <Eye size={14} />}</button>
                     <button onClick={() => remove(bank)} title="Delete" className="p-1.5 rounded-lg text-[#737373] hover:text-red-600 hover:bg-red-50 transition-colors"><Trash2 size={14} /></button>
                   </div>
                 </td>
@@ -348,7 +348,7 @@ export function BranchesPanel() {
   return (
     <div>
       <div className="flex flex-wrap items-center justify-between gap-3 mb-5">
-        <div className="flex items-center gap-2.5 text-[#04314A]">
+        <div className="flex items-center gap-2.5 text-[#0B3D2B]">
           <MapPin size={18} />
           <span className="text-[13px] font-semibold">Bank Branches</span>
           <span className="text-[12px] text-[#737373]">{count}</span>
@@ -367,7 +367,7 @@ export function BranchesPanel() {
             />
           </div>
           <input
-            className="border border-[#E8E8E5] rounded-xl bg-white px-3 py-2 text-[12px] font-medium text-[#04314A] w-56"
+            className="border border-[#E8E8E5] rounded-xl bg-white px-3 py-2 text-[12px] font-medium text-[#0B3D2B] w-56"
             value={search}
             onChange={(e) => {
               setSearch(e.target.value);
@@ -378,7 +378,7 @@ export function BranchesPanel() {
           <button onClick={() => setCreating(true)} className={primaryBtnCls}><Plus size={14} /> Add Branch</button>
         </div>
       </div>
-      {error && <div className="mb-3 text-[12px] text-[#00AAEB] bg-[#00AAEB]/5 border-l-2 border-[#00AAEB] px-3 py-2 rounded-r-lg">{error}</div>}
+      {error && <div className="mb-3 text-[12px] text-[#10B981] bg-[#10B981]/5 border-l-2 border-[#10B981] px-3 py-2 rounded-r-lg">{error}</div>}
       <div className="border border-[#E8E8E5] rounded-2xl bg-white overflow-hidden">
         <table className="w-full">
           <thead>
@@ -393,7 +393,7 @@ export function BranchesPanel() {
             {rows.map((branch) => (
               <tr key={branch.id} className="border-b border-[#F0F0ED] last:border-0 hover:bg-[#FAFAF8] transition-colors">
                 <td className="px-5 py-3.5">
-                  <div className="text-[13px] font-semibold text-[#04314A]">{branch.name}</div>
+                  <div className="text-[13px] font-semibold text-[#0B3D2B]">{branch.name}</div>
                   {branch.code && <div className="text-[10px] text-[#737373]">{branch.code}</div>}
                 </td>
                 <td className="px-5 py-3.5 text-[12px] text-[#737373]">{branch.bank_name}</td>
@@ -402,8 +402,8 @@ export function BranchesPanel() {
                 <td className="px-5 py-3.5"><ActiveBadge active={branch.is_active} /></td>
                 <td className="px-5 py-3.5 text-right">
                   <div className="flex items-center justify-end gap-1">
-                    <button onClick={() => setEditing(branch)} title="Edit" className="p-1.5 rounded-lg text-[#737373] hover:text-[#04314A] hover:bg-[#F0F0ED] transition-colors"><Pencil size={14} /></button>
-                    <button onClick={() => toggle(branch)} title={branch.is_active ? "Deactivate" : "Activate"} className="p-1.5 rounded-lg text-[#737373] hover:text-[#04314A] hover:bg-[#F0F0ED] transition-colors">{branch.is_active ? <EyeOff size={14} /> : <Eye size={14} />}</button>
+                    <button onClick={() => setEditing(branch)} title="Edit" className="p-1.5 rounded-lg text-[#737373] hover:text-[#0B3D2B] hover:bg-[#F0F0ED] transition-colors"><Pencil size={14} /></button>
+                    <button onClick={() => toggle(branch)} title={branch.is_active ? "Deactivate" : "Activate"} className="p-1.5 rounded-lg text-[#737373] hover:text-[#0B3D2B] hover:bg-[#F0F0ED] transition-colors">{branch.is_active ? <EyeOff size={14} /> : <Eye size={14} />}</button>
                     <button onClick={() => remove(branch)} title="Delete" className="p-1.5 rounded-lg text-[#737373] hover:text-red-600 hover:bg-red-50 transition-colors"><Trash2 size={14} /></button>
                   </div>
                 </td>

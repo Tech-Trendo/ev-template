@@ -208,7 +208,7 @@ export default function ImportFromEventsModal({
               value={eventsSearch}
               onChange={(e) => setEventsSearch(e.target.value)}
               placeholder="Search events…"
-              className="w-full pl-10 pr-4 py-2.5 text-[13px] font-medium focus:outline-none focus:border-[#00AAEB] transition-colors border border-[#E8E8E5] rounded-xl bg-white text-[#04314A] placeholder:text-[#B0B0AA]"
+              className="w-full pl-10 pr-4 py-2.5 text-[13px] font-medium focus:outline-none focus:border-[#10B981] transition-colors border border-[#E8E8E5] rounded-xl bg-white text-[#0B3D2B] placeholder:text-[#B0B0AA]"
             />
           </div>
           {eventsLoading ? (
@@ -224,12 +224,12 @@ export default function ImportFromEventsModal({
                     className="w-full flex items-center justify-between gap-3 px-5 py-3.5 text-left hover:bg-[#FAFAF8] transition-colors"
                   >
                     <span>
-                      <span className="block text-[13px] font-bold text-[#04314A]">{e.name}</span>
+                      <span className="block text-[13px] font-bold text-[#0B3D2B]">{e.name}</span>
                       <span className="block text-[11px] text-[#737373] mt-0.5">
                         {e.start_date} → {e.end_date} · {e.visitors_count} visitor{e.visitors_count === 1 ? "" : "s"} · {e.status}
                       </span>
                     </span>
-                    <span className="text-[11px] font-bold uppercase tracking-[0.08em] text-[#00AAEB]">Select →</span>
+                    <span className="text-[11px] font-bold uppercase tracking-[0.08em] text-[#10B981]">Select →</span>
                   </button>
                 </li>
               ))}
@@ -246,11 +246,11 @@ export default function ImportFromEventsModal({
               setResult(null);
               setError("");
             }}
-            className="inline-flex items-center gap-1.5 text-[12px] font-semibold text-[#737373] hover:text-[#04314A] mb-4"
+            className="inline-flex items-center gap-1.5 text-[12px] font-semibold text-[#737373] hover:text-[#0B3D2B] mb-4"
           >
             <ChevronLeft size={14} /> All events
           </button>
-          <h3 className="text-[15px] font-black text-[#04314A]">
+          <h3 className="text-[15px] font-black text-[#0B3D2B]">
             {selectedEvent?.name ?? `Event #${eventId}`}
             <span className="ml-2 text-[11px] font-semibold text-[#737373]">
               {data.count} visitor{data.count === 1 ? "" : "s"}
@@ -266,7 +266,7 @@ export default function ImportFromEventsModal({
                 value={search}
                 onChange={(e) => onFilterChange(() => setSearch(e.target.value))}
                 placeholder="Search name, phone, email, company…"
-                className="w-full pl-10 pr-4 py-2.5 text-[13px] font-medium focus:outline-none focus:border-[#00AAEB] transition-colors border border-[#E8E8E5] rounded-xl bg-white text-[#04314A] placeholder:text-[#B0B0AA]"
+                className="w-full pl-10 pr-4 py-2.5 text-[13px] font-medium focus:outline-none focus:border-[#10B981] transition-colors border border-[#E8E8E5] rounded-xl bg-white text-[#0B3D2B] placeholder:text-[#B0B0AA]"
               />
             </div>
             <div className="relative">
@@ -304,7 +304,7 @@ export default function ImportFromEventsModal({
                   setVehicleF("all");
                   setDateF("");
                 })}
-                className="text-[11px] font-semibold uppercase tracking-[0.08em] text-[#00AAEB] hover:text-[#04314A]"
+                className="text-[11px] font-semibold uppercase tracking-[0.08em] text-[#10B981] hover:text-[#0B3D2B]"
               >
                 Clear filters
               </button>
@@ -318,13 +318,13 @@ export default function ImportFromEventsModal({
           {!selectAllMatching && data.count > 0 && (
             <button
               onClick={() => setSelectAllMatching(true)}
-              className="mb-3 w-full px-4 py-2.5 rounded-xl bg-[#00AAEB]/5 border border-[#00AAEB]/30 text-[12px] font-semibold text-[#04314A] hover:bg-[#00AAEB]/10 transition-colors"
+              className="mb-3 w-full px-4 py-2.5 rounded-xl bg-[#10B981]/5 border border-[#10B981]/30 text-[12px] font-semibold text-[#0B3D2B] hover:bg-[#10B981]/10 transition-colors"
             >
               Select all {data.count} visitor{data.count === 1 ? "" : "s"} matching current filters (across all pages)
             </button>
           )}
           {selectAllMatching && (
-            <div className="mb-3 flex items-center justify-between gap-3 px-4 py-2.5 rounded-xl bg-[#04314A] text-white text-[12px] font-semibold">
+            <div className="mb-3 flex items-center justify-between gap-3 px-4 py-2.5 rounded-xl bg-[#0B3D2B] text-white text-[12px] font-semibold">
               <span>All {data.count} matching visitors selected</span>
               <button onClick={() => { setSelectAllMatching(false); setSelected(new Set()); }} className="inline-flex items-center gap-1 text-white/80 hover:text-white">
                 <X size={13} /> Clear
@@ -338,7 +338,7 @@ export default function ImportFromEventsModal({
                 <thead>
                   <tr className="border-b border-[#E8E8E5] bg-[#FAFAF8]">
                     <th className="px-4 py-3 w-10">
-                      <button onClick={togglePage} aria-label="Select page" className="text-[#04314A]">
+                      <button onClick={togglePage} aria-label="Select page" className="text-[#0B3D2B]">
                         {selectAllMatching || allPageSelected ? <CheckSquare size={16} /> : <Square size={16} />}
                       </button>
                     </th>
@@ -351,7 +351,7 @@ export default function ImportFromEventsModal({
                   {loading ? (
                     <tr><td colSpan={6} className="px-4 py-10 text-center text-[13px] text-[#737373]">Loading visitors…</td></tr>
                   ) : error && data.results.length === 0 ? (
-                    <tr><td colSpan={6} className="px-4 py-10 text-center text-[13px] text-[#00AAEB]">{error}</td></tr>
+                    <tr><td colSpan={6} className="px-4 py-10 text-center text-[13px] text-[#10B981]">{error}</td></tr>
                   ) : data.results.length === 0 ? (
                     <tr><td colSpan={6} className="px-4 py-10 text-center text-[13px] text-[#737373]">No visitors match your filters.</td></tr>
                   ) : (
@@ -360,11 +360,11 @@ export default function ImportFromEventsModal({
                       return (
                         <tr key={v.id} className="border-b border-[#F0F0ED] last:border-0 hover:bg-[#FAFAF8]">
                           <td className="px-4 py-3">
-                            <button onClick={() => toggleOne(v.id)} aria-label={`Select ${v.name}`} className="text-[#04314A]">
-                              {checked ? <CheckSquare size={16} className="text-[#00AAEB]" /> : <Square size={16} />}
+                            <button onClick={() => toggleOne(v.id)} aria-label={`Select ${v.name}`} className="text-[#0B3D2B]">
+                              {checked ? <CheckSquare size={16} className="text-[#10B981]" /> : <Square size={16} />}
                             </button>
                           </td>
-                          <td className="px-4 py-3 text-[13px] font-bold text-[#04314A]">{v.name}</td>
+                          <td className="px-4 py-3 text-[13px] font-bold text-[#0B3D2B]">{v.name}</td>
                           <td className="px-4 py-3 text-[12px] text-[#737373] whitespace-nowrap">{v.phone || "—"}</td>
                           <td className="px-4 py-3 text-[12px] text-[#737373] max-w-[140px] truncate">{v.company || "—"}</td>
                           <td className="px-4 py-3 text-[12px] text-[#737373]">{v.interest_level_detail?.name || "—"}</td>
@@ -380,15 +380,15 @@ export default function ImportFromEventsModal({
           </div>
 
           {error && data.results.length > 0 && (
-            <p className="mt-3 text-[12px] font-medium text-[#00AAEB]">{error}</p>
+            <p className="mt-3 text-[12px] font-medium text-[#10B981]">{error}</p>
           )}
 
           {result && (
             <div className="mt-4 border border-[#E8E8E5] rounded-xl overflow-hidden">
-              <div className="px-4 py-3 bg-[#F7F7F5] border-b border-[#E8E8E5] text-[12px] font-bold text-[#04314A]">
+              <div className="px-4 py-3 bg-[#F7F7F5] border-b border-[#E8E8E5] text-[12px] font-bold text-[#0B3D2B]">
                 Imported {result.created} of {result.total}
                 {result.skipped_count > 0 && <span className="text-[#737373]"> · {result.skipped_count} skipped (already leads)</span>}
-                {result.failed > 0 && <span className="text-[#00AAEB]"> · {result.failed} failed</span>}
+                {result.failed > 0 && <span className="text-[#10B981]"> · {result.failed} failed</span>}
               </div>
               {(result.skipped.length > 0 || result.errors.length > 0) && (
                 <ul className="max-h-[160px] overflow-y-auto divide-y divide-[#F0F0ED]">
@@ -398,7 +398,7 @@ export default function ImportFromEventsModal({
                     </li>
                   ))}
                   {result.errors.slice(0, 20).map((e, i) => (
-                    <li key={`e-${i}`} className="px-4 py-2 text-[12px] text-[#00AAEB]">
+                    <li key={`e-${i}`} className="px-4 py-2 text-[12px] text-[#10B981]">
                       {e.name || `Visitor ${e.visitor_id}`} — {e.error}
                     </li>
                   ))}
@@ -408,7 +408,7 @@ export default function ImportFromEventsModal({
           )}
 
           <div data-modal-actions className="mt-5 flex flex-wrap justify-end gap-3">
-            <button onClick={onClose} className="px-4 py-2.5 text-[12px] font-semibold uppercase tracking-[0.04em] text-[#737373] hover:text-[#04314A] transition-colors">
+            <button onClick={onClose} className="px-4 py-2.5 text-[12px] font-semibold uppercase tracking-[0.04em] text-[#737373] hover:text-[#0B3D2B] transition-colors">
               Close
             </button>
             <button

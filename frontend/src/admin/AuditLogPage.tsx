@@ -168,13 +168,13 @@ export default function AuditLogPage({
   const getActionBadgeClass = (action: string | undefined) => {
     switch (action?.toUpperCase()) {
       case "CREATE":
-        return "bg-[#04314A] text-white";
+        return "bg-[#0B3D2B] text-white";
       case "UPDATE":
-        return "bg-[#FAFAF8] text-[#04314A] border border-[#E8E8E5]";
+        return "bg-[#FAFAF8] text-[#0B3D2B] border border-[#E8E8E5]";
       case "DELETE":
         return "bg-[#DC2626] text-white";
       case "LOGIN":
-        return "bg-[#00AAEB] text-white";
+        return "bg-[#10B981] text-white";
       case "LOGOUT":
         return "bg-[#737373] text-white";
       default:
@@ -192,14 +192,14 @@ export default function AuditLogPage({
     <div className="space-y-6">
       <div className="flex items-center justify-between flex-wrap gap-4">
         <div>
-          <h1 className="text-[28px] font-bold text-[#04314A]">Staff Activity & Audit Trail</h1>
+          <h1 className="text-[28px] font-bold text-[#0B3D2B]">Staff Activity & Audit Trail</h1>
           <p className="text-[13px] text-[#737373]">
             Tamper-evident log of staff logins, logouts, record creations, field-level corrections, and deletions.
           </p>
         </div>
         <button
           onClick={() => setReloadKey((key) => key + 1)}
-          className="flex items-center gap-1.5 px-4 py-2 rounded-lg border border-[#E8E8E5] bg-white text-[12px] font-semibold text-[#04314A] hover:bg-[#FAFAF8] transition-colors"
+          className="flex items-center gap-1.5 px-4 py-2 rounded-lg border border-[#E8E8E5] bg-white text-[12px] font-semibold text-[#0B3D2B] hover:bg-[#FAFAF8] transition-colors"
         >
           <RefreshCw size={13} className={loading ? "animate-spin" : ""} /> Refresh
         </button>
@@ -213,7 +213,7 @@ export default function AuditLogPage({
             value={searchInput}
             onChange={(e) => setSearchInput(e.target.value)}
             placeholder="Search summary, field, value, user, object ID..."
-            className="w-full h-9 pl-9 pr-3 rounded-lg border border-[#E8E8E5] text-[12px] text-[#04314A] placeholder-[#737373] focus:outline-none focus:border-[#00AAEB]"
+            className="w-full h-9 pl-9 pr-3 rounded-lg border border-[#E8E8E5] text-[12px] text-[#0B3D2B] placeholder-[#737373] focus:outline-none focus:border-[#10B981]"
           />
         </div>
 
@@ -236,7 +236,7 @@ export default function AuditLogPage({
             emptyMessage="No staff accounts found."
             renderItem={(user) => (
               <div className="min-w-0">
-                <span className="block text-[12px] font-medium text-[#04314A] truncate">
+                <span className="block text-[12px] font-medium text-[#0B3D2B] truncate">
                   {[user.first_name, user.last_name].filter(Boolean).join(" ").trim() || user.username}
                 </span>
                 <span className="block text-[10px] text-[#737373] truncate">@{user.username}</span>
@@ -248,7 +248,7 @@ export default function AuditLogPage({
         <select
           value={actionFilter}
           onChange={(e) => setActionFilter(e.target.value)}
-          className="h-9 px-3 rounded-lg border border-[#E8E8E5] bg-white text-[12px] text-[#04314A] focus:outline-none focus:border-[#00AAEB]"
+          className="h-9 px-3 rounded-lg border border-[#E8E8E5] bg-white text-[12px] text-[#0B3D2B] focus:outline-none focus:border-[#10B981]"
         >
           <option value="">All Actions</option>
           <option value="LOGIN">Login</option>
@@ -261,7 +261,7 @@ export default function AuditLogPage({
         <select
           value={modelFilter}
           onChange={(e) => setModelFilter(e.target.value)}
-          className="h-9 px-3 rounded-lg border border-[#E8E8E5] bg-white text-[12px] text-[#04314A] focus:outline-none focus:border-[#00AAEB]"
+          className="h-9 px-3 rounded-lg border border-[#E8E8E5] bg-white text-[12px] text-[#0B3D2B] focus:outline-none focus:border-[#10B981]"
         >
           <option value="">All Models</option>
           <option value="customer">Customer</option>
@@ -277,7 +277,7 @@ export default function AuditLogPage({
         <select
           value={sourceFilter}
           onChange={(e) => setSourceFilter(e.target.value)}
-          className="h-9 px-3 rounded-lg border border-[#E8E8E5] bg-white text-[12px] text-[#04314A] focus:outline-none focus:border-[#00AAEB]"
+          className="h-9 px-3 rounded-lg border border-[#E8E8E5] bg-white text-[12px] text-[#0B3D2B] focus:outline-none focus:border-[#10B981]"
         >
           <option value="">All Sources</option>
           <option value="STAFF_ACTIVITY">Staff Activity</option>
@@ -294,7 +294,7 @@ export default function AuditLogPage({
             type="date"
             value={dateFrom}
             onChange={(e) => setDateFrom(e.target.value)}
-            className="h-9 px-2 rounded-lg border border-[#E8E8E5] bg-white text-[12px] text-[#04314A] focus:outline-none focus:border-[#00AAEB]"
+            className="h-9 px-2 rounded-lg border border-[#E8E8E5] bg-white text-[12px] text-[#0B3D2B] focus:outline-none focus:border-[#10B981]"
           />
         </div>
 
@@ -304,13 +304,13 @@ export default function AuditLogPage({
             type="date"
             value={dateTo}
             onChange={(e) => setDateTo(e.target.value)}
-            className="h-9 px-2 rounded-lg border border-[#E8E8E5] bg-white text-[12px] text-[#04314A] focus:outline-none focus:border-[#00AAEB]"
+            className="h-9 px-2 rounded-lg border border-[#E8E8E5] bg-white text-[12px] text-[#0B3D2B] focus:outline-none focus:border-[#10B981]"
           />
         </div>
       </div>
 
       {staffActivityLabel ? (
-        <div className="rounded-xl border border-[#E6F7FD] bg-[#F7FCFE] px-4 py-3 text-[13px] text-[#04314A]">
+        <div className="rounded-xl border border-[#E8F8F0] bg-[#F7FCFE] px-4 py-3 text-[13px] text-[#0B3D2B]">
           <span className="font-semibold tabular-nums">{staffActivityLabel}</span>
           <span className="text-[#737373]"> matching the current filters.</span>
         </div>
@@ -334,7 +334,7 @@ export default function AuditLogPage({
                 <tr>
                   <td colSpan={6} className="px-5 py-12 text-center text-[#737373]">
                     <div className="flex items-center justify-center gap-2">
-                      <Loader2 size={16} className="animate-spin text-[#00AAEB]" />
+                      <Loader2 size={16} className="animate-spin text-[#10B981]" />
                       Loading activity entries...
                     </div>
                   </td>
@@ -381,7 +381,7 @@ export default function AuditLogPage({
                           <button
                             type="button"
                             onClick={() => handleEntityClick(entry.model_name, entry.object_id)}
-                            className="font-bold text-[#00AAEB] hover:underline"
+                            className="font-bold text-[#10B981] hover:underline"
                           >
                             {entry.model_name} #{entry.object_id}
                           </button>
@@ -391,7 +391,7 @@ export default function AuditLogPage({
                       </td>
                       <td className="px-5 py-3.5 max-w-md">
                         {entry.summary ? (
-                          <div className="font-medium text-[#04314A] text-[12px]">{entry.summary}</div>
+                          <div className="font-medium text-[#0B3D2B] text-[12px]">{entry.summary}</div>
                         ) : null}
                         {hasDiff && (
                           <div className="mt-1 flex items-center gap-2 font-medium text-[11px] bg-[#F7F7F5] rounded p-1.5 border border-[#E8E8E5]">
@@ -413,7 +413,7 @@ export default function AuditLogPage({
                           {entry.source}
                         </span>
                       </td>
-                      <td className="px-5 py-3.5 whitespace-nowrap text-[#04314A]">
+                      <td className="px-5 py-3.5 whitespace-nowrap text-[#0B3D2B]">
                         <div className="font-semibold">{entry.changed_by_name}</div>
                         {entry.changed_by_username &&
                           entry.changed_by_username !== entry.changed_by_name && (

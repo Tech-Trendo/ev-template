@@ -139,7 +139,7 @@ export function Modal({
 
   return (
     <div
-      className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-[#04314A]/60 overflow-y-auto"
+      className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-[#0B3D2B]/60 overflow-y-auto"
       onClick={(e) => {
         if (closeOnBackdrop && e.target === e.currentTarget) {
           onClose();
@@ -150,13 +150,13 @@ export function Modal({
     >
       <div
         ref={modalRef}
-        className={`w-full ${sizeClasses} bg-white rounded-xl border border-[#E8E8E5] shadow-lg flex flex-col max-h-[90vh] overflow-hidden dark:bg-[#0B2538] dark:border-[#174261] ${className}`}
+        className={`w-full ${sizeClasses} bg-white rounded-xl border border-[#E8E8E5] shadow-lg flex flex-col max-h-[90vh] overflow-hidden dark:bg-[#0C2620] dark:border-[#1B5039] ${className}`}
       >
         {(title || subtitle) && (
-          <div className="flex items-start justify-between px-5 py-4 border-b border-[#E8E8E5] shrink-0 dark:border-[#174261]">
+          <div className="flex items-start justify-between px-5 py-4 border-b border-[#E8E8E5] shrink-0 dark:border-[#1B5039]">
             <div>
               {title && (
-                <h2 className="text-[15px] font-semibold text-[#04314A] dark:text-[#F7F7F5]">
+                <h2 className="text-[15px] font-semibold text-[#0B3D2B] dark:text-[#F7F7F5]">
                   {title}
                 </h2>
               )}
@@ -169,7 +169,7 @@ export function Modal({
             <button
               type="button"
               onClick={onClose}
-              className="p-1 rounded-md text-[#737373] hover:text-[#04314A] hover:bg-[#F0F0ED] transition-colors dark:text-[#94A3B8] dark:hover:text-[#F7F7F5] dark:hover:bg-[#10334C]"
+              className="p-1 rounded-md text-[#737373] hover:text-[#0B3D2B] hover:bg-[#F0F0ED] transition-colors dark:text-[#94A3B8] dark:hover:text-[#F7F7F5] dark:hover:bg-[#113A2B]"
               aria-label="Close modal"
             >
               <X size={18} />
@@ -189,8 +189,8 @@ export function Modal({
           <div
             className={
               footer
-                ? "flex items-center justify-end gap-2.5 px-5 py-3.5 bg-[#FAFAF8] border-t border-[#E8E8E5] shrink-0 dark:bg-[#061824] dark:border-[#174261]"
-                : "px-5 py-3.5 bg-[#FAFAF8] border-t border-[#E8E8E5] shrink-0 dark:bg-[#061824] dark:border-[#174261]"
+                ? "flex items-center justify-end gap-2.5 px-5 py-3.5 bg-[#FAFAF8] border-t border-[#E8E8E5] shrink-0 dark:bg-[#071713] dark:border-[#1B5039]"
+                : "px-5 py-3.5 bg-[#FAFAF8] border-t border-[#E8E8E5] shrink-0 dark:bg-[#071713] dark:border-[#1B5039]"
             }
           >
             {resolvedFooter}

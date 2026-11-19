@@ -1,4 +1,4 @@
-"""Demo data seeding package for the Vehicle Template application."""
+"""Demo data seeding package for the EV OS application."""
 
 from .runner import run_seed
 

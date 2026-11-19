@@ -257,8 +257,8 @@ REST_FRAMEWORK = {
 }
 
 SPECTACULAR_SETTINGS = {
-    'TITLE': 'Vehicle Template API',
-    'DESCRIPTION': 'API for the Vehicle Template dashboard — vehicles, stories, enquiries/leads, savings calculator and events with visitor management.',
+    'TITLE': 'EV OS API',
+    'DESCRIPTION': 'API for the EV OS dashboard — vehicles, stories, enquiries/leads, savings calculator and events with visitor management.',
     'VERSION': '1.0.0',
     'SERVE_INCLUDE_SCHEMA': False,
     'SWAGGER_UI_SETTINGS': {
@@ -341,5 +341,5 @@ RESERVATION_DEFAULT_DAYS = int(os.environ.get('RESERVATION_DEFAULT_DAYS', 7))
 ACTIVITY_LOG_RETENTION_DAYS = int(os.environ.get('ACTIVITY_LOG_RETENTION_DAYS', 60))
 
 # Company branding defaults
-COMPANY_NAME = os.environ.get('COMPANY_NAME', 'Vehicle Template')
+COMPANY_NAME = os.environ.get('COMPANY_NAME', 'EV OS')
 COMPANY_TAGLINE = os.environ.get('COMPANY_TAGLINE', 'Commercial Vehicle and Fleet Solutions')

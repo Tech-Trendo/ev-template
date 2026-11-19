@@ -200,7 +200,7 @@ function EmployeeList({ onNavigate }: { onNavigate: (path: string) => void }) {
         }
       />
 
-      <div className="rounded-xl border border-[#E8E8E5] bg-white p-3 dark:border-[#174261] dark:bg-[#061824]">
+      <div className="rounded-xl border border-[#E8E8E5] bg-white p-3 dark:border-[#1B5039] dark:bg-[#071713]">
         <div className="flex flex-col gap-3 lg:flex-row lg:items-center">
           <div className="min-w-0 flex-1">
             <label htmlFor="emp-search" className="sr-only">
@@ -220,7 +220,7 @@ function EmployeeList({ onNavigate }: { onNavigate: (path: string) => void }) {
                   <button
                     type="button"
                     aria-label="Clear search"
-                    className="rounded p-0.5 text-[#737373] transition-colors hover:text-[#04314A] dark:hover:text-[#F7F7F5]"
+                    className="rounded p-0.5 text-[#737373] transition-colors hover:text-[#0B3D2B] dark:hover:text-[#F7F7F5]"
                     onClick={() => {
                       setSearch("");
                       setPage(1);
@@ -278,13 +278,13 @@ function EmployeeList({ onNavigate }: { onNavigate: (path: string) => void }) {
           </div>
         </div>
 
-        <div className="mt-3 flex flex-wrap items-center justify-between gap-2 border-t border-[#E8E8E5] pt-3 dark:border-[#174261]">
+        <div className="mt-3 flex flex-wrap items-center justify-between gap-2 border-t border-[#E8E8E5] pt-3 dark:border-[#1B5039]">
           <p className="text-[12px] text-[#737373]">
             {loading ? (
               "Loading employees…"
             ) : (
               <>
-                <span className="font-medium text-[#04314A] dark:text-[#F7F7F5]">{totalCount}</span>
+                <span className="font-medium text-[#0B3D2B] dark:text-[#F7F7F5]">{totalCount}</span>
                 {totalCount === 1 ? " employee" : " employees"}
                 {hasFilters ? <span> matching {filterSummary.join(" · ")}</span> : null}
               </>
@@ -355,7 +355,7 @@ function EmployeeList({ onNavigate }: { onNavigate: (path: string) => void }) {
             sortable: true,
             width: "7rem",
             render: (row) => (
-              <span className="font-medium tabular-nums text-[#04314A] dark:text-[#F7F7F5]">{row.employee_code}</span>
+              <span className="font-medium tabular-nums text-[#0B3D2B] dark:text-[#F7F7F5]">{row.employee_code}</span>
             ),
           },
           {
@@ -366,12 +366,12 @@ function EmployeeList({ onNavigate }: { onNavigate: (path: string) => void }) {
               <div className="flex min-w-0 items-center gap-2.5">
                 <span
                   aria-hidden="true"
-                  className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-[#E6F7FD] text-[11px] font-semibold text-[#04314A]"
+                  className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-[#E8F8F0] text-[11px] font-semibold text-[#0B3D2B]"
                 >
                   {initials(row.full_name)}
                 </span>
                 <span className="min-w-0">
-                  <span className="block truncate font-medium text-[#04314A] dark:text-[#F7F7F5]">{row.full_name}</span>
+                  <span className="block truncate font-medium text-[#0B3D2B] dark:text-[#F7F7F5]">{row.full_name}</span>
                   {row.designation ? (
                     <span className="block truncate text-[11px] text-[#737373]">{row.designation}</span>
                   ) : null}
@@ -517,8 +517,8 @@ function EmployeeForm({ employeeId, onNavigate }: { employeeId?: string; onNavig
         }
       />
 
-      <section className="rounded-xl border border-[#E8E8E5] bg-white p-5 dark:border-[#174261] dark:bg-[#061824]">
-        <h2 className="mb-4 text-[13px] font-bold tracking-wide text-[#04314A] dark:text-[#F7F7F5]">
+      <section className="rounded-xl border border-[#E8E8E5] bg-white p-5 dark:border-[#1B5039] dark:bg-[#071713]">
+        <h2 className="mb-4 text-[13px] font-bold tracking-wide text-[#0B3D2B] dark:text-[#F7F7F5]">
           Personal details
         </h2>
         <div className="grid gap-4 md:grid-cols-2">
@@ -560,8 +560,8 @@ function EmployeeForm({ employeeId, onNavigate }: { employeeId?: string; onNavig
         </div>
       </section>
 
-      <section className="rounded-xl border border-[#E8E8E5] bg-white p-5 dark:border-[#174261] dark:bg-[#061824]">
-        <h2 className="mb-4 text-[13px] font-bold tracking-wide text-[#04314A] dark:text-[#F7F7F5]">
+      <section className="rounded-xl border border-[#E8E8E5] bg-white p-5 dark:border-[#1B5039] dark:bg-[#071713]">
+        <h2 className="mb-4 text-[13px] font-bold tracking-wide text-[#0B3D2B] dark:text-[#F7F7F5]">
           Contact & addresses
         </h2>
         <div className="grid gap-4 md:grid-cols-2">
@@ -593,8 +593,8 @@ function EmployeeForm({ employeeId, onNavigate }: { employeeId?: string; onNavig
         </div>
       </section>
 
-      <section className="rounded-xl border border-[#E8E8E5] bg-white p-5 dark:border-[#174261] dark:bg-[#061824]">
-        <h2 className="mb-4 text-[13px] font-bold tracking-wide text-[#04314A] dark:text-[#F7F7F5]">
+      <section className="rounded-xl border border-[#E8E8E5] bg-white p-5 dark:border-[#1B5039] dark:bg-[#071713]">
+        <h2 className="mb-4 text-[13px] font-bold tracking-wide text-[#0B3D2B] dark:text-[#F7F7F5]">
           Employment
         </h2>
         <div className="grid gap-4 md:grid-cols-2">
@@ -684,8 +684,8 @@ function EmployeeForm({ employeeId, onNavigate }: { employeeId?: string; onNavig
         </div>
       </section>
 
-      <section className="rounded-xl border border-[#E8E8E5] bg-white p-5 dark:border-[#174261] dark:bg-[#061824]">
-        <h2 className="mb-4 text-[13px] font-bold tracking-wide text-[#04314A] dark:text-[#F7F7F5]">
+      <section className="rounded-xl border border-[#E8E8E5] bg-white p-5 dark:border-[#1B5039] dark:bg-[#071713]">
+        <h2 className="mb-4 text-[13px] font-bold tracking-wide text-[#0B3D2B] dark:text-[#F7F7F5]">
           Emergency contact
         </h2>
         <div className="grid gap-4 md:grid-cols-2">
@@ -711,7 +711,7 @@ function EmployeeForm({ employeeId, onNavigate }: { employeeId?: string; onNavig
 
       <section className="space-y-3">
         <div>
-          <h2 className="text-[13px] font-bold tracking-wide text-[#04314A] dark:text-[#F7F7F5]">
+          <h2 className="text-[13px] font-bold tracking-wide text-[#0B3D2B] dark:text-[#F7F7F5]">
             Attached documents
           </h2>
           <p className="mt-1 text-[12px] text-[#737373]">
@@ -726,9 +726,9 @@ function EmployeeForm({ employeeId, onNavigate }: { employeeId?: string; onNavig
             canManage={canManageDocs}
           />
         ) : (
-          <div className="rounded-xl border border-dashed border-[#E8E8E5] bg-white px-5 py-8 text-center dark:border-[#174261] dark:bg-[#061824]">
-            <FileText size={22} className="mx-auto text-[#00AAEB]" />
-            <p className="mt-3 text-[13px] font-semibold text-[#04314A] dark:text-[#F7F7F5]">
+          <div className="rounded-xl border border-dashed border-[#E8E8E5] bg-white px-5 py-8 text-center dark:border-[#1B5039] dark:bg-[#071713]">
+            <FileText size={22} className="mx-auto text-[#10B981]" />
+            <p className="mt-3 text-[13px] font-semibold text-[#0B3D2B] dark:text-[#F7F7F5]">
               Save the employee to attach documents
             </p>
             <p className="mt-1 text-[12px] text-[#737373]">
@@ -745,7 +745,7 @@ function EmployeeForm({ employeeId, onNavigate }: { employeeId?: string; onNavig
         </p>
       ) : null}
 
-      <div className="fixed bottom-0 left-0 right-0 z-30 border-t border-[#E8E8E5] bg-white/95 px-4 py-3 backdrop-blur md:static md:border-0 md:bg-transparent md:p-0 md:backdrop-blur-none dark:border-[#174261] dark:bg-[#061824]/95">
+      <div className="fixed bottom-0 left-0 right-0 z-30 border-t border-[#E8E8E5] bg-white/95 px-4 py-3 backdrop-blur md:static md:border-0 md:bg-transparent md:p-0 md:backdrop-blur-none dark:border-[#1B5039] dark:bg-[#071713]/95">
         <div className="flex w-full flex-wrap items-center justify-end gap-2">
           <Button
             variant="secondary"
@@ -836,14 +836,14 @@ function EmployeeProfile({
         ))}
       </div>
       {tab === "overview" ? (
-        <div className="space-y-3 rounded-xl border border-[#E8E8E5] bg-white p-4 text-[13px] dark:border-[#174261] dark:bg-[#061824]">
+        <div className="space-y-3 rounded-xl border border-[#E8E8E5] bg-white p-4 text-[13px] dark:border-[#1B5039] dark:bg-[#071713]">
           <p>Joined <DateDisplay value={employee.joining_date} /></p>
           <p>Reports to {employee.reports_to_name || "nobody"}</p>
           <p>Type {employee.employment_type_name || "not set"}</p>
           <p>Branch {employee.dealer_name || "not set"}</p>
           <p>Phone {employee.phone || "—"} · {employee.email || "no email"}</p>
           {employee.basic_salary ? <p>Basic salary NPR {employee.basic_salary}</p> : null}
-          <div className="border-t border-[#E8E8E5] pt-3 dark:border-[#174261]">
+          <div className="border-t border-[#E8E8E5] pt-3 dark:border-[#1B5039]">
             <h3 className="font-semibold">Account</h3>
             {employee.username ? (
               <p className="mt-1">{employee.username} is {employee.user_is_active ? "active" : "inactive"}.</p>
@@ -865,7 +865,7 @@ function EmployeeProfile({
         <DocumentAttachmentWidget targetType="employee" targetId={employee.id} targetTitle={employee.full_name} canManage={hasPerm("hrm.manage_employee")} />
       ) : null}
       {tab === "activity" ? (
-        <ul className="divide-y divide-[#E8E8E5] rounded-xl border border-[#E8E8E5] dark:divide-[#174261] dark:border-[#174261]">
+        <ul className="divide-y divide-[#E8E8E5] rounded-xl border border-[#E8E8E5] dark:divide-[#1B5039] dark:border-[#1B5039]">
           {changes.map((row) => (
             <li key={row.id} className="px-4 py-3 text-[12px]">
               <span className="font-semibold">{row.field_name}</span> {row.old_value || "—"} → {row.new_value || "—"}
@@ -876,7 +876,7 @@ function EmployeeProfile({
         </ul>
       ) : null}
       {tab === "history" ? (
-        <ul className="divide-y divide-[#E8E8E5] rounded-xl border border-[#E8E8E5] dark:divide-[#174261] dark:border-[#174261]">
+        <ul className="divide-y divide-[#E8E8E5] rounded-xl border border-[#E8E8E5] dark:divide-[#1B5039] dark:border-[#1B5039]">
           {history.map((row) => (
             <li key={row.id} className="px-4 py-3 text-[12px]">
               <Badge status={row.status} /> <DateDisplay value={row.effective_date} /> {row.reason}

@@ -573,7 +573,7 @@ export default function LeadsPage({
               setInterestF("all");
               setDateFrom("");
             }}
-            className="text-[11px] font-semibold text-[#00AAEB] hover:text-[#04314A] transition-colors"
+            className="text-[11px] font-semibold text-[#10B981] hover:text-[#0B3D2B] transition-colors"
           >
             Clear
           </button>
@@ -584,7 +584,7 @@ export default function LeadsPage({
         <div className="overflow-x-auto">
           <table className="w-full text-left border-collapse min-w-[1080px]">
             <thead>
-              <tr className="border-b border-[#E8E8E5] bg-[#FAFAF8] text-[11px] font-semibold text-[#04314A] tracking-[0.02em]">
+              <tr className="border-b border-[#E8E8E5] bg-[#FAFAF8] text-[11px] font-semibold text-[#0B3D2B] tracking-[0.02em]">
                 {cols.map((h) => (
                   <th key={h} className="px-5 py-3">
                     {h}
@@ -666,7 +666,7 @@ export default function LeadsPage({
                             onChange={(e) =>
                               setStatus(l, e.target.value as LeadStatus)
                             }
-                            className="h-7 border border-[#E8E8E5] rounded-lg bg-white px-2 text-[11px] font-semibold text-[#04314A] focus:outline-none focus:border-[#00AAEB] cursor-pointer"
+                            className="h-7 border border-[#E8E8E5] rounded-lg bg-white px-2 text-[11px] font-semibold text-[#0B3D2B] focus:outline-none focus:border-[#10B981] cursor-pointer"
                             aria-label={`Change status for ${l.id}`}
                           >
                             {meta.leadStatuses

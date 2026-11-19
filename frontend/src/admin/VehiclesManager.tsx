@@ -89,14 +89,14 @@ function AccordionSection({
       >
         <div className="text-left">
           <div className="flex items-center gap-2">
-            <span className="text-[12px] font-bold tracking-[0.06em] uppercase text-[#04314A]">{title}</span>
+            <span className="text-[12px] font-bold tracking-[0.06em] uppercase text-[#0B3D2B]">{title}</span>
             {count !== undefined && (
               <span className="text-[11px] font-bold text-[#737373]">({count})</span>
             )}
           </div>
           {subtitle && <div className="text-[11px] text-[#737373] mt-0.5">{subtitle}</div>}
         </div>
-        <div className="w-7 h-7 border border-[#E8E8E5] rounded-lg flex items-center justify-center bg-white text-[#04314A]">
+        <div className="w-7 h-7 border border-[#E8E8E5] rounded-lg flex items-center justify-center bg-white text-[#0B3D2B]">
           {open ? <ChevronUp size={14} /> : <ChevronDown size={14} />}
         </div>
       </button>
@@ -155,7 +155,7 @@ function VehicleForm({
   const fileRef = useRef<HTMLInputElement>(null);
 
   const input =
-    "w-full border border-[#E8E8E5] rounded-xl bg-white px-3 py-2.5 text-[13px] font-medium text-[#04314A] placeholder:text-[#B0B0AA] focus:outline-none focus:border-[#00AAEB] transition-colors";
+    "w-full border border-[#E8E8E5] rounded-xl bg-white px-3 py-2.5 text-[13px] font-medium text-[#0B3D2B] placeholder:text-[#B0B0AA] focus:outline-none focus:border-[#10B981] transition-colors";
   const label = "text-[10px] font-semibold tracking-[0.12em] uppercase text-[#737373] block mb-1.5";
   const textarea = `${input} resize-none`;
 
@@ -466,7 +466,7 @@ function VehicleForm({
       >
         <div className="flex items-center justify-between px-7 py-5 bg-white border-b border-[#E8E8E5] flex-shrink-0">
           <div>
-            <h2 className="text-[20px] font-black tracking-tight text-[#04314A]">
+            <h2 className="text-[20px] font-black tracking-tight text-[#0B3D2B]">
               {initial ? `Edit ${initial.name}` : "New Vehicle"}
             </h2>
             {form.slug && <p className="text-[11px] text-[#737373] mt-0.5">Slug: /model/{form.slug}</p>}
@@ -506,8 +506,8 @@ function VehicleForm({
               </div>
               <div className="sm:col-span-2 flex items-center gap-3 pt-2">
                 <label className="flex items-center gap-3 cursor-pointer select-none">
-                  <input type="checkbox" checked={form.is_active} onChange={(e) => setForm({ ...form, is_active: e.target.checked })} className="w-4 h-4 accent-[#00AAEB]" />
-                  <span className="text-[12px] font-semibold text-[#04314A]">Active / visible on site</span>
+                  <input type="checkbox" checked={form.is_active} onChange={(e) => setForm({ ...form, is_active: e.target.checked })} className="w-4 h-4 accent-[#10B981]" />
+                  <span className="text-[12px] font-semibold text-[#0B3D2B]">Active / visible on site</span>
                 </label>
               </div>
             </div>
@@ -523,7 +523,7 @@ function VehicleForm({
               <div>
                 <label className={label}>…or Upload Image File</label>
                 <input ref={fileRef} type="file" accept="image/*" className={input} onChange={(e) => setFile(e.target.files?.[0] ?? null)} />
-                {file && <p className="text-[11px] text-[#00AAEB] mt-1">Selected: {file.name}</p>}
+                {file && <p className="text-[11px] text-[#10B981] mt-1">Selected: {file.name}</p>}
                 {!file && initial?.image_display && (
                   <div className="mt-3 flex items-center gap-3">
                     <img src={initial.image_display} alt="" className="w-20 h-14 object-cover rounded-lg border border-[#E8E8E5] bg-white" />
@@ -604,11 +604,11 @@ function VehicleForm({
                   <div className="flex gap-1 pb-1">
                     <button type="button" onClick={() => moveStat(i, -1)} className="w-8 h-8 border border-[#E8E8E5] rounded-lg flex items-center justify-center hover:bg-[#F7F7F5]"><ChevronUp size={13} /></button>
                     <button type="button" onClick={() => moveStat(i, 1)} className="w-8 h-8 border border-[#E8E8E5] rounded-lg flex items-center justify-center hover:bg-[#F7F7F5]"><ChevronDown size={13} /></button>
-                    <button type="button" onClick={() => removeStat(i)} className="w-8 h-8 border border-[#E8E8E5] rounded-lg flex items-center justify-center text-[#00AAEB] hover:bg-[#00AAEB] hover:text-white"><Trash size={13} /></button>
+                    <button type="button" onClick={() => removeStat(i)} className="w-8 h-8 border border-[#E8E8E5] rounded-lg flex items-center justify-center text-[#10B981] hover:bg-[#10B981] hover:text-white"><Trash size={13} /></button>
                   </div>
                 </div>
               ))}
-              <button type="button" onClick={addStat} className="w-full py-2.5 border border-dashed border-[#E8E8E5] rounded-xl text-[12px] font-semibold text-[#04314A] hover:border-[#00AAEB] hover:text-[#00AAEB] transition-colors flex items-center justify-center gap-2 bg-white">
+              <button type="button" onClick={addStat} className="w-full py-2.5 border border-dashed border-[#E8E8E5] rounded-xl text-[12px] font-semibold text-[#0B3D2B] hover:border-[#10B981] hover:text-[#10B981] transition-colors flex items-center justify-center gap-2 bg-white">
                 <Plus size={14} /> Add Statistic
               </button>
             </div>
@@ -625,7 +625,7 @@ function VehicleForm({
                     <div className="flex gap-1">
                       <button type="button" onClick={() => moveFeature(i, -1)} className="w-7 h-7 border border-[#E8E8E5] rounded-lg flex items-center justify-center hover:bg-[#F7F7F5]"><ChevronUp size={12} /></button>
                       <button type="button" onClick={() => moveFeature(i, 1)} className="w-7 h-7 border border-[#E8E8E5] rounded-lg flex items-center justify-center hover:bg-[#F7F7F5]"><ChevronDown size={12} /></button>
-                      <button type="button" onClick={() => removeFeature(i)} className="w-7 h-7 border border-[#E8E8E5] rounded-lg flex items-center justify-center text-[#00AAEB] hover:bg-[#00AAEB] hover:text-white"><Trash size={12} /></button>
+                      <button type="button" onClick={() => removeFeature(i)} className="w-7 h-7 border border-[#E8E8E5] rounded-lg flex items-center justify-center text-[#10B981] hover:bg-[#10B981] hover:text-white"><Trash size={12} /></button>
                     </div>
                   </div>
                   <div>
@@ -652,7 +652,7 @@ function VehicleForm({
                   </div>
                 </div>
               ))}
-              <button type="button" onClick={addFeature} className="w-full py-2.5 border border-dashed border-[#E8E8E5] rounded-xl text-[12px] font-semibold text-[#04314A] hover:border-[#00AAEB] hover:text-[#00AAEB] transition-colors flex items-center justify-center gap-2 bg-white">
+              <button type="button" onClick={addFeature} className="w-full py-2.5 border border-dashed border-[#E8E8E5] rounded-xl text-[12px] font-semibold text-[#0B3D2B] hover:border-[#10B981] hover:text-[#10B981] transition-colors flex items-center justify-center gap-2 bg-white">
                 <Plus size={14} /> Add Feature
               </button>
             </div>
@@ -669,7 +669,7 @@ function VehicleForm({
                     <div className="flex gap-1">
                       <button type="button" onClick={() => moveGallery(i, -1)} className="w-7 h-7 border border-[#E8E8E5] rounded-lg flex items-center justify-center hover:bg-[#F7F7F5]"><ChevronUp size={12} /></button>
                       <button type="button" onClick={() => moveGallery(i, 1)} className="w-7 h-7 border border-[#E8E8E5] rounded-lg flex items-center justify-center hover:bg-[#F7F7F5]"><ChevronDown size={12} /></button>
-                      <button type="button" onClick={() => removeGallery(i)} className="w-7 h-7 border border-[#E8E8E5] rounded-lg flex items-center justify-center text-[#00AAEB] hover:bg-[#00AAEB] hover:text-white"><Trash size={12} /></button>
+                      <button type="button" onClick={() => removeGallery(i)} className="w-7 h-7 border border-[#E8E8E5] rounded-lg flex items-center justify-center text-[#10B981] hover:bg-[#10B981] hover:text-white"><Trash size={12} /></button>
                     </div>
                   </div>
 
@@ -693,7 +693,7 @@ function VehicleForm({
                   </div>
                 </div>
               ))}
-              <button type="button" onClick={addGallery} className="w-full py-2.5 border border-dashed border-[#E8E8E5] rounded-xl text-[12px] font-semibold text-[#04314A] hover:border-[#00AAEB] hover:text-[#00AAEB] transition-colors flex items-center justify-center gap-2 bg-white">
+              <button type="button" onClick={addGallery} className="w-full py-2.5 border border-dashed border-[#E8E8E5] rounded-xl text-[12px] font-semibold text-[#0B3D2B] hover:border-[#10B981] hover:text-[#10B981] transition-colors flex items-center justify-center gap-2 bg-white">
                 <Plus size={14} /> Add Gallery Image
               </button>
             </div>
@@ -706,11 +706,11 @@ function VehicleForm({
               {form.specification_groups.map((grp, gi) => (
                 <div key={gi} className="bg-white border border-[#E8E8E5] rounded-xl p-4 space-y-3">
                   <div className="flex items-center justify-between">
-                    <span className="text-[11px] font-bold tracking-[0.08em] uppercase text-[#04314A]">Group {gi + 1}</span>
+                    <span className="text-[11px] font-bold tracking-[0.08em] uppercase text-[#0B3D2B]">Group {gi + 1}</span>
                     <div className="flex gap-1">
                       <button type="button" onClick={() => moveSpecGroup(gi, -1)} className="w-7 h-7 border border-[#E8E8E5] rounded-lg flex items-center justify-center hover:bg-[#F7F7F5]"><ChevronUp size={12} /></button>
                       <button type="button" onClick={() => moveSpecGroup(gi, 1)} className="w-7 h-7 border border-[#E8E8E5] rounded-lg flex items-center justify-center hover:bg-[#F7F7F5]"><ChevronDown size={12} /></button>
-                      <button type="button" onClick={() => removeSpecGroup(gi)} className="w-7 h-7 border border-[#E8E8E5] rounded-lg flex items-center justify-center text-[#00AAEB] hover:bg-[#00AAEB] hover:text-white"><Trash size={12} /></button>
+                      <button type="button" onClick={() => removeSpecGroup(gi)} className="w-7 h-7 border border-[#E8E8E5] rounded-lg flex items-center justify-center text-[#10B981] hover:bg-[#10B981] hover:text-white"><Trash size={12} /></button>
                     </div>
                   </div>
                   <div>
@@ -727,16 +727,16 @@ function VehicleForm({
                         <div className="flex-1">
                           <input className={input} value={s.value} onChange={(e) => updateSpec(gi, si, { value: e.target.value })} placeholder="5,995 mm" />
                         </div>
-                        <button type="button" onClick={() => removeSpec(gi, si)} className="w-8 h-8 border border-[#E8E8E5] rounded-lg flex items-center justify-center text-[#737373] hover:bg-[#00AAEB] hover:text-white shrink-0"><X size={13} /></button>
+                        <button type="button" onClick={() => removeSpec(gi, si)} className="w-8 h-8 border border-[#E8E8E5] rounded-lg flex items-center justify-center text-[#737373] hover:bg-[#10B981] hover:text-white shrink-0"><X size={13} /></button>
                       </div>
                     ))}
-                    <button type="button" onClick={() => addSpec(gi)} className="w-full py-2 border border-dashed border-[#E8E8E5] rounded-lg text-[11px] font-semibold text-[#737373] hover:border-[#00AAEB] hover:text-[#00AAEB] bg-[#F7F7F5] flex items-center justify-center gap-1">
+                    <button type="button" onClick={() => addSpec(gi)} className="w-full py-2 border border-dashed border-[#E8E8E5] rounded-lg text-[11px] font-semibold text-[#737373] hover:border-[#10B981] hover:text-[#10B981] bg-[#F7F7F5] flex items-center justify-center gap-1">
                       <Plus size={12} /> Add Specification
                     </button>
                   </div>
                 </div>
               ))}
-              <button type="button" onClick={addSpecGroup} className="w-full py-2.5 border border-dashed border-[#E8E8E5] rounded-xl text-[12px] font-semibold text-[#04314A] hover:border-[#00AAEB] hover:text-[#00AAEB] transition-colors flex items-center justify-center gap-2 bg-white">
+              <button type="button" onClick={addSpecGroup} className="w-full py-2.5 border border-dashed border-[#E8E8E5] rounded-xl text-[12px] font-semibold text-[#0B3D2B] hover:border-[#10B981] hover:text-[#10B981] transition-colors flex items-center justify-center gap-2 bg-white">
                 <Plus size={14} /> Add Specification Group
               </button>
             </div>
@@ -744,14 +744,14 @@ function VehicleForm({
         </div>
 
         {error && (
-          <div className="mx-5 mb-3 text-[12px] font-medium text-[#00AAEB] bg-[#00AAEB]/5 border-l-2 border-[#00AAEB] px-3 py-2 rounded-r-lg">{error}</div>
+          <div className="mx-5 mb-3 text-[12px] font-medium text-[#10B981] bg-[#10B981]/5 border-l-2 border-[#10B981] px-3 py-2 rounded-r-lg">{error}</div>
         )}
 
         <div className="flex gap-3 p-5 bg-white border-t border-[#E8E8E5] flex-shrink-0">
-          <button type="submit" disabled={busy} className="flex-1 py-3.5 rounded-full bg-[#04314A] text-white text-[13px] font-semibold tracking-[0.06em] hover:bg-[#00AAEB] transition-colors disabled:opacity-50">
+          <button type="submit" disabled={busy} className="flex-1 py-3.5 rounded-full bg-[#0B3D2B] text-white text-[13px] font-semibold tracking-[0.06em] hover:bg-[#10B981] transition-colors disabled:opacity-50">
             {busy ? "Saving…" : initial ? "Save Changes" : "Create Vehicle"}
           </button>
-          <button type="button" onClick={onClose} className="px-8 py-3.5 border border-[#E8E8E5] rounded-full text-[13px] font-semibold text-[#737373] hover:border-[#04314A] hover:text-[#04314A] transition-colors bg-white">
+          <button type="button" onClick={onClose} className="px-8 py-3.5 border border-[#E8E8E5] rounded-full text-[13px] font-semibold text-[#737373] hover:border-[#0B3D2B] hover:text-[#0B3D2B] transition-colors bg-white">
             Cancel
           </button>
         </div>
@@ -797,15 +797,15 @@ export default function VehiclesManager() {
     <div>
       <div className="flex items-end justify-between mb-8">
         <div>
-          <h1 className="text-[36px] font-black tracking-tight text-[#04314A]">Vehicles.</h1>
+          <h1 className="text-[36px] font-black tracking-tight text-[#0B3D2B]">Vehicles.</h1>
         </div>
-        <button onClick={() => setCreating(true)} className="flex items-center gap-2 px-5 py-3 rounded-full bg-[#04314A] text-white text-[12px] font-semibold tracking-[0.06em] uppercase hover:bg-[#00AAEB] transition-colors">
+        <button onClick={() => setCreating(true)} className="flex items-center gap-2 px-5 py-3 rounded-full bg-[#0B3D2B] text-white text-[12px] font-semibold tracking-[0.06em] uppercase hover:bg-[#10B981] transition-colors">
           <Plus size={14} /> Add Vehicle
         </button>
       </div>
 
       {error && (
-        <p className="mb-4 text-[13px] text-[#00AAEB] bg-[#00AAEB]/5 border-l-2 border-[#00AAEB] px-3 py-2">{error}</p>
+        <p className="mb-4 text-[13px] text-[#10B981] bg-[#10B981]/5 border-l-2 border-[#10B981] px-3 py-2">{error}</p>
       )}
 
       <div className="bg-white border border-[#E8E8E5] rounded-xl overflow-x-auto">
@@ -833,14 +833,14 @@ export default function VehiclesManager() {
                         <div className="w-12 h-9 bg-[#F7F7F5] flex items-center justify-center rounded-lg border border-[#E8E8E5]"><Truck size={14} className="text-[#B0B0AA]" /></div>
                       )}
                       <div>
-                        <div className="text-[13px] font-bold text-[#04314A]">{v.name}</div>
+                        <div className="text-[13px] font-bold text-[#0B3D2B]">{v.name}</div>
                         <div className="flex items-center gap-1.5">
-                          {v.tag && <div className="text-[10px] font-semibold tracking-[0.1em] uppercase text-[#00AAEB]">{v.tag}</div>}
+                          {v.tag && <div className="text-[10px] font-semibold tracking-[0.1em] uppercase text-[#10B981]">{v.tag}</div>}
                           <span className="text-[10px] text-[#B0B0AA]">/{v.slug}</span>
                         </div>
                         {v.stock_summary && v.stock_summary.total_units > 0 && (
                           <div className="text-[11px] text-[#737373] mt-1 font-medium">
-                            <span className="text-[#04314A] font-semibold">{v.stock_summary.in_stock} in stock</span>
+                            <span className="text-[#0B3D2B] font-semibold">{v.stock_summary.in_stock} in stock</span>
                             {v.stock_summary.sold > 0 && <span> · {v.stock_summary.sold} sold</span>}
                             {v.stock_summary.in_servicing > 0 && <span> · {v.stock_summary.in_servicing} in service</span>}
                           </div>
@@ -849,11 +849,11 @@ export default function VehiclesManager() {
                     </div>
                   </td>
                   <td className="px-5 py-3.5 text-[12px] text-[#737373]">{v.category}</td>
-                  <td className="px-5 py-3.5 text-[12px] font-medium text-[#04314A]">{v.payload}</td>
-                  <td className="px-5 py-3.5 text-[12px] font-medium text-[#04314A]">{v.range_km}</td>
+                  <td className="px-5 py-3.5 text-[12px] font-medium text-[#0B3D2B]">{v.payload}</td>
+                  <td className="px-5 py-3.5 text-[12px] font-medium text-[#0B3D2B]">{v.range_km}</td>
                   <td className="px-5 py-3.5 text-[12px] text-[#737373]">{v.sort_order}</td>
                   <td className="px-5 py-3.5">
-                    <span className={`text-[11px] font-semibold uppercase tracking-[0.04em] ${v.is_active ? "text-[#04314A]" : "text-[#737373]"}`}>
+                    <span className={`text-[11px] font-semibold uppercase tracking-[0.04em] ${v.is_active ? "text-[#0B3D2B]" : "text-[#737373]"}`}>
                       {v.is_active ? "Active" : "Hidden"}
                     </span>
                   </td>
@@ -867,13 +867,13 @@ export default function VehiclesManager() {
                           e.preventDefault();
                           window.open(`/model/${v.slug}`, "_blank");
                         }}
-                        className="w-8 h-8 border border-[#E8E8E5] rounded-xl flex items-center justify-center text-[#00AAEB] hover:bg-[#00AAEB] hover:text-white transition-colors"
+                        className="w-8 h-8 border border-[#E8E8E5] rounded-xl flex items-center justify-center text-[#10B981] hover:bg-[#10B981] hover:text-white transition-colors"
                         title="View"
                       >
                         <Eye size={13} />
                       </a>
-                      <button onClick={() => setEditing(v)} className="w-8 h-8 border border-[#E8E8E5] rounded-xl flex items-center justify-center text-[#04314A] hover:bg-[#04314A] hover:text-white transition-colors"><Pencil size={13} /></button>
-                      <button onClick={() => remove(v)} className="w-8 h-8 border border-[#E8E8E5] rounded-xl flex items-center justify-center text-[#00AAEB] hover:bg-[#00AAEB] hover:text-white transition-colors"><Trash2 size={13} /></button>
+                      <button onClick={() => setEditing(v)} className="w-8 h-8 border border-[#E8E8E5] rounded-xl flex items-center justify-center text-[#0B3D2B] hover:bg-[#0B3D2B] hover:text-white transition-colors"><Pencil size={13} /></button>
+                      <button onClick={() => remove(v)} className="w-8 h-8 border border-[#E8E8E5] rounded-xl flex items-center justify-center text-[#10B981] hover:bg-[#10B981] hover:text-white transition-colors"><Trash2 size={13} /></button>
                     </div>
                   </td>
                 </tr>

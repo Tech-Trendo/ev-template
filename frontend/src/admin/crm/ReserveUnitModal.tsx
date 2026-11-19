@@ -60,7 +60,7 @@ export function ReserveUnitModal({
             <span className="block text-[10px] font-bold uppercase tracking-[0.1em] text-[#737373] mb-1">
               Proposed Unit
             </span>
-            <div className="text-[13px] font-bold text-[#04314A]">
+            <div className="text-[13px] font-bold text-[#0B3D2B]">
               VIN: {presetUnitVin}
             </div>
           </div>
@@ -83,7 +83,7 @@ export function ReserveUnitModal({
             <label className="block text-[11px] font-bold uppercase tracking-[0.08em] text-[#737373] mb-1">
               Reserved For
             </label>
-            <div className="px-3.5 py-2.5 bg-[#FAFAF8] border border-[#E8E8E5] rounded-xl text-[13px] font-semibold text-[#04314A]">
+            <div className="px-3.5 py-2.5 bg-[#FAFAF8] border border-[#E8E8E5] rounded-xl text-[13px] font-semibold text-[#0B3D2B]">
               {customerName ? `Customer: ${customerName}` : `Lead: ${leadName || leadId}`}
             </div>
           </div>
@@ -103,12 +103,12 @@ export function ReserveUnitModal({
           Default reservation length can vary; check the expiry date shown. Expired reservations release the unit back to ready inventory.
         </p>
 
-        {error && <p className="text-[12px] text-[#00AAEB]">{error}</p>}
+        {error && <p className="text-[12px] text-[#10B981]">{error}</p>}
 
         <div data-modal-actions className="mt-6 flex justify-end gap-3 pt-3 border-t border-[#F0F0ED]">
           <button
             onClick={onClose}
-            className="px-4 py-2.5 text-[12px] font-semibold uppercase tracking-[0.04em] text-[#737373] hover:text-[#04314A] transition-colors"
+            className="px-4 py-2.5 text-[12px] font-semibold uppercase tracking-[0.04em] text-[#737373] hover:text-[#0B3D2B] transition-colors"
           >
             Cancel
           </button>

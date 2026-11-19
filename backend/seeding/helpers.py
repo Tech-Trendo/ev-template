@@ -10,9 +10,9 @@ from django.apps import apps
 from django.db import transaction
 from django.utils import timezone
 
-COMPANY = "Vehicle Template"
+COMPANY = "EV OS"
 BRAND = "VT"
-DOMAIN = "vehicletemplate.example.com"
+DOMAIN = "evos.example.com"
 DEFAULT_PASSWORD = "evtemplate"
 
 CENTRAL_DEALER = "VT Central Fleet & Service Hub"
@@ -81,21 +81,21 @@ def canonical_dealer_map() -> dict[str, object]:
         CENTRAL_DEALER: dict(
             contact_person="Aarav Sharma",
             phone=phone(1),
-            email="central@vehicletemplate.example.com",
+            email="central@evos.example.com",
             address="Fleet Avenue, Ward 10",
             district="Kathmandu",
         ),
         WEST_DEALER: dict(
             contact_person="Nisha Karki",
             phone=phone(2),
-            email="west@vehicletemplate.example.com",
+            email="west@evos.example.com",
             address="Industrial Corridor, Ward 4",
             district="Lalitpur",
         ),
         NORTH_DEALER: dict(
             contact_person="Bikash Tamang",
             phone=phone(3),
-            email="north@vehicletemplate.example.com",
+            email="north@evos.example.com",
             address="Highway Service Park, Ward 7",
             district="Chitwan",
         ),
@@ -251,7 +251,7 @@ def svg_placeholder(title: str, subtitle: str, accent: str = "#16a34a") -> bytes
   <circle cx="850" cy="615" r="58" fill="#0f172a" stroke="#ffffff" stroke-width="16"/>
   <text x="90" y="190" fill="#ffffff" font-family="Segoe UI, Arial, sans-serif" font-size="34" opacity="0.75">{safe_subtitle}</text>
   <text x="90" y="300" fill="#ffffff" font-family="Segoe UI, Arial, sans-serif" font-size="82" font-weight="700">{safe_title}</text>
-  <text x="90" y="355" fill="#ffffff" font-family="Segoe UI, Arial, sans-serif" font-size="26" opacity="0.7">Vehicle Template · Electric Commercial Mobility</text>
+  <text x="90" y="355" fill="#ffffff" font-family="Segoe UI, Arial, sans-serif" font-size="26" opacity="0.7">EV OS · Electric Commercial Mobility</text>
 </svg>""".encode("utf-8")
 
 

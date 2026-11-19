@@ -96,7 +96,7 @@ export default function QuotationDetail({
 
   const totals = crm.quotationTotals({ ...quote.item, accessories: 0 });
 
-  const salespersonName = quote.salesperson || "VehicleTemplate";
+  const salespersonName = quote.salesperson || "EVOS";
   const matchedUser = users.find((u) => {
     const sp = salespersonName.toLowerCase().trim();
     if (!sp) return false;
@@ -120,12 +120,12 @@ export default function QuotationDetail({
   const salespersonEmail =
     quote.salespersonEmail ||
     matchedUser?.email ||
-    "info@vehicletemplate.example.com";
+    "info@evos.example.com";
 
   const line = (label: string, value: number, bold?: boolean, negative?: boolean) => (
-    <div className={`flex items-center justify-between py-1 ${bold ? "border-t border-[#04314A] mt-1.5 pt-2" : ""}`}>
-      <span className={`text-[11px] ${bold ? "font-black uppercase tracking-[0.08em] text-[#04314A]" : "text-[#737373]"}`}>{label}</span>
-      <span className={`text-[12px] ${bold ? "text-[16px] font-black" : "font-semibold"} ${negative ? "text-[#00AAEB]" : "text-[#04314A]"}`}>
+    <div className={`flex items-center justify-between py-1 ${bold ? "border-t border-[#0B3D2B] mt-1.5 pt-2" : ""}`}>
+      <span className={`text-[11px] ${bold ? "font-black uppercase tracking-[0.08em] text-[#0B3D2B]" : "text-[#737373]"}`}>{label}</span>
+      <span className={`text-[12px] ${bold ? "text-[16px] font-black" : "font-semibold"} ${negative ? "text-[#10B981]" : "text-[#0B3D2B]"}`}>
         {negative ? "-" : ""}
         {formatNpr(Math.abs(value))}
       </span>
@@ -220,7 +220,7 @@ export default function QuotationDetail({
           {revisions.find((r) => r.isLatest) && (
             <button
               onClick={() => onNavigate(`crm-quotations/${revisions.find((r) => r.isLatest)!.id}`)}
-              className="px-3 py-1.5 bg-[#04314A] text-white text-[12px] font-semibold rounded hover:bg-[#064264] transition-colors"
+              className="px-3 py-1.5 bg-[#0B3D2B] text-white text-[12px] font-semibold rounded hover:bg-[#064264] transition-colors"
             >
               View Latest
             </button>
@@ -233,10 +233,10 @@ export default function QuotationDetail({
         {/* Document sheet */}
         <div className="quotation-sheet relative bg-white border border-[#E8E8E5] rounded-xl w-full max-w-[760px] shadow-sm overflow-hidden flex flex-col justify-between print:fixed print:inset-0 print:border-none print:shadow-none print:rounded-none print:max-w-none print:mx-0 print:w-full print:h-full print:min-h-full print:max-h-full print:m-0 print:p-0 print:overflow-hidden print:z-[999999]">
           {/* Generic letterhead header — replace with your own branding */}
-          <div className="w-full relative z-10 bg-white flex-shrink-0 border-b-[3px] border-[#04314A] px-6 py-3 flex items-center justify-between">
+          <div className="w-full relative z-10 bg-white flex-shrink-0 border-b-[3px] border-[#0B3D2B] px-6 py-3 flex items-center justify-between">
             <div className="flex items-center gap-2">
-              <span className="flex h-8 w-8 items-center justify-center rounded bg-[#00AAEB] text-[12px] font-black text-white">VT</span>
-              <span className="text-[13px] font-black tracking-tight text-[#04314A]">VEHICLE TEMPLATE</span>
+              <span className="flex h-8 w-8 items-center justify-center rounded bg-[#10B981] text-[12px] font-black text-white">EV</span>
+              <span className="text-[13px] font-black tracking-tight text-[#0B3D2B]">EV OS</span>
             </div>
             <div className="text-right text-[8.5px] leading-tight text-[#4B5563]">
               <div>Commercial Vehicle Sales &amp; Fleet Solutions</div>
@@ -246,8 +246,8 @@ export default function QuotationDetail({
 
           {/* Watermark in background */}
           <div className="absolute inset-0 flex items-center justify-center pointer-events-none select-none z-0 overflow-hidden">
-            <span className="text-[72px] font-black tracking-[0.2em] text-[#04314A] opacity-[0.05]">
-              VEHICLE TEMPLATE
+            <span className="text-[72px] font-black tracking-[0.2em] text-[#0B3D2B] opacity-[0.05]">
+              EV OS
             </span>
           </div>
 
@@ -262,7 +262,7 @@ export default function QuotationDetail({
               {/* Quotation Meta Bar */}
               <div className="flex items-start justify-between pb-2 mb-3 border-b border-[#D1D5DB]">
                 <div>
-                  <span className="block text-[15px] sm:text-[17px] font-black text-[#04314A] tracking-tight">
+                  <span className="block text-[15px] sm:text-[17px] font-black text-[#0B3D2B] tracking-tight">
                     {quotationLabel(quote)}
                   </span>
                   <div className="flex items-center gap-2 mt-1 no-print">
@@ -273,7 +273,7 @@ export default function QuotationDetail({
                       </span>
                     )}
                     {quote.convertedToOrder && (
-                      <span className="px-2.5 py-0.5 text-[10px] font-bold uppercase tracking-[0.08em] bg-[#04314A] text-white rounded">
+                      <span className="px-2.5 py-0.5 text-[10px] font-bold uppercase tracking-[0.08em] bg-[#0B3D2B] text-white rounded">
                         Sold
                       </span>
                     )}
@@ -340,7 +340,7 @@ export default function QuotationDetail({
                       <span className="text-[#6B7280]">Mobile:</span>{" "}
                       <a
                         href={`tel:${salespersonPhone.replace(/\s+/g, "")}`}
-                        className="hover:text-[#00AAEB] text-[#111827] transition-colors"
+                        className="hover:text-[#10B981] text-[#111827] transition-colors"
                       >
                         {salespersonPhone}
                       </a>
@@ -351,7 +351,7 @@ export default function QuotationDetail({
                       <span className="text-[#6B7280]">Email:</span>{" "}
                       <a
                         href={`mailto:${salespersonEmail}`}
-                        className="hover:text-[#00AAEB] text-[#111827] transition-colors"
+                        className="hover:text-[#10B981] text-[#111827] transition-colors"
                       >
                         {salespersonEmail}
                       </a>
@@ -422,7 +422,7 @@ export default function QuotationDetail({
               {/* Specifications & Terms Grid */}
               <div className="grid grid-cols-2 gap-6 my-2 sm:my-3 text-[10.5px] sm:text-[11px] leading-tight">
                 <div>
-                  <h3 className="text-[11px] sm:text-[11.5px] font-extrabold uppercase text-[#04314A] tracking-wider mb-2">
+                  <h3 className="text-[11px] sm:text-[11.5px] font-extrabold uppercase text-[#0B3D2B] tracking-wider mb-2">
                     VEHICLE&apos;S SPECIFICATIONS:
                   </h3>
                   <ul className="space-y-1 text-[#1F2937]">
@@ -442,7 +442,7 @@ export default function QuotationDetail({
                 </div>
 
                 <div>
-                  <h3 className="text-[11px] sm:text-[11.5px] font-extrabold uppercase text-[#04314A] tracking-wider mb-2">
+                  <h3 className="text-[11px] sm:text-[11.5px] font-extrabold uppercase text-[#0B3D2B] tracking-wider mb-2">
                     TERMS &amp; CONDITION:
                   </h3>
                   <ul className="space-y-1 text-[#1F2937]">
@@ -471,7 +471,7 @@ export default function QuotationDetail({
                   ACCOUNT DETAILS:
                 </div>
                 <div className="text-[10px] sm:text-[10.5px] font-bold text-[#111827] leading-tight space-y-0.5">
-                  <div>VEHICLE TEMPLATE</div>
+                  <div>EV OS</div>
                   <div>{quote.bankName || "YOUR BANK NAME"}</div>
                   <div>{quote.bankAddress || "YOUR BRANCH"}</div>
                   <div>A/C NO: 000000000000</div>
@@ -485,7 +485,7 @@ export default function QuotationDetail({
               <div className="flex flex-col items-end pt-6">
                 <div className="w-[170px] border-t border-[#111827] pt-1 text-center">
                   <div className="text-[11px] font-bold text-[#111827]">Authorized Signature</div>
-                  <div className="text-[9px] text-[#4B5563]">Vehicle Template</div>
+                  <div className="text-[9px] text-[#4B5563]">EV OS</div>
                 </div>
               </div>
             </div>
@@ -493,7 +493,7 @@ export default function QuotationDetail({
 
           {/* Generic letterhead footer */}
           <div className="w-full relative z-10 bg-white mt-auto flex-shrink-0 border-t border-[#D1D5DB] px-6 py-2 flex items-center justify-between text-[8px] text-[#6B7280]">
-            <span>Vehicle Template · Commercial Vehicle Sales &amp; Fleet Solutions</span>
+            <span>EV OS · Commercial Vehicle Sales &amp; Fleet Solutions</span>
             <span>info@yourcompany.com · +1 555 0100</span>
           </div>
         </div>
@@ -501,7 +501,7 @@ export default function QuotationDetail({
         {/* Right sidebar */}
         <aside className="no-print space-y-4 w-full xl:w-[280px] lg:w-[260px] flex-shrink-0 lg:sticky lg:top-4">
           <div className="bg-white border border-[#E8E8E5] rounded-xl p-5 shadow-sm">
-            <h3 className="text-[12px] font-black tracking-[0.12em] uppercase text-[#04314A] mb-3">
+            <h3 className="text-[12px] font-black tracking-[0.12em] uppercase text-[#0B3D2B] mb-3">
               Connected Records
             </h3>
             <div className="space-y-3">
@@ -510,7 +510,7 @@ export default function QuotationDetail({
                 {quote.customerId ? (
                   <EntityLink type="customer" id={quote.customerId} label={quote.customerName} onNavigate={onNavigate} />
                 ) : (
-                  <span className="text-[13px] font-bold text-[#04314A]">{quote.customerName}</span>
+                  <span className="text-[13px] font-bold text-[#0B3D2B]">{quote.customerName}</span>
                 )}
               </div>
               <div>
@@ -523,7 +523,7 @@ export default function QuotationDetail({
               </div>
               <div>
                 <span className="block text-[10px] font-semibold uppercase tracking-[0.1em] text-[#737373] mb-0.5">Conversion Status</span>
-                <span className="text-[13px] font-bold text-[#04314A]">
+                <span className="text-[13px] font-bold text-[#0B3D2B]">
                   {quote.convertedToOrder ? "Converted to Sale" : "Pending Order"}
                 </span>
               </div>
@@ -654,7 +654,7 @@ export default function QuotationDetail({
         <div className="mt-8 bg-white border border-[#E8E8E5] rounded-xl w-full p-6 no-print">
           <div className="flex items-center justify-between mb-4 border-b border-[#E8E8E5] pb-3">
             <div>
-              <h3 className="text-[14px] font-bold text-[#04314A]">Revision History</h3>
+              <h3 className="text-[14px] font-bold text-[#0B3D2B]">Revision History</h3>
               <p className="text-[12px] text-[#737373]">All revisions in this quotation sequence.</p>
             </div>
             <span className="text-[11px] font-semibold text-[#737373] bg-[#F4F4F2] px-2.5 py-1 rounded">
@@ -672,12 +672,12 @@ export default function QuotationDetail({
                   }`}
                 >
                   <div className="flex items-center gap-3">
-                    <span className="text-[13px] font-bold text-[#04314A]">
+                    <span className="text-[13px] font-bold text-[#0B3D2B]">
                       {quotationLabel(rev)}
                     </span>
                     <Badge status={rev.status} />
                     {rev.isLatest && (
-                      <span className="px-2 py-0.5 text-[10px] font-bold uppercase tracking-[0.08em] bg-[#04314A] text-white rounded">
+                      <span className="px-2 py-0.5 text-[10px] font-bold uppercase tracking-[0.08em] bg-[#0B3D2B] text-white rounded">
                         Latest
                       </span>
                     )}
@@ -691,7 +691,7 @@ export default function QuotationDetail({
                     {!isCurrent && (
                       <button
                         onClick={() => onNavigate(`crm-quotations/${rev.id}`)}
-                        className="text-[12px] font-semibold text-[#00AAEB] hover:underline"
+                        className="text-[12px] font-semibold text-[#10B981] hover:underline"
                       >
                         View
                       </button>
@@ -763,11 +763,11 @@ export default function QuotationDetail({
       {editChoiceOpen && (
         <Modal title="Edit quotation" onClose={() => setEditChoiceOpen(false)}>
           <div className="space-y-4">
-            <p className="text-[13px] text-[#04314A]">Do you want to edit quotation or revise quotation?</p>
+            <p className="text-[13px] text-[#0B3D2B]">Do you want to edit quotation or revise quotation?</p>
             <div data-modal-actions className="flex flex-wrap gap-3 justify-end pt-3 border-t border-[#E8E8E5]">
               <button
                 onClick={() => setEditChoiceOpen(false)}
-                className="px-5 py-2.5 border border-[#E8E8E5] rounded-full text-[12px] font-semibold text-[#737373] hover:text-[#04314A]"
+                className="px-5 py-2.5 border border-[#E8E8E5] rounded-full text-[12px] font-semibold text-[#737373] hover:text-[#0B3D2B]"
               >
                 Cancel
               </button>
@@ -776,7 +776,7 @@ export default function QuotationDetail({
                   setEditChoiceOpen(false);
                   setEditing(true);
                 }}
-                className="px-5 py-2.5 rounded-full border border-[#04314A] text-[#04314A] text-[12px] font-bold hover:bg-[#04314A] hover:text-white"
+                className="px-5 py-2.5 rounded-full border border-[#0B3D2B] text-[#0B3D2B] text-[12px] font-bold hover:bg-[#0B3D2B] hover:text-white"
               >
                 Edit quotation
               </button>
@@ -784,7 +784,7 @@ export default function QuotationDetail({
                 <button
                   onClick={startRevision}
                   disabled={revising}
-                  className="px-5 py-2.5 rounded-full bg-[#04314A] text-white text-[12px] font-bold hover:bg-[#00AAEB] disabled:opacity-50"
+                  className="px-5 py-2.5 rounded-full bg-[#0B3D2B] text-white text-[12px] font-bold hover:bg-[#10B981] disabled:opacity-50"
                 >
                   {revising ? "Revising..." : "Revise quotation"}
                 </button>
@@ -797,18 +797,18 @@ export default function QuotationDetail({
       {reviseConfirmOpen && (
         <Modal title="Revise quotation" onClose={() => setReviseConfirmOpen(false)}>
           <div className="space-y-4">
-            <p className="text-[13px] text-[#04314A]">Do you really want to revise quotation?</p>
+            <p className="text-[13px] text-[#0B3D2B]">Do you really want to revise quotation?</p>
             <div data-modal-actions className="flex gap-3 justify-end pt-3 border-t border-[#E8E8E5]">
               <button
                 onClick={() => setReviseConfirmOpen(false)}
-                className="px-5 py-2.5 border border-[#E8E8E5] rounded-full text-[12px] font-semibold text-[#737373] hover:text-[#04314A]"
+                className="px-5 py-2.5 border border-[#E8E8E5] rounded-full text-[12px] font-semibold text-[#737373] hover:text-[#0B3D2B]"
               >
                 Cancel
               </button>
               <button
                 onClick={startRevision}
                 disabled={revising}
-                className="px-5 py-2.5 rounded-full bg-[#04314A] text-white text-[12px] font-bold hover:bg-[#00AAEB] disabled:opacity-50"
+                className="px-5 py-2.5 rounded-full bg-[#0B3D2B] text-white text-[12px] font-bold hover:bg-[#10B981] disabled:opacity-50"
               >
                 {revising ? "Revising..." : "Revise quotation"}
               </button>
@@ -826,7 +826,7 @@ export default function QuotationDetail({
             <div data-modal-actions className="flex gap-3 justify-end pt-3 border-t border-[#E8E8E5]">
               <button
                 onClick={() => setRejectModal(false)}
-                className="px-5 py-2.5 border border-[#E8E8E5] rounded-full text-[12px] font-semibold text-[#737373] hover:text-[#04314A]"
+                className="px-5 py-2.5 border border-[#E8E8E5] rounded-full text-[12px] font-semibold text-[#737373] hover:text-[#0B3D2B]"
               >
                 Cancel
               </button>
@@ -948,7 +948,7 @@ function RevisionComparison({
     <div className="mt-6 border-t border-[#E8E8E5] pt-4">
       <div className="flex flex-wrap items-center justify-between gap-3 mb-3">
         <div>
-          <h4 className="text-[13px] font-bold text-[#04314A]">Revision Comparison</h4>
+          <h4 className="text-[13px] font-bold text-[#0B3D2B]">Revision Comparison</h4>
           <p className="text-[11px] text-[#737373]">
             Comparing {quotationLabel(currentQuote)} with prior sequence.
           </p>
@@ -958,7 +958,7 @@ function RevisionComparison({
           <select
             value={compareId}
             onChange={(e) => setCompareId(e.target.value)}
-            className="px-2.5 py-1 text-[12px] bg-[#FAFAF8] border border-[#E8E8E5] rounded font-medium text-[#04314A]"
+            className="px-2.5 py-1 text-[12px] bg-[#FAFAF8] border border-[#E8E8E5] rounded font-medium text-[#0B3D2B]"
           >
             {sorted
               .filter((r) => r.id !== currentQuote.id)
@@ -987,25 +987,25 @@ function RevisionComparison({
                 key={row.label}
                 className={row.changed ? "bg-[#FAFAF8]" : "hover:bg-[#FAFAF8]/50"}
               >
-                <td className="py-2.5 px-3 font-medium text-[#04314A] flex items-center gap-2">
+                <td className="py-2.5 px-3 font-medium text-[#0B3D2B] flex items-center gap-2">
                   {row.label}
                   {row.changed && (
-                    <span className="px-1.5 py-0.5 text-[9px] font-bold uppercase tracking-wider bg-[#04314A] text-white rounded">
+                    <span className="px-1.5 py-0.5 text-[9px] font-bold uppercase tracking-wider bg-[#0B3D2B] text-white rounded">
                       Changed
                     </span>
                   )}
                 </td>
                 <td className="py-2.5 px-3 text-[#737373]">{row.prior}</td>
-                <td className={`py-2.5 px-3 ${row.changed ? "font-semibold text-[#04314A]" : "text-[#737373]"}`}>
+                <td className={`py-2.5 px-3 ${row.changed ? "font-semibold text-[#0B3D2B]" : "text-[#737373]"}`}>
                   {row.current}
                 </td>
                 <td className="py-2.5 px-3 text-[11px]">
                   {row.diff ? (
-                    <span className={row.changed ? "text-[#04314A] font-semibold" : "text-[#737373]"}>
+                    <span className={row.changed ? "text-[#0B3D2B] font-semibold" : "text-[#737373]"}>
                       {row.diff.startsWith("-") ? row.diff : `+${row.diff}`}
                     </span>
                   ) : (
-                    row.changed ? <span className="text-[#04314A]">Updated</span> : <span className="text-[#A3A3A3]">-</span>
+                    row.changed ? <span className="text-[#0B3D2B]">Updated</span> : <span className="text-[#A3A3A3]">-</span>
                   )}
                 </td>
               </tr>

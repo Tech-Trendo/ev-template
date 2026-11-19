@@ -50,9 +50,9 @@ export function CmsLivePreview({
       className="fixed inset-0 z-50 bg-black/70 backdrop-blur-xs flex flex-col p-3 sm:p-6 animate-in fade-in duration-200"
     >
       {/* Top Controller Bar */}
-      <div className="w-full bg-[#04314A] text-white rounded-2xl px-5 py-3.5 mb-4 flex items-center justify-between shadow-xl">
+      <div className="w-full bg-[#0B3D2B] text-white rounded-2xl px-5 py-3.5 mb-4 flex items-center justify-between shadow-xl">
         <div className="flex items-center gap-3">
-          <div className="w-2.5 h-2.5 rounded-full bg-[#00AAEB] animate-pulse" />
+          <div className="w-2.5 h-2.5 rounded-full bg-[#10B981] animate-pulse" />
           <span className="text-[13px] font-black tracking-[0.06em] uppercase">
             Live Preview: {pageTitle}
           </span>
@@ -67,7 +67,7 @@ export function CmsLivePreview({
             type="button"
             onClick={() => setDevice("desktop")}
             className={`flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-[11px] font-bold transition-all ${
-              device === "desktop" ? "bg-[#00AAEB] text-white shadow-xs" : "text-white/60 hover:text-white"
+              device === "desktop" ? "bg-[#10B981] text-white shadow-xs" : "text-white/60 hover:text-white"
             }`}
           >
             <Monitor size={14} />
@@ -77,7 +77,7 @@ export function CmsLivePreview({
             type="button"
             onClick={() => setDevice("tablet")}
             className={`flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-[11px] font-bold transition-all ${
-              device === "tablet" ? "bg-[#00AAEB] text-white shadow-xs" : "text-white/60 hover:text-white"
+              device === "tablet" ? "bg-[#10B981] text-white shadow-xs" : "text-white/60 hover:text-white"
             }`}
           >
             <Tablet size={14} />
@@ -87,7 +87,7 @@ export function CmsLivePreview({
             type="button"
             onClick={() => setDevice("mobile")}
             className={`flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-[11px] font-bold transition-all ${
-              device === "mobile" ? "bg-[#00AAEB] text-white shadow-xs" : "text-white/60 hover:text-white"
+              device === "mobile" ? "bg-[#10B981] text-white shadow-xs" : "text-white/60 hover:text-white"
             }`}
           >
             <Smartphone size={14} />

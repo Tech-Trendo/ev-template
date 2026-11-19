@@ -37,11 +37,11 @@ function PipelineBoard({
             onDragOver={(e) => { e.preventDefault(); setOverStage(stage as Stage); }}
             onDragLeave={() => setOverStage((s) => (s === stage ? null : s))}
             onDrop={() => { if (dragId) onMove(dragId, stage as Stage); setDragId(null); setOverStage(null); }}
-            className={`flex-shrink-0 w-[270px] bg-white border ${overStage === stage ? "border-[#00AAEB]" : "border-[#E8E8E5]"}`}
+            className={`flex-shrink-0 w-[270px] bg-white border ${overStage === stage ? "border-[#10B981]" : "border-[#E8E8E5]"}`}
           >
             <div className="px-4 py-3 border-b border-[#E8E8E5]">
               <div className="flex items-center justify-between">
-                <span className={`text-[10px] font-bold tracking-[0.12em] uppercase ${stage === "won" ? "text-[#00AAEB]" : stage === "lost" ? "text-[#737373]" : "text-[#04314A]"}`}>
+                <span className={`text-[10px] font-bold tracking-[0.12em] uppercase ${stage === "won" ? "text-[#10B981]" : stage === "lost" ? "text-[#737373]" : "text-[#0B3D2B]"}`}>
                   {stageLabels[stage] ?? stage}
                 </span>
                 <span className="text-[10px] font-bold text-[#B0B0AA]">{items.length}</span>
@@ -55,14 +55,14 @@ function PipelineBoard({
                   draggable
                   onDragStart={() => setDragId(o.id)}
                   onDragEnd={() => { setDragId(null); setOverStage(null); }}
-                  className={`bg-[#FAFAF8] border border-[#E8E8E5] rounded-xl p-3.5 cursor-grab active:cursor-grabbing hover:border-[#04314A] transition-colors ${
+                  className={`bg-[#FAFAF8] border border-[#E8E8E5] rounded-xl p-3.5 cursor-grab active:cursor-grabbing hover:border-[#0B3D2B] transition-colors ${
                     dragId === o.id ? "opacity-40" : ""
                   }`}
                 >
-                  <p className="text-[12px] font-bold text-[#04314A] leading-snug">{o.title}</p>
+                  <p className="text-[12px] font-bold text-[#0B3D2B] leading-snug">{o.title}</p>
                   {o.company && <p className="text-[10px] text-[#737373] mt-0.5">{o.company}</p>}
                   <div className="mt-2.5 flex flex-wrap gap-x-3 gap-y-1 text-[10px] text-[#737373]">
-                    <span className="font-semibold text-[#04314A]">{formatNpr(o.value)}</span>
+                    <span className="font-semibold text-[#0B3D2B]">{formatNpr(o.value)}</span>
                     <span>{o.vehicle}</span>
                     <span>· {Math.round(o.probability)}%</span>
                   </div>
@@ -152,7 +152,7 @@ export default function OpportunitiesPage() {
                 key={v.key}
                 onClick={() => setView(v.key)}
                 className={`flex items-center gap-2 px-4 py-2.5 text-[11px] font-bold uppercase tracking-[0.08em] transition-colors ${
-                  view === v.key ? "rounded-full bg-[#04314A] text-white" : "text-[#737373] hover:text-[#04314A]"
+                  view === v.key ? "rounded-full bg-[#0B3D2B] text-white" : "text-[#737373] hover:text-[#0B3D2B]"
                 }`}
               >
                 {v.icon} {v.label}
@@ -184,7 +184,7 @@ export default function OpportunitiesPage() {
       </div>
 
       {error && (
-        <p className="mb-4 text-[13px] text-[#00AAEB] bg-[#00AAEB]/5 border-l-2 border-[#00AAEB] px-3 py-2">{error}</p>
+        <p className="mb-4 text-[13px] text-[#10B981] bg-[#10B981]/5 border-l-2 border-[#10B981] px-3 py-2">{error}</p>
       )}
 
       {view === "pipeline" ? (
@@ -213,7 +213,7 @@ export default function OpportunitiesPage() {
                 rows.map((o) => (
                   <tr key={o.id} className="border-b border-[#F0F0ED] last:border-0 hover:bg-[#FAFAF8]">
                     <td className="px-5 py-3.5">
-                      <div className="text-[13px] font-bold text-[#04314A]">{o.title}</div>
+                      <div className="text-[13px] font-bold text-[#0B3D2B]">{o.title}</div>
                       <div className="text-[10px] text-[#B0B0AA]">{o.id}</div>
                     </td>
                     <td className="px-5 py-3.5 text-[12px] text-[#737373] whitespace-nowrap">{o.customerName}{o.company ? ` · ${o.company}` : ""}</td>
@@ -222,7 +222,7 @@ export default function OpportunitiesPage() {
                       <select
                         value={o.stage}
                         onChange={(e) => move(o.id, e.target.value as Stage)}
-                        className="border border-[#E8E8E5] rounded-xl bg-white px-2 py-1.5 text-[10px] font-bold uppercase tracking-[0.06em] text-[#04314A] focus:outline-none focus:border-[#00AAEB] cursor-pointer"
+                        className="border border-[#E8E8E5] rounded-xl bg-white px-2 py-1.5 text-[10px] font-bold uppercase tracking-[0.06em] text-[#0B3D2B] focus:outline-none focus:border-[#10B981] cursor-pointer"
                         aria-label={`Change stage for ${o.id}`}
                       >
                         {meta.stages.map((s) => (
@@ -230,7 +230,7 @@ export default function OpportunitiesPage() {
                         ))}
                       </select>
                     </td>
-                    <td className="px-5 py-3.5 text-[12px] font-semibold text-[#04314A] whitespace-nowrap">{formatNpr(o.value)}</td>
+                    <td className="px-5 py-3.5 text-[12px] font-semibold text-[#0B3D2B] whitespace-nowrap">{formatNpr(o.value)}</td>
                     <td className="px-5 py-3.5 text-[12px] text-[#737373] whitespace-nowrap">{Math.round(o.probability)}%</td>
                     <td className="px-5 py-3.5 text-[12px] text-[#737373] whitespace-nowrap">{o.closeDate.slice(0, 10)}</td>
                     <td className="px-5 py-3.5 text-[12px] text-[#737373] whitespace-nowrap">{o.assignedTo}</td>

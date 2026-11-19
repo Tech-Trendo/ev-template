@@ -159,11 +159,11 @@ export default function ConditionForm({
       <div className="py-24 text-center text-[13px] text-[#737373]">
         {error ? (
           <>
-            <p className="font-bold text-[#04314A] mb-2">Couldn&apos;t load form</p>
+            <p className="font-bold text-[#0B3D2B] mb-2">Couldn&apos;t load form</p>
             <p className="mb-4">{error}</p>
             <button
               onClick={() => onNavigate(`units/${unitId}`)}
-              className="px-6 py-3 rounded-full bg-[#04314A] text-white text-[12px] font-semibold"
+              className="px-6 py-3 rounded-full bg-[#0B3D2B] text-white text-[12px] font-semibold"
             >
               Back to Unit
             </button>
@@ -179,28 +179,28 @@ export default function ConditionForm({
     <div className="max-w-[1100px] mx-auto pb-16">
       <button
         onClick={() => onNavigate(`units/${unit.id}`)}
-        className="flex items-center gap-1.5 text-[12px] font-semibold text-[#737373] hover:text-[#00AAEB] transition-colors mb-4"
+        className="flex items-center gap-1.5 text-[12px] font-semibold text-[#737373] hover:text-[#10B981] transition-colors mb-4"
       >
         <ArrowLeft size={14} /> Back to Unit
       </button>
 
       <div className="bg-white border border-[#E8E8E5] rounded-2xl p-5 sm:p-7">
         <div className="text-center mb-6">
-          <p className="text-[11px] font-bold tracking-[0.22em] uppercase text-[#00AAEB] mb-1">
+          <p className="text-[11px] font-bold tracking-[0.22em] uppercase text-[#10B981] mb-1">
             Vehicle Full Condition Report
           </p>
-          <h1 className="text-[22px] sm:text-[28px] font-black tracking-tight text-[#04314A]">
+          <h1 className="text-[22px] sm:text-[28px] font-black tracking-tight text-[#0B3D2B]">
             {unit.vin_chassis_no}
           </h1>
           <p className="text-[12px] text-[#737373] mt-1">
             {unit.model_detail.brand} {unit.model_detail.model_name} · Template v{template.version_no} ·{" "}
-            <span className="font-bold text-[#04314A]">{stats.ok} OK</span> ·{" "}
+            <span className="font-bold text-[#0B3D2B]">{stats.ok} OK</span> ·{" "}
             <span className="font-bold text-[#737373]">{stats.notOk} Not OK</span>
           </p>
         </div>
 
         {error && (
-          <p className="mb-4 text-[13px] text-[#00AAEB] bg-[#00AAEB]/5 border-l-2 border-[#00AAEB] px-3 py-2">
+          <p className="mb-4 text-[13px] text-[#10B981] bg-[#10B981]/5 border-l-2 border-[#10B981] px-3 py-2">
             {error}
           </p>
         )}
@@ -238,7 +238,7 @@ export default function ConditionForm({
 
         <div className="flex flex-wrap items-center justify-between gap-3 mb-4 pt-4 border-t border-[#E8E8E5]">
           <div>
-            <h3 className="text-[13px] font-bold tracking-[0.12em] uppercase text-[#04314A]">
+            <h3 className="text-[13px] font-bold tracking-[0.12em] uppercase text-[#0B3D2B]">
               Condition Inspection Checklist
             </h3>
             <p className="text-[11px] text-[#737373]">
@@ -248,7 +248,7 @@ export default function ConditionForm({
           <button
             type="button"
             onClick={markAllOk}
-            className="flex items-center gap-1.5 px-4 py-2 rounded-full bg-[#04314A] text-white text-[11px] font-bold uppercase tracking-wider hover:bg-[#00AAEB] transition-all shadow-xs"
+            className="flex items-center gap-1.5 px-4 py-2 rounded-full bg-[#0B3D2B] text-white text-[11px] font-bold uppercase tracking-wider hover:bg-[#10B981] transition-all shadow-xs"
             title="Mark all items as OK"
           >
             ⚡ Mark All OK
@@ -262,7 +262,7 @@ export default function ConditionForm({
           onChange={(itemId, value) => setValues((prev) => ({ ...prev, [itemId]: value }))}
         />
 
-        <h3 className="text-[12px] font-bold tracking-[0.12em] uppercase text-[#04314A] mt-8 mb-3 pb-2 border-b border-[#E8E8E5]">
+        <h3 className="text-[12px] font-bold tracking-[0.12em] uppercase text-[#0B3D2B] mt-8 mb-3 pb-2 border-b border-[#E8E8E5]">
           Notes & Condition Gallery
         </h3>
         <Field label="Free-form Notes">
@@ -280,7 +280,7 @@ export default function ConditionForm({
             <span className="text-[10px] font-semibold tracking-[0.12em] uppercase text-[#737373]">
               Gallery Photos ({gallery.length})
             </span>
-            <label className="inline-flex items-center gap-1.5 px-3.5 py-2 border border-[#E8E8E5] rounded-full text-[11px] font-bold text-[#04314A] hover:border-[#04314A] cursor-pointer transition-colors">
+            <label className="inline-flex items-center gap-1.5 px-3.5 py-2 border border-[#E8E8E5] rounded-full text-[11px] font-bold text-[#0B3D2B] hover:border-[#0B3D2B] cursor-pointer transition-colors">
               <Camera size={13} /> Add Photos
               <input
                 type="file"
@@ -333,7 +333,7 @@ export default function ConditionForm({
                       setGallery((list) => list.map((item, j) => (j === i ? { ...item, caption: e.target.value } : item)))
                     }
                     placeholder="Caption (Front, Odo…)…"
-                    className="w-full px-2.5 py-1.5 text-[11px] text-[#04314A] placeholder:text-[#B0B0AA] focus:outline-none"
+                    className="w-full px-2.5 py-1.5 text-[11px] text-[#0B3D2B] placeholder:text-[#B0B0AA] focus:outline-none"
                   />
                 </div>
               ))}
@@ -345,7 +345,7 @@ export default function ConditionForm({
           <button
             onClick={save}
             disabled={busy}
-            className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-[#04314A] text-white text-[12px] font-bold tracking-[0.06em] uppercase hover:bg-[#00AAEB] transition-colors disabled:opacity-50"
+            className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-[#0B3D2B] text-white text-[12px] font-bold tracking-[0.06em] uppercase hover:bg-[#10B981] transition-colors disabled:opacity-50"
           >
             <Save size={14} /> {busy ? "Saving…" : "Save Report"}
           </button>

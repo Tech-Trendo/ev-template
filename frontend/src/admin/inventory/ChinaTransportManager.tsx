@@ -258,7 +258,7 @@ export default function ChinaTransportManager({ onNavigate }: { onNavigate: (p: 
       {/* Header */}
       <div className="mb-6 flex flex-col sm:flex-row sm:items-center justify-between gap-4">
         <div>
-          <h1 className="text-[28px] font-bold text-[#04314A]">Shipments & Imports.</h1>
+          <h1 className="text-[28px] font-bold text-[#0B3D2B]">Shipments & Imports.</h1>
           <p className="text-[13px] text-[#737373]">
             Track vehicle consignments, shipping milestones, and customs clearances from origin port to destination.
           </p>
@@ -268,14 +268,14 @@ export default function ChinaTransportManager({ onNavigate }: { onNavigate: (p: 
           <button
             onClick={handleExportCsv}
             disabled={exporting}
-            className="flex items-center gap-1.5 px-3.5 py-2 rounded-lg border border-[#E8E8E5] bg-white text-[#04314A] text-[12px] font-semibold hover:bg-[#F0F0ED] transition-colors"
+            className="flex items-center gap-1.5 px-3.5 py-2 rounded-lg border border-[#E8E8E5] bg-white text-[#0B3D2B] text-[12px] font-semibold hover:bg-[#F0F0ED] transition-colors"
           >
             <Download size={14} /> {exporting ? "Exporting..." : "Export CSV"}
           </button>
           {canCreate && (
             <button
               onClick={openCreate}
-              className="flex items-center gap-1.5 px-4 py-2 rounded-lg bg-[#04314A] text-white text-[12px] font-semibold hover:bg-[#00AAEB] transition-colors"
+              className="flex items-center gap-1.5 px-4 py-2 rounded-lg bg-[#0B3D2B] text-white text-[12px] font-semibold hover:bg-[#10B981] transition-colors"
             >
               <Plus size={14} /> Add Shipment
             </button>
@@ -287,19 +287,19 @@ export default function ChinaTransportManager({ onNavigate }: { onNavigate: (p: 
       <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 mb-5">
         <div className="bg-white border border-[#E8E8E5] rounded-xl p-3.5">
           <div className="text-[11px] text-[#737373]">Total Shipments</div>
-          <div className="text-[22px] font-bold text-[#04314A] mt-0.5">{kpis.totalBatches}</div>
+          <div className="text-[22px] font-bold text-[#0B3D2B] mt-0.5">{kpis.totalBatches}</div>
         </div>
         <div className="bg-white border border-[#E8E8E5] rounded-xl p-3.5">
           <div className="text-[11px] text-[#737373]">In Transit / Ordered</div>
-          <div className="text-[22px] font-bold text-[#04314A] mt-0.5">{kpis.inTransitBatches}</div>
+          <div className="text-[22px] font-bold text-[#0B3D2B] mt-0.5">{kpis.inTransitBatches}</div>
         </div>
         <div className="bg-white border border-[#E8E8E5] rounded-xl p-3.5">
           <div className="text-[11px] text-[#737373]">At Port / Border</div>
-          <div className="text-[22px] font-bold text-[#04314A] mt-0.5">{kpis.atCustomsBatches}</div>
+          <div className="text-[22px] font-bold text-[#0B3D2B] mt-0.5">{kpis.atCustomsBatches}</div>
         </div>
         <div className="bg-white border border-[#E8E8E5] rounded-xl p-3.5">
           <div className="text-[11px] text-[#737373]">Received in Warehouse</div>
-          <div className="text-[22px] font-bold text-[#04314A] mt-0.5">{kpis.arrivedBatches}</div>
+          <div className="text-[22px] font-bold text-[#0B3D2B] mt-0.5">{kpis.arrivedBatches}</div>
         </div>
       </div>
 
@@ -311,14 +311,14 @@ export default function ChinaTransportManager({ onNavigate }: { onNavigate: (p: 
             value={search}
             onChange={(e) => setSearch(e.target.value)}
             placeholder="Search shipment number, supplier, BL/container, carrier..."
-            className="w-full border border-[#E8E8E5] rounded-lg pl-9 pr-3 py-1.5 text-[12px] text-[#04314A] placeholder:text-[#A0A09C] focus:outline-none focus:border-[#00AAEB]"
+            className="w-full border border-[#E8E8E5] rounded-lg pl-9 pr-3 py-1.5 text-[12px] text-[#0B3D2B] placeholder:text-[#A0A09C] focus:outline-none focus:border-[#10B981]"
           />
         </div>
 
         <select
           value={statusFilter}
           onChange={(e) => setStatusFilter(e.target.value)}
-          className="border border-[#E8E8E5] rounded-lg px-3 py-1.5 text-[12px] text-[#04314A] focus:outline-none focus:border-[#00AAEB]"
+          className="border border-[#E8E8E5] rounded-lg px-3 py-1.5 text-[12px] text-[#0B3D2B] focus:outline-none focus:border-[#10B981]"
         >
           <option value="ALL">All Statuses</option>
           {Object.entries(SHIPMENT_STATUS_LABELS).map(([code, label]) => (
@@ -331,7 +331,7 @@ export default function ChinaTransportManager({ onNavigate }: { onNavigate: (p: 
         <select
           value={borderFilter}
           onChange={(e) => setBorderFilter(e.target.value)}
-          className="border border-[#E8E8E5] rounded-lg px-3 py-1.5 text-[12px] text-[#04314A] focus:outline-none focus:border-[#00AAEB]"
+          className="border border-[#E8E8E5] rounded-lg px-3 py-1.5 text-[12px] text-[#0B3D2B] focus:outline-none focus:border-[#10B981]"
         >
           <option value="ALL">All Border Crossings</option>
           {borderCrossings.map((bc) => (
@@ -348,7 +348,7 @@ export default function ChinaTransportManager({ onNavigate }: { onNavigate: (p: 
               setStatusFilter("ALL");
               setBorderFilter("ALL");
             }}
-            className="text-[12px] text-[#00AAEB] hover:underline"
+            className="text-[12px] text-[#10B981] hover:underline"
           >
             Reset
           </button>
@@ -356,7 +356,7 @@ export default function ChinaTransportManager({ onNavigate }: { onNavigate: (p: 
 
         <button
           onClick={load}
-          className="ml-auto flex items-center gap-1 px-3 py-1.5 border border-[#E8E8E5] rounded-lg text-[12px] text-[#737373] hover:text-[#04314A]"
+          className="ml-auto flex items-center gap-1 px-3 py-1.5 border border-[#E8E8E5] rounded-lg text-[12px] text-[#737373] hover:text-[#0B3D2B]"
         >
           <RefreshCw size={12} /> Refresh
         </button>
@@ -402,32 +402,32 @@ export default function ChinaTransportManager({ onNavigate }: { onNavigate: (p: 
               ) : (
                 batches.map((b) => (
                   <tr key={b.id} className="border-b border-[#F0F0ED] hover:bg-[#FAFAF8]">
-                    <td className="px-4 py-3 font-medium text-[#04314A]">
-                      <div className="font-bold text-[#04314A]">{b.shipment_no || b.batch_no}</div>
+                    <td className="px-4 py-3 font-medium text-[#0B3D2B]">
+                      <div className="font-bold text-[#0B3D2B]">{b.shipment_no || b.batch_no}</div>
                       <div className="text-[11px] text-[#737373]">
                         {b.supplier_exporter || b.origin || "China Factory"}
                       </div>
                     </td>
-                    <td className="px-4 py-3 text-[#04314A]">
+                    <td className="px-4 py-3 text-[#0B3D2B]">
                       <div className="font-medium">{b.container_bl_no || b.container_or_truck_no || "-"}</div>
                       {b.carrier_name && (
                         <div className="text-[11px] text-[#737373]">{b.carrier_name}</div>
                       )}
                     </td>
-                    <td className="px-4 py-3 text-[#04314A]">
+                    <td className="px-4 py-3 text-[#0B3D2B]">
                       <div>{b.vessel_transport_mode || "Road"}</div>
                       <div className="text-[11px] text-[#737373]">
                         {b.port_of_loading || "China"} to {b.port_of_arrival || b.border_crossing || "Destination"}
                       </div>
                     </td>
-                    <td className="px-4 py-3 text-[#04314A]">
+                    <td className="px-4 py-3 text-[#0B3D2B]">
                       <span className="font-semibold">{b.units_count} units</span>
                       <span className="text-[11px] text-[#737373] block">
                         ({b.remaining_count} in stock)
                       </span>
                     </td>
-                    <td className="px-4 py-3 text-[#04314A]">
-                      <span className="inline-block px-2.5 py-0.5 rounded text-[11px] font-semibold bg-[#04314A] text-white">
+                    <td className="px-4 py-3 text-[#0B3D2B]">
+                      <span className="inline-block px-2.5 py-0.5 rounded text-[11px] font-semibold bg-[#0B3D2B] text-white">
                         {b.status_display || SHIPMENT_STATUS_LABELS[b.status] || b.status}
                       </span>
                     </td>
@@ -450,7 +450,7 @@ export default function ChinaTransportManager({ onNavigate }: { onNavigate: (p: 
                       <div className="inline-flex items-center gap-1.5 justify-end">
                         <button
                           onClick={() => onNavigate(`batches/${b.id}`)}
-                          className="px-2.5 py-1 rounded-md bg-[#04314A] text-white text-[11px] font-semibold hover:bg-[#00AAEB] transition-colors"
+                          className="px-2.5 py-1 rounded-md bg-[#0B3D2B] text-white text-[11px] font-semibold hover:bg-[#10B981] transition-colors"
                         >
                           View Details ({b.units_count})
                         </button>
@@ -458,7 +458,7 @@ export default function ChinaTransportManager({ onNavigate }: { onNavigate: (p: 
                         {canEdit && (
                           <button
                             onClick={() => openEdit(b)}
-                            className="p-1 rounded text-[#737373] hover:text-[#04314A]"
+                            className="p-1 rounded text-[#737373] hover:text-[#0B3D2B]"
                             title="Edit"
                           >
                             <Pencil size={13} />
@@ -501,7 +501,7 @@ export default function ChinaTransportManager({ onNavigate }: { onNavigate: (p: 
             {editing ? (
               <p className="text-[12px] text-[#737373]">
                 Status:{" "}
-                <span className="font-semibold text-[#04314A]">
+                <span className="font-semibold text-[#0B3D2B]">
                   {SHIPMENT_STATUS_LABELS[form.status] || form.status}
                 </span>
                 {" — "}change status from the shipment detail page.
@@ -666,7 +666,7 @@ export default function ChinaTransportManager({ onNavigate }: { onNavigate: (p: 
                   setCreating(false);
                   setEditing(null);
                 }}
-                className="px-4 py-2 rounded-lg border border-[#E8E8E5] text-[12px] font-semibold text-[#737373] hover:text-[#04314A]"
+                className="px-4 py-2 rounded-lg border border-[#E8E8E5] text-[12px] font-semibold text-[#737373] hover:text-[#0B3D2B]"
               >
                 Cancel
               </button>
@@ -674,7 +674,7 @@ export default function ChinaTransportManager({ onNavigate }: { onNavigate: (p: 
                 type="button"
                 onClick={save}
                 disabled={busy}
-                className="px-4 py-2 rounded-lg bg-[#04314A] text-white text-[12px] font-semibold hover:bg-[#00AAEB] disabled:opacity-50 transition-colors"
+                className="px-4 py-2 rounded-lg bg-[#0B3D2B] text-white text-[12px] font-semibold hover:bg-[#10B981] disabled:opacity-50 transition-colors"
               >
                 {busy ? "Saving..." : creating ? "Create Shipment" : "Save Changes"}
               </button>
@@ -709,7 +709,7 @@ export default function ChinaTransportManager({ onNavigate }: { onNavigate: (p: 
               <button
                 type="button"
                 onClick={() => setDeleting(null)}
-                className="px-4 py-2 rounded-lg border border-[#E8E8E5] text-[12px] font-semibold text-[#737373] hover:text-[#04314A]"
+                className="px-4 py-2 rounded-lg border border-[#E8E8E5] text-[12px] font-semibold text-[#737373] hover:text-[#0B3D2B]"
               >
                 Cancel
               </button>

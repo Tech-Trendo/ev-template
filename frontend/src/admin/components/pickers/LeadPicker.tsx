@@ -88,8 +88,8 @@ export function LeadPicker({
       renderItem={(l) => (
         <div className="flex flex-col gap-0.5">
           <div className="flex items-center gap-2 flex-wrap">
-            <span className="text-[12px] font-bold text-[#04314A]">{l.name}</span>
-            <span className="text-[10px] font-bold px-1.5 py-0.5 rounded bg-[#F4F7F9] text-[#04314A] border border-[#E8E8E5]">
+            <span className="text-[12px] font-bold text-[#0B3D2B]">{l.name}</span>
+            <span className="text-[10px] font-bold px-1.5 py-0.5 rounded bg-[#F4F7F9] text-[#0B3D2B] border border-[#E8E8E5]">
               LD-{l.id}
             </span>
             {l.status && (
@@ -99,7 +99,7 @@ export function LeadPicker({
             )}
           </div>
           <div className="flex items-center gap-2 text-[11px] text-[#737373] flex-wrap">
-            {l.company && <span className="font-medium text-[#04314A]">{l.company}</span>}
+            {l.company && <span className="font-medium text-[#0B3D2B]">{l.company}</span>}
             {l.phone && <span>· {l.phone}</span>}
             {l.vehicle && <span>· Vehicle: {l.vehicle}</span>}
           </div>
@@ -107,8 +107,8 @@ export function LeadPicker({
       )}
       renderSelected={(l) => (
         <div className="flex items-center gap-1.5 min-w-0 overflow-hidden whitespace-nowrap">
-          <span className="text-[13px] font-medium text-[#04314A] truncate">{l.name}</span>
-          <span className="text-[10px] font-bold px-1.5 py-0.5 rounded bg-[#F4F7F9] text-[#04314A] border border-[#E8E8E5] shrink-0">
+          <span className="text-[13px] font-medium text-[#0B3D2B] truncate">{l.name}</span>
+          <span className="text-[10px] font-bold px-1.5 py-0.5 rounded bg-[#F4F7F9] text-[#0B3D2B] border border-[#E8E8E5] shrink-0">
             LD-{l.id}
           </span>
           {l.company && (

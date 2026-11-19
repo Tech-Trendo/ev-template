@@ -397,21 +397,21 @@ function Shell() {
     return (
       <div className="h-screen flex items-center justify-center bg-[#F7F7F5] p-6">
         <div className="max-w-md w-full bg-white border border-[#E8E8E5] rounded-2xl p-8 text-center shadow-sm">
-          <ShieldAlert size={28} className="mx-auto mb-4 text-[#00AAEB]" />
-          <h1 className="text-[20px] font-black text-[#04314A]">Unable to load account</h1>
+          <ShieldAlert size={28} className="mx-auto mb-4 text-[#10B981]" />
+          <h1 className="text-[20px] font-black text-[#0B3D2B]">Unable to load account</h1>
           <p className="text-[13px] text-[#737373] mt-2 leading-relaxed">
             {meError}
           </p>
           <div className="mt-6 flex items-center justify-center gap-3">
             <button
               onClick={() => refreshMe()}
-              className="px-5 py-2.5 rounded-full bg-[#04314A] text-white text-[12px] font-semibold tracking-[0.06em] uppercase hover:bg-[#00AAEB] transition-colors"
+              className="px-5 py-2.5 rounded-full bg-[#0B3D2B] text-white text-[12px] font-semibold tracking-[0.06em] uppercase hover:bg-[#10B981] transition-colors"
             >
               Retry
             </button>
             <button
               onClick={logout}
-              className="px-5 py-2.5 rounded-full border border-[#E8E8E5] text-[#04314A] text-[12px] font-semibold tracking-[0.06em] uppercase hover:bg-[#F7F7F5] transition-colors"
+              className="px-5 py-2.5 rounded-full border border-[#E8E8E5] text-[#0B3D2B] text-[12px] font-semibold tracking-[0.06em] uppercase hover:bg-[#F7F7F5] transition-colors"
             >
               Sign out
             </button>
@@ -438,15 +438,15 @@ function Shell() {
 
   const accessDenied = (
     <div className="max-w-md mx-auto mt-16 bg-white border border-[#E8E8E5] rounded-2xl p-8 text-center">
-      <ShieldAlert size={28} className="mx-auto mb-4 text-[#00AAEB]" />
-      <h1 className="text-[20px] font-black text-[#04314A]">Access denied.</h1>
+      <ShieldAlert size={28} className="mx-auto mb-4 text-[#10B981]" />
+      <h1 className="text-[20px] font-black text-[#0B3D2B]">Access denied.</h1>
       <p className="text-[13px] text-[#737373] mt-2 leading-relaxed">
         Your role{me.role_names.length ? ` (${me.role_names.join(", ")})` : ""} doesn&apos;t include
         access to this section. Contact an administrator if you need it.
       </p>
       <button
         onClick={() => navigate(firstAllowed)}
-        className="mt-6 px-6 py-3 rounded-full bg-[#04314A] text-white text-[12px] font-semibold tracking-[0.06em] uppercase hover:bg-[#00AAEB] transition-colors"
+        className="mt-6 px-6 py-3 rounded-full bg-[#0B3D2B] text-white text-[12px] font-semibold tracking-[0.06em] uppercase hover:bg-[#10B981] transition-colors"
       >
         Go to {firstAllowed}
       </button>
@@ -456,14 +456,14 @@ function Shell() {
   return (
     <div className="h-screen bg-[#F7F7F5] flex overflow-hidden print:h-auto print:overflow-visible print:bg-white print:block">
       {/* Sidebar - fixed pane; only the nav list can scroll internally if needed */}
-      <aside className="hidden md:flex w-[230px] flex-col bg-[#04314A] flex-shrink-0 h-full">
+      <aside className="hidden md:flex w-[230px] flex-col bg-[#0B3D2B] flex-shrink-0 h-full">
         <div className="px-6 py-7 border-b border-white/10 flex-shrink-0">
           <div className="flex items-center gap-2.5 mb-2">
-            <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-lg bg-[#00AAEB] text-[13px] font-black text-white">
-              VT
+            <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-lg bg-[#10B981] text-[13px] font-black text-white">
+              EV
             </span>
             <span className="text-[14px] font-bold tracking-tight text-white">
-              Vehicle Template
+              EV OS
             </span>
           </div>
           <span className="text-[9px] font-semibold tracking-[0.22em] uppercase text-white/40">
@@ -487,11 +487,11 @@ function Shell() {
                 className={`flex items-center gap-3 px-4 py-2 text-left text-[13px] font-semibold tracking-[0.02em] rounded-lg transition-colors ${
                   item.key === "cms-home"
                     ? routePath.startsWith("cms-")
-                      ? "bg-[#00AAEB] text-white"
+                      ? "bg-[#10B981] text-white"
                       : "text-white/55 hover:text-white hover:bg-white/10"
                     : routePath === item.key ||
                       (item.key !== "dashboard" && routePath.startsWith(item.key + "/"))
-                    ? "bg-[#00AAEB] text-white"
+                    ? "bg-[#10B981] text-white"
                     : "text-white/55 hover:text-white hover:bg-white/10"
                 }`}
               >
@@ -532,18 +532,18 @@ function Shell() {
           aria-label="Navigation drawer"
         >
           <div
-            className="fixed inset-0 bg-[#04314A]/60 transition-opacity"
+            className="fixed inset-0 bg-[#0B3D2B]/60 transition-opacity"
             onClick={() => setMobileMenuOpen(false)}
             aria-hidden="true"
           />
 
-          <div className="relative w-72 max-w-[85vw] bg-[#04314A] flex flex-col h-full z-10 shadow-2xl">
+          <div className="relative w-72 max-w-[85vw] bg-[#0B3D2B] flex flex-col h-full z-10 shadow-2xl">
             <div className="px-5 py-5 border-b border-white/10 flex items-center justify-between flex-shrink-0">
               <div className="flex items-center gap-2">
-                <span className="flex h-7 w-7 shrink-0 items-center justify-center rounded-md bg-[#00AAEB] text-[11px] font-black text-white">
-                  VT
+                <span className="flex h-7 w-7 shrink-0 items-center justify-center rounded-md bg-[#10B981] text-[11px] font-black text-white">
+                  EV
                 </span>
-                <span className="text-[12px] font-bold text-white">Vehicle Template</span>
+                <span className="text-[12px] font-bold text-white">EV OS</span>
               </div>
               <button
                 type="button"
@@ -571,11 +571,11 @@ function Shell() {
                     className={`flex items-center gap-3 px-3 py-2 text-left text-[12px] font-semibold tracking-[0.02em] rounded-lg transition-colors ${
                       item.key === "cms-home"
                         ? routePath.startsWith("cms-")
-                          ? "bg-[#00AAEB] text-white"
+                          ? "bg-[#10B981] text-white"
                           : "text-white/60 hover:text-white hover:bg-white/10"
                         : routePath === item.key ||
                           (item.key !== "dashboard" && routePath.startsWith(item.key + "/"))
-                        ? "bg-[#00AAEB] text-white"
+                        ? "bg-[#10B981] text-white"
                         : "text-white/60 hover:text-white hover:bg-white/10"
                     }`}
                   >
@@ -607,7 +607,7 @@ function Shell() {
       )}
 
       {/* Mobile bottom nav */}
-      <div className="md:hidden fixed bottom-0 inset-x-0 z-40 bg-[#04314A] flex no-print">
+      <div className="md:hidden fixed bottom-0 inset-x-0 z-40 bg-[#0B3D2B] flex no-print">
         {visibleNav
           .filter(
             (item): item is Extract<NavItem, { key: string }> =>
@@ -621,7 +621,7 @@ function Shell() {
                 (crmActive && item.key === "crm") ||
                 routePath === item.key ||
                 (item.key !== "dashboard" && routePath.startsWith(item.key))
-                  ? "text-[#00AAEB]"
+                  ? "text-[#10B981]"
                   : "text-white/50"
               }`}
             >
@@ -639,7 +639,7 @@ function Shell() {
             <button
               type="button"
               onClick={() => setMobileMenuOpen(true)}
-              className="md:hidden p-2 rounded-lg text-[#04314A] hover:bg-[#F0F0ED] transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#00AAEB]"
+              className="md:hidden p-2 rounded-lg text-[#0B3D2B] hover:bg-[#F0F0ED] transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#10B981]"
               aria-label="Open navigation menu"
               aria-expanded={mobileMenuOpen}
               aria-controls="admin-mobile-drawer"
@@ -653,7 +653,7 @@ function Shell() {
           <div className="flex items-center gap-3 flex-shrink-0">
             <NotificationBell onNavigate={navigate} />
             <div className="hidden sm:flex flex-col text-right">
-              <span className="text-[12px] font-bold text-[#04314A] leading-tight">
+              <span className="text-[12px] font-bold text-[#0B3D2B] leading-tight">
                 {me.username || me.email}
               </span>
               <span className="text-[10px] text-[#737373] leading-tight">
@@ -666,7 +666,7 @@ function Shell() {
             </div>
             <button
               onClick={() => navigate("profile")}
-              className="w-8 h-8 rounded-full bg-[#04314A] text-white flex items-center justify-center text-[12px] font-bold hover:bg-[#00AAEB] transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-[#00AAEB]"
+              className="w-8 h-8 rounded-full bg-[#0B3D2B] text-white flex items-center justify-center text-[12px] font-bold hover:bg-[#10B981] transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-[#10B981]"
               title="My Profile"
               aria-label="View Profile"
             >

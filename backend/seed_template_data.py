@@ -1,4 +1,4 @@
-"""Complete demo data seeder for the Vehicle Template EV admin console.
+"""Complete demo data seeder for the EV OS EV admin console.
 
 The heavy lifting lives in the :mod:`seeding` package so each module can be
 maintained independently.  Running this script is safe and idempotent:

@@ -94,15 +94,15 @@ export function CmsListField({
       {/* Header bar */}
       <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 pb-3 border-b border-[#E8E8E5]/70 mb-4">
         <div className="flex items-center gap-2.5">
-          <div className="w-7 h-7 rounded-lg bg-[#00AAEB]/10 text-[#00AAEB] flex items-center justify-center">
+          <div className="w-7 h-7 rounded-lg bg-[#10B981]/10 text-[#10B981] flex items-center justify-center">
             <Layers size={14} />
           </div>
           <div>
             <div className="flex items-center gap-2">
-              <span className="text-[12px] font-black tracking-[0.1em] uppercase text-[#04314A]">
+              <span className="text-[12px] font-black tracking-[0.1em] uppercase text-[#0B3D2B]">
                 {field.label}
               </span>
-              <span className="px-2 py-0.5 rounded-full bg-[#04314A]/10 text-[#04314A] text-[10px] font-bold">
+              <span className="px-2 py-0.5 rounded-full bg-[#0B3D2B]/10 text-[#0B3D2B] text-[10px] font-bold">
                 {items.length} {items.length === 1 ? field.itemName : `${field.itemName}s`}
               </span>
             </div>
@@ -116,7 +116,7 @@ export function CmsListField({
               <button
                 type="button"
                 onClick={expandAll}
-                className="hover:text-[#00AAEB] px-1.5 py-0.5 rounded-md hover:bg-white transition-colors"
+                className="hover:text-[#10B981] px-1.5 py-0.5 rounded-md hover:bg-white transition-colors"
               >
                 Expand all
               </button>
@@ -124,7 +124,7 @@ export function CmsListField({
               <button
                 type="button"
                 onClick={collapseAll}
-                className="hover:text-[#00AAEB] px-1.5 py-0.5 rounded-md hover:bg-white transition-colors"
+                className="hover:text-[#10B981] px-1.5 py-0.5 rounded-md hover:bg-white transition-colors"
               >
                 Collapse all
               </button>
@@ -133,7 +133,7 @@ export function CmsListField({
           <button
             type="button"
             onClick={addItem}
-            className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full bg-[#00AAEB] text-white text-[11px] font-bold tracking-[0.04em] uppercase hover:bg-[#04314A] transition-colors shadow-xs"
+            className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full bg-[#10B981] text-white text-[11px] font-bold tracking-[0.04em] uppercase hover:bg-[#0B3D2B] transition-colors shadow-xs"
           >
             <Plus size={13} /> Add {field.itemName}
           </button>
@@ -151,8 +151,8 @@ export function CmsListField({
               key={index}
               className={`border rounded-xl bg-white transition-all overflow-hidden ${
                 isCollapsed
-                  ? "border-[#E8E8E5] hover:border-[#00AAEB]/50"
-                  : "border-[#00AAEB]/30 shadow-xs ring-1 ring-[#00AAEB]/10"
+                  ? "border-[#E8E8E5] hover:border-[#10B981]/50"
+                  : "border-[#10B981]/30 shadow-xs ring-1 ring-[#10B981]/10"
               }`}
             >
               {/* Item Card Header */}
@@ -162,11 +162,11 @@ export function CmsListField({
                 data-open={!isCollapsed}
               >
                 <div className="flex items-center gap-3 min-w-0">
-                  <span className="w-6 h-6 rounded-md bg-[#04314A] text-white text-[10px] font-bold flex items-center justify-center flex-shrink-0">
+                  <span className="w-6 h-6 rounded-md bg-[#0B3D2B] text-white text-[10px] font-bold flex items-center justify-center flex-shrink-0">
                     {index + 1}
                   </span>
                   <div className="truncate min-w-0">
-                    <span className="text-[13px] font-bold text-[#04314A] truncate block">
+                    <span className="text-[13px] font-bold text-[#0B3D2B] truncate block">
                       {displayTitle}
                     </span>
                     {isCollapsed && typeof item.desc === "string" && item.desc.trim() !== "" && (
@@ -186,7 +186,7 @@ export function CmsListField({
                     onClick={() => move(index, -1)}
                     disabled={index === 0}
                     title="Move item up"
-                    className="w-7 h-7 flex items-center justify-center rounded-lg text-[#737373] hover:bg-[#F0F0ED] hover:text-[#04314A] disabled:opacity-20 transition-colors"
+                    className="w-7 h-7 flex items-center justify-center rounded-lg text-[#737373] hover:bg-[#F0F0ED] hover:text-[#0B3D2B] disabled:opacity-20 transition-colors"
                   >
                     <ArrowUp size={13} />
                   </button>
@@ -195,7 +195,7 @@ export function CmsListField({
                     onClick={() => move(index, 1)}
                     disabled={index === items.length - 1}
                     title="Move item down"
-                    className="w-7 h-7 flex items-center justify-center rounded-lg text-[#737373] hover:bg-[#F0F0ED] hover:text-[#04314A] disabled:opacity-20 transition-colors"
+                    className="w-7 h-7 flex items-center justify-center rounded-lg text-[#737373] hover:bg-[#F0F0ED] hover:text-[#0B3D2B] disabled:opacity-20 transition-colors"
                   >
                     <ArrowDown size={13} />
                   </button>
@@ -203,7 +203,7 @@ export function CmsListField({
                     type="button"
                     onClick={() => duplicateItem(index)}
                     title="Duplicate item"
-                    className="w-7 h-7 flex items-center justify-center rounded-lg text-[#737373] hover:bg-[#00AAEB]/10 hover:text-[#00AAEB] transition-colors"
+                    className="w-7 h-7 flex items-center justify-center rounded-lg text-[#737373] hover:bg-[#10B981]/10 hover:text-[#10B981] transition-colors"
                   >
                     <Copy size={13} />
                   </button>
@@ -262,17 +262,17 @@ export function CmsListField({
 
         {items.length === 0 && (
           <div className="border border-dashed border-[#E0E0DC] rounded-xl p-8 text-center bg-white">
-            <div className="w-10 h-10 rounded-full bg-[#00AAEB]/10 text-[#00AAEB] flex items-center justify-center mx-auto mb-2">
+            <div className="w-10 h-10 rounded-full bg-[#10B981]/10 text-[#10B981] flex items-center justify-center mx-auto mb-2">
               <Sparkles size={18} />
             </div>
-            <p className="text-[13px] font-bold text-[#04314A]">No {field.itemName.toLowerCase()}s configured</p>
+            <p className="text-[13px] font-bold text-[#0B3D2B]">No {field.itemName.toLowerCase()}s configured</p>
             <p className="text-[11px] text-[#737373] mt-1 mb-4">
               Click the button below to add your first {field.itemName.toLowerCase()}.
             </p>
             <button
               type="button"
               onClick={addItem}
-              className="inline-flex items-center gap-1.5 px-4 py-2 rounded-full bg-[#00AAEB] text-white text-[12px] font-bold tracking-[0.04em] uppercase hover:bg-[#04314A] transition-colors"
+              className="inline-flex items-center gap-1.5 px-4 py-2 rounded-full bg-[#10B981] text-white text-[12px] font-bold tracking-[0.04em] uppercase hover:bg-[#0B3D2B] transition-colors"
             >
               <Plus size={14} /> Add {field.itemName}
             </button>

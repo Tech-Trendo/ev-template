@@ -137,7 +137,7 @@ export default function BatchesManager({ onNavigate }: { onNavigate: (p: string)
           canWrite ? (
             <button
               onClick={openCreate}
-              className="flex items-center gap-2 px-5 py-3 rounded-full bg-[#04314A] text-white text-[12px] font-semibold tracking-[0.06em] uppercase hover:bg-[#00AAEB] transition-colors"
+              className="flex items-center gap-2 px-5 py-3 rounded-full bg-[#0B3D2B] text-white text-[12px] font-semibold tracking-[0.06em] uppercase hover:bg-[#10B981] transition-colors"
             >
               <Plus size={14} /> New Batch
             </button>
@@ -157,7 +157,7 @@ export default function BatchesManager({ onNavigate }: { onNavigate: (p: string)
       <ModelsSection />
 
       {error && (
-        <p className="mb-4 text-[13px] text-[#00AAEB] bg-[#00AAEB]/5 border-l-2 border-[#00AAEB] px-3 py-2">
+        <p className="mb-4 text-[13px] text-[#10B981] bg-[#10B981]/5 border-l-2 border-[#10B981] px-3 py-2">
           {error}
         </p>
       )}
@@ -184,7 +184,7 @@ export default function BatchesManager({ onNavigate }: { onNavigate: (p: string)
                   <td className="px-5 py-3.5">
                     <button
                       onClick={() => onNavigate(`batches/${b.id}`)}
-                      className="text-[13px] font-bold text-[#00AAEB] hover:text-[#04314A]"
+                      className="text-[13px] font-bold text-[#10B981] hover:text-[#0B3D2B]"
                     >
                       {b.batch_no}
                     </button>
@@ -197,15 +197,15 @@ export default function BatchesManager({ onNavigate }: { onNavigate: (p: string)
                     {formatDate(b.arrived_date)}
                   </td>
                   <td className="px-5 py-3.5 text-[12px] text-[#737373]">{b.invoice_no || "—"}</td>
-                  <td className="px-5 py-3.5 text-[12px] font-bold text-[#04314A]">{b.units_count}</td>
+                  <td className="px-5 py-3.5 text-[12px] font-bold text-[#0B3D2B]">{b.units_count}</td>
                   <td className="px-5 py-3.5 text-[12px] text-[#737373]">{b.sold_count}</td>
-                  <td className="px-5 py-3.5 text-[12px] font-bold text-[#04314A]">{b.remaining_count}</td>
+                  <td className="px-5 py-3.5 text-[12px] font-bold text-[#0B3D2B]">{b.remaining_count}</td>
                   <td className="px-5 py-3.5">
                     <div className="flex justify-end gap-2">
                       {canWrite && (
                         <button
                           onClick={() => openEdit(b)}
-                          className="w-8 h-8 border border-[#E8E8E5] rounded-xl flex items-center justify-center text-[#04314A] hover:bg-[#04314A] hover:text-white transition-colors"
+                          className="w-8 h-8 border border-[#E8E8E5] rounded-xl flex items-center justify-center text-[#0B3D2B] hover:bg-[#0B3D2B] hover:text-white transition-colors"
                           title="Edit"
                         >
                           <Pencil size={13} />
@@ -214,7 +214,7 @@ export default function BatchesManager({ onNavigate }: { onNavigate: (p: string)
                       {canDelete && (
                         <button
                           onClick={() => setDeleting(b)}
-                          className="w-8 h-8 border border-[#E8E8E5] rounded-xl flex items-center justify-center text-[#00AAEB] hover:bg-[#00AAEB] hover:text-white transition-colors"
+                          className="w-8 h-8 border border-[#E8E8E5] rounded-xl flex items-center justify-center text-[#10B981] hover:bg-[#10B981] hover:text-white transition-colors"
                           title="Delete"
                         >
                           <Trash2 size={13} />
@@ -295,14 +295,14 @@ export default function BatchesManager({ onNavigate }: { onNavigate: (p: string)
           <div data-modal-actions className="flex gap-3 justify-end mt-6">
             <button
               onClick={() => { setCreating(false); setEditing(null); }}
-              className="px-6 py-2.5 border border-[#E8E8E5] rounded-full text-[12px] font-semibold text-[#737373] hover:border-[#04314A] hover:text-[#04314A] transition-colors"
+              className="px-6 py-2.5 border border-[#E8E8E5] rounded-full text-[12px] font-semibold text-[#737373] hover:border-[#0B3D2B] hover:text-[#0B3D2B] transition-colors"
             >
               Cancel
             </button>
             <button
               onClick={save}
               disabled={busy}
-              className="px-6 py-2.5 rounded-full bg-[#04314A] text-white text-[12px] font-semibold hover:bg-[#00AAEB] transition-colors disabled:opacity-50"
+              className="px-6 py-2.5 rounded-full bg-[#0B3D2B] text-white text-[12px] font-semibold hover:bg-[#10B981] transition-colors disabled:opacity-50"
             >
               {busy ? "Saving…" : creating ? "Create & Add Units" : "Save"}
             </button>
@@ -313,7 +313,7 @@ export default function BatchesManager({ onNavigate }: { onNavigate: (p: string)
       {deleting && (
         <Modal title="Delete Batch?" onClose={() => { setDeleting(null); setDeleteReason(""); }}>
           <p className="text-[13px] text-[#737373] leading-relaxed mb-4">
-            Soft-delete batch <span className="font-bold text-[#04314A]">{deleting.batch_no}</span>?
+            Soft-delete batch <span className="font-bold text-[#0B3D2B]">{deleting.batch_no}</span>?
             A reason is required.
           </p>
           <Field label="Deletion reason">
@@ -328,7 +328,7 @@ export default function BatchesManager({ onNavigate }: { onNavigate: (p: string)
           <div data-modal-actions className="flex gap-3 justify-end mt-4">
             <button
               onClick={() => { setDeleting(null); setDeleteReason(""); }}
-              className="px-6 py-2.5 border border-[#E8E8E5] rounded-full text-[12px] font-semibold text-[#737373] hover:border-[#04314A] hover:text-[#04314A] transition-colors"
+              className="px-6 py-2.5 border border-[#E8E8E5] rounded-full text-[12px] font-semibold text-[#737373] hover:border-[#0B3D2B] hover:text-[#0B3D2B] transition-colors"
             >
               Cancel
             </button>
@@ -454,19 +454,19 @@ function ModelsSection() {
   return (
     <div className="bg-white border border-[#E8E8E5] rounded-xl p-5 mb-4">
       <div className="flex items-center justify-between mb-3">
-        <h3 className="text-[12px] font-bold tracking-[0.12em] uppercase text-[#04314A]">
+        <h3 className="text-[12px] font-bold tracking-[0.12em] uppercase text-[#0B3D2B]">
           Vehicle Models ({models.length})
         </h3>
         {canWrite && (
           <button
             onClick={openCreate}
-            className="inline-flex items-center gap-1.5 px-3.5 py-2 border border-[#E8E8E5] rounded-full text-[11px] font-bold text-[#04314A] hover:border-[#04314A] transition-colors"
+            className="inline-flex items-center gap-1.5 px-3.5 py-2 border border-[#E8E8E5] rounded-full text-[11px] font-bold text-[#0B3D2B] hover:border-[#0B3D2B] transition-colors"
           >
             <Plus size={13} /> New Model
           </button>
         )}
       </div>
-      {error && <p className="mb-3 text-[12px] text-[#00AAEB]">{error}</p>}
+      {error && <p className="mb-3 text-[12px] text-[#10B981]">{error}</p>}
       <div className="flex flex-wrap gap-2">
         {models.map((m) => (
           <div
@@ -475,7 +475,7 @@ function ModelsSection() {
               m.is_active ? "border-[#E8E8E5] bg-[#FAFAF8]" : "border-dashed border-[#E8E8E5] opacity-60"
             }`}
           >
-            <span className="text-[12px] font-bold text-[#04314A] whitespace-nowrap">
+            <span className="text-[12px] font-bold text-[#0B3D2B] whitespace-nowrap">
               {getModelDisplayName(m)}
             </span>
             <span className="text-[10px] text-[#737373] whitespace-nowrap">
@@ -484,7 +484,7 @@ function ModelsSection() {
             {canWrite && (
               <button
                 onClick={() => openEdit(m)}
-                className="w-7 h-7 rounded-lg flex items-center justify-center text-[#737373] hover:bg-[#04314A] hover:text-white transition-colors"
+                className="w-7 h-7 rounded-lg flex items-center justify-center text-[#737373] hover:bg-[#0B3D2B] hover:text-white transition-colors"
                 title="Edit model"
               >
                 <Pencil size={12} />
@@ -555,18 +555,18 @@ function ModelsSection() {
               />
             </Field>
           </div>
-          {error && <p className="mt-3 text-[12px] text-[#00AAEB]">{error}</p>}
+          {error && <p className="mt-3 text-[12px] text-[#10B981]">{error}</p>}
           <div data-modal-actions className="flex gap-3 justify-end mt-6">
             <button
               onClick={() => setOpen(false)}
-              className="px-6 py-2.5 border border-[#E8E8E5] rounded-full text-[12px] font-semibold text-[#737373] hover:border-[#04314A] hover:text-[#04314A] transition-colors"
+              className="px-6 py-2.5 border border-[#E8E8E5] rounded-full text-[12px] font-semibold text-[#737373] hover:border-[#0B3D2B] hover:text-[#0B3D2B] transition-colors"
             >
               Cancel
             </button>
             <button
               onClick={save}
               disabled={busy}
-              className="px-6 py-2.5 rounded-full bg-[#04314A] text-white text-[12px] font-semibold hover:bg-[#00AAEB] transition-colors disabled:opacity-50"
+              className="px-6 py-2.5 rounded-full bg-[#0B3D2B] text-white text-[12px] font-semibold hover:bg-[#10B981] transition-colors disabled:opacity-50"
             >
               {busy ? "Saving…" : "Save Model"}
             </button>

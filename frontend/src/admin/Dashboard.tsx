@@ -259,7 +259,7 @@ function MetricCard({
     return (
       <div
         onClick={onClick}
-        className="bg-[#04314A] text-white p-6 rounded-xl flex flex-col justify-between gap-6 cursor-pointer hover:bg-[#06293d] hover:shadow-md transition-all col-span-2 lg:col-span-1 lg:row-span-2 min-h-[220px]"
+        className="bg-[#0B3D2B] text-white p-6 rounded-xl flex flex-col justify-between gap-6 cursor-pointer hover:bg-[#06293d] hover:shadow-md transition-all col-span-2 lg:col-span-1 lg:row-span-2 min-h-[220px]"
       >
         <div className="flex items-center justify-between gap-2">
           <div className="w-11 h-11 rounded-xl bg-white/10 flex items-center justify-center flex-shrink-0">
@@ -288,10 +288,10 @@ function MetricCard({
   return (
     <div
       onClick={onClick}
-      className="bg-white p-4 rounded-xl border border-[#E8E8E5] flex flex-col justify-between gap-4 cursor-pointer hover:border-[#04314A] hover:shadow-sm transition-all"
+      className="bg-white p-4 rounded-xl border border-[#E8E8E5] flex flex-col justify-between gap-4 cursor-pointer hover:border-[#0B3D2B] hover:shadow-sm transition-all"
     >
       <div className="flex items-center justify-between gap-2">
-        <div className="w-9 h-9 rounded-lg bg-[#F0F0ED] text-[#04314A] flex items-center justify-center flex-shrink-0">
+        <div className="w-9 h-9 rounded-lg bg-[#F0F0ED] text-[#0B3D2B] flex items-center justify-center flex-shrink-0">
           {icon}
         </div>
         {sub && (
@@ -301,7 +301,7 @@ function MetricCard({
         )}
       </div>
       <div>
-        <div className="text-[26px] font-black leading-none text-[#04314A] tabular-nums tracking-tight">
+        <div className="text-[26px] font-black leading-none text-[#0B3D2B] tabular-nums tracking-tight">
           {value}
         </div>
         <div className="text-[11px] font-bold tracking-[0.08em] uppercase text-[#737373] mt-1.5">
@@ -329,7 +329,7 @@ function Section({
     <div className="bg-white border rounded-xl border-[#E8E8E5]">
       <div className="flex items-center justify-between px-5 py-4 border-b border-[#E8E8E5]">
         <div>
-          <h2 className="text-[11px] font-black tracking-[0.14em] uppercase text-[#04314A]">
+          <h2 className="text-[11px] font-black tracking-[0.14em] uppercase text-[#0B3D2B]">
             {title}
           </h2>
           {subtitle && (
@@ -339,7 +339,7 @@ function Section({
         {action && onAction && (
           <button
             onClick={onAction}
-            className="flex items-center gap-1.5 text-[11px] font-bold tracking-[0.08em] uppercase text-[#00AAEB] hover:text-[#04314A] transition-colors"
+            className="flex items-center gap-1.5 text-[11px] font-bold tracking-[0.08em] uppercase text-[#10B981] hover:text-[#0B3D2B] transition-colors"
           >
             {action} <ChevronRight size={13} />
           </button>
@@ -377,12 +377,12 @@ function PipelineBar({
       <div className="flex-1 h-1.5 bg-[#F0F0ED] overflow-hidden">
         <div
           className="h-full transition-all duration-500"
-          style={{ width: `${pct}%`, backgroundColor: color || "#04314A" }}
+          style={{ width: `${pct}%`, backgroundColor: color || "#0B3D2B" }}
         />
       </div>
       <div className="flex items-center gap-2 w-16 justify-end">
         <span className="text-[11px] text-[#737373]">{pct}%</span>
-        <span className="text-[13px] font-black text-[#04314A] tabular-nums">
+        <span className="text-[13px] font-black text-[#0B3D2B] tabular-nums">
           {value}
         </span>
       </div>
@@ -471,13 +471,13 @@ export default function Dashboard({
               onClick={() => setActiveTab(tab.key as DashboardTab)}
               className={`px-4 py-3 text-[12px] font-bold tracking-[0.06em] uppercase transition-all relative whitespace-nowrap ${
                 isActive
-                  ? "text-[#04314A]"
-                  : "text-[#737373] hover:text-[#04314A]"
+                  ? "text-[#0B3D2B]"
+                  : "text-[#737373] hover:text-[#0B3D2B]"
               }`}
             >
               {tab.label}
               {isActive && (
-                <div className="absolute bottom-0 left-0 right-0 h-0.5 bg-[#00AAEB]" />
+                <div className="absolute bottom-0 left-0 right-0 h-0.5 bg-[#10B981]" />
               )}
             </button>
           );
@@ -574,21 +574,21 @@ export default function Dashboard({
                     label="Ready for Sale"
                     value={inv.ready_for_sale}
                     max={invTotal}
-                    color="#00AAEB"
+                    color="#10B981"
                     onClick={() => onNavigate("units?status=READY_FOR_SALE")}
                   />
                   <PipelineBar
                     label="In Warehouse"
                     value={inv.in_warehouse}
                     max={invTotal}
-                    color="#04314A"
+                    color="#0B3D2B"
                     onClick={() => onNavigate("units?status=IN_WAREHOUSE")}
                   />
                   <PipelineBar
                     label="In Transit (China)"
                     value={inv.in_transit}
                     max={invTotal}
-                    color="#00AAEB"
+                    color="#10B981"
                     onClick={() => onNavigate("china-transport")}
                   />
                   <PipelineBar
@@ -602,7 +602,7 @@ export default function Dashboard({
                     label="Reserved"
                     value={inv.reserved}
                     max={invTotal}
-                    color="#04314A"
+                    color="#0B3D2B"
                     onClick={() => onNavigate("units?status=RESERVED")}
                   />
                   <PipelineBar
@@ -617,7 +617,7 @@ export default function Dashboard({
                   <span className="text-[12px] text-[#737373]">
                     Total physical fleet inventory
                   </span>
-                  <span className="text-[13px] font-black text-[#04314A]">
+                  <span className="text-[13px] font-black text-[#0B3D2B]">
                     {fmt(invTotal)} units
                   </span>
                 </div>
@@ -635,12 +635,12 @@ export default function Dashboard({
                 <div className="p-5 space-y-4">
                   <div
                     onClick={() => onNavigate("units?status=SOLD")}
-                    className="p-4 border border-[#E8E8E5] bg-[#FAFAF8] cursor-pointer hover:border-[#04314A] transition-colors"
+                    className="p-4 border border-[#E8E8E5] bg-[#FAFAF8] cursor-pointer hover:border-[#0B3D2B] transition-colors"
                   >
                     <div className="text-[11px] font-bold uppercase tracking-[0.08em] text-[#737373]">
                       Total Sold Volume (Value)
                     </div>
-                    <div className="text-[26px] font-black text-[#04314A] mt-1">
+                    <div className="text-[26px] font-black text-[#0B3D2B] mt-1">
                       {fmtMoney(sales.total_revenue)}
                     </div>
                     <div className="text-[12px] text-[#737373] mt-0.5">
@@ -651,25 +651,25 @@ export default function Dashboard({
                   <div className="space-y-2">
                     <div
                       onClick={() => onNavigate("units?status=SOLD")}
-                      className="flex items-center justify-between text-[12px] py-1 border-b border-[#F0F0ED] cursor-pointer hover:text-[#00AAEB]"
+                      className="flex items-center justify-between text-[12px] py-1 border-b border-[#F0F0ED] cursor-pointer hover:text-[#10B981]"
                     >
                       <span className="text-[#737373]">Full Cash / Direct Payment</span>
-                      <span className="font-bold text-[#04314A]">
+                      <span className="font-bold text-[#0B3D2B]">
                         {fmt(sales.cash_count)} units
                       </span>
                     </div>
                     <div
                       onClick={() => onNavigate("units?status=SOLD")}
-                      className="flex items-center justify-between text-[12px] py-1 border-b border-[#F0F0ED] cursor-pointer hover:text-[#00AAEB]"
+                      className="flex items-center justify-between text-[12px] py-1 border-b border-[#F0F0ED] cursor-pointer hover:text-[#10B981]"
                     >
                       <span className="text-[#737373]">Bank Financed / EMI</span>
-                      <span className="font-bold text-[#04314A]">
+                      <span className="font-bold text-[#0B3D2B]">
                         {fmt(sales.finance_count)} units
                       </span>
                     </div>
                     <div
                       onClick={() => onNavigate("units?status=RESERVED")}
-                      className="flex items-center justify-between text-[12px] py-1 cursor-pointer hover:text-[#00AAEB]"
+                      className="flex items-center justify-between text-[12px] py-1 cursor-pointer hover:text-[#10B981]"
                     >
                       <div>
                         <span className="text-[#737373] block">Pending Finance Approval</span>
@@ -677,7 +677,7 @@ export default function Dashboard({
                           Units sold awaiting bank loan approval before final handover.
                         </span>
                       </div>
-                      <span className="font-bold text-[#00AAEB]">
+                      <span className="font-bold text-[#10B981]">
                         {fmt(sales.pending_finance)} units
                       </span>
                     </div>
@@ -688,7 +688,7 @@ export default function Dashboard({
                   className="flex items-center justify-between px-5 py-3 border-t border-[#E8E8E5] bg-[#FAFAF8] cursor-pointer hover:bg-[#F0F0ED] transition-colors"
                 >
                   <span className="text-[12px] text-[#737373]">Active Customers</span>
-                  <span className="text-[13px] font-black text-[#04314A]">
+                  <span className="text-[13px] font-black text-[#0B3D2B]">
                     {fmt(stats?.crm?.customers)} registered
                   </span>
                 </div>
@@ -699,7 +699,7 @@ export default function Dashboard({
             {svc && (
               <Section
                 title="Workshop Status"
-                subtitle="Vehicle Template service bays"
+                subtitle="EV OS service bays"
                 action="Open Workshop"
                 onAction={() => onNavigate("servicing")}
               >
@@ -717,7 +717,7 @@ export default function Dashboard({
                       className="flex items-center justify-between py-2 border-b border-[#F0F0ED] last:border-0 cursor-pointer hover:bg-[#FAFAF8] px-2 -mx-2 rounded transition-colors"
                     >
                       <span className="text-[12px] text-[#737373]">{row.label}</span>
-                      <span className="text-[14px] font-black text-[#04314A] tabular-nums">
+                      <span className="text-[14px] font-black text-[#0B3D2B] tabular-nums">
                         {fmt(row.val)}
                       </span>
                     </div>
@@ -725,7 +725,7 @@ export default function Dashboard({
                 </div>
                 <div className="flex items-center justify-between px-5 py-3 border-t border-[#E8E8E5] bg-[#FAFAF8]">
                   <span className="text-[12px] text-[#737373]">Total Service Visits</span>
-                  <span className="text-[13px] font-black text-[#04314A]">
+                  <span className="text-[13px] font-black text-[#0B3D2B]">
                     {fmt(svc.total)} total ({fmt(svc.this_month)} this month)
                   </span>
                 </div>
@@ -768,11 +768,11 @@ export default function Dashboard({
                           onClick={() => onNavigate(`units?model=${m.id}`)}
                         >
                           <td className="px-5 py-3.5">
-                            <div className="text-[13px] font-bold text-[#04314A]">
+                            <div className="text-[13px] font-bold text-[#0B3D2B]">
                               {m.brand} {m.model_name}
                             </div>
                           </td>
-                          <td className="px-5 py-3.5 text-[13px] font-bold text-[#00AAEB] tabular-nums">
+                          <td className="px-5 py-3.5 text-[13px] font-bold text-[#10B981] tabular-nums">
                             {fmt(m.ready_for_sale)}
                           </td>
                           <td className="px-5 py-3.5 text-[13px] text-[#737373] tabular-nums">
@@ -784,7 +784,7 @@ export default function Dashboard({
                           <td className="px-5 py-3.5 text-[13px] text-[#737373] tabular-nums">
                             {fmt(m.sold)}
                           </td>
-                          <td className="px-5 py-3.5 text-[13px] font-black text-[#04314A] tabular-nums">
+                          <td className="px-5 py-3.5 text-[13px] font-black text-[#0B3D2B] tabular-nums">
                             {fmt(m.total)}
                           </td>
                           <td className="px-5 py-3.5">
@@ -793,8 +793,8 @@ export default function Dashboard({
                                 isOutOfStock
                                   ? "text-[#737373]"
                                   : isLow
-                                  ? "text-[#00AAEB]"
-                                  : "text-[#04314A]"
+                                  ? "text-[#10B981]"
+                                  : "text-[#0B3D2B]"
                               }`}
                             >
                               {isOutOfStock ? "Out of Stock" : isLow ? "Low Stock" : "In Stock"}
@@ -828,7 +828,7 @@ export default function Dashboard({
                     >
                       <div className="flex items-start justify-between gap-2">
                         <div>
-                          <div className="text-[13px] font-bold text-[#04314A]">
+                          <div className="text-[13px] font-bold text-[#0B3D2B]">
                             {q.name}
                             {q.company ? ` · ${q.company}` : ""}
                           </div>
@@ -838,8 +838,8 @@ export default function Dashboard({
                         </div>
                         <StatusBadge status={q.status} />
                       </div>
-                      <div className="mt-2 text-[12px] text-[#04314A] font-medium">
-                        Vehicle: <span className="text-[#00AAEB]">{q.vehicle}</span>
+                      <div className="mt-2 text-[12px] text-[#0B3D2B] font-medium">
+                        Vehicle: <span className="text-[#10B981]">{q.vehicle}</span>
                       </div>
                       {q.message && (
                         <p className="mt-1 text-[11px] text-[#737373] line-clamp-1 italic">
@@ -856,7 +856,7 @@ export default function Dashboard({
             {svc?.recent && svc.recent.length > 0 && (
               <Section
                 title="Recent Vehicle Repair Orders (VRO)"
-                subtitle="Workshop visits at Vehicle Template service center"
+                subtitle="Workshop visits at EV OS service center"
                 action="View All"
                 onAction={() => onNavigate("servicing")}
               >
@@ -869,14 +869,14 @@ export default function Dashboard({
                     >
                       <div className="flex items-start justify-between gap-2">
                         <div>
-                          <div className="text-[13px] font-bold text-[#04314A]">
+                          <div className="text-[13px] font-bold text-[#0B3D2B]">
                             {rec.vro_no} · {rec.customer_name || "Customer Walk-in"}
                           </div>
                           <div className="text-[11px] text-[#737373] mt-0.5">
                             Chassis: {rec.chassis_number}
                           </div>
                         </div>
-                        <span className="text-[11px] font-semibold uppercase tracking-[0.04em] text-[#04314A]">
+                        <span className="text-[11px] font-semibold uppercase tracking-[0.04em] text-[#0B3D2B]">
                           {SERVICE_STATUS_LABEL[rec.status] || rec.status}
                         </span>
                       </div>
@@ -888,7 +888,7 @@ export default function Dashboard({
                       <div className="mt-1 flex items-center justify-between text-[11px] text-[#737373]">
                         <span>Received: {relativeDate(rec.date_received)}</span>
                         {rec.estimated_cost != null && rec.estimated_cost > 0 && (
-                          <span className="font-bold text-[#04314A]">
+                          <span className="font-bold text-[#0B3D2B]">
                             Est: {fmtMoney(rec.estimated_cost)}
                           </span>
                         )}
@@ -911,7 +911,7 @@ export default function Dashboard({
                   <div className="flex items-center justify-between p-3 border border-[#E8E8E5] bg-[#FAFAF8]">
                     <div className="flex items-center gap-2">
                       <span className="w-2.5 h-2.5 rounded-full bg-[#DC2626]" />
-                      <span className="text-[13px] font-bold text-[#04314A]">Overdue for Routine Service</span>
+                      <span className="text-[13px] font-bold text-[#0B3D2B]">Overdue for Routine Service</span>
                     </div>
                     <span className="text-[14px] font-bold text-[#DC2626]">
                       {svc.service_due.overdue}
@@ -920,7 +920,7 @@ export default function Dashboard({
                   <div className="flex items-center justify-between p-3 border border-[#E8E8E5] bg-[#FAFAF8]">
                     <div className="flex items-center gap-2">
                       <span className="w-2.5 h-2.5 rounded-full bg-[#D97706]" />
-                      <span className="text-[13px] font-bold text-[#04314A]">Due Soon (Next 7 Days or 500 km)</span>
+                      <span className="text-[13px] font-bold text-[#0B3D2B]">Due Soon (Next 7 Days or 500 km)</span>
                     </div>
                     <span className="text-[14px] font-bold text-[#D97706]">
                       {svc.service_due.due_soon}
@@ -928,7 +928,7 @@ export default function Dashboard({
                   </div>
                   <button
                     onClick={() => onNavigate("servicing-due")}
-                    className="w-full mt-1 py-2 text-center text-[12px] font-semibold text-[#04314A] border border-[#04314A] hover:bg-[#04314A] hover:text-white transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-[#00AAEB]"
+                    className="w-full mt-1 py-2 text-center text-[12px] font-semibold text-[#0B3D2B] border border-[#0B3D2B] hover:bg-[#0B3D2B] hover:text-white transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-[#10B981]"
                   >
                     Open Service Due Queue
                   </button>
@@ -977,11 +977,11 @@ export default function Dashboard({
                         onClick={() => onNavigate(`units?model=${m.id}`)}
                       >
                         <td className="px-5 py-3.5">
-                          <div className="text-[13px] font-bold text-[#04314A]">
+                          <div className="text-[13px] font-bold text-[#0B3D2B]">
                             {m.brand} {m.model_name}
                           </div>
                         </td>
-                        <td className="px-5 py-3.5 text-[13px] font-bold text-[#00AAEB] tabular-nums">
+                        <td className="px-5 py-3.5 text-[13px] font-bold text-[#10B981] tabular-nums">
                           {fmt(m.ready_for_sale)}
                         </td>
                         <td className="px-5 py-3.5 text-[13px] text-[#737373] tabular-nums">
@@ -996,7 +996,7 @@ export default function Dashboard({
                         <td className="px-5 py-3.5 text-[13px] text-[#737373] tabular-nums">
                           {fmt(m.sold)}
                         </td>
-                        <td className="px-5 py-3.5 text-[13px] font-black text-[#04314A] tabular-nums">
+                        <td className="px-5 py-3.5 text-[13px] font-black text-[#0B3D2B] tabular-nums">
                           {fmt(m.total)}
                         </td>
                       </tr>
@@ -1039,7 +1039,7 @@ export default function Dashboard({
                           className="border-b border-[#F0F0ED] last:border-0 hover:bg-[#FAFAF8] cursor-pointer"
                           onClick={() => onNavigate(`batches/${b.id}`)}
                         >
-                          <td className="px-5 py-3.5 text-[12px] font-bold text-[#04314A]">
+                          <td className="px-5 py-3.5 text-[12px] font-bold text-[#0B3D2B]">
                             {b.batch_no}
                           </td>
                           <td className="px-5 py-3.5 text-[12px] text-[#737373]">
@@ -1049,11 +1049,11 @@ export default function Dashboard({
                             {b.border_crossing || "Rasuwagadhi (Kerung)"}
                           </td>
                           <td className="px-5 py-3.5">
-                            <span className="text-[11px] font-semibold uppercase tracking-[0.04em] text-[#00AAEB]">
+                            <span className="text-[11px] font-semibold uppercase tracking-[0.04em] text-[#10B981]">
                               {b.status_label || b.status}
                             </span>
                           </td>
-                          <td className="px-5 py-3.5 text-[12px] font-bold text-[#04314A] tabular-nums">
+                          <td className="px-5 py-3.5 text-[12px] font-bold text-[#0B3D2B] tabular-nums">
                             {b.total_units}
                           </td>
                           <td className="px-5 py-3.5 text-[12px] text-[#737373]">
@@ -1109,7 +1109,7 @@ export default function Dashboard({
                           key={r.id}
                           className="border-b border-[#F0F0ED] last:border-0 hover:bg-[#FAFAF8]"
                         >
-                          <td className="px-5 py-3.5 text-[12px] font-bold text-[#04314A]">
+                          <td className="px-5 py-3.5 text-[12px] font-bold text-[#0B3D2B]">
                             {r.receive_no}
                           </td>
                           <td className="px-5 py-3.5 text-[12px] text-[#737373]">
@@ -1131,7 +1131,7 @@ export default function Dashboard({
                             {relativeDate(r.receive_date)}
                           </td>
                           <td className="px-5 py-3.5">
-                            <span className="text-[11px] font-semibold uppercase tracking-[0.04em] text-[#04314A]">
+                            <span className="text-[11px] font-semibold uppercase tracking-[0.04em] text-[#0B3D2B]">
                               {r.status}
                             </span>
                           </td>
@@ -1169,27 +1169,27 @@ export default function Dashboard({
                 <div className="px-5 py-3">
                   {leads.pipeline ? (
                     <>
-                      <PipelineBar label="New Lead" value={leads.pipeline.new ?? leads.new} max={leadsTotal} color="#00AAEB" onClick={() => onNavigate("crm-leads?status=new")} />
-                      <PipelineBar label="Contacted" value={leads.pipeline.contacted ?? leads.contacted} max={leadsTotal} color="#04314A" onClick={() => onNavigate("crm-leads?status=contacted")} />
-                      <PipelineBar label="Test Drive" value={leads.pipeline.test_drive ?? 0} max={leadsTotal} color="#00AAEB" onClick={() => onNavigate("crm-testdrives")} />
-                      <PipelineBar label="Quotation" value={leads.pipeline.quotation ?? 0} max={leadsTotal} color="#04314A" onClick={() => onNavigate("crm-quotations")} />
-                      <PipelineBar label="Negotiation" value={leads.pipeline.negotiation ?? 0} max={leadsTotal} color="#00AAEB" onClick={() => onNavigate("crm-leads?status=negotiation")} />
-                      <PipelineBar label="Won / Sold" value={leads.pipeline.won ?? leads.converted} max={leadsTotal} color="#04314A" onClick={() => onNavigate("crm-leads?status=won")} />
+                      <PipelineBar label="New Lead" value={leads.pipeline.new ?? leads.new} max={leadsTotal} color="#10B981" onClick={() => onNavigate("crm-leads?status=new")} />
+                      <PipelineBar label="Contacted" value={leads.pipeline.contacted ?? leads.contacted} max={leadsTotal} color="#0B3D2B" onClick={() => onNavigate("crm-leads?status=contacted")} />
+                      <PipelineBar label="Test Drive" value={leads.pipeline.test_drive ?? 0} max={leadsTotal} color="#10B981" onClick={() => onNavigate("crm-testdrives")} />
+                      <PipelineBar label="Quotation" value={leads.pipeline.quotation ?? 0} max={leadsTotal} color="#0B3D2B" onClick={() => onNavigate("crm-quotations")} />
+                      <PipelineBar label="Negotiation" value={leads.pipeline.negotiation ?? 0} max={leadsTotal} color="#10B981" onClick={() => onNavigate("crm-leads?status=negotiation")} />
+                      <PipelineBar label="Won / Sold" value={leads.pipeline.won ?? leads.converted} max={leadsTotal} color="#0B3D2B" onClick={() => onNavigate("crm-leads?status=won")} />
                       <PipelineBar label="Lost" value={leads.pipeline.lost ?? leads.lost} max={leadsTotal} color="#737373" onClick={() => onNavigate("crm-leads?status=lost")} />
                     </>
                   ) : (
                     <>
-                      <PipelineBar label="New Lead" value={leads.new} max={leadsTotal} color="#00AAEB" onClick={() => onNavigate("crm-leads?status=new")} />
-                      <PipelineBar label="Contacted" value={leads.contacted} max={leadsTotal} color="#04314A" onClick={() => onNavigate("crm-leads?status=contacted")} />
-                      <PipelineBar label="Qualified" value={leads.qualified} max={leadsTotal} color="#00AAEB" onClick={() => onNavigate("crm-leads?status=qualified")} />
-                      <PipelineBar label="Converted" value={leads.converted} max={leadsTotal} color="#04314A" onClick={() => onNavigate("crm-leads?status=won")} />
+                      <PipelineBar label="New Lead" value={leads.new} max={leadsTotal} color="#10B981" onClick={() => onNavigate("crm-leads?status=new")} />
+                      <PipelineBar label="Contacted" value={leads.contacted} max={leadsTotal} color="#0B3D2B" onClick={() => onNavigate("crm-leads?status=contacted")} />
+                      <PipelineBar label="Qualified" value={leads.qualified} max={leadsTotal} color="#10B981" onClick={() => onNavigate("crm-leads?status=qualified")} />
+                      <PipelineBar label="Converted" value={leads.converted} max={leadsTotal} color="#0B3D2B" onClick={() => onNavigate("crm-leads?status=won")} />
                       <PipelineBar label="Lost" value={leads.lost} max={leadsTotal} color="#737373" onClick={() => onNavigate("crm-leads?status=lost")} />
                     </>
                   )}
                 </div>
                 <div className="flex items-center justify-between px-5 py-3 border-t border-[#E8E8E5] bg-[#FAFAF8]">
                   <span className="text-[12px] text-[#737373]">This Week</span>
-                  <span className="text-[13px] font-black text-[#04314A]">
+                  <span className="text-[13px] font-black text-[#0B3D2B]">
                     +{fmt(leads.this_week)} leads
                   </span>
                 </div>
@@ -1210,7 +1210,7 @@ export default function Dashboard({
                     className="flex items-center justify-between py-2 border-b border-[#F0F0ED] cursor-pointer hover:bg-[#FAFAF8] px-2 -mx-2 rounded transition-colors"
                   >
                     <span className="text-[12px] text-[#737373]">Draft Quotations</span>
-                    <span className="text-[14px] font-black text-[#04314A]">
+                    <span className="text-[14px] font-black text-[#0B3D2B]">
                       {fmt(stats.crm.quotations.draft)}
                     </span>
                   </div>
@@ -1219,7 +1219,7 @@ export default function Dashboard({
                     className="flex items-center justify-between py-2 border-b border-[#F0F0ED] cursor-pointer hover:bg-[#FAFAF8] px-2 -mx-2 rounded transition-colors"
                   >
                     <span className="text-[12px] text-[#737373]">Sent to Customer</span>
-                    <span className="text-[14px] font-black text-[#00AAEB]">
+                    <span className="text-[14px] font-black text-[#10B981]">
                       {fmt(stats.crm.quotations.sent)}
                     </span>
                   </div>
@@ -1228,7 +1228,7 @@ export default function Dashboard({
                     className="flex items-center justify-between py-2 border-b border-[#F0F0ED] cursor-pointer hover:bg-[#FAFAF8] px-2 -mx-2 rounded transition-colors"
                   >
                     <span className="text-[12px] text-[#737373]">Accepted & Approved</span>
-                    <span className="text-[14px] font-black text-[#04314A]">
+                    <span className="text-[14px] font-black text-[#0B3D2B]">
                       {fmt(stats.crm.quotations.accepted)}
                     </span>
                   </div>
@@ -1244,7 +1244,7 @@ export default function Dashboard({
                 </div>
                 <div className="flex items-center justify-between px-5 py-3 border-t border-[#E8E8E5] bg-[#FAFAF8]">
                   <span className="text-[12px] text-[#737373]">Total Quotations</span>
-                  <span className="text-[13px] font-black text-[#04314A]">
+                  <span className="text-[13px] font-black text-[#0B3D2B]">
                     {fmt(stats.crm.quotations.total)}
                   </span>
                 </div>
@@ -1264,10 +1264,10 @@ export default function Dashboard({
                   className="p-5 flex flex-col justify-between h-[180px] cursor-pointer hover:bg-[#FAFAF8] transition-colors"
                 >
                   <div>
-                    <div className="text-[36px] font-black text-[#04314A]">
+                    <div className="text-[36px] font-black text-[#0B3D2B]">
                       {fmt(stats.crm.test_drives.upcoming)}
                     </div>
-                    <div className="text-[12px] font-bold uppercase tracking-[0.08em] text-[#00AAEB] mt-1">
+                    <div className="text-[12px] font-bold uppercase tracking-[0.08em] text-[#10B981] mt-1">
                       Upcoming Test Drives Scheduled
                     </div>
                   </div>
@@ -1277,7 +1277,7 @@ export default function Dashboard({
                 </div>
                 <div className="flex items-center justify-between px-5 py-3 border-t border-[#E8E8E5] bg-[#FAFAF8]">
                   <span className="text-[12px] text-[#737373]">Total Bookings</span>
-                  <span className="text-[13px] font-black text-[#04314A]">
+                  <span className="text-[13px] font-black text-[#0B3D2B]">
                     {fmt(stats.crm.test_drives.total)}
                   </span>
                 </div>
@@ -1317,7 +1317,7 @@ export default function Dashboard({
                         onClick={() => onNavigate(`crm-leads/${lead.id}`)}
                       >
                         <td className="px-5 py-3.5">
-                          <div className="text-[13px] font-bold text-[#04314A]">
+                          <div className="text-[13px] font-bold text-[#0B3D2B]">
                             {lead.name}
                           </div>
                           {lead.email && (
@@ -1327,14 +1327,14 @@ export default function Dashboard({
                         <td className="px-5 py-3.5 text-[12px] text-[#737373]">
                           {lead.phone}
                         </td>
-                        <td className="px-5 py-3.5 text-[12px] font-medium text-[#04314A]">
+                        <td className="px-5 py-3.5 text-[12px] font-medium text-[#0B3D2B]">
                           {lead.vehicle || "General"}
                         </td>
                         <td className="px-5 py-3.5 text-[12px] text-[#737373]">
                           {lead.source}
                         </td>
                         <td className="px-5 py-3.5">
-                          <span className="text-[11px] font-semibold uppercase tracking-[0.04em] text-[#00AAEB]">
+                          <span className="text-[11px] font-semibold uppercase tracking-[0.04em] text-[#10B981]">
                             {LEAD_STATUS_LABEL[lead.status] || lead.status}
                           </span>
                         </td>
@@ -1388,7 +1388,7 @@ export default function Dashboard({
                           className="border-b border-[#F0F0ED] last:border-0 hover:bg-[#FAFAF8]"
                         >
                           <td className="px-5 py-3.5">
-                            <div className="text-[13px] font-bold text-[#04314A]">
+                            <div className="text-[13px] font-bold text-[#0B3D2B]">
                               {q.name}
                             </div>
                             {q.company && (
@@ -1399,7 +1399,7 @@ export default function Dashboard({
                             <div>{q.phone}</div>
                             {q.email && <div className="text-[11px]">{q.email}</div>}
                           </td>
-                          <td className="px-5 py-3.5 text-[12px] font-bold text-[#00AAEB]">
+                          <td className="px-5 py-3.5 text-[12px] font-bold text-[#10B981]">
                             {q.vehicle}
                           </td>
                           <td className="px-5 py-3.5 text-[12px] text-[#737373] max-w-xs truncate">
@@ -1414,7 +1414,7 @@ export default function Dashboard({
                           <td className="px-5 py-3.5">
                             <button
                               onClick={() => onNavigate("quote-requests")}
-                              className="text-[11px] font-bold uppercase tracking-[0.06em] text-[#00AAEB] hover:text-[#04314A]"
+                              className="text-[11px] font-bold uppercase tracking-[0.06em] text-[#10B981] hover:text-[#0B3D2B]"
                             >
                               Review
                             </button>
@@ -1466,7 +1466,7 @@ export default function Dashboard({
                           className="border-b border-[#F0F0ED] last:border-0 hover:bg-[#FAFAF8]"
                         >
                           <td className="px-5 py-3.5">
-                            <div className="text-[13px] font-bold text-[#04314A]">
+                            <div className="text-[13px] font-bold text-[#0B3D2B]">
                               {e.name}
                             </div>
                             {e.company && (
@@ -1477,7 +1477,7 @@ export default function Dashboard({
                             <div>{e.phone}</div>
                             {e.email && <div className="text-[11px]">{e.email}</div>}
                           </td>
-                          <td className="px-5 py-3.5 text-[12px] text-[#04314A]">
+                          <td className="px-5 py-3.5 text-[12px] text-[#0B3D2B]">
                             {e.vehicle || "General Inquiry"}
                           </td>
                           <td className="px-5 py-3.5 text-[12px] text-[#737373] max-w-sm truncate">
@@ -1525,12 +1525,12 @@ export default function Dashboard({
                   <div
                     key={s.label}
                     onClick={() => onNavigate(`servicing?status=${s.status}`)}
-                    className="bg-white border border-[#E8E8E5] p-4 cursor-pointer hover:border-[#00AAEB] transition-colors"
+                    className="bg-white border border-[#E8E8E5] p-4 cursor-pointer hover:border-[#10B981] transition-colors"
                   >
                     <div className="text-[11px] font-bold uppercase tracking-[0.08em] text-[#737373]">
                       {s.label}
                     </div>
-                    <div className="text-[28px] font-black text-[#04314A] mt-2">
+                    <div className="text-[28px] font-black text-[#0B3D2B] mt-2">
                       {fmt(s.count)}
                     </div>
                   </div>
@@ -1568,13 +1568,13 @@ export default function Dashboard({
                             className="border-b border-[#F0F0ED] last:border-0 hover:bg-[#FAFAF8] cursor-pointer"
                             onClick={() => onNavigate(`servicing?vro=${encodeURIComponent(rec.vro_no || rec.id)}`)}
                           >
-                            <td className="px-5 py-3.5 text-[12px] font-bold text-[#04314A]">
+                            <td className="px-5 py-3.5 text-[12px] font-bold text-[#0B3D2B]">
                               {rec.vro_no}
                             </td>
                             <td className="px-5 py-3.5 text-[12px] text-[#737373]">
                               {rec.chassis_number}
                             </td>
-                            <td className="px-5 py-3.5 text-[12px] font-medium text-[#04314A]">
+                            <td className="px-5 py-3.5 text-[12px] font-medium text-[#0B3D2B]">
                               {rec.customer_name || "Walk-in"}
                             </td>
                             <td className="px-5 py-3.5 text-[12px] text-[#737373] max-w-sm truncate">
@@ -1583,11 +1583,11 @@ export default function Dashboard({
                             <td className="px-5 py-3.5 text-[12px] text-[#737373] whitespace-nowrap">
                               {relativeDate(rec.date_received)}
                             </td>
-                            <td className="px-5 py-3.5 text-[12px] font-bold text-[#04314A] tabular-nums">
+                            <td className="px-5 py-3.5 text-[12px] font-bold text-[#0B3D2B] tabular-nums">
                               {rec.estimated_cost ? fmtMoney(rec.estimated_cost) : "-"}
                             </td>
                             <td className="px-5 py-3.5">
-                              <span className="text-[11px] font-semibold uppercase tracking-[0.04em] text-[#04314A]">
+                              <span className="text-[11px] font-semibold uppercase tracking-[0.04em] text-[#0B3D2B]">
                                 {SERVICE_STATUS_LABEL[rec.status] || rec.status}
                               </span>
                             </td>

@@ -286,7 +286,7 @@ export const CMS_DEFAULTS: CmsContent = {
       line1: "MOUNTAIN",
       line2: "KING",
       line3: "",
-      footer: "Vehicle Template · Electric Commercial Vehicles",
+      footer: "EV OS · Electric Commercial Vehicles",
       background_image: "",
     },
     technology: {
@@ -549,7 +549,7 @@ export const CMS_DEFAULTS: CmsContent = {
     line1: "FROM THE",
     line2: "FIELD.",
     subhead:
-      "Field reports, customer wins, and engineering notes from Vehicle Template's electric fleet journey.",
+      "Field reports, customer wins, and engineering notes from EV OS's electric fleet journey.",
   },
 
   contact: {
@@ -560,23 +560,23 @@ export const CMS_DEFAULTS: CmsContent = {
       subhead: "Questions about vehicles, after-sales and general enquiries: we respond within one business day.",
     },
     info: {
-      company_name: "Vehicle Template",
+      company_name: "EV OS",
       address_primary: "Your Showroom, Your Address, Your City",
       address_secondary: "Opposite Jawalakhel, Bagdol-3",
       maps_link: "https://share.google/k48vHdFOU8M1jExYy",
       phone_label: "Sales & Service",
       phone: "+977 1 442 0000",
       email_label: "Email",
-      email: "info@vehicletemplate.example.com",
+      email: "info@evos.example.com",
     },
     map: {
       badge: "Visit Us",
       heading: "Find us in Bagdol.",
       subtext:
-        "Vehicle Template showroom and service centre, Lalitpur: walk in for a closer look at the fleet.",
+        "EV OS showroom and service centre, Lalitpur: walk in for a closer look at the fleet.",
       embed_url:
         "",
-      caption: "Vehicle Template: Wuling & VT Showroom, Bagdol, Lalitpur",
+      caption: "EV OS: Wuling & VT Showroom, Bagdol, Lalitpur",
     },
   },
 
@@ -594,7 +594,7 @@ export const CMS_DEFAULTS: CmsContent = {
     brand: {
       logo_url: "/favicon.svg",
       logo_white_url: "/favicon.svg",
-      logo_alt: "Vehicle Template",
+      logo_alt: "EV OS",
     },
     cta: {
       badge: "Experience VT",

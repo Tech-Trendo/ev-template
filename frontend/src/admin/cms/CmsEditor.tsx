@@ -55,7 +55,7 @@ export type { CmsFieldDef, CmsGroupDef };
 type Json = Record<string, unknown>;
 
 const inputCls =
-  "border border-[#E8E8E5] rounded-xl bg-white px-3.5 py-2.5 text-[13px] font-medium text-[#04314A] placeholder:text-[#B0B0AA] focus:outline-none focus:border-[#00AAEB] focus:ring-2 focus:ring-[#00AAEB]/10 transition-all w-full";
+  "border border-[#E8E8E5] rounded-xl bg-white px-3.5 py-2.5 text-[13px] font-medium text-[#0B3D2B] placeholder:text-[#B0B0AA] focus:outline-none focus:border-[#10B981] focus:ring-2 focus:ring-[#10B981]/10 transition-all w-full";
 
 function clone<T>(value: T): T {
   return JSON.parse(JSON.stringify(value)) as T;
@@ -389,7 +389,7 @@ export default function CmsEditor({
           <label htmlFor={id} className="text-[10px] font-bold tracking-[0.12em] uppercase text-[#737373] flex items-center gap-1.5">
             {field.label}
             {field.isAccent && (
-              <span className="px-1.5 py-0.2 rounded-sm bg-[#00AAEB]/10 text-[#00AAEB] text-[9px] font-bold lowercase tracking-normal">
+              <span className="px-1.5 py-0.2 rounded-sm bg-[#10B981]/10 text-[#10B981] text-[9px] font-bold lowercase tracking-normal">
                 accent blue
               </span>
             )}
@@ -399,7 +399,7 @@ export default function CmsEditor({
               type="button"
               onClick={() => onChange(defaultVal)}
               title="Reset field to default"
-              className="text-[9px] font-semibold text-[#B0B0AA] hover:text-[#00AAEB] flex items-center gap-0.5 transition-colors"
+              className="text-[9px] font-semibold text-[#B0B0AA] hover:text-[#10B981] flex items-center gap-0.5 transition-colors"
             >
               <RefreshCw size={9} /> Reset
             </button>
@@ -436,9 +436,9 @@ export default function CmsEditor({
         )}
 
         {field.isAccent && strValue && (
-          <div className="p-2 rounded-lg bg-[#00AAEB]/5 border border-[#00AAEB]/20 text-[11px] text-[#04314A]">
-            <span className="text-[10px] font-bold text-[#00AAEB] uppercase block mb-0.5">Live Style Preview:</span>
-            <span className="font-bold text-[#00AAEB]">{strValue}</span>
+          <div className="p-2 rounded-lg bg-[#10B981]/5 border border-[#10B981]/20 text-[11px] text-[#0B3D2B]">
+            <span className="text-[10px] font-bold text-[#10B981] uppercase block mb-0.5">Live Style Preview:</span>
+            <span className="font-bold text-[#10B981]">{strValue}</span>
           </div>
         )}
 
@@ -467,7 +467,7 @@ export default function CmsEditor({
       <div className="bg-white border border-[#E8E8E5] rounded-2xl p-2.5 shadow-xs space-y-2">
         <div className="flex items-center justify-between px-2.5 py-1 border-b border-[#E8E8E5]/70">
           <div className="flex items-center gap-2">
-            <span className="text-[10px] font-black tracking-[0.16em] uppercase text-[#04314A]">
+            <span className="text-[10px] font-black tracking-[0.16em] uppercase text-[#0B3D2B]">
               Website Content Hub
             </span>
             <span className="text-[10px] font-semibold text-[#737373]">· 8 Editable Pages</span>
@@ -484,7 +484,7 @@ export default function CmsEditor({
               hubScrollRef.current?.scrollBy({ left: -200, behavior: "smooth" });
             }}
             title="Scroll pages left"
-            className="w-7 h-7 rounded-lg border border-[#E8E8E5] bg-[#FAFAF8] hover:bg-[#04314A] hover:text-white hover:border-[#04314A] text-[#737373] flex items-center justify-center flex-shrink-0 transition-colors shadow-2xs"
+            className="w-7 h-7 rounded-lg border border-[#E8E8E5] bg-[#FAFAF8] hover:bg-[#0B3D2B] hover:text-white hover:border-[#0B3D2B] text-[#737373] flex items-center justify-center flex-shrink-0 transition-colors shadow-2xs"
           >
             <ChevronLeft size={14} />
           </button>
@@ -508,11 +508,11 @@ export default function CmsEditor({
                   onClick={() => onNavigate?.(key)}
                   className={`flex items-center gap-2 px-3.5 py-2 rounded-xl text-[12px] font-bold tracking-[0.02em] whitespace-nowrap transition-all flex-shrink-0 ${
                     isActive
-                      ? "bg-[#04314A] text-white shadow-sm ring-2 ring-[#04314A]/10"
-                      : "bg-[#FAFAF8] text-[#737373] hover:text-[#04314A] hover:bg-[#F0F0ED] border border-[#E8E8E5]"
+                      ? "bg-[#0B3D2B] text-white shadow-sm ring-2 ring-[#0B3D2B]/10"
+                      : "bg-[#FAFAF8] text-[#737373] hover:text-[#0B3D2B] hover:bg-[#F0F0ED] border border-[#E8E8E5]"
                   }`}
                 >
-                  <span className={isActive ? "text-[#00AAEB]" : "text-[#737373]"}>
+                  <span className={isActive ? "text-[#10B981]" : "text-[#737373]"}>
                     {getPageIcon(key)}
                   </span>
                   {pageMeta.label}
@@ -527,7 +527,7 @@ export default function CmsEditor({
               hubScrollRef.current?.scrollBy({ left: 200, behavior: "smooth" });
             }}
             title="Scroll pages right"
-            className="w-7 h-7 rounded-lg border border-[#E8E8E5] bg-[#FAFAF8] hover:bg-[#04314A] hover:text-white hover:border-[#04314A] text-[#737373] flex items-center justify-center flex-shrink-0 transition-colors shadow-2xs"
+            className="w-7 h-7 rounded-lg border border-[#E8E8E5] bg-[#FAFAF8] hover:bg-[#0B3D2B] hover:text-white hover:border-[#0B3D2B] text-[#737373] flex items-center justify-center flex-shrink-0 transition-colors shadow-2xs"
           >
             <ChevronRight size={14} />
           </button>
@@ -553,7 +553,7 @@ export default function CmsEditor({
             <button
               type="button"
               onClick={() => setPreviewOpen(true)}
-              className="inline-flex items-center gap-1.5 px-3.5 py-2 rounded-full border border-[#E8E8E5] bg-white text-[12px] font-bold text-[#04314A] hover:border-[#00AAEB] hover:text-[#00AAEB] transition-colors shadow-xs"
+              className="inline-flex items-center gap-1.5 px-3.5 py-2 rounded-full border border-[#E8E8E5] bg-white text-[12px] font-bold text-[#0B3D2B] hover:border-[#10B981] hover:text-[#10B981] transition-colors shadow-xs"
             >
               <Eye size={14} /> Live Preview
             </button>
@@ -563,7 +563,7 @@ export default function CmsEditor({
               href={sitePath}
               target="_blank"
               rel="noreferrer"
-              className="inline-flex items-center gap-1.5 px-3.5 py-2 rounded-full border border-[#E8E8E5] bg-white text-[12px] font-bold text-[#737373] hover:text-[#04314A] hover:border-[#04314A] transition-colors shadow-xs"
+              className="inline-flex items-center gap-1.5 px-3.5 py-2 rounded-full border border-[#E8E8E5] bg-white text-[12px] font-bold text-[#737373] hover:text-[#0B3D2B] hover:border-[#0B3D2B] transition-colors shadow-xs"
             >
               View Page <ExternalLink size={13} />
             </a>
@@ -585,8 +585,8 @@ export default function CmsEditor({
               disabled={loading || saving}
               className={`inline-flex items-center gap-2 px-5 py-2.5 rounded-full text-[12px] font-bold tracking-[0.06em] uppercase transition-all shadow-md ${
                 isDirty
-                  ? "bg-[#00AAEB] text-white hover:bg-[#04314A] scale-[1.02] ring-2 ring-[#00AAEB]/30"
-                  : "bg-[#04314A] text-white hover:bg-[#00AAEB]"
+                  ? "bg-[#10B981] text-white hover:bg-[#0B3D2B] scale-[1.02] ring-2 ring-[#10B981]/30"
+                  : "bg-[#0B3D2B] text-white hover:bg-[#10B981]"
               } disabled:opacity-50`}
             >
               {saving ? <Loader2 size={14} className="animate-spin" /> : <Save size={14} />}
@@ -602,12 +602,12 @@ export default function CmsEditor({
           role="status"
           className={`flex items-center justify-between px-4 py-3 rounded-xl border text-[13px] font-medium transition-all ${
             status.kind === "ok"
-              ? "bg-white text-[#04314A] border-[#E8E8E5]"
-              : "bg-[#F7F7F5] text-[#04314A] border-[#04314A]"
+              ? "bg-white text-[#0B3D2B] border-[#E8E8E5]"
+              : "bg-[#F7F7F5] text-[#0B3D2B] border-[#0B3D2B]"
           }`}
         >
           <div className="flex items-center gap-2">
-            {status.kind === "ok" ? <Check size={16} className="text-[#00AAEB]" /> : <X size={16} className="text-[#737373]" />}
+            {status.kind === "ok" ? <Check size={16} className="text-[#10B981]" /> : <X size={16} className="text-[#737373]" />}
             <span>{status.message}</span>
           </div>
           <button
@@ -626,17 +626,17 @@ export default function CmsEditor({
           {/* Top Row: Search & Controls */}
           <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3 pb-2 border-b border-[#E8E8E5]/60">
             <div className="flex items-center gap-2">
-              <span className="text-[11px] font-black tracking-[0.1em] uppercase text-[#04314A]">
+              <span className="text-[11px] font-black tracking-[0.1em] uppercase text-[#0B3D2B]">
                 Page Sections
               </span>
-              <span className="px-2 py-0.5 rounded-full bg-[#04314A]/8 text-[#04314A] text-[10px] font-bold">
+              <span className="px-2 py-0.5 rounded-full bg-[#0B3D2B]/8 text-[#0B3D2B] text-[10px] font-bold">
                 {schema.length} sections
               </span>
               {selectedSection !== "all" && (
                 <button
                   type="button"
                   onClick={() => setSelectedSection("all")}
-                  className="text-[10px] font-bold text-[#00AAEB] hover:underline ml-1"
+                  className="text-[10px] font-bold text-[#10B981] hover:underline ml-1"
                 >
                   (Show All)
                 </button>
@@ -654,13 +654,13 @@ export default function CmsEditor({
                   value={searchQuery}
                   onChange={(e) => setSearchQuery(e.target.value)}
                   placeholder="Search fields, labels, text…"
-                  className="w-full pl-8 pr-7 py-1.5 bg-[#FAFAF8] border border-[#E8E8E5] rounded-lg text-[12px] text-[#04314A] placeholder:text-[#B0B0AA] focus:outline-none focus:border-[#00AAEB] focus:bg-white transition-colors"
+                  className="w-full pl-8 pr-7 py-1.5 bg-[#FAFAF8] border border-[#E8E8E5] rounded-lg text-[12px] text-[#0B3D2B] placeholder:text-[#B0B0AA] focus:outline-none focus:border-[#10B981] focus:bg-white transition-colors"
                 />
                 {searchQuery && (
                   <button
                     type="button"
                     onClick={() => setSearchQuery("")}
-                    className="absolute right-2 top-1/2 -translate-y-1/2 text-[#B0B0AA] hover:text-[#04314A]"
+                    className="absolute right-2 top-1/2 -translate-y-1/2 text-[#B0B0AA] hover:text-[#0B3D2B]"
                   >
                     <X size={12} />
                   </button>
@@ -671,7 +671,7 @@ export default function CmsEditor({
                 <button
                   type="button"
                   onClick={expandAllSections}
-                  className="px-2 py-1 hover:bg-[#FAFAF8] rounded hover:text-[#00AAEB] transition-colors"
+                  className="px-2 py-1 hover:bg-[#FAFAF8] rounded hover:text-[#10B981] transition-colors"
                   title="Expand all sections"
                 >
                   Expand
@@ -680,7 +680,7 @@ export default function CmsEditor({
                 <button
                   type="button"
                   onClick={collapseAllSections}
-                  className="px-2 py-1 hover:bg-[#FAFAF8] rounded hover:text-[#00AAEB] transition-colors"
+                  className="px-2 py-1 hover:bg-[#FAFAF8] rounded hover:text-[#10B981] transition-colors"
                   title="Collapse all sections"
                 >
                   Collapse
@@ -697,7 +697,7 @@ export default function CmsEditor({
                 sectionScrollRef.current?.scrollBy({ left: -200, behavior: "smooth" });
               }}
               title="Scroll left"
-              className="w-7 h-7 rounded-lg border border-[#E8E8E5] bg-[#FAFAF8] hover:bg-[#00AAEB] hover:text-white hover:border-[#00AAEB] text-[#737373] flex items-center justify-center flex-shrink-0 transition-colors shadow-2xs"
+              className="w-7 h-7 rounded-lg border border-[#E8E8E5] bg-[#FAFAF8] hover:bg-[#10B981] hover:text-white hover:border-[#10B981] text-[#737373] flex items-center justify-center flex-shrink-0 transition-colors shadow-2xs"
             >
               <ChevronLeft size={14} />
             </button>
@@ -716,8 +716,8 @@ export default function CmsEditor({
                 onClick={() => setSelectedSection("all")}
                 className={`px-3 py-1.5 rounded-lg text-[11px] font-bold tracking-[0.04em] uppercase transition-all whitespace-nowrap flex-shrink-0 ${
                   selectedSection === "all"
-                    ? "bg-[#00AAEB] text-white shadow-xs"
-                    : "bg-[#FAFAF8] text-[#737373] hover:text-[#04314A] hover:bg-[#F0F0ED] border border-[#E8E8E5]"
+                    ? "bg-[#10B981] text-white shadow-xs"
+                    : "bg-[#FAFAF8] text-[#737373] hover:text-[#0B3D2B] hover:bg-[#F0F0ED] border border-[#E8E8E5]"
                 }`}
               >
                 All Sections ({schema.length})
@@ -733,8 +733,8 @@ export default function CmsEditor({
                     onClick={() => setSelectedSection(id)}
                     className={`inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-[11px] font-bold tracking-[0.04em] uppercase transition-all whitespace-nowrap flex-shrink-0 ${
                       isSelected
-                        ? "bg-[#00AAEB] text-white shadow-xs"
-                        : "bg-[#FAFAF8] text-[#737373] hover:text-[#04314A] hover:bg-[#F0F0ED] border border-[#E8E8E5]"
+                        ? "bg-[#10B981] text-white shadow-xs"
+                        : "bg-[#FAFAF8] text-[#737373] hover:text-[#0B3D2B] hover:bg-[#F0F0ED] border border-[#E8E8E5]"
                     }`}
                   >
                     <span className={isSelected ? "text-white" : "text-[#737373]"}>
@@ -752,7 +752,7 @@ export default function CmsEditor({
                 sectionScrollRef.current?.scrollBy({ left: 200, behavior: "smooth" });
               }}
               title="Scroll right"
-              className="w-7 h-7 rounded-lg border border-[#E8E8E5] bg-[#FAFAF8] hover:bg-[#00AAEB] hover:text-white hover:border-[#00AAEB] text-[#737373] flex items-center justify-center flex-shrink-0 transition-colors shadow-2xs"
+              className="w-7 h-7 rounded-lg border border-[#E8E8E5] bg-[#FAFAF8] hover:bg-[#10B981] hover:text-white hover:border-[#10B981] text-[#737373] flex items-center justify-center flex-shrink-0 transition-colors shadow-2xs"
             >
               <ChevronRight size={14} />
             </button>
@@ -763,7 +763,7 @@ export default function CmsEditor({
       {/* 5. CONTENT SECTIONS GRID */}
       {loading ? (
         <div className="bg-white border border-[#E8E8E5] rounded-2xl p-16 flex flex-col items-center justify-center gap-3 text-[13px] text-[#737373]">
-          <Loader2 size={24} className="animate-spin text-[#00AAEB]" />
+          <Loader2 size={24} className="animate-spin text-[#10B981]" />
           <span className="font-bold">Loading website content…</span>
         </div>
       ) : (
@@ -774,7 +774,7 @@ export default function CmsEditor({
               <section
                 key={group.title}
                 className={`bg-white border rounded-2xl transition-all shadow-xs overflow-hidden ${
-                  isCollapsed ? "border-[#E8E8E5]" : "border-[#00AAEB]/25 ring-1 ring-[#00AAEB]/5"
+                  isCollapsed ? "border-[#E8E8E5]" : "border-[#10B981]/25 ring-1 ring-[#10B981]/5"
                 }`}
               >
                 {/* Section Header */}
@@ -784,15 +784,15 @@ export default function CmsEditor({
                   data-open={!isCollapsed}
                 >
                   <div className="flex items-center gap-3">
-                    <div className="w-8 h-8 rounded-xl bg-[#00AAEB]/10 text-[#00AAEB] flex items-center justify-center flex-shrink-0">
+                    <div className="w-8 h-8 rounded-xl bg-[#10B981]/10 text-[#10B981] flex items-center justify-center flex-shrink-0">
                       {getSectionIcon(group.icon)}
                     </div>
                     <div>
                       <div className="flex items-center gap-2">
-                        <h2 className="text-[14px] font-black tracking-[0.06em] uppercase text-[#04314A]">
+                        <h2 className="text-[14px] font-black tracking-[0.06em] uppercase text-[#0B3D2B]">
                           {group.title}
                         </h2>
-                        <span className="px-2 py-0.5 rounded-full bg-[#04314A]/8 text-[#04314A] text-[10px] font-bold">
+                        <span className="px-2 py-0.5 rounded-full bg-[#0B3D2B]/8 text-[#0B3D2B] text-[10px] font-bold">
                           {group.fields.length} {group.fields.length === 1 ? "field" : "fields"}
                         </span>
                       </div>
@@ -810,7 +810,7 @@ export default function CmsEditor({
                       type="button"
                       onClick={() => resetSection(group)}
                       title="Reset this section to defaults"
-                      className="inline-flex items-center gap-1 px-2.5 py-1.5 rounded-lg text-[11px] font-semibold text-[#737373] hover:text-[#04314A] hover:bg-[#F0F0ED] transition-colors"
+                      className="inline-flex items-center gap-1 px-2.5 py-1.5 rounded-lg text-[11px] font-semibold text-[#737373] hover:text-[#0B3D2B] hover:bg-[#F0F0ED] transition-colors"
                     >
                       <RotateCcw size={11} /> Reset
                     </button>
@@ -866,7 +866,7 @@ export default function CmsEditor({
           {filteredSchema.length === 0 && (
             <div className="bg-white border border-dashed border-[#E8E8E5] rounded-2xl p-12 text-center">
               <Search size={24} className="mx-auto text-[#B0B0AA] mb-2" />
-              <p className="text-[13px] font-bold text-[#04314A]">No fields match your search</p>
+              <p className="text-[13px] font-bold text-[#0B3D2B]">No fields match your search</p>
               <p className="text-[11px] text-[#737373] mt-1 mb-4">
                 Try searching for a different keyword or reset filters.
               </p>
@@ -876,7 +876,7 @@ export default function CmsEditor({
                   setSearchQuery("");
                   setSelectedSection("all");
                 }}
-                className="px-4 py-2 rounded-full bg-[#00AAEB] text-white text-[12px] font-bold uppercase tracking-[0.04em]"
+                className="px-4 py-2 rounded-full bg-[#10B981] text-white text-[12px] font-bold uppercase tracking-[0.04em]"
               >
                 Clear Filters
               </button>
@@ -887,9 +887,9 @@ export default function CmsEditor({
 
       {/* 6. FLOATING STICKY ACTION BAR (When Unsaved Changes Exist) */}
       {isDirty && (
-        <div className="fixed bottom-6 left-1/2 -translate-x-1/2 z-40 bg-[#04314A] text-white px-5 py-3 rounded-full shadow-2xl border border-white/20 flex items-center gap-4 animate-in slide-in-from-bottom-4">
+        <div className="fixed bottom-6 left-1/2 -translate-x-1/2 z-40 bg-[#0B3D2B] text-white px-5 py-3 rounded-full shadow-2xl border border-white/20 flex items-center gap-4 animate-in slide-in-from-bottom-4">
           <div className="flex items-center gap-2">
-            <span className="w-2.5 h-2.5 rounded-full bg-[#00AAEB] animate-pulse" />
+            <span className="w-2.5 h-2.5 rounded-full bg-[#10B981] animate-pulse" />
             <span className="text-[12px] font-bold">Unsaved changes on {meta.label}</span>
           </div>
 
@@ -905,7 +905,7 @@ export default function CmsEditor({
               type="button"
               onClick={save}
               disabled={saving}
-              className="inline-flex items-center gap-1.5 px-4 py-1.5 rounded-full bg-[#00AAEB] text-white text-[11px] font-bold uppercase tracking-[0.04em] hover:bg-white hover:text-[#04314A] transition-colors shadow-xs"
+              className="inline-flex items-center gap-1.5 px-4 py-1.5 rounded-full bg-[#10B981] text-white text-[11px] font-bold uppercase tracking-[0.04em] hover:bg-white hover:text-[#0B3D2B] transition-colors shadow-xs"
             >
               {saving ? <Loader2 size={12} className="animate-spin" /> : <Save size={12} />}
               Publish (Ctrl+S)
@@ -929,7 +929,7 @@ export default function CmsEditor({
             <div className="w-10 h-10 rounded-full bg-[#B85C5C]/10 text-[#B85C5C] flex items-center justify-center mb-3">
               <RotateCcw size={18} />
             </div>
-            <h3 className="text-[16px] font-black text-[#04314A] tracking-tight">
+            <h3 className="text-[16px] font-black text-[#0B3D2B] tracking-tight">
               Reset {meta.label} to default content?
             </h3>
             <p className="text-[13px] text-[#737373] mt-2 mb-6 leading-relaxed">
@@ -940,7 +940,7 @@ export default function CmsEditor({
               <button
                 type="button"
                 onClick={() => setResetModalOpen(false)}
-                className="px-4 py-2 rounded-full border border-[#E8E8E5] text-[12px] font-bold text-[#737373] hover:text-[#04314A]"
+                className="px-4 py-2 rounded-full border border-[#E8E8E5] text-[12px] font-bold text-[#737373] hover:text-[#0B3D2B]"
               >
                 Cancel
               </button>

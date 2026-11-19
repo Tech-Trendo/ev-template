@@ -102,14 +102,14 @@ export default function QuoteRequestsManager({
   };
 
   const select =
-    "border border-[#E8E8E5] rounded-xl bg-white px-3 py-2.5 text-[12px] font-semibold text-[#04314A] focus:outline-none focus:border-[#00AAEB] cursor-pointer appearance-none";
+    "border border-[#E8E8E5] rounded-xl bg-white px-3 py-2.5 text-[12px] font-semibold text-[#0B3D2B] focus:outline-none focus:border-[#10B981] cursor-pointer appearance-none";
 
   return (
     <div>
       <div className="mb-8">
-        <h1 className="text-[36px] font-black tracking-tight text-[#04314A]">Quote Requests.</h1>
+        <h1 className="text-[36px] font-black tracking-tight text-[#0B3D2B]">Quote Requests.</h1>
         <p className="text-[13px] text-[#737373] mt-2 max-w-[600px]">
-          All <span className="font-semibold text-[#04314A]">Request a Quote</span> submissions from the public site.
+          All <span className="font-semibold text-[#0B3D2B]">Request a Quote</span> submissions from the public site.
           Contact enquiries remain in <span className="font-semibold">Enquiries</span>.
         </p>
       </div>
@@ -122,7 +122,7 @@ export default function QuoteRequestsManager({
             value={searchInput}
             onChange={(e) => setSearchInput(e.target.value)}
             placeholder="Search name, company, email, phone…"
-            className="w-full border border-[#E8E8E5] rounded-xl bg-white pl-10 pr-4 py-2.5 text-[13px] font-medium text-[#04314A] placeholder:text-[#B0B0AA] focus:outline-none focus:border-[#00AAEB] transition-colors"
+            className="w-full border border-[#E8E8E5] rounded-xl bg-white pl-10 pr-4 py-2.5 text-[13px] font-medium text-[#0B3D2B] placeholder:text-[#B0B0AA] focus:outline-none focus:border-[#10B981] transition-colors"
           />
         </div>
         <div className="relative">
@@ -144,7 +144,7 @@ export default function QuoteRequestsManager({
       </div>
 
       {error && (
-        <p className="mb-4 text-[13px] text-[#00AAEB] bg-[#00AAEB]/5 border-l-2 border-[#00AAEB] px-3 py-2">
+        <p className="mb-4 text-[13px] text-[#10B981] bg-[#10B981]/5 border-l-2 border-[#10B981] px-3 py-2">
           {error}
         </p>
       )}
@@ -177,7 +177,7 @@ export default function QuoteRequestsManager({
                     <FileText size={22} className="mx-auto mb-3 text-[#B0B0AA]" />
                     <p className="text-[13px] text-[#737373]">No quote requests yet.</p>
                     <p className="text-[12px] text-[#B0B0AA] mt-1">
-                      Submissions from <span className="font-medium text-[#04314A]">/quote</span> will appear here.
+                      Submissions from <span className="font-medium text-[#0B3D2B]">/quote</span> will appear here.
                     </p>
                   </td>
                 </tr>
@@ -189,7 +189,7 @@ export default function QuoteRequestsManager({
                       className="border-b border-[#F0F0ED] hover:bg-[#FAFAF8] cursor-pointer"
                     >
                       <td className="px-5 py-3.5">
-                        <div className="text-[13px] font-bold text-[#04314A]">{e.name}</div>
+                        <div className="text-[13px] font-bold text-[#0B3D2B]">{e.name}</div>
                         <div className="flex items-center gap-2">
                           <span className="text-[11px] text-[#737373]">{e.email}</span>
                           {e.lead_display && (
@@ -202,7 +202,7 @@ export default function QuoteRequestsManager({
                                   onNavigate(`crm-leads/${e.lead_display.id}`);
                                 }
                               }}
-                              className="text-[11px] font-semibold text-[#00AAEB] hover:underline"
+                              className="text-[11px] font-semibold text-[#10B981] hover:underline"
                             >
                               → Lead #{e.lead_display.id}
                             </a>
@@ -210,7 +210,7 @@ export default function QuoteRequestsManager({
                         </div>
                       </td>
                       <td className="px-5 py-3.5">
-                        <div className="text-[12px] font-medium text-[#04314A]">{e.company || "-"}</div>
+                        <div className="text-[12px] font-medium text-[#0B3D2B]">{e.company || "-"}</div>
                         <div className="text-[11px] text-[#737373]">{e.phone}</div>
                       </td>
                       <td className="px-5 py-3.5 text-[12px] text-[#737373]">{e.vehicle ?? "-"}</td>
@@ -229,7 +229,7 @@ export default function QuoteRequestsManager({
                           <select
                             value={e.status}
                             onChange={(ev) => setStatus(e, ev.target.value)}
-                            className="border border-[#E8E8E5] rounded-xl bg-white px-2 py-1.5 text-[10px] font-bold tracking-[0.06em] uppercase text-[#04314A] focus:outline-none focus:border-[#00AAEB] cursor-pointer"
+                            className="border border-[#E8E8E5] rounded-xl bg-white px-2 py-1.5 text-[10px] font-bold tracking-[0.06em] uppercase text-[#0B3D2B] focus:outline-none focus:border-[#10B981] cursor-pointer"
                           >
                             <option value="new">New</option>
                             <option value="in_progress">In Progress</option>
@@ -237,7 +237,7 @@ export default function QuoteRequestsManager({
                           </select>
                           <button
                             onClick={() => remove(e)}
-                            className="w-8 h-8 border border-[#E8E8E5] rounded-xl flex items-center justify-center text-[#00AAEB] hover:bg-[#00AAEB] hover:text-white transition-colors"
+                            className="w-8 h-8 border border-[#E8E8E5] rounded-xl flex items-center justify-center text-[#10B981] hover:bg-[#10B981] hover:text-white transition-colors"
                           >
                             <Trash2 size={13} />
                           </button>
@@ -253,7 +253,7 @@ export default function QuoteRequestsManager({
                                 <span className="font-semibold text-[#737373] text-[11px] tracking-[0.08em] uppercase block">
                                   Phone
                                 </span>
-                                <a href={`tel:${e.phone}`} className="text-[#04314A] hover:text-[#00AAEB]">
+                                <a href={`tel:${e.phone}`} className="text-[#0B3D2B] hover:text-[#10B981]">
                                   {e.phone}
                                 </a>
                               </p>
@@ -261,7 +261,7 @@ export default function QuoteRequestsManager({
                                 <span className="font-semibold text-[#737373] text-[11px] tracking-[0.08em] uppercase block">
                                   Email
                                 </span>
-                                <a href={`mailto:${e.email}`} className="text-[#04314A] hover:text-[#00AAEB]">
+                                <a href={`mailto:${e.email}`} className="text-[#0B3D2B] hover:text-[#10B981]">
                                   {e.email}
                                 </a>
                               </p>
@@ -269,7 +269,7 @@ export default function QuoteRequestsManager({
                                 <span className="font-semibold text-[#737373] text-[11px] tracking-[0.08em] uppercase block">
                                   Vehicle
                                 </span>
-                                <span className="text-[#04314A]">{e.vehicle ?? "-"}</span>
+                                <span className="text-[#0B3D2B]">{e.vehicle ?? "-"}</span>
                               </p>
                               {e.lead_display && (
                                 <p className="pt-2">
@@ -284,7 +284,7 @@ export default function QuoteRequestsManager({
                                         onNavigate(`crm-leads/${e.lead_display.id}`);
                                       }
                                     }}
-                                    className="inline-flex items-center gap-1.5 mt-1 px-3 py-1.5 bg-[#04314A] text-white rounded-lg text-[11px] font-bold hover:bg-[#00AAEB] transition-colors"
+                                    className="inline-flex items-center gap-1.5 mt-1 px-3 py-1.5 bg-[#0B3D2B] text-white rounded-lg text-[11px] font-bold hover:bg-[#10B981] transition-colors"
                                   >
                                     Open Lead #{e.lead_display.id} ({e.lead_display.status}) in CRM →
                                   </a>
@@ -295,7 +295,7 @@ export default function QuoteRequestsManager({
                               <span className="font-semibold text-[#737373] text-[11px] tracking-[0.08em] uppercase block">
                                 Message / Requirements
                               </span>
-                              <p className="text-[13px] text-[#04314A] leading-relaxed mt-1 whitespace-pre-wrap">
+                              <p className="text-[13px] text-[#0B3D2B] leading-relaxed mt-1 whitespace-pre-wrap">
                                 {e.message || "—"}
                               </p>
                             </div>

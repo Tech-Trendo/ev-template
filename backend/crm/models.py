@@ -1038,7 +1038,7 @@ class Quotation(models.Model):
                 return full
         if sp and " " in sp and "." not in sp.split()[0]:
             return sp
-        return sp or "VehicleTemplate"
+        return sp or "EVOS"
 
     @property
     def resolved_salesperson_email(self) -> str:
@@ -1056,7 +1056,7 @@ class Quotation(models.Model):
                 return u.email
         if self.salesperson_email:
             return self.salesperson_email
-        return "info@vehicletemplate.example.com"
+        return "info@evos.example.com"
 
     @property
     def resolved_salesperson_phone(self) -> str:

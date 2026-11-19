@@ -305,7 +305,7 @@ export default function LibraryPage({ onNavigate }: { onNavigate: (p: string) =>
       {/* Header */}
       <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
         <div>
-          <h1 className="text-[28px] font-bold text-[#04314A]">Media & Document Library.</h1>
+          <h1 className="text-[28px] font-bold text-[#0B3D2B]">Media & Document Library.</h1>
           <p className="text-[13px] text-[#737373]">
             Centralized document vault for shipments, vehicle units, customer KYC, and promotional media.
           </p>
@@ -320,7 +320,7 @@ export default function LibraryPage({ onNavigate }: { onNavigate: (p: string) =>
               setUploadNotes("");
               setUploadModalOpen(true);
             }}
-            className="flex items-center gap-1.5 px-4 py-2 rounded-lg bg-[#04314A] text-white text-[12px] font-semibold hover:bg-[#00AAEB] transition-colors self-start sm:self-auto"
+            className="flex items-center gap-1.5 px-4 py-2 rounded-lg bg-[#0B3D2B] text-white text-[12px] font-semibold hover:bg-[#10B981] transition-colors self-start sm:self-auto"
           >
             <Plus size={14} /> Upload Files
           </button>
@@ -331,11 +331,11 @@ export default function LibraryPage({ onNavigate }: { onNavigate: (p: string) =>
       <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
         <div className="bg-white border border-[#E8E8E5] rounded-xl p-3.5">
           <div className="text-[11px] text-[#737373]">Total {activeTab === "media" ? "Media Files" : "Documents"}</div>
-          <div className="text-[22px] font-bold text-[#04314A] mt-0.5">{kpis.total}</div>
+          <div className="text-[22px] font-bold text-[#0B3D2B] mt-0.5">{kpis.total}</div>
         </div>
         <div className="bg-white border border-[#E8E8E5] rounded-xl p-3.5">
           <div className="text-[11px] text-[#737373]">Linked to Records</div>
-          <div className="text-[22px] font-bold text-[#04314A] mt-0.5">{kpis.inUse}</div>
+          <div className="text-[22px] font-bold text-[#0B3D2B] mt-0.5">{kpis.inUse}</div>
         </div>
         <div className="bg-white border border-[#E8E8E5] rounded-xl p-3.5">
           <div className="text-[11px] text-[#737373]">Expiring Soon (&le;30d)</div>
@@ -355,8 +355,8 @@ export default function LibraryPage({ onNavigate }: { onNavigate: (p: string) =>
             onClick={() => setActiveTab("document")}
             className={`flex items-center gap-1.5 px-3.5 py-1.5 rounded-md text-[12px] font-semibold transition-colors ${
               activeTab === "document"
-                ? "bg-white text-[#04314A] shadow-sm"
-                : "text-[#737373] hover:text-[#04314A]"
+                ? "bg-white text-[#0B3D2B] shadow-sm"
+                : "text-[#737373] hover:text-[#0B3D2B]"
             }`}
           >
             <FileText size={14} /> Document Library
@@ -365,8 +365,8 @@ export default function LibraryPage({ onNavigate }: { onNavigate: (p: string) =>
             onClick={() => setActiveTab("media")}
             className={`flex items-center gap-1.5 px-3.5 py-1.5 rounded-md text-[12px] font-semibold transition-colors ${
               activeTab === "media"
-                ? "bg-white text-[#04314A] shadow-sm"
-                : "text-[#737373] hover:text-[#04314A]"
+                ? "bg-white text-[#0B3D2B] shadow-sm"
+                : "text-[#737373] hover:text-[#0B3D2B]"
             }`}
           >
             <ImageIcon size={14} /> Media Library
@@ -378,7 +378,7 @@ export default function LibraryPage({ onNavigate }: { onNavigate: (p: string) =>
           <button
             onClick={() => setViewMode("grid")}
             className={`p-1.5 rounded text-[12px] ${
-              viewMode === "grid" ? "bg-white text-[#04314A] shadow-sm" : "text-[#737373]"
+              viewMode === "grid" ? "bg-white text-[#0B3D2B] shadow-sm" : "text-[#737373]"
             }`}
             title="Grid View"
           >
@@ -387,7 +387,7 @@ export default function LibraryPage({ onNavigate }: { onNavigate: (p: string) =>
           <button
             onClick={() => setViewMode("list")}
             className={`p-1.5 rounded text-[12px] ${
-              viewMode === "list" ? "bg-white text-[#04314A] shadow-sm" : "text-[#737373]"
+              viewMode === "list" ? "bg-white text-[#0B3D2B] shadow-sm" : "text-[#737373]"
             }`}
             title="List View"
           >
@@ -404,14 +404,14 @@ export default function LibraryPage({ onNavigate }: { onNavigate: (p: string) =>
             value={search}
             onChange={(e) => setSearch(e.target.value)}
             placeholder="Search by title, filename, notes..."
-            className="w-full border border-[#E8E8E5] rounded-lg pl-9 pr-3 py-1.5 text-[12px] text-[#04314A] placeholder:text-[#A0A09C] focus:outline-none focus:border-[#00AAEB]"
+            className="w-full border border-[#E8E8E5] rounded-lg pl-9 pr-3 py-1.5 text-[12px] text-[#0B3D2B] placeholder:text-[#A0A09C] focus:outline-none focus:border-[#10B981]"
           />
         </div>
 
         <select
           value={categoryFilter}
           onChange={(e) => setCategoryFilter(e.target.value)}
-          className="border border-[#E8E8E5] rounded-lg px-3 py-1.5 text-[12px] text-[#04314A] focus:outline-none focus:border-[#00AAEB]"
+          className="border border-[#E8E8E5] rounded-lg px-3 py-1.5 text-[12px] text-[#0B3D2B] focus:outline-none focus:border-[#10B981]"
         >
           <option value="ALL">All Categories</option>
           {Object.entries(DOCUMENT_CATEGORY_LABELS).map(([cat, label]) => (
@@ -426,7 +426,7 @@ export default function LibraryPage({ onNavigate }: { onNavigate: (p: string) =>
             type="date"
             value={dateFrom}
             onChange={(e) => setDateFrom(e.target.value)}
-            className="border border-[#E8E8E5] rounded-lg px-2.5 py-1.5 text-[12px] text-[#04314A] focus:outline-none focus:border-[#00AAEB]"
+            className="border border-[#E8E8E5] rounded-lg px-2.5 py-1.5 text-[12px] text-[#0B3D2B] focus:outline-none focus:border-[#10B981]"
             title="From date"
           />
           <span className="text-[#A0A09C] text-[12px]">to</span>
@@ -434,7 +434,7 @@ export default function LibraryPage({ onNavigate }: { onNavigate: (p: string) =>
             type="date"
             value={dateTo}
             onChange={(e) => setDateTo(e.target.value)}
-            className="border border-[#E8E8E5] rounded-lg px-2.5 py-1.5 text-[12px] text-[#04314A] focus:outline-none focus:border-[#00AAEB]"
+            className="border border-[#E8E8E5] rounded-lg px-2.5 py-1.5 text-[12px] text-[#0B3D2B] focus:outline-none focus:border-[#10B981]"
             title="To date"
           />
         </div>
@@ -447,7 +447,7 @@ export default function LibraryPage({ onNavigate }: { onNavigate: (p: string) =>
               setDateFrom("");
               setDateTo("");
             }}
-            className="text-[12px] text-[#00AAEB] hover:underline"
+            className="text-[12px] text-[#10B981] hover:underline"
           >
             Reset
           </button>
@@ -455,7 +455,7 @@ export default function LibraryPage({ onNavigate }: { onNavigate: (p: string) =>
 
         <button
           onClick={load}
-          className="ml-auto flex items-center gap-1 px-3 py-1.5 border border-[#E8E8E5] rounded-lg text-[12px] text-[#737373] hover:text-[#04314A]"
+          className="ml-auto flex items-center gap-1 px-3 py-1.5 border border-[#E8E8E5] rounded-lg text-[12px] text-[#737373] hover:text-[#0B3D2B]"
         >
           <RefreshCw size={12} /> Refresh
         </button>
@@ -473,7 +473,7 @@ export default function LibraryPage({ onNavigate }: { onNavigate: (p: string) =>
       ) : documents.length === 0 ? (
         <div className="bg-white border border-[#E8E8E5] rounded-xl p-12 text-center text-[#737373]">
           <FileText size={36} className="mx-auto text-[#A0A09C] mb-2" />
-          <p className="font-semibold text-[#04314A]">No {activeTab === "media" ? "media" : "documents"} found</p>
+          <p className="font-semibold text-[#0B3D2B]">No {activeTab === "media" ? "media" : "documents"} found</p>
           <p className="text-[12px] text-[#737373] mt-1">Upload files or adjust filters to view items.</p>
         </div>
       ) : viewMode === "grid" ? (
@@ -485,8 +485,8 @@ export default function LibraryPage({ onNavigate }: { onNavigate: (p: string) =>
               <div
                 key={doc.id}
                 onClick={() => setSelectedDoc(doc)}
-                className={`bg-white border rounded-xl overflow-hidden cursor-pointer transition-all hover:border-[#00AAEB] flex flex-col ${
-                  isSelected ? "border-[#00AAEB] ring-2 ring-[#00AAEB]/20" : "border-[#E8E8E5]"
+                className={`bg-white border rounded-xl overflow-hidden cursor-pointer transition-all hover:border-[#10B981] flex flex-col ${
+                  isSelected ? "border-[#10B981] ring-2 ring-[#10B981]/20" : "border-[#E8E8E5]"
                 }`}
               >
                 {/* Thumbnail */}
@@ -500,7 +500,7 @@ export default function LibraryPage({ onNavigate }: { onNavigate: (p: string) =>
                     />
                   ) : (
                     <div className="text-center p-3">
-                      <FileText size={32} className="mx-auto text-[#04314A] mb-1" />
+                      <FileText size={32} className="mx-auto text-[#0B3D2B] mb-1" />
                       <span className="text-[10px] font-bold uppercase tracking-wider text-[#737373]">
                         {doc.file_type.split("/")[1] || "PDF"}
                       </span>
@@ -508,7 +508,7 @@ export default function LibraryPage({ onNavigate }: { onNavigate: (p: string) =>
                   )}
 
                   {doc.attachments && doc.attachments.length > 0 && (
-                    <span className="absolute top-2 right-2 bg-[#04314A] text-white text-[10px] font-bold px-1.5 py-0.5 rounded">
+                    <span className="absolute top-2 right-2 bg-[#0B3D2B] text-white text-[10px] font-bold px-1.5 py-0.5 rounded">
                       {doc.attachments.length} link{doc.attachments.length > 1 ? "s" : ""}
                     </span>
                   )}
@@ -517,7 +517,7 @@ export default function LibraryPage({ onNavigate }: { onNavigate: (p: string) =>
                 {/* Info */}
                 <div className="p-3 flex-1 flex flex-col justify-between">
                   <div>
-                    <h4 className="text-[12px] font-bold text-[#04314A] line-clamp-1" title={doc.title}>
+                    <h4 className="text-[12px] font-bold text-[#0B3D2B] line-clamp-1" title={doc.title}>
                       {doc.title}
                     </h4>
                     <p className="text-[11px] text-[#737373] mt-0.5">
@@ -575,11 +575,11 @@ export default function LibraryPage({ onNavigate }: { onNavigate: (p: string) =>
                     >
                       <td className="px-4 py-3">
                         <div className="flex items-center gap-3">
-                          <div className="w-8 h-8 rounded bg-[#F0F0ED] flex items-center justify-center text-[#04314A] shrink-0">
+                          <div className="w-8 h-8 rounded bg-[#F0F0ED] flex items-center justify-center text-[#0B3D2B] shrink-0">
                             {img ? <ImageIcon size={16} /> : <FileText size={16} />}
                           </div>
                           <div>
-                            <div className="font-bold text-[#04314A]">{doc.title}</div>
+                            <div className="font-bold text-[#0B3D2B]">{doc.title}</div>
                             {doc.notes && <div className="text-[11px] text-[#737373] line-clamp-1">{doc.notes}</div>}
                           </div>
                         </div>
@@ -609,7 +609,7 @@ export default function LibraryPage({ onNavigate }: { onNavigate: (p: string) =>
                       </td>
                       <td className="px-4 py-3 text-[#737373]">
                         {doc.attachments && doc.attachments.length > 0 ? (
-                          <span className="font-semibold text-[#04314A]">
+                          <span className="font-semibold text-[#0B3D2B]">
                             {doc.attachments.length} record{doc.attachments.length > 1 ? "s" : ""}
                           </span>
                         ) : (
@@ -624,7 +624,7 @@ export default function LibraryPage({ onNavigate }: { onNavigate: (p: string) =>
                         <div className="inline-flex items-center gap-1.5 justify-end" onClick={(e) => e.stopPropagation()}>
                           <button
                             onClick={() => setSelectedDoc(doc)}
-                            className="p-1.5 rounded hover:bg-[#F0F0ED] text-[#04314A]"
+                            className="p-1.5 rounded hover:bg-[#F0F0ED] text-[#0B3D2B]"
                             title="Preview"
                           >
                             <Eye size={14} />
@@ -633,7 +633,7 @@ export default function LibraryPage({ onNavigate }: { onNavigate: (p: string) =>
                             href={doc.download_url}
                             target="_blank"
                             rel="noopener noreferrer"
-                            className="p-1.5 rounded hover:bg-[#F0F0ED] text-[#04314A]"
+                            className="p-1.5 rounded hover:bg-[#F0F0ED] text-[#0B3D2B]"
                             title="Download"
                           >
                             <Download size={14} />
@@ -641,7 +641,7 @@ export default function LibraryPage({ onNavigate }: { onNavigate: (p: string) =>
                           {canChange && (
                             <button
                               onClick={() => openEditModal(doc)}
-                              className="p-1.5 rounded hover:bg-[#F0F0ED] text-[#737373] hover:text-[#04314A]"
+                              className="p-1.5 rounded hover:bg-[#F0F0ED] text-[#737373] hover:text-[#0B3D2B]"
                               title="Edit Details"
                             >
                               <Pencil size={14} />
@@ -685,8 +685,8 @@ export default function LibraryPage({ onNavigate }: { onNavigate: (p: string) =>
                 />
               ) : (
                 <div className="p-8 text-center">
-                  <FileText size={48} className="mx-auto text-[#04314A] mb-3" />
-                  <p className="font-bold text-[#04314A] text-[15px]">{selectedDoc.title}</p>
+                  <FileText size={48} className="mx-auto text-[#0B3D2B] mb-3" />
+                  <p className="font-bold text-[#0B3D2B] text-[15px]">{selectedDoc.title}</p>
                   <p className="text-[12px] text-[#737373] mt-1 mb-4">
                     PDF Document ({formatFileSize(selectedDoc.file_size)})
                   </p>
@@ -695,7 +695,7 @@ export default function LibraryPage({ onNavigate }: { onNavigate: (p: string) =>
                       href={selectedDoc.download_url}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="inline-flex items-center gap-1.5 px-4 py-2 rounded-lg bg-[#04314A] text-white text-[12px] font-semibold hover:bg-[#00AAEB] transition-colors"
+                      className="inline-flex items-center gap-1.5 px-4 py-2 rounded-lg bg-[#0B3D2B] text-white text-[12px] font-semibold hover:bg-[#10B981] transition-colors"
                     >
                       <Download size={14} /> Download Document
                     </a>
@@ -711,13 +711,13 @@ export default function LibraryPage({ onNavigate }: { onNavigate: (p: string) =>
                   href={selectedDoc.download_url}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg border border-[#E8E8E5] bg-white text-[12px] font-semibold text-[#04314A] hover:bg-[#F0F0ED] transition-colors"
+                  className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg border border-[#E8E8E5] bg-white text-[12px] font-semibold text-[#0B3D2B] hover:bg-[#F0F0ED] transition-colors"
                 >
                   <Download size={13} /> Download
                 </a>
                 <button
                   onClick={() => handlePrint(selectedDoc)}
-                  className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg border border-[#E8E8E5] bg-white text-[12px] font-semibold text-[#04314A] hover:bg-[#F0F0ED] transition-colors"
+                  className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg border border-[#E8E8E5] bg-white text-[12px] font-semibold text-[#0B3D2B] hover:bg-[#F0F0ED] transition-colors"
                 >
                   <Eye size={13} /> Open Tab
                 </button>
@@ -728,13 +728,13 @@ export default function LibraryPage({ onNavigate }: { onNavigate: (p: string) =>
                   <>
                     <button
                       onClick={() => openReplaceModal(selectedDoc)}
-                      className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg border border-[#04314A] text-[12px] font-semibold text-[#04314A] hover:bg-[#04314A] hover:text-white transition-colors"
+                      className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg border border-[#0B3D2B] text-[12px] font-semibold text-[#0B3D2B] hover:bg-[#0B3D2B] hover:text-white transition-colors"
                     >
                       <History size={13} /> Replace File
                     </button>
                     <button
                       onClick={() => openEditModal(selectedDoc)}
-                      className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg border border-[#E8E8E5] bg-white text-[12px] font-semibold text-[#737373] hover:text-[#04314A] transition-colors"
+                      className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg border border-[#E8E8E5] bg-white text-[12px] font-semibold text-[#737373] hover:text-[#0B3D2B] transition-colors"
                     >
                       <Pencil size={13} /> Edit Info
                     </button>
@@ -755,17 +755,17 @@ export default function LibraryPage({ onNavigate }: { onNavigate: (p: string) =>
             <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 text-[12px]">
               <div className="p-3 bg-[#FAFAF8] rounded-xl">
                 <span className="block text-[11px] text-[#737373]">Category</span>
-                <span className="font-semibold text-[#04314A]">
+                <span className="font-semibold text-[#0B3D2B]">
                   {DOCUMENT_CATEGORY_LABELS[selectedDoc.category] || selectedDoc.category}
                 </span>
               </div>
               <div className="p-3 bg-[#FAFAF8] rounded-xl">
                 <span className="block text-[11px] text-[#737373]">File Size</span>
-                <span className="font-semibold text-[#04314A]">{formatFileSize(selectedDoc.file_size)}</span>
+                <span className="font-semibold text-[#0B3D2B]">{formatFileSize(selectedDoc.file_size)}</span>
               </div>
               <div className="p-3 bg-[#FAFAF8] rounded-xl">
                 <span className="block text-[11px] text-[#737373]">Uploaded By</span>
-                <span className="font-semibold text-[#04314A]">{selectedDoc.uploaded_by_name || "Staff"}</span>
+                <span className="font-semibold text-[#0B3D2B]">{selectedDoc.uploaded_by_name || "Staff"}</span>
               </div>
               <div className="p-3 bg-[#FAFAF8] rounded-xl">
                 <span className="block text-[11px] text-[#737373]">Expiry Status</span>
@@ -786,13 +786,13 @@ export default function LibraryPage({ onNavigate }: { onNavigate: (p: string) =>
             {selectedDoc.notes && (
               <div className="p-3 bg-[#FAFAF8] rounded-xl text-[12px]">
                 <span className="block text-[11px] font-semibold text-[#737373] mb-1">Notes</span>
-                <p className="text-[#04314A]">{selectedDoc.notes}</p>
+                <p className="text-[#0B3D2B]">{selectedDoc.notes}</p>
               </div>
             )}
 
             {/* Used in Entities Section */}
             <div className="border border-[#E8E8E5] rounded-xl p-4">
-              <h4 className="text-[13px] font-bold text-[#04314A] mb-2 flex items-center justify-between">
+              <h4 className="text-[13px] font-bold text-[#0B3D2B] mb-2 flex items-center justify-between">
                 <span>Used in Records ({selectedDoc.used_in?.length || 0})</span>
               </h4>
               {(!selectedDoc.used_in || selectedDoc.used_in.length === 0) ? (
@@ -802,7 +802,7 @@ export default function LibraryPage({ onNavigate }: { onNavigate: (p: string) =>
                   {selectedDoc.used_in.map((item, idx) => (
                     <div key={idx} className="py-2 flex items-center justify-between text-[12px]">
                       <div>
-                        <span className="font-semibold text-[#04314A]">{item.summary}</span>
+                        <span className="font-semibold text-[#0B3D2B]">{item.summary}</span>
                         <span className="text-[11px] text-[#737373] ml-2 uppercase">({item.type})</span>
                       </div>
                       <button
@@ -812,7 +812,7 @@ export default function LibraryPage({ onNavigate }: { onNavigate: (p: string) =>
                           else if (item.type === "UNIT") onNavigate(`units/${item.id}`);
                           else if (item.type === "CUSTOMER") onNavigate(`crm-customers/${item.id}`);
                         }}
-                        className="text-[12px] font-semibold text-[#00AAEB] hover:underline flex items-center gap-1"
+                        className="text-[12px] font-semibold text-[#10B981] hover:underline flex items-center gap-1"
                       >
                         View Record &rarr;
                       </button>
@@ -825,14 +825,14 @@ export default function LibraryPage({ onNavigate }: { onNavigate: (p: string) =>
             {/* Version History Section */}
             {selectedDoc.versions && selectedDoc.versions.length > 0 && (
               <div className="border border-[#E8E8E5] rounded-xl p-4">
-                <h4 className="text-[13px] font-bold text-[#04314A] mb-2">
+                <h4 className="text-[13px] font-bold text-[#0B3D2B] mb-2">
                   Version History ({selectedDoc.versions.length} prior version{selectedDoc.versions.length > 1 ? "s" : ""})
                 </h4>
                 <div className="divide-y divide-[#F0F0ED]">
                   {selectedDoc.versions.map((ver) => (
                     <div key={ver.id} className="py-2.5 flex items-center justify-between text-[12px]">
                       <div>
-                        <div className="font-semibold text-[#04314A]">Version {ver.version_no}</div>
+                        <div className="font-semibold text-[#0B3D2B]">Version {ver.version_no}</div>
                         <div className="text-[11px] text-[#737373]">
                           {formatFileSize(ver.file_size)} · {ver.change_note} · {ver.created_at?.slice(0, 10)}
                         </div>
@@ -841,7 +841,7 @@ export default function LibraryPage({ onNavigate }: { onNavigate: (p: string) =>
                         href={withQueryParam(selectedDoc.download_url, "version", String(ver.version_no))}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="text-[12px] font-semibold text-[#00AAEB] hover:underline inline-flex items-center gap-1"
+                        className="text-[12px] font-semibold text-[#10B981] hover:underline inline-flex items-center gap-1"
                       >
                         <Download size={12} /> Download v{ver.version_no}
                       </a>
@@ -875,7 +875,7 @@ export default function LibraryPage({ onNavigate }: { onNavigate: (p: string) =>
 
             {uploadFiles.length > 0 && (
               <div className="p-3 bg-[#FAFAF8] border border-[#E8E8E5] rounded-xl">
-                <span className="block font-bold text-[12px] text-[#04314A] mb-2">
+                <span className="block font-bold text-[12px] text-[#0B3D2B] mb-2">
                   {uploadFiles.length} file(s) ready to upload:
                 </span>
                 <ul className="divide-y divide-[#E8E8E5] max-h-40 overflow-y-auto text-[11px] text-[#737373]">
@@ -925,7 +925,7 @@ export default function LibraryPage({ onNavigate }: { onNavigate: (p: string) =>
             </Field>
 
             {uploadProgress && (
-              <div className="p-3 bg-[#F0F7FA] border border-[#00AAEB]/20 rounded-xl text-[12px] text-[#04314A] font-semibold">
+              <div className="p-3 bg-[#F0F7FA] border border-[#10B981]/20 rounded-xl text-[12px] text-[#0B3D2B] font-semibold">
                 {uploadProgress}
               </div>
             )}
@@ -934,7 +934,7 @@ export default function LibraryPage({ onNavigate }: { onNavigate: (p: string) =>
               <button
                 type="button"
                 onClick={() => setUploadModalOpen(false)}
-                className="px-4 py-2 rounded-lg border border-[#E8E8E5] text-[12px] font-semibold text-[#737373] hover:text-[#04314A]"
+                className="px-4 py-2 rounded-lg border border-[#E8E8E5] text-[12px] font-semibold text-[#737373] hover:text-[#0B3D2B]"
               >
                 Cancel
               </button>
@@ -942,7 +942,7 @@ export default function LibraryPage({ onNavigate }: { onNavigate: (p: string) =>
                 type="button"
                 onClick={handleMultiUploadSubmit}
                 disabled={uploading || uploadFiles.length === 0}
-                className="px-4 py-2 rounded-lg bg-[#04314A] text-white text-[12px] font-semibold hover:bg-[#00AAEB] disabled:opacity-50 transition-colors"
+                className="px-4 py-2 rounded-lg bg-[#0B3D2B] text-white text-[12px] font-semibold hover:bg-[#10B981] disabled:opacity-50 transition-colors"
               >
                 {uploading ? "Uploading..." : `Upload ${uploadFiles.length} File(s)`}
               </button>
@@ -984,7 +984,7 @@ export default function LibraryPage({ onNavigate }: { onNavigate: (p: string) =>
               <button
                 type="button"
                 onClick={() => setReplaceModalDoc(null)}
-                className="px-4 py-2 rounded-lg border border-[#E8E8E5] text-[12px] font-semibold text-[#737373] hover:text-[#04314A]"
+                className="px-4 py-2 rounded-lg border border-[#E8E8E5] text-[12px] font-semibold text-[#737373] hover:text-[#0B3D2B]"
               >
                 Cancel
               </button>
@@ -992,7 +992,7 @@ export default function LibraryPage({ onNavigate }: { onNavigate: (p: string) =>
                 type="button"
                 onClick={handleReplaceSubmit}
                 disabled={replacing || !replacementFile}
-                className="px-4 py-2 rounded-lg bg-[#04314A] text-white text-[12px] font-semibold hover:bg-[#00AAEB] disabled:opacity-50 transition-colors"
+                className="px-4 py-2 rounded-lg bg-[#0B3D2B] text-white text-[12px] font-semibold hover:bg-[#10B981] disabled:opacity-50 transition-colors"
               >
                 {replacing ? "Replacing..." : "Replace & Archive Previous"}
               </button>
@@ -1054,7 +1054,7 @@ export default function LibraryPage({ onNavigate }: { onNavigate: (p: string) =>
               <button
                 type="button"
                 onClick={() => setEditModalDoc(null)}
-                className="px-4 py-2 rounded-lg border border-[#E8E8E5] text-[12px] font-semibold text-[#737373] hover:text-[#04314A]"
+                className="px-4 py-2 rounded-lg border border-[#E8E8E5] text-[12px] font-semibold text-[#737373] hover:text-[#0B3D2B]"
               >
                 Cancel
               </button>
@@ -1062,7 +1062,7 @@ export default function LibraryPage({ onNavigate }: { onNavigate: (p: string) =>
                 type="button"
                 onClick={handleEditSubmit}
                 disabled={editingBusy}
-                className="px-4 py-2 rounded-lg bg-[#04314A] text-white text-[12px] font-semibold hover:bg-[#00AAEB] disabled:opacity-50 transition-colors"
+                className="px-4 py-2 rounded-lg bg-[#0B3D2B] text-white text-[12px] font-semibold hover:bg-[#10B981] disabled:opacity-50 transition-colors"
               >
                 {editingBusy ? "Saving..." : "Save Changes"}
               </button>
@@ -1114,7 +1114,7 @@ export default function LibraryPage({ onNavigate }: { onNavigate: (p: string) =>
               <button
                 type="button"
                 onClick={() => setDeleteModalDoc(null)}
-                className="px-4 py-2 rounded-lg border border-[#E8E8E5] text-[12px] font-semibold text-[#737373] hover:text-[#04314A]"
+                className="px-4 py-2 rounded-lg border border-[#E8E8E5] text-[12px] font-semibold text-[#737373] hover:text-[#0B3D2B]"
               >
                 Cancel
               </button>

@@ -167,13 +167,13 @@ export function SaleFormModal({
           <div className="flex flex-wrap gap-2 text-[11px] text-[#737373] bg-[#FAFAF8] border border-[#E8E8E5] rounded-xl px-4 py-2.5">
             {initialLeadId && (
               <span>
-                Linked Lead: <strong className="text-[#04314A]">{initialLeadName || `Lead #${initialLeadId}`}</strong>
+                Linked Lead: <strong className="text-[#0B3D2B]">{initialLeadName || `Lead #${initialLeadId}`}</strong>
               </span>
             )}
             {initialLeadId && initialQuotationId && <span>·</span>}
             {initialQuotationId && (
               <span>
-                Linked Quotation: <strong className="text-[#04314A]">QT-{initialQuotationId}</strong>
+                Linked Quotation: <strong className="text-[#0B3D2B]">QT-{initialQuotationId}</strong>
               </span>
             )}
           </div>
@@ -240,7 +240,7 @@ export function SaleFormModal({
         {/* Financing Fields if applicable */}
         {isFinanced && (
           <div className="border border-[#E8E8E5] rounded-xl p-4 bg-[#FAFAF8] space-y-4">
-            <h4 className="text-[11px] font-bold tracking-[0.1em] uppercase text-[#04314A]">
+            <h4 className="text-[11px] font-bold tracking-[0.1em] uppercase text-[#0B3D2B]">
               Financing and Banking Details
             </h4>
             <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
@@ -357,12 +357,12 @@ export function SaleFormModal({
           />
         </Field>
 
-        {error && <p className="text-[12px] text-[#00AAEB]">{error}</p>}
+        {error && <p className="text-[12px] text-[#10B981]">{error}</p>}
 
         <div data-modal-actions className="flex justify-end gap-3 pt-3 border-t border-[#F0F0ED]">
           <button
             onClick={onClose}
-            className="px-4 py-2.5 text-[12px] font-semibold uppercase tracking-[0.04em] text-[#737373] hover:text-[#04314A] transition-colors"
+            className="px-4 py-2.5 text-[12px] font-semibold uppercase tracking-[0.04em] text-[#737373] hover:text-[#0B3D2B] transition-colors"
           >
             Cancel
           </button>

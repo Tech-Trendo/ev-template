@@ -1,4 +1,4 @@
-# ev-template
+# EV OS
 
 A white-label **vehicle / fleet management admin template**: a Django REST API
 with a Next.js admin dashboard. The public marketing website has been removed —
@@ -53,7 +53,7 @@ and pulls them on the VPS (`/opt/ev-template`), then restarts the stack. Set the
 
 ## Customising
 
-- Brand name: search for `Vehicle Template` in `frontend/src/admin/` and
+- Brand name: search for `EV OS` in `frontend/src/admin/` and
   `backend/config/settings.py` (`COMPANY_NAME`).
 - Logo mark: `frontend/src/admin/AdminApp.tsx`, `frontend/src/admin/Login.tsx`.
 - Colours: CSS variables in `frontend/src/index.css`.

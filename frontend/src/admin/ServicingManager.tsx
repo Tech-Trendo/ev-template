@@ -263,7 +263,7 @@ function RecordForm({
     battery_kw: initial?.battery_kw != null ? String(initial.battery_kw) : "",
     motor_no: initial?.motor_no ?? "",
     date_of_sale: initial?.date_of_sale ?? "",
-    ev_company: initial?.ev_company ?? "Vehicle Template",
+    ev_company: initial?.ev_company ?? "EV OS",
     customer_name: initial?.customer_name ?? "",
     customer_address: initial?.customer_address ?? "",
     customer_mobile: initial?.customer_mobile ?? "",
@@ -556,7 +556,7 @@ function RecordForm({
                 });
                 window.print();
               }}
-              className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-[#04314A] text-white text-[11px] font-bold hover:bg-[#00AAEB] transition-colors"
+              className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-[#0B3D2B] text-white text-[11px] font-bold hover:bg-[#10B981] transition-colors"
             >
               <Printer size={13} /> Print Job Sheet
             </button>
@@ -564,7 +564,7 @@ function RecordForm({
           <button
             type="button"
             onClick={tryOpenPrintPreview}
-            className="flex items-center gap-1 px-3 py-1.5 rounded-lg border border-[#E8E8E5] text-[11px] font-bold text-[#04314A] hover:bg-[#FAFAF8]"
+            className="flex items-center gap-1 px-3 py-1.5 rounded-lg border border-[#E8E8E5] text-[11px] font-bold text-[#0B3D2B] hover:bg-[#FAFAF8]"
           >
             <Printer size={13} /> {printPreview ? "Edit Form" : "Official Paper Order View"}
           </button>
@@ -576,12 +576,12 @@ function RecordForm({
         <div className="print-document bg-white border border-[#222] p-6 text-[#111] font-sans text-[12px] print:border-none print:p-0">
           <div className="text-center mb-4 border-b border-[#222] pb-3">
             <div className="flex justify-between items-center text-[10px] font-bold tracking-widest text-[#555] mb-1">
-              <img src="/favicon.svg" alt="VT" className="h-8 w-auto object-contain" />
-              <span>VEHICLE TEMPLATE</span>
-              <span>Vehicle Template</span>
+              <img src="/favicon.svg" alt="EV OS" className="h-8 w-auto object-contain" />
+              <span>EV OS</span>
+              <span>EV OS</span>
             </div>
             <h2 className="text-[16px] font-bold uppercase tracking-wider">
-              Vehicle Template
+              EV OS
             </h2>
             <h3 className="text-[15px] font-black underline mt-1">Vehicle Repair Order</h3>
             <div className="text-right text-[11px] font-bold mt-1">
@@ -718,7 +718,7 @@ function RecordForm({
                     value={searchQuery}
                     onChange={(e) => setSearchQuery(e.target.value)}
                     placeholder="Type VIN, license plate, motor no, or customer phone..."
-                    className="w-full border border-[#E8E8E5] rounded-lg pl-9 pr-3 py-2 text-[13px] text-[#04314A] bg-white focus:outline-none focus:border-[#00AAEB]"
+                    className="w-full border border-[#E8E8E5] rounded-lg pl-9 pr-3 py-2 text-[13px] text-[#0B3D2B] bg-white focus:outline-none focus:border-[#10B981]"
                   />
                 </div>
                 <p className="text-[11px] text-[#737373] mt-1">
@@ -728,7 +728,7 @@ function RecordForm({
 
               {searching && (
                 <div className="text-[12px] text-[#737373] py-2 flex items-center gap-2">
-                  <Clock size={13} className="animate-spin text-[#00AAEB]" /> Searching inventory and customer records...
+                  <Clock size={13} className="animate-spin text-[#10B981]" /> Searching inventory and customer records...
                 </div>
               )}
 
@@ -737,22 +737,22 @@ function RecordForm({
                   {searchResults.map((item) => (
                     <div
                       key={`${item.unit.id || item.unit.vin}-${item.customer?.id || ""}`}
-                      className="flex items-center justify-between p-3 bg-white border border-[#E8E8E5] rounded-lg hover:border-[#00AAEB] transition-colors"
+                      className="flex items-center justify-between p-3 bg-white border border-[#E8E8E5] rounded-lg hover:border-[#10B981] transition-colors"
                     >
                       <div className="space-y-0.5">
                         <div className="flex items-center gap-2 flex-wrap">
-                          <span className="text-[13px] font-bold text-[#04314A]">{item.unit.vin}</span>
+                          <span className="text-[13px] font-bold text-[#0B3D2B]">{item.unit.vin}</span>
                           {item.unit.registration && (
-                            <span className="px-2 py-0.5 rounded bg-[#FAFAF8] border border-[#E8E8E5] text-[10px] font-bold text-[#04314A]">
+                            <span className="px-2 py-0.5 rounded bg-[#FAFAF8] border border-[#E8E8E5] text-[10px] font-bold text-[#0B3D2B]">
                               {item.unit.registration}
                             </span>
                           )}
-                          <span className="text-[12px] font-semibold text-[#04314A]">
+                          <span className="text-[12px] font-semibold text-[#0B3D2B]">
                             {item.unit.model || "VT EV"} {item.unit.color ? `· ${item.unit.color}` : ""}
                           </span>
                         </div>
                         <div className="text-[11px] text-[#737373]">
-                          Customer: <strong className="text-[#04314A]">{item.customer?.name || "Unassigned"}</strong>
+                          Customer: <strong className="text-[#0B3D2B]">{item.customer?.name || "Unassigned"}</strong>
                           {item.customer?.phone && ` (${item.customer.phone})`}
                           {item.unit.motor_no && ` · Motor: ${item.unit.motor_no}`}
                         </div>
@@ -803,7 +803,7 @@ function RecordForm({
                       <button
                         type="button"
                         onClick={() => handleSelectVehicle(item)}
-                        className="px-3 py-1.5 rounded-lg bg-[#04314A] text-white text-[11px] font-bold hover:bg-[#00AAEB] transition-colors"
+                        className="px-3 py-1.5 rounded-lg bg-[#0B3D2B] text-white text-[11px] font-bold hover:bg-[#10B981] transition-colors"
                       >
                         Select Vehicle
                       </button>
@@ -820,7 +820,7 @@ function RecordForm({
                   <button
                     type="button"
                     onClick={handleAddExternal}
-                    className="px-3 py-1.5 rounded-lg border border-[#04314A] text-[#04314A] text-[11px] font-bold hover:bg-[#04314A] hover:text-white transition-colors"
+                    className="px-3 py-1.5 rounded-lg border border-[#0B3D2B] text-[#0B3D2B] text-[11px] font-bold hover:bg-[#0B3D2B] hover:text-white transition-colors"
                   >
                     Add as External Vehicle
                   </button>
@@ -835,7 +835,7 @@ function RecordForm({
               <div className="flex items-start justify-between gap-3 border-b border-[#E8E8E5] pb-3">
                 <div>
                   <div className="flex items-center gap-2 flex-wrap">
-                    <span className="text-[14px] font-bold text-[#04314A]">
+                    <span className="text-[14px] font-bold text-[#0B3D2B]">
                       {selectedVehicle.unit.model || form.vehicle_model_name || "Vehicle"}
                     </span>
                     {selectedVehicle.unit.color && (
@@ -844,7 +844,7 @@ function RecordForm({
                       </span>
                     )}
                     {form.v_reg_no && (
-                      <span className="px-2 py-0.5 rounded bg-[#FAFAF8] border border-[#E8E8E5] text-[11px] font-bold text-[#04314A]">
+                      <span className="px-2 py-0.5 rounded bg-[#FAFAF8] border border-[#E8E8E5] text-[11px] font-bold text-[#0B3D2B]">
                         {form.v_reg_no}
                       </span>
                     )}
@@ -896,7 +896,7 @@ function RecordForm({
                   <button
                     type="button"
                     onClick={handleChangeVehicle}
-                    className="px-2.5 py-1 border border-[#E8E8E5] rounded text-[11px] font-semibold text-[#04314A] hover:bg-[#FAFAF8]"
+                    className="px-2.5 py-1 border border-[#E8E8E5] rounded text-[11px] font-semibold text-[#0B3D2B] hover:bg-[#FAFAF8]"
                   >
                     Change
                   </button>
@@ -907,7 +907,7 @@ function RecordForm({
               <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-3 text-[12px]">
                 <div>
                   <div className="text-[10px] font-bold uppercase tracking-wider text-[#737373]">Customer</div>
-                  <div className="font-semibold text-[#04314A] mt-0.5">{form.customer_name || "None"}</div>
+                  <div className="font-semibold text-[#0B3D2B] mt-0.5">{form.customer_name || "None"}</div>
                   <div className="text-[11px] text-[#737373]">{form.customer_address || "No address"}</div>
                 </div>
 
@@ -917,7 +917,7 @@ function RecordForm({
                     value={form.customer_mobile}
                     onChange={(e) => setForm({ ...form, customer_mobile: e.target.value })}
                     placeholder="Phone number"
-                    className="mt-0.5 w-full border border-[#E8E8E5] rounded px-2 py-1 text-[12px] text-[#04314A] bg-[#FAFAF8] focus:bg-white"
+                    className="mt-0.5 w-full border border-[#E8E8E5] rounded px-2 py-1 text-[12px] text-[#0B3D2B] bg-[#FAFAF8] focus:bg-white"
                   />
                   <div className="text-[10px] text-[#737373] mt-0.5">Editing updates customer record</div>
                 </div>
@@ -928,14 +928,14 @@ function RecordForm({
                     value={form.customer_email}
                     onChange={(e) => setForm({ ...form, customer_email: e.target.value })}
                     placeholder="Email address"
-                    className="mt-0.5 w-full border border-[#E8E8E5] rounded px-2 py-1 text-[12px] text-[#04314A] bg-[#FAFAF8] focus:bg-white"
+                    className="mt-0.5 w-full border border-[#E8E8E5] rounded px-2 py-1 text-[12px] text-[#0B3D2B] bg-[#FAFAF8] focus:bg-white"
                   />
                   <div className="text-[10px] text-[#737373] mt-0.5">Editing updates customer record</div>
                 </div>
 
                 <div>
                   <div className="text-[10px] font-bold uppercase tracking-wider text-[#737373]">Sale & Dealer</div>
-                  <div className="font-semibold text-[#04314A] mt-0.5">{form.dealer_name || "Central Workshop"}</div>
+                  <div className="font-semibold text-[#0B3D2B] mt-0.5">{form.dealer_name || "Central Workshop"}</div>
                   <div className="text-[11px] text-[#737373]">{form.date_of_sale ? `Sold: ${form.date_of_sale}` : "No sale date"}</div>
                 </div>
               </div>
@@ -967,11 +967,11 @@ function RecordForm({
                       <tbody>
                         {recentServices.map((s) => (
                           <tr key={s.id} className="border-b border-[#F0F0ED] last:border-0">
-                            <td className="px-3 py-1.5 font-bold text-[#04314A]">{s.vro_no || `VRO-${s.id}`}</td>
+                            <td className="px-3 py-1.5 font-bold text-[#0B3D2B]">{s.vro_no || `VRO-${s.id}`}</td>
                             <td className="px-3 py-1.5 text-[#737373]">{s.date_received}</td>
                             <td className="px-3 py-1.5 text-[#737373]">{s.odometer_reading != null ? `${s.odometer_reading} km` : "None"}</td>
-                            <td className="px-3 py-1.5 capitalize text-[#04314A]">{s.status.replace(/_/g, " ")}</td>
-                            <td className="px-3 py-1.5 text-right font-semibold text-[#04314A]">NPR {(s.total_cost || 0).toLocaleString()}</td>
+                            <td className="px-3 py-1.5 capitalize text-[#0B3D2B]">{s.status.replace(/_/g, " ")}</td>
+                            <td className="px-3 py-1.5 text-right font-semibold text-[#0B3D2B]">NPR {(s.total_cost || 0).toLocaleString()}</td>
                           </tr>
                         ))}
                       </tbody>
@@ -987,7 +987,7 @@ function RecordForm({
             <div className="bg-[#FAFAF8] border border-[#E8E8E5] rounded-xl p-4 space-y-3">
               <div className="flex items-center justify-between border-b border-[#E8E8E5] pb-2">
                 <div className="flex items-center gap-2">
-                  <span className="px-2 py-0.5 rounded bg-[#04314A] text-white text-[10px] font-bold uppercase tracking-wider">
+                  <span className="px-2 py-0.5 rounded bg-[#0B3D2B] text-white text-[10px] font-bold uppercase tracking-wider">
                     External Vehicle
                   </span>
                   <span className="text-[12px] font-medium text-[#737373]">
@@ -1000,7 +1000,7 @@ function RecordForm({
                     setIsExternal(false);
                     setSearchQuery("");
                   }}
-                  className="text-[11px] font-semibold text-[#00AAEB] hover:underline"
+                  className="text-[11px] font-semibold text-[#10B981] hover:underline"
                 >
                   Cancel and Search
                 </button>
@@ -1092,7 +1092,7 @@ function RecordForm({
           {/* Paper VRO fields — match physical Vehicle Repair Order */}
           <div className="border border-[#E8E8E5] rounded-lg overflow-hidden text-[12px]">
             <div className="bg-[#FAFAF8] px-3 py-2 border-b border-[#E8E8E5] flex flex-wrap items-center justify-between gap-2">
-              <span className="text-[12px] font-bold text-[#04314A]">
+              <span className="text-[12px] font-bold text-[#0B3D2B]">
                 Vehicle Repair Order{form.vro_no ? `: ${form.vro_no}` : ""}
               </span>
               <div className="w-40">
@@ -1270,7 +1270,7 @@ function RecordForm({
           {/* DESCRIPTION / REMARKS checklist — matches paper */}
           <div className="border border-[#E8E8E5] rounded-lg overflow-hidden">
             <div className="bg-[#FAFAF8] px-3 py-2 border-b border-[#E8E8E5]">
-              <span className="text-[12px] font-bold text-[#04314A]">Description / Remarks</span>
+              <span className="text-[12px] font-bold text-[#0B3D2B]">Description / Remarks</span>
             </div>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 p-3 text-[11px]">
               {VRO_INVENTORY_ITEMS.map((item) => {
@@ -1282,16 +1282,16 @@ function RecordForm({
                       type="checkbox"
                       checked={val.present}
                       onChange={(e) => updateInv(item.key, { present: e.target.checked })}
-                      className="w-4 h-4 rounded text-[#04314A]"
+                      className="w-4 h-4 rounded text-[#0B3D2B]"
                     />
-                    <span className="w-28 font-semibold text-[#04314A]">{item.label}</span>
+                    <span className="w-28 font-semibold text-[#0B3D2B]">{item.label}</span>
                     <input
                       value={val.remarks}
                       onChange={(e) => updateInv(item.key, { remarks: e.target.value })}
                       placeholder="Remarks..."
                       className="flex-1 border border-[#E8E8E5] rounded px-2 py-0.5 text-[10px]"
                     />
-                    <label className="inline-flex items-center gap-1 text-[10px] font-semibold text-[#00AAEB] cursor-pointer shrink-0">
+                    <label className="inline-flex items-center gap-1 text-[10px] font-semibold text-[#10B981] cursor-pointer shrink-0">
                       <Camera size={13} />
                       Photo
                       <input
@@ -1340,7 +1340,7 @@ function RecordForm({
               <button
                 type="button"
                 onClick={() => setParts((prev) => [...prev, { ...EMPTY_PART }])}
-                className="text-[11px] font-semibold text-[#00AAEB] hover:underline flex items-center gap-1"
+                className="text-[11px] font-semibold text-[#10B981] hover:underline flex items-center gap-1"
               >
                 <Plus size={12} /> Add Part
               </button>
@@ -1435,10 +1435,10 @@ function RecordForm({
                 id="undertaking"
                 checked={form.customer_undertaking_agreed}
                 onChange={(e) => setForm({ ...form, customer_undertaking_agreed: e.target.checked })}
-                className="w-4 h-4 rounded text-[#04314A] mt-0.5"
+                className="w-4 h-4 rounded text-[#0B3D2B] mt-0.5"
               />
               <label htmlFor="undertaking" className="text-[#737373]">
-                <span className="font-bold text-[#04314A]">Undertaking by Customer: </span>
+                <span className="font-bold text-[#0B3D2B]">Undertaking by Customer: </span>
                 I hereby authorize you to undertake repairs/testing of my vehicle and agree to the above
                 conditions. I confirm that a copy of this order is given to me. The above estimates are agreed.
               </label>
@@ -1460,7 +1460,7 @@ function RecordForm({
                 <button
                   type="button"
                   onClick={() => submit(undefined, { confirmRegChange: true })}
-                  className="block text-[11px] font-bold text-white bg-[#04314A] px-3 py-1.5 rounded hover:bg-[#032336]"
+                  className="block text-[11px] font-bold text-white bg-[#0B3D2B] px-3 py-1.5 rounded hover:bg-[#032336]"
                 >
                   Confirm Registration Update
                 </button>
@@ -1469,7 +1469,7 @@ function RecordForm({
                 <button
                   type="button"
                   onClick={() => submit(undefined, { overrideCustomer: true })}
-                  className="block text-[11px] font-bold text-white bg-[#04314A] px-3 py-1.5 rounded hover:bg-[#032336]"
+                  className="block text-[11px] font-bold text-white bg-[#0B3D2B] px-3 py-1.5 rounded hover:bg-[#032336]"
                 >
                   Proceed with different customer
                 </button>
@@ -1488,7 +1488,7 @@ function RecordForm({
             <button
               type="submit"
               disabled={busy}
-              className="px-5 py-2 rounded-md bg-[#04314A] text-white text-[12px] font-semibold hover:bg-[#00AAEB] disabled:opacity-50"
+              className="px-5 py-2 rounded-md bg-[#0B3D2B] text-white text-[12px] font-semibold hover:bg-[#10B981] disabled:opacity-50"
             >
               {busy ? "Saving..." : isEdit ? "Update VRO" : "Create Repair Order"}
             </button>
@@ -1570,7 +1570,7 @@ async function createDraftServicingOrder(prefill: PrefillResult): Promise<Servic
     status: "received",
     date_received: now.toISOString().slice(0, 10),
     time_received: nowTimeInputValue(),
-    ev_company: "Vehicle Template",
+    ev_company: "EV OS",
     customer_undertaking_agreed: true,
     parts: [],
   };
@@ -1756,7 +1756,7 @@ export default function ServicingManager({
       {/* Header */}
       <div className="mb-6 flex flex-col sm:flex-row sm:items-center justify-between gap-4">
         <div>
-          <h1 className="text-[28px] font-bold text-[#04314A]">Servicing Orders.</h1>
+          <h1 className="text-[28px] font-bold text-[#0B3D2B]">Servicing Orders.</h1>
           <p className="text-[13px] text-[#737373]">
             Receive the vehicle, then complete the repair order — tracked by VIN / chassis number.
           </p>
@@ -1764,7 +1764,7 @@ export default function ServicingManager({
 
         <button
           onClick={() => openReceiveIntake()}
-          className="self-start sm:self-auto flex items-center gap-1.5 px-4 py-2 rounded-lg bg-[#04314A] text-white text-[12px] font-semibold hover:bg-[#00AAEB] transition-colors"
+          className="self-start sm:self-auto flex items-center gap-1.5 px-4 py-2 rounded-lg bg-[#0B3D2B] text-white text-[12px] font-semibold hover:bg-[#10B981] transition-colors"
         >
           <Plus size={14} /> New Servicing Order
         </button>
@@ -1774,19 +1774,19 @@ export default function ServicingManager({
       <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 mb-5">
         <div className="bg-white border border-[#E8E8E5] rounded-lg p-3">
           <div className="text-[11px] text-[#737373]">Total Servicing Orders</div>
-          <div className="text-[20px] font-bold text-[#04314A] mt-0.5">{records.length}</div>
+          <div className="text-[20px] font-bold text-[#0B3D2B] mt-0.5">{records.length}</div>
         </div>
         <div className="bg-white border border-[#E8E8E5] rounded-lg p-3">
           <div className="text-[11px] text-[#737373]">In Workshop</div>
-          <div className="text-[20px] font-bold text-[#04314A] mt-0.5">{activeCount}</div>
+          <div className="text-[20px] font-bold text-[#0B3D2B] mt-0.5">{activeCount}</div>
         </div>
         <div className="bg-white border border-[#E8E8E5] rounded-lg p-3">
           <div className="text-[11px] text-[#737373]">Waiting for Parts</div>
-          <div className="text-[20px] font-bold text-[#04314A] mt-0.5">{waitingPartsCount}</div>
+          <div className="text-[20px] font-bold text-[#0B3D2B] mt-0.5">{waitingPartsCount}</div>
         </div>
         <div className="bg-white border border-[#E8E8E5] rounded-lg p-3">
           <div className="text-[11px] text-[#737373]">Completed / Delivered</div>
-          <div className="text-[20px] font-bold text-[#04314A] mt-0.5">{completedCount}</div>
+          <div className="text-[20px] font-bold text-[#0B3D2B] mt-0.5">{completedCount}</div>
         </div>
       </div>
 
@@ -1799,14 +1799,14 @@ export default function ServicingManager({
               value={searchInput}
               onChange={(e) => setSearchInput(e.target.value)}
               placeholder="Search VRO no, VIN, customer, license plate..."
-              className="w-full border border-[#E8E8E5] rounded-md pl-9 pr-3 py-1.5 text-[12px] text-[#04314A] placeholder:text-[#B0B0AA] focus:outline-none focus:border-[#00AAEB]"
+              className="w-full border border-[#E8E8E5] rounded-md pl-9 pr-3 py-1.5 text-[12px] text-[#0B3D2B] placeholder:text-[#B0B0AA] focus:outline-none focus:border-[#10B981]"
             />
           </div>
 
         <select
           value={status}
           onChange={(e) => setStatus(e.target.value)}
-          className="border border-[#E8E8E5] rounded-md px-3 py-1.5 text-[12px] text-[#04314A] focus:outline-none focus:border-[#00AAEB]"
+          className="border border-[#E8E8E5] rounded-md px-3 py-1.5 text-[12px] text-[#0B3D2B] focus:outline-none focus:border-[#10B981]"
         >
           <option value="">All Statuses</option>
           {SERVICE_STATUSES.map((s) => (
@@ -1817,7 +1817,7 @@ export default function ServicingManager({
         <select
           value={dealer}
           onChange={(e) => setDealer(e.target.value)}
-          className="border border-[#E8E8E5] rounded-md px-3 py-1.5 text-[12px] text-[#04314A] focus:outline-none focus:border-[#00AAEB]"
+          className="border border-[#E8E8E5] rounded-md px-3 py-1.5 text-[12px] text-[#0B3D2B] focus:outline-none focus:border-[#10B981]"
         >
           <option value="">All Workshops / Dealers</option>
           {dealers.map((d) => (
@@ -1835,7 +1835,7 @@ export default function ServicingManager({
               setDateFrom("");
               setDateTo("");
             }}
-            className="text-[12px] text-[#00AAEB] hover:underline"
+            className="text-[12px] text-[#10B981] hover:underline"
           >
             Reset
           </button>
@@ -1884,7 +1884,7 @@ export default function ServicingManager({
               ) : (
                 records.map((r) => (
                   <tr key={r.id} className="border-b border-[#F0F0ED] hover:bg-[#FAFAF8]">
-                    <td className="px-4 py-3 font-medium text-[#04314A]">
+                    <td className="px-4 py-3 font-medium text-[#0B3D2B]">
                       <EntityLink
                         type="vro"
                         id={r.vro_no || `VRO-${r.id}`}
@@ -1902,13 +1902,13 @@ export default function ServicingManager({
                         />
                       </div>
                     </td>
-                    <td className="px-4 py-3 text-[#04314A]">
+                    <td className="px-4 py-3 text-[#0B3D2B]">
                       <div>{r.vehicle_model_name || r.vehicle_name || "VT EV"}</div>
                       {r.v_reg_no && (
                         <div className="text-[11px] text-[#737373]">Reg: {r.v_reg_no}</div>
                       )}
                     </td>
-                    <td className="px-4 py-3 text-[#04314A]">
+                    <td className="px-4 py-3 text-[#0B3D2B]">
                       {r.customer_name ? (
                         <EntityLink
                           type="customer"
@@ -1923,14 +1923,14 @@ export default function ServicingManager({
                     <td className="px-4 py-3 text-[11px] text-[#737373]">
                       <div>In: {r.date_received} {r.time_received ? `(${r.time_received})` : ""}</div>
                       {r.actual_delivered_at ? (
-                        <div className="text-[#00AAEB] font-medium">Out: {new Date(r.actual_delivered_at).toLocaleDateString()}</div>
+                        <div className="text-[#10B981] font-medium">Out: {new Date(r.actual_delivered_at).toLocaleDateString()}</div>
                       ) : r.date_completed ? (
                         <div>Done: {r.date_completed}</div>
                       ) : null}
                     </td>
-                    <td className="px-4 py-3 text-[#04314A]">
-                      <span className="inline-flex items-center gap-1 font-semibold text-[11px] text-[#04314A]">
-                        <Clock size={11} className="text-[#00AAEB]" />
+                    <td className="px-4 py-3 text-[#0B3D2B]">
+                      <span className="inline-flex items-center gap-1 font-semibold text-[11px] text-[#0B3D2B]">
+                        <Clock size={11} className="text-[#10B981]" />
                         {r.duration_display || "None"}
                       </span>
                     </td>
@@ -1938,14 +1938,14 @@ export default function ServicingManager({
                       <select
                         value={r.status}
                         onChange={(e) => quickStatus(r, e.target.value)}
-                        className="border border-[#E8E8E5] rounded px-2 py-1 text-[11px] font-semibold text-[#04314A] bg-white cursor-pointer"
+                        className="border border-[#E8E8E5] rounded px-2 py-1 text-[11px] font-semibold text-[#0B3D2B] bg-white cursor-pointer"
                       >
                         {SERVICE_STATUSES.map((s) => (
                           <option key={s.value} value={s.value}>{s.label}</option>
                         ))}
                       </select>
                     </td>
-                    <td className="px-4 py-3 font-semibold text-[#04314A]">
+                    <td className="px-4 py-3 font-semibold text-[#0B3D2B]">
                       NPR {(r.total_cost || 0).toLocaleString()}
                     </td>
                     <td className="px-4 py-3 text-right whitespace-nowrap">
@@ -1953,14 +1953,14 @@ export default function ServicingManager({
                         {r.has_receive_checklist && (
                           <button
                             onClick={() => void openVrc(r)}
-                            className="px-2.5 py-1 border border-[#E8E8E5] rounded text-[11px] font-semibold text-[#04314A] hover:bg-gray-100"
+                            className="px-2.5 py-1 border border-[#E8E8E5] rounded text-[11px] font-semibold text-[#0B3D2B] hover:bg-gray-100"
                           >
                             View VRC
                           </button>
                         )}
                         <button
                           onClick={() => setEditing(r)}
-                          className="px-2.5 py-1 border border-[#E8E8E5] rounded text-[11px] font-semibold text-[#04314A] hover:bg-gray-100"
+                          className="px-2.5 py-1 border border-[#E8E8E5] rounded text-[11px] font-semibold text-[#0B3D2B] hover:bg-gray-100"
                         >
                           {r.vro_filled ? "View VRO" : "Create VRO"}
                         </button>

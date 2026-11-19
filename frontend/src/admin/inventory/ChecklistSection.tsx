@@ -12,7 +12,7 @@ export type CheckValue = {
 };
 
 const RESULT_STYLES: Record<CheckResult, string> = {
-  OK: "bg-[#04314A] text-white border-[#04314A]",
+  OK: "bg-[#0B3D2B] text-white border-[#0B3D2B]",
   NOT_OK: "bg-[#8B0000] text-white border-[#8B0000]",
   NA: "bg-white text-[#737373] border-[#E8E8E5]",
 };
@@ -85,12 +85,12 @@ function ItemCard({
           : value.result === "NOT_OK"
             ? "border-[#8B0000]/40 bg-[#8B0000]/[0.03]"
             : value.result === "OK"
-              ? "border-[#00AAEB]/30 bg-[#00AAEB]/[0.02]"
+              ? "border-[#10B981]/30 bg-[#10B981]/[0.02]"
               : "border-[#E8E8E5] bg-white"
       }`}
     >
       <div className="flex items-start justify-between gap-2">
-        <span className="text-[12px] font-semibold text-[#04314A] leading-snug">
+        <span className="text-[12px] font-semibold text-[#0B3D2B] leading-snug">
           <span className="text-[#B0B0AA] font-medium mr-1.5">{index}.</span>
           {item.label}
         </span>
@@ -113,7 +113,7 @@ function ItemCard({
         ))}
         {!readOnly && (
           <label
-            className="ml-auto flex items-center gap-1 text-[11px] font-semibold text-[#00AAEB] hover:text-[#04314A] cursor-pointer transition-colors"
+            className="ml-auto flex items-center gap-1 text-[11px] font-semibold text-[#10B981] hover:text-[#0B3D2B] cursor-pointer transition-colors"
             title="Attach defect photo"
           >
             <Camera size={14} />
@@ -168,7 +168,7 @@ function ItemCard({
             value={value.remark}
             onChange={(e) => onChange?.(item.id, { ...value, remark: e.target.value })}
             placeholder={value.result === "NOT_OK" ? "Describe the defect… (required)" : "Remark (optional)…"}
-            className="mt-2 w-full border border-[#E8E8E5] rounded-lg bg-white px-2.5 py-1.5 text-[12px] text-[#04314A] placeholder:text-[#B0B0AA] focus:outline-none focus:border-[#00AAEB]"
+            className="mt-2 w-full border border-[#E8E8E5] rounded-lg bg-white px-2.5 py-1.5 text-[12px] text-[#0B3D2B] placeholder:text-[#B0B0AA] focus:outline-none focus:border-[#10B981]"
           />
         )
       ) : (
@@ -234,7 +234,7 @@ export default function ChecklistSection({
 
         return (
           <div key={section}>
-            <h4 className="text-center text-[12px] font-bold tracking-[0.18em] uppercase text-[#04314A] mb-4 py-2 border-y border-[#E8E8E5] bg-[#FAFAF8]">
+            <h4 className="text-center text-[12px] font-bold tracking-[0.18em] uppercase text-[#0B3D2B] mb-4 py-2 border-y border-[#E8E8E5] bg-[#FAFAF8]">
               {sectionLabels[section] ?? section.replace(/_/g, " ")}
             </h4>
 
@@ -246,7 +246,7 @@ export default function ChecklistSection({
                     subs.slice(0, colIdx).reduce((n, s) => n + s.items.length, 0);
                   return (
                     <div key={sub ?? "none"}>
-                      <p className="text-center text-[10px] font-bold tracking-[0.14em] uppercase text-[#04314A] mb-3">
+                      <p className="text-center text-[10px] font-bold tracking-[0.14em] uppercase text-[#0B3D2B] mb-3">
                         {sectionTitle(section, sub, sectionLabels)}
                       </p>
                       <ColumnList

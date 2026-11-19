@@ -36,7 +36,7 @@ import { Modal, PageHeader, Pagination, TableState, ghostBtnCls, primaryBtnCls, 
 import { DEFAULT_PAGE_SIZE } from "@/lib/pagination";
 
 const inputCls =
-  "w-full border border-[#E8E8E5] rounded-xl bg-white px-3 py-2.5 text-[13px] font-medium text-[#04314A] placeholder:text-[#B0B0AA] focus:outline-none focus:border-[#00AAEB] transition-colors";
+  "w-full border border-[#E8E8E5] rounded-xl bg-white px-3 py-2.5 text-[13px] font-medium text-[#0B3D2B] placeholder:text-[#B0B0AA] focus:outline-none focus:border-[#10B981] transition-colors";
 const labelCls = "text-[10px] font-semibold tracking-[0.12em] uppercase text-[#737373] block mb-1.5";
 
 function StatusForm({
@@ -151,9 +151,9 @@ function StatusForm({
               type="checkbox"
               checked={isActive}
               onChange={(e) => setIsActive(e.target.checked)}
-              className="w-4 h-4 accent-[#00AAEB]"
+              className="w-4 h-4 accent-[#10B981]"
             />
-            <span className="text-[13px] font-semibold text-[#04314A]">Active</span>
+            <span className="text-[13px] font-semibold text-[#0B3D2B]">Active</span>
           </label>
         </div>
 
@@ -244,9 +244,9 @@ function BorderForm({
               type="checkbox"
               checked={isActive}
               onChange={(e) => setIsActive(e.target.checked)}
-              className="w-4 h-4 accent-[#00AAEB]"
+              className="w-4 h-4 accent-[#10B981]"
             />
-            <span className="text-[13px] font-semibold text-[#04314A]">Active</span>
+            <span className="text-[13px] font-semibold text-[#0B3D2B]">Active</span>
           </label>
         </div>
 
@@ -364,9 +364,9 @@ function WarehouseForm({
               type="checkbox"
               checked={isActive}
               onChange={(e) => setIsActive(e.target.checked)}
-              className="w-4 h-4 accent-[#00AAEB]"
+              className="w-4 h-4 accent-[#10B981]"
             />
-            <span className="text-[13px] font-semibold text-[#04314A]">Active</span>
+            <span className="text-[13px] font-semibold text-[#0B3D2B]">Active</span>
           </label>
         </div>
 
@@ -566,8 +566,8 @@ export default function InventoryAdditionalsPage() {
           onClick={() => setActiveTab("statuses")}
           className={`flex items-center gap-2 px-5 py-3 text-[12px] font-semibold tracking-[0.02em] border-b-2 transition-colors ${
             activeTab === "statuses"
-              ? "border-[#00AAEB] text-[#04314A]"
-              : "border-transparent text-[#737373] hover:text-[#04314A]"
+              ? "border-[#10B981] text-[#0B3D2B]"
+              : "border-transparent text-[#737373] hover:text-[#0B3D2B]"
           }`}
         >
           <Container size={15} />
@@ -580,8 +580,8 @@ export default function InventoryAdditionalsPage() {
           onClick={() => setActiveTab("crossings")}
           className={`flex items-center gap-2 px-5 py-3 text-[12px] font-semibold tracking-[0.02em] border-b-2 transition-colors ${
             activeTab === "crossings"
-              ? "border-[#00AAEB] text-[#04314A]"
-              : "border-transparent text-[#737373] hover:text-[#04314A]"
+              ? "border-[#10B981] text-[#0B3D2B]"
+              : "border-transparent text-[#737373] hover:text-[#0B3D2B]"
           }`}
         >
           <Milestone size={15} />
@@ -594,8 +594,8 @@ export default function InventoryAdditionalsPage() {
           onClick={() => setActiveTab("warehouses")}
           className={`flex items-center gap-2 px-5 py-3 text-[12px] font-semibold tracking-[0.02em] border-b-2 transition-colors ${
             activeTab === "warehouses"
-              ? "border-[#00AAEB] text-[#04314A]"
-              : "border-transparent text-[#737373] hover:text-[#04314A]"
+              ? "border-[#10B981] text-[#0B3D2B]"
+              : "border-transparent text-[#737373] hover:text-[#0B3D2B]"
           }`}
         >
           <Warehouse size={15} />
@@ -620,7 +620,7 @@ export default function InventoryAdditionalsPage() {
                 ? "Search border crossings..."
                 : "Search destination warehouses..."
             }
-            className="w-full border border-[#E8E8E5] rounded-xl pl-9 pr-3 py-2 text-[12px] text-[#04314A] placeholder:text-[#B0B0AA] focus:outline-none focus:border-[#00AAEB] transition-colors"
+            className="w-full border border-[#E8E8E5] rounded-xl pl-9 pr-3 py-2 text-[12px] text-[#0B3D2B] placeholder:text-[#B0B0AA] focus:outline-none focus:border-[#10B981] transition-colors"
           />
         </div>
 
@@ -647,7 +647,7 @@ export default function InventoryAdditionalsPage() {
           <div className="flex items-center justify-between mb-4">
             <div className="flex items-center gap-4 text-[12px] text-[#737373]">
               <span className="flex items-center gap-1.5">
-                <span className="w-2.5 h-2.5 rounded-full bg-[#00AAEB]" />
+                <span className="w-2.5 h-2.5 rounded-full bg-[#10B981]" />
                 {statuses.filter((s) => s.is_active).length} Active
               </span>
               <span className="flex items-center gap-1.5">
@@ -681,7 +681,7 @@ export default function InventoryAdditionalsPage() {
                     className="border-b border-[#F0F0ED] last:border-0 hover:bg-[#FAFAF8] transition-colors"
                   >
                     <td className="px-5 py-3.5">
-                      <div className="font-semibold text-[#04314A] text-[13px]">{s.label}</div>
+                      <div className="font-semibold text-[#0B3D2B] text-[13px]">{s.label}</div>
                       {s.description && <div className="text-[11px] text-[#737373] mt-0.5">{s.description}</div>}
                     </td>
                     <td className="px-5 py-3.5">
@@ -692,7 +692,7 @@ export default function InventoryAdditionalsPage() {
                     <td className="px-5 py-3.5">
                       <span
                         className={`inline-flex items-center gap-1 px-2.5 py-1 text-[9px] font-bold tracking-[0.12em] uppercase rounded-full ${
-                          s.is_active ? "bg-[#00AAEB] text-white" : "bg-[#F0F0ED] text-[#737373]"
+                          s.is_active ? "bg-[#10B981] text-white" : "bg-[#F0F0ED] text-[#737373]"
                         }`}
                       >
                         {s.is_active ? <CheckCircle size={10} /> : <XCircle size={10} />}
@@ -708,14 +708,14 @@ export default function InventoryAdditionalsPage() {
                         <button
                           onClick={() => setEditingStatus(s)}
                           title="Edit"
-                          className="p-1.5 rounded-lg text-[#737373] hover:text-[#04314A] hover:bg-[#F0F0ED] transition-colors"
+                          className="p-1.5 rounded-lg text-[#737373] hover:text-[#0B3D2B] hover:bg-[#F0F0ED] transition-colors"
                         >
                           <Pencil size={14} />
                         </button>
                         <button
                           onClick={() => toggleStatusActive(s)}
                           title={s.is_active ? "Deactivate" : "Activate"}
-                          className="p-1.5 rounded-lg text-[#737373] hover:text-[#04314A] hover:bg-[#F0F0ED] transition-colors"
+                          className="p-1.5 rounded-lg text-[#737373] hover:text-[#0B3D2B] hover:bg-[#F0F0ED] transition-colors"
                         >
                           {s.is_active ? <EyeOff size={14} /> : <Eye size={14} />}
                         </button>
@@ -752,7 +752,7 @@ export default function InventoryAdditionalsPage() {
           <div className="flex items-center justify-between mb-4">
             <div className="flex items-center gap-4 text-[12px] text-[#737373]">
               <span className="flex items-center gap-1.5">
-                <span className="w-2.5 h-2.5 rounded-full bg-[#00AAEB]" />
+                <span className="w-2.5 h-2.5 rounded-full bg-[#10B981]" />
                 {crossings.filter((c) => c.is_active).length} Active
               </span>
               <span className="flex items-center gap-1.5">
@@ -786,7 +786,7 @@ export default function InventoryAdditionalsPage() {
                     className="border-b border-[#F0F0ED] last:border-0 hover:bg-[#FAFAF8] transition-colors"
                   >
                     <td className="px-5 py-3.5">
-                      <div className="font-semibold text-[#04314A] text-[13px]">{c.name}</div>
+                      <div className="font-semibold text-[#0B3D2B] text-[13px]">{c.name}</div>
                     </td>
                     <td className="px-5 py-3.5 text-[12px] text-[#737373]">
                       {c.description || "—"}
@@ -794,7 +794,7 @@ export default function InventoryAdditionalsPage() {
                     <td className="px-5 py-3.5">
                       <span
                         className={`inline-flex items-center gap-1 px-2.5 py-1 text-[9px] font-bold tracking-[0.12em] uppercase rounded-full ${
-                          c.is_active ? "bg-[#00AAEB] text-white" : "bg-[#F0F0ED] text-[#737373]"
+                          c.is_active ? "bg-[#10B981] text-white" : "bg-[#F0F0ED] text-[#737373]"
                         }`}
                       >
                         {c.is_active ? <CheckCircle size={10} /> : <XCircle size={10} />}
@@ -810,14 +810,14 @@ export default function InventoryAdditionalsPage() {
                         <button
                           onClick={() => setEditingCrossing(c)}
                           title="Edit"
-                          className="p-1.5 rounded-lg text-[#737373] hover:text-[#04314A] hover:bg-[#F0F0ED] transition-colors"
+                          className="p-1.5 rounded-lg text-[#737373] hover:text-[#0B3D2B] hover:bg-[#F0F0ED] transition-colors"
                         >
                           <Pencil size={14} />
                         </button>
                         <button
                           onClick={() => toggleCrossingActive(c)}
                           title={c.is_active ? "Deactivate" : "Activate"}
-                          className="p-1.5 rounded-lg text-[#737373] hover:text-[#04314A] hover:bg-[#F0F0ED] transition-colors"
+                          className="p-1.5 rounded-lg text-[#737373] hover:text-[#0B3D2B] hover:bg-[#F0F0ED] transition-colors"
                         >
                           {c.is_active ? <EyeOff size={14} /> : <Eye size={14} />}
                         </button>
@@ -854,7 +854,7 @@ export default function InventoryAdditionalsPage() {
           <div className="flex items-center justify-between mb-4">
             <div className="flex items-center gap-4 text-[12px] text-[#737373]">
               <span className="flex items-center gap-1.5">
-                <span className="w-2.5 h-2.5 rounded-full bg-[#00AAEB]" />
+                <span className="w-2.5 h-2.5 rounded-full bg-[#10B981]" />
                 {warehouses.filter((w) => w.is_active).length} Active
               </span>
               <span className="flex items-center gap-1.5">
@@ -890,13 +890,13 @@ export default function InventoryAdditionalsPage() {
                     className="border-b border-[#F0F0ED] last:border-0 hover:bg-[#FAFAF8] transition-colors"
                   >
                     <td className="px-5 py-3.5">
-                      <div className="font-semibold text-[#04314A] text-[13px]">{w.name}</div>
+                      <div className="font-semibold text-[#0B3D2B] text-[13px]">{w.name}</div>
                     </td>
                     <td className="px-5 py-3.5 text-[12px] text-[#737373]">{w.location || "—"}</td>
                     <td className="px-5 py-3.5 text-[12px] text-[#737373]">
                       {w.contact_person || w.phone ? (
                         <div>
-                          {w.contact_person && <span className="font-medium text-[#04314A]">{w.contact_person}</span>}
+                          {w.contact_person && <span className="font-medium text-[#0B3D2B]">{w.contact_person}</span>}
                           {w.contact_person && w.phone && <span className="text-[#B0B0AA]"> • </span>}
                           {w.phone && <span>{w.phone}</span>}
                         </div>
@@ -907,7 +907,7 @@ export default function InventoryAdditionalsPage() {
                     <td className="px-5 py-3.5">
                       <span
                         className={`inline-flex items-center gap-1 px-2.5 py-1 text-[9px] font-bold tracking-[0.12em] uppercase rounded-full ${
-                          w.is_active ? "bg-[#00AAEB] text-white" : "bg-[#F0F0ED] text-[#737373]"
+                          w.is_active ? "bg-[#10B981] text-white" : "bg-[#F0F0ED] text-[#737373]"
                         }`}
                       >
                         {w.is_active ? <CheckCircle size={10} /> : <XCircle size={10} />}
@@ -923,14 +923,14 @@ export default function InventoryAdditionalsPage() {
                         <button
                           onClick={() => setEditingWarehouse(w)}
                           title="Edit"
-                          className="p-1.5 rounded-lg text-[#737373] hover:text-[#04314A] hover:bg-[#F0F0ED] transition-colors"
+                          className="p-1.5 rounded-lg text-[#737373] hover:text-[#0B3D2B] hover:bg-[#F0F0ED] transition-colors"
                         >
                           <Pencil size={14} />
                         </button>
                         <button
                           onClick={() => toggleWarehouseActive(w)}
                           title={w.is_active ? "Deactivate" : "Activate"}
-                          className="p-1.5 rounded-lg text-[#737373] hover:text-[#04314A] hover:bg-[#F0F0ED] transition-colors"
+                          className="p-1.5 rounded-lg text-[#737373] hover:text-[#0B3D2B] hover:bg-[#F0F0ED] transition-colors"
                         >
                           {w.is_active ? <EyeOff size={14} /> : <Eye size={14} />}
                         </button>

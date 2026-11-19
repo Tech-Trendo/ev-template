@@ -549,7 +549,7 @@ export default function UnitsManager({
             key={c.label}
             className="bg-white border border-[#E8E8E5] rounded-xl px-3.5 py-2.5"
           >
-            <div className="text-[20px] font-semibold text-[#04314A]">
+            <div className="text-[20px] font-semibold text-[#0B3D2B]">
               {c.value}
             </div>
             <div className="text-[9px] font-semibold tracking-[0.1em] uppercase text-[#737373]">
@@ -576,8 +576,8 @@ export default function UnitsManager({
             }}
             className={`px-4 py-1.5 rounded-lg text-[12px] font-semibold transition-colors border ${
               tab === key
-                ? "bg-[#04314A] text-white border-transparent"
-                : "bg-white text-[#737373] border-[#E8E8E5] hover:text-[#04314A] hover:border-[#04314A]"
+                ? "bg-[#0B3D2B] text-white border-transparent"
+                : "bg-white text-[#737373] border-[#E8E8E5] hover:text-[#0B3D2B] hover:border-[#0B3D2B]"
             }`}
           >
             {label}
@@ -699,7 +699,7 @@ export default function UnitsManager({
               setDateFrom("");
               setDateTo("");
             }}
-            className="flex items-center gap-1 text-[11px] font-semibold text-[#00AAEB] hover:text-[#04314A] transition-colors"
+            className="flex items-center gap-1 text-[11px] font-semibold text-[#10B981] hover:text-[#0B3D2B] transition-colors"
           >
             <X size={12} /> Clear
           </button>
@@ -711,7 +711,7 @@ export default function UnitsManager({
         <div className="overflow-x-auto">
           <table className="w-full text-left border-collapse min-w-[1020px]">
             <thead>
-              <tr className="border-b border-[#E8E8E5] bg-[#FAFAF8] text-[11px] font-semibold text-[#04314A] tracking-[0.02em]">
+              <tr className="border-b border-[#E8E8E5] bg-[#FAFAF8] text-[11px] font-semibold text-[#0B3D2B] tracking-[0.02em]">
                 {[
                   "VIN / Chassis",
                   "Model",
@@ -739,7 +739,7 @@ export default function UnitsManager({
                 rows.map((u) => (
                   <tr key={u.id} className="hover:bg-[#FAFAF8] transition-colors">
                     <td className="px-5 py-3.5">
-                      <div className="text-[13px] font-semibold text-[#04314A]">
+                      <div className="text-[13px] font-semibold text-[#0B3D2B]">
                         <EntityLink
                           type="unit"
                           id={u.id}
@@ -814,7 +814,7 @@ export default function UnitsManager({
                     <td className="px-5 py-3.5 text-[12px] text-[#737373] whitespace-nowrap">
                       {formatDate(u.manufacture_date)}
                     </td>
-                    <td className="px-5 py-3.5 text-[12px] font-semibold text-[#04314A] whitespace-nowrap">
+                    <td className="px-5 py-3.5 text-[12px] font-semibold text-[#0B3D2B] whitespace-nowrap">
                       {formatNPR(u.selling_price)}
                     </td>
                     <td className="px-5 py-3.5">
@@ -908,7 +908,7 @@ export default function UnitsManager({
           size="lg"
         >
           <div className="bg-[#FAFAF8] border border-[#E8E8E5] rounded-xl p-3.5 mb-5">
-            <div className="text-[13px] font-semibold text-[#04314A]">
+            <div className="text-[13px] font-semibold text-[#0B3D2B]">
               {quickAction.unit.vin_chassis_no}
             </div>
             <div className="text-[12px] text-[#737373] mt-0.5">
@@ -989,7 +989,7 @@ export default function UnitsManager({
 
                 {qaPaymentMode !== "CASH" && (
                   <div className="border border-[#E8E8E5] rounded-xl p-4 bg-[#FAFAF8] space-y-3">
-                    <h4 className="text-[11px] font-semibold tracking-[0.08em] uppercase text-[#04314A]">
+                    <h4 className="text-[11px] font-semibold tracking-[0.08em] uppercase text-[#0B3D2B]">
                       Bank Financing Details
                     </h4>
 

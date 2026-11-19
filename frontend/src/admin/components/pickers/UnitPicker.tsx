@@ -139,7 +139,7 @@ export function UnitPicker({
     if (!status) return null;
     const readable = status.replace(/_/g, " ");
     return (
-      <span className="text-[10px] font-bold uppercase tracking-[0.04em] px-1.5 py-0.5 rounded bg-[#F4F7F9] text-[#04314A] border border-[#E8E8E5]">
+      <span className="text-[10px] font-bold uppercase tracking-[0.04em] px-1.5 py-0.5 rounded bg-[#F4F7F9] text-[#0B3D2B] border border-[#E8E8E5]">
         {readable}
       </span>
     );
@@ -171,7 +171,7 @@ export function UnitPicker({
                 if (onAddExternal) onAddExternal();
                 else setExternalModalOpen(true);
               }}
-              className="inline-flex items-center gap-1 text-[11px] font-bold text-[#00AAEB] hover:text-[#04314A] transition-colors"
+              className="inline-flex items-center gap-1 text-[11px] font-bold text-[#10B981] hover:text-[#0B3D2B] transition-colors"
             >
               <Plus size={13} /> Add external vehicle
             </button>
@@ -181,7 +181,7 @@ export function UnitPicker({
           if (compact) {
             return (
               <div className="flex items-center justify-between gap-2 py-0.5">
-                <span className="text-[12px] font-bold text-[#04314A] truncate">
+                <span className="text-[12px] font-bold text-[#0B3D2B] truncate">
                   {u.vin_chassis_no}
                 </span>
                 <span className="text-[10px] font-semibold px-1.5 py-0.5 rounded bg-[#FAFAF8] text-[#737373] border border-[#E8E8E5] shrink-0">
@@ -193,7 +193,7 @@ export function UnitPicker({
           return (
             <div className="flex flex-col gap-0.5">
               <div className="flex items-center gap-2 flex-wrap">
-                <span className="text-[12px] font-bold text-[#04314A]">
+                <span className="text-[12px] font-bold text-[#0B3D2B]">
                   {u.vin_chassis_no}
                 </span>
                 <span className="text-[10px] font-semibold px-1.5 py-0.5 rounded bg-[#FAFAF8] text-[#737373] border border-[#E8E8E5]">
@@ -201,7 +201,7 @@ export function UnitPicker({
                 </span>
                 {getStatusBadge(u.status)}
                 {u.registration_no && (
-                  <span className="text-[10px] font-bold px-1.5 py-0.5 rounded bg-[#04314A] text-white">
+                  <span className="text-[10px] font-bold px-1.5 py-0.5 rounded bg-[#0B3D2B] text-white">
                     {u.registration_no}
                   </span>
                 )}
@@ -219,7 +219,7 @@ export function UnitPicker({
         }}
         renderSelected={(u) => (
           <div className="flex items-center gap-1.5 min-w-0 overflow-hidden whitespace-nowrap">
-            <span className="text-[12px] font-bold text-[#04314A] truncate shrink-0">
+            <span className="text-[12px] font-bold text-[#0B3D2B] truncate shrink-0">
               {u.vin_chassis_no}
             </span>
             <span className="text-[10px] font-semibold px-1.5 py-0.5 rounded bg-[#FAFAF8] text-[#737373] border border-[#E8E8E5] shrink-0 truncate max-w-[120px]">
@@ -324,7 +324,7 @@ function AddExternalVehicleModal({
           <button
             type="button"
             onClick={onClose}
-            className="px-4 py-2.5 text-[12px] font-semibold uppercase tracking-[0.04em] text-[#737373] hover:text-[#04314A] transition-colors"
+            className="px-4 py-2.5 text-[12px] font-semibold uppercase tracking-[0.04em] text-[#737373] hover:text-[#0B3D2B] transition-colors"
           >
             Cancel
           </button>

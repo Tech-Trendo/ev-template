@@ -13,8 +13,8 @@ import { PageHeader, useToast } from "../crm/ui";
 
 function Kpi({ label, value, accent, sub }: { label: string; value: number; accent?: boolean; sub?: string }) {
   return (
-    <div className={`bg-white border rounded-xl px-4 py-3.5 ${accent ? "border-[#00AAEB]/40 bg-[#00AAEB]/[0.02]" : "border-[#E8E8E5]"}`}>
-      <div className={`text-[22px] font-black tracking-tight ${accent ? "text-[#00AAEB]" : "text-[#04314A]"}`}>
+    <div className={`bg-white border rounded-xl px-4 py-3.5 ${accent ? "border-[#10B981]/40 bg-[#10B981]/[0.02]" : "border-[#E8E8E5]"}`}>
+      <div className={`text-[22px] font-black tracking-tight ${accent ? "text-[#10B981]" : "text-[#0B3D2B]"}`}>
         {value}
       </div>
       <div className="text-[10px] font-semibold tracking-[0.12em] uppercase text-[#737373] mt-0.5">
@@ -67,7 +67,7 @@ export default function StockDashboard({ onNavigate }: { onNavigate: (p: string)
   const exportStockCsv = () => {
     if (!summary) return;
     const lines: string[] = [
-      "VEHICLE TEMPLATE - VEHICLE STOCK & IMPORT REPORT",
+      "EV OS - VEHICLE STOCK & IMPORT REPORT",
       `Generated on: ${new Date().toLocaleString()}`,
       "",
       "EXECUTIVE SUMMARY",
@@ -115,19 +115,19 @@ export default function StockDashboard({ onNavigate }: { onNavigate: (p: string)
           <div className="flex items-center gap-2">
             <button
               onClick={exportStockCsv}
-              className="flex items-center gap-1.5 px-4 py-2.5 rounded-full border border-[#E8E8E5] bg-white text-[#04314A] text-[12px] font-semibold hover:border-[#04314A] transition-colors"
+              className="flex items-center gap-1.5 px-4 py-2.5 rounded-full border border-[#E8E8E5] bg-white text-[#0B3D2B] text-[12px] font-semibold hover:border-[#0B3D2B] transition-colors"
             >
               <Download size={14} /> Export CSV
             </button>
             <button
               onClick={() => onNavigate("china-transport")}
-              className="flex items-center gap-1.5 px-4 py-2.5 rounded-full border border-[#00AAEB] text-[#00AAEB] bg-sky-50/50 text-[12px] font-semibold hover:bg-[#00AAEB] hover:text-white transition-colors"
+              className="flex items-center gap-1.5 px-4 py-2.5 rounded-full border border-[#10B981] text-[#10B981] bg-sky-50/50 text-[12px] font-semibold hover:bg-[#10B981] hover:text-white transition-colors"
             >
               <Truck size={14} /> China Shipments
             </button>
             <button
               onClick={() => onNavigate("units")}
-              className="flex items-center gap-2 px-5 py-2.5 rounded-full bg-[#04314A] text-white text-[12px] font-semibold tracking-[0.06em] uppercase hover:bg-[#00AAEB] transition-colors"
+              className="flex items-center gap-2 px-5 py-2.5 rounded-full bg-[#0B3D2B] text-white text-[12px] font-semibold tracking-[0.06em] uppercase hover:bg-[#10B981] transition-colors"
             >
               <Boxes size={14} /> View Units
             </button>
@@ -140,7 +140,7 @@ export default function StockDashboard({ onNavigate }: { onNavigate: (p: string)
           type="date"
           value={dateFrom}
           onChange={(e) => setDateFrom(e.target.value)}
-          className="border border-[#E8E8E5] rounded-xl bg-white px-3 py-2 text-[12px] font-medium text-[#04314A] focus:outline-none focus:border-[#00AAEB]"
+          className="border border-[#E8E8E5] rounded-xl bg-white px-3 py-2 text-[12px] font-medium text-[#0B3D2B] focus:outline-none focus:border-[#10B981]"
           title="Imported/sold from"
         />
         <span className="text-[11px] text-[#737373]">→</span>
@@ -148,7 +148,7 @@ export default function StockDashboard({ onNavigate }: { onNavigate: (p: string)
           type="date"
           value={dateTo}
           onChange={(e) => setDateTo(e.target.value)}
-          className="border border-[#E8E8E5] rounded-xl bg-white px-3 py-2 text-[12px] font-medium text-[#04314A] focus:outline-none focus:border-[#00AAEB]"
+          className="border border-[#E8E8E5] rounded-xl bg-white px-3 py-2 text-[12px] font-medium text-[#0B3D2B] focus:outline-none focus:border-[#10B981]"
           title="Imported/sold to"
         />
         {(dateFrom || dateTo) && (
@@ -157,7 +157,7 @@ export default function StockDashboard({ onNavigate }: { onNavigate: (p: string)
               setDateFrom("");
               setDateTo("");
             }}
-            className="text-[11px] font-semibold text-[#00AAEB] hover:underline px-2"
+            className="text-[11px] font-semibold text-[#10B981] hover:underline px-2"
           >
             Clear
           </button>
@@ -165,7 +165,7 @@ export default function StockDashboard({ onNavigate }: { onNavigate: (p: string)
       </div>
 
       {error && (
-        <p className="mb-4 text-[13px] text-[#00AAEB] bg-[#00AAEB]/5 border-l-2 border-[#00AAEB] px-3 py-2">
+        <p className="mb-4 text-[13px] text-[#10B981] bg-[#10B981]/5 border-l-2 border-[#10B981] px-3 py-2">
           {error}
         </p>
       )}
@@ -176,11 +176,11 @@ export default function StockDashboard({ onNavigate }: { onNavigate: (p: string)
         <>
           {/* Three Core Numbers: Imported, Sold, Remaining Left */}
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-6">
-            <div className="bg-white border-2 border-[#04314A] rounded-2xl p-6 shadow-xs relative overflow-hidden">
+            <div className="bg-white border-2 border-[#0B3D2B] rounded-2xl p-6 shadow-xs relative overflow-hidden">
               <div className="text-[11px] font-bold tracking-[0.16em] uppercase text-[#737373] mb-1">
                 1. Total Vehicles Imported
               </div>
-              <div className="text-[36px] font-black text-[#04314A] tracking-tight">
+              <div className="text-[36px] font-black text-[#0B3D2B] tracking-tight">
                 {totalImported}
               </div>
               <p className="text-[12px] text-[#737373] mt-1">
@@ -188,15 +188,15 @@ export default function StockDashboard({ onNavigate }: { onNavigate: (p: string)
               </p>
             </div>
 
-            <div className="bg-white border-2 border-[#00AAEB] rounded-2xl p-6 shadow-xs relative overflow-hidden">
-              <div className="text-[11px] font-bold tracking-[0.16em] uppercase text-[#00AAEB] mb-1">
+            <div className="bg-white border-2 border-[#10B981] rounded-2xl p-6 shadow-xs relative overflow-hidden">
+              <div className="text-[11px] font-bold tracking-[0.16em] uppercase text-[#10B981] mb-1">
                 2. Total Vehicles Sold
               </div>
-              <div className="text-[36px] font-black text-[#00AAEB] tracking-tight">
+              <div className="text-[36px] font-black text-[#10B981] tracking-tight">
                 {totalSold}
               </div>
               <div className="flex items-center gap-2 mt-1 text-[12px] text-[#737373]">
-                <span className="inline-flex items-center gap-1 font-semibold text-[#00AAEB]">
+                <span className="inline-flex items-center gap-1 font-semibold text-[#10B981]">
                   <TrendingUp size={13} /> {sellThroughRate}% Sell-through
                 </span>
                 <span>({k.sold_this_month ?? 0} sold this month)</span>
@@ -204,10 +204,10 @@ export default function StockDashboard({ onNavigate }: { onNavigate: (p: string)
             </div>
 
             <div className="bg-white border border-[#E8E8E5] rounded-2xl p-6 shadow-xs relative overflow-hidden">
-              <div className="text-[11px] font-bold tracking-[0.16em] uppercase text-[#04314A] mb-1">
+              <div className="text-[11px] font-bold tracking-[0.16em] uppercase text-[#0B3D2B] mb-1">
                 3. Current Stock Left (Available)
               </div>
-              <div className="text-[36px] font-black text-[#04314A] tracking-tight">
+              <div className="text-[36px] font-black text-[#0B3D2B] tracking-tight">
                 {remainingStock}
               </div>
               <p className="text-[12px] text-[#737373] mt-1">
@@ -228,8 +228,8 @@ export default function StockDashboard({ onNavigate }: { onNavigate: (p: string)
 
           {(summary?.low_stock_alerts.length ?? 0) > 0 && (
             <div className="mb-6 bg-white border border-[#E8E8E5] rounded-2xl p-5">
-              <div className="flex items-center gap-2 mb-2 text-[#04314A]">
-                <AlertTriangle size={15} className="text-[#00AAEB]" />
+              <div className="flex items-center gap-2 mb-2 text-[#0B3D2B]">
+                <AlertTriangle size={15} className="text-[#10B981]" />
                 <span className="text-[12px] font-bold tracking-[0.08em] uppercase">
                   Low stock alerts
                 </span>
@@ -239,7 +239,7 @@ export default function StockDashboard({ onNavigate }: { onNavigate: (p: string)
                   <button
                     key={a.id}
                     onClick={() => onNavigate(`units?model=${a.id}`)}
-                    className="px-3 py-1.5 rounded-xl bg-[#F7F7F5] border border-[#E8E8E5] text-[12px] font-semibold text-[#04314A] hover:border-[#00AAEB]"
+                    className="px-3 py-1.5 rounded-xl bg-[#F7F7F5] border border-[#E8E8E5] text-[12px] font-semibold text-[#0B3D2B] hover:border-[#10B981]"
                   >
                     {getModelDisplayName(a)} — {a.remaining} left (min {a.threshold})
                   </button>
@@ -251,17 +251,17 @@ export default function StockDashboard({ onNavigate }: { onNavigate: (p: string)
           <div className="grid lg:grid-cols-2 gap-4 mb-6">
             {/* By model */}
             <div className="bg-white border border-[#E8E8E5] rounded-xl p-5">
-              <h3 className="text-[12px] font-bold tracking-[0.12em] uppercase text-[#04314A] mb-4">
+              <h3 className="text-[12px] font-bold tracking-[0.12em] uppercase text-[#0B3D2B] mb-4">
                 Stock by model
               </h3>
               <div className="space-y-3">
                 {(summary?.by_model ?? []).map((m) => (
                   <div key={m.id}>
                     <div className="flex items-center justify-between text-[12px] mb-1">
-                      <span className="font-bold text-[#04314A]">
+                      <span className="font-bold text-[#0B3D2B]">
                         {getModelDisplayName(m)}
                         {m.low_stock && m.imported > 0 && (
-                          <span className="ml-2 text-[11px] font-semibold text-[#00AAEB]">
+                          <span className="ml-2 text-[11px] font-semibold text-[#10B981]">
                             [Low Stock]
                           </span>
                         )}
@@ -273,7 +273,7 @@ export default function StockDashboard({ onNavigate }: { onNavigate: (p: string)
                     </div>
                     <div className="h-2 rounded-full bg-[#F0F0ED] overflow-hidden">
                       <div
-                        className="h-full rounded-full bg-[#00AAEB]"
+                        className="h-full rounded-full bg-[#10B981]"
                         style={{ width: `${m.imported ? Math.round((m.sold / m.imported) * 100) : 0}%` }}
                       />
                     </div>
@@ -287,7 +287,7 @@ export default function StockDashboard({ onNavigate }: { onNavigate: (p: string)
 
             {/* Trend */}
             <div className="bg-white border border-[#E8E8E5] rounded-xl p-5">
-              <h3 className="text-[12px] font-bold tracking-[0.12em] uppercase text-[#04314A] mb-1">
+              <h3 className="text-[12px] font-bold tracking-[0.12em] uppercase text-[#0B3D2B] mb-1">
                 Imported vs sold
               </h3>
               <p className="text-[11px] text-[#B0B0AA] mb-4">Last 12 months</p>
@@ -296,12 +296,12 @@ export default function StockDashboard({ onNavigate }: { onNavigate: (p: string)
                   <div key={t.month} className="flex-1 flex flex-col items-center gap-1 h-full justify-end">
                     <div className="w-full flex gap-0.5 items-end justify-center flex-1">
                       <div
-                        className="w-1/2 max-w-3 rounded-t bg-[#04314A]"
+                        className="w-1/2 max-w-3 rounded-t bg-[#0B3D2B]"
                         style={{ height: `${Math.round((t.imported / maxTrend) * 100)}%`, minHeight: t.imported ? 3 : 0 }}
                         title={`${t.month}: ${t.imported} imported`}
                       />
                       <div
-                        className="w-1/2 max-w-3 rounded-t bg-[#00AAEB]"
+                        className="w-1/2 max-w-3 rounded-t bg-[#10B981]"
                         style={{ height: `${Math.round((t.sold / maxTrend) * 100)}%`, minHeight: t.sold ? 3 : 0 }}
                         title={`${t.month}: ${t.sold} sold`}
                       />
@@ -314,10 +314,10 @@ export default function StockDashboard({ onNavigate }: { onNavigate: (p: string)
               </div>
               <div className="flex gap-4 mt-3 text-[11px] font-medium text-[#737373]">
                 <span className="flex items-center gap-1.5">
-                  <span className="w-2.5 h-2.5 rounded-sm bg-[#04314A]" /> Imported
+                  <span className="w-2.5 h-2.5 rounded-sm bg-[#0B3D2B]" /> Imported
                 </span>
                 <span className="flex items-center gap-1.5">
-                  <span className="w-2.5 h-2.5 rounded-sm bg-[#00AAEB]" /> Sold
+                  <span className="w-2.5 h-2.5 rounded-sm bg-[#10B981]" /> Sold
                 </span>
               </div>
             </div>
@@ -325,7 +325,7 @@ export default function StockDashboard({ onNavigate }: { onNavigate: (p: string)
 
           {/* Batch table */}
           <div className="bg-white border border-[#E8E8E5] rounded-xl overflow-x-auto mb-6">
-            <h3 className="px-5 pt-4 text-[12px] font-bold tracking-[0.12em] uppercase text-[#04314A]">
+            <h3 className="px-5 pt-4 text-[12px] font-bold tracking-[0.12em] uppercase text-[#0B3D2B]">
               Batches
             </h3>
             <table className="w-full text-left min-w-[720px] mt-2">
@@ -345,12 +345,12 @@ export default function StockDashboard({ onNavigate }: { onNavigate: (p: string)
                     className="border-b border-[#F0F0ED] last:border-0 hover:bg-[#FAFAF8] cursor-pointer"
                     onClick={() => onNavigate(`batches/${b.id}`)}
                   >
-                    <td className="px-5 py-3 text-[13px] font-bold text-[#00AAEB]">{b.batch_no}</td>
+                    <td className="px-5 py-3 text-[13px] font-bold text-[#10B981]">{b.batch_no}</td>
                     <td className="px-5 py-3 text-[12px] text-[#737373]">{b.origin || "—"}</td>
                     <td className="px-5 py-3 text-[12px] text-[#737373]">{formatDate(b.arrived_date)}</td>
-                    <td className="px-5 py-3 text-[12px] font-semibold text-[#04314A]">{b.imported}</td>
-                    <td className="px-5 py-3 text-[12px] font-semibold text-[#04314A]">{b.sold}</td>
-                    <td className="px-5 py-3 text-[12px] font-semibold text-[#04314A]">{b.remaining}</td>
+                    <td className="px-5 py-3 text-[12px] font-semibold text-[#0B3D2B]">{b.imported}</td>
+                    <td className="px-5 py-3 text-[12px] font-semibold text-[#0B3D2B]">{b.sold}</td>
+                    <td className="px-5 py-3 text-[12px] font-semibold text-[#0B3D2B]">{b.remaining}</td>
                     <td className="px-5 py-3 text-[12px] text-[#737373]">{b.pct_sold}%</td>
                   </tr>
                 ))}
@@ -372,7 +372,7 @@ export default function StockDashboard({ onNavigate }: { onNavigate: (p: string)
               { title: "PDI pending longest", rows: aging?.pdi_pending ?? [] },
             ].map((block) => (
               <div key={block.title} className="bg-white border border-[#E8E8E5] rounded-xl p-5">
-                <h3 className="text-[12px] font-bold tracking-[0.12em] uppercase text-[#04314A] mb-3">
+                <h3 className="text-[12px] font-bold tracking-[0.12em] uppercase text-[#0B3D2B] mb-3">
                   {block.title}
                 </h3>
                 {block.rows.length === 0 ? (
@@ -383,15 +383,15 @@ export default function StockDashboard({ onNavigate }: { onNavigate: (p: string)
                       <li key={r.id}>
                         <button
                           onClick={() => onNavigate(`units/${r.id}`)}
-                          className="w-full flex items-center justify-between py-2 text-left hover:text-[#00AAEB]"
+                          className="w-full flex items-center justify-between py-2 text-left hover:text-[#10B981]"
                         >
                           <span>
-                            <span className="block text-[12px] font-bold text-[#04314A]">
+                            <span className="block text-[12px] font-bold text-[#0B3D2B]">
                               {r.vin_chassis_no}
                             </span>
                             <span className="block text-[11px] text-[#737373]">{r.model}</span>
                           </span>
-                          <span className="text-[12px] font-semibold text-[#04314A] whitespace-nowrap">
+                          <span className="text-[12px] font-semibold text-[#0B3D2B] whitespace-nowrap">
                             {r.days_in_stock}d
                           </span>
                         </button>

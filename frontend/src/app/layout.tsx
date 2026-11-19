@@ -4,8 +4,8 @@ import "@/index.css";
 export const metadata: Metadata = {
   metadataBase: new URL("http://localhost:3000"),
   title: {
-    default: "Vehicle Template — Admin Console",
-    template: "%s | Vehicle Template",
+    default: "EV OS — Admin Console",
+    template: "%s | EV OS",
   },
   description: "Administrative dashboard template for vehicle and fleet management.",
   robots: { index: false, follow: false },

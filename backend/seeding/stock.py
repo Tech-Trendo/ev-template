@@ -328,7 +328,7 @@ def seed_stock(catalog: dict, crm: dict, users: dict, dealers: dict) -> dict[str
         unit.reservation_expires_at = stamp(7, 17) if status == "RESERVED" else None
         unit.source = "import"
         unit.delivery_notes = (
-            f"Demo {model_name} unit. Status planned by the Vehicle Template seeder."
+            f"Demo {model_name} unit. Status planned by the EV OS seeder."
         )
         unit.save()
         units[key] = unit

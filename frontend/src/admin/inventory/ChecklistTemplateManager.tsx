@@ -402,7 +402,7 @@ export default function ChecklistTemplateManager({
         <div className="lg:col-span-4 space-y-4">
           {/* Filters Card */}
           <div className="bg-white border border-[#E8E8E5] rounded-xl p-4 space-y-3">
-            <div className="text-[12px] font-semibold text-[#04314A] uppercase tracking-wider">
+            <div className="text-[12px] font-semibold text-[#0B3D2B] uppercase tracking-wider">
               Filter Templates
             </div>
 
@@ -415,8 +415,8 @@ export default function ChecklistTemplateManager({
                   onClick={() => setTypeFilter(t)}
                   className={`flex-1 py-1.5 text-xs font-semibold rounded-md transition-colors ${
                     typeFilter === t
-                      ? "bg-white text-[#04314A] shadow-sm"
-                      : "text-[#737373] hover:text-[#04314A]"
+                      ? "bg-white text-[#0B3D2B] shadow-sm"
+                      : "text-[#737373] hover:text-[#0B3D2B]"
                   }`}
                 >
                   {t === "ALL" ? "All" : t}
@@ -477,7 +477,7 @@ export default function ChecklistTemplateManager({
                     onClick={() => setSelectedTemplateId(t.id)}
                     className={`w-full text-left p-3.5 rounded-xl border transition-all ${
                       isSelected
-                        ? "bg-[#F0F9FF] border-[#00AAEB] ring-1 ring-[#00AAEB]"
+                        ? "bg-[#F0F9FF] border-[#10B981] ring-1 ring-[#10B981]"
                         : "bg-white border-[#E8E8E5] hover:border-[#CBD5E1]"
                     }`}
                   >
@@ -492,8 +492,8 @@ export default function ChecklistTemplateManager({
                         >
                           {t.inspection_type}
                         </span>
-                        <span className="font-semibold text-[13px] text-[#04314A]">
-                          {t.name || (isDefault ? "Global Default Template" : "Vehicle Template")}
+                        <span className="font-semibold text-[13px] text-[#0B3D2B]">
+                          {t.name || (isDefault ? "Global Default Template" : "EV OS")}
                         </span>
                       </div>
                       <span className="text-[10px] font-mono font-medium text-[#737373]">
@@ -542,7 +542,7 @@ export default function ChecklistTemplateManager({
                       >
                         {selectedTemplate.inspection_type_display || selectedTemplate.inspection_type}
                       </span>
-                      <h2 className="text-lg font-bold text-[#04314A]">
+                      <h2 className="text-lg font-bold text-[#0B3D2B]">
                         {selectedTemplate.name ||
                           (!selectedTemplate.vehicle_model && !selectedTemplate.variant
                             ? "Global Default Checklist"
@@ -627,7 +627,7 @@ export default function ChecklistTemplateManager({
                         className="border border-[#E8E8E5] rounded-xl overflow-hidden"
                       >
                         <div className="bg-[#F8FAFC] px-4 py-2.5 border-b border-[#E8E8E5] flex items-center justify-between">
-                          <span className="text-xs font-bold text-[#04314A] tracking-wide uppercase">
+                          <span className="text-xs font-bold text-[#0B3D2B] tracking-wide uppercase">
                             {secLabel}
                           </span>
                           <span className="text-[11px] font-medium text-[#737373]">
@@ -646,7 +646,7 @@ export default function ChecklistTemplateManager({
                                   {item.sort_order}
                                 </span>
                                 <div>
-                                  <div className="text-[13px] font-medium text-[#04314A]">
+                                  <div className="text-[13px] font-medium text-[#0B3D2B]">
                                     {item.label}
                                   </div>
                                   {item.sub_section && (
@@ -667,7 +667,7 @@ export default function ChecklistTemplateManager({
                                   <button
                                     type="button"
                                     onClick={() => openEditItemModal(item)}
-                                    className="p-1.5 text-[#737373] hover:text-[#00AAEB] hover:bg-[#F0F9FF] rounded-lg transition-colors"
+                                    className="p-1.5 text-[#737373] hover:text-[#10B981] hover:bg-[#F0F9FF] rounded-lg transition-colors"
                                     title="Edit item"
                                   >
                                     <Pencil className="w-3.5 h-3.5" />
@@ -760,12 +760,12 @@ export default function ChecklistTemplateManager({
           )}
 
           <div className="p-3 bg-[#F8FAFC] border border-[#E2E8F0] rounded-xl">
-            <label className="flex items-center gap-2 cursor-pointer text-xs text-[#04314A] font-medium">
+            <label className="flex items-center gap-2 cursor-pointer text-xs text-[#0B3D2B] font-medium">
               <input
                 type="checkbox"
                 checked={createCloneDefault}
                 onChange={(e) => setCreateCloneDefault(e.target.checked)}
-                className="w-4 h-4 rounded text-[#00AAEB] focus:ring-[#00AAEB]"
+                className="w-4 h-4 rounded text-[#10B981] focus:ring-[#10B981]"
               />
               <span>Copy checklist items from active default template</span>
             </label>
@@ -807,12 +807,12 @@ export default function ChecklistTemplateManager({
             </FormField>
 
             <div className="p-3 bg-[#F8FAFC] border border-[#E2E8F0] rounded-xl">
-              <label className="flex items-center gap-2 cursor-pointer text-xs text-[#04314A] font-medium">
+              <label className="flex items-center gap-2 cursor-pointer text-xs text-[#0B3D2B] font-medium">
                 <input
                   type="checkbox"
                   checked={editIsActive}
                   onChange={(e) => setEditIsActive(e.target.checked)}
-                  className="w-4 h-4 rounded text-[#00AAEB] focus:ring-[#00AAEB]"
+                  className="w-4 h-4 rounded text-[#10B981] focus:ring-[#10B981]"
                 />
                 <span>Active Template</span>
               </label>

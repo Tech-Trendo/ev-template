@@ -164,16 +164,16 @@ export default function DatePicker({
           aria-haspopup="dialog"
           aria-expanded={open}
           onClick={() => !disabled && setOpen((current) => !current)}
-          className={`flex h-9 w-full items-center gap-2 rounded-lg border bg-white px-3 pr-9 text-left text-[12px] transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-[#00AAEB] disabled:cursor-not-allowed disabled:bg-[#F7F7F5] dark:bg-[#0B2538] dark:disabled:bg-[#061824] ${
+          className={`flex h-9 w-full items-center gap-2 rounded-lg border bg-white px-3 pr-9 text-left text-[12px] transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-[#10B981] disabled:cursor-not-allowed disabled:bg-[#F7F7F5] dark:bg-[#0C2620] dark:disabled:bg-[#071713] ${
             open
-              ? "border-[#00AAEB] ring-1 ring-[#00AAEB]"
-              : "border-[#E8E8E5] hover:border-[#D4D4CE] dark:border-[#174261] dark:hover:border-[#20557B]"
+              ? "border-[#10B981] ring-1 ring-[#10B981]"
+              : "border-[#E8E8E5] hover:border-[#D4D4CE] dark:border-[#1B5039] dark:hover:border-[#20557B]"
           }`}
         >
           <Calendar size={14} className="shrink-0 text-[#737373]" />
           <span
             className={`min-w-0 flex-1 truncate ${
-              selected ? "font-medium text-[#04314A] dark:text-[#F7F7F5]" : "text-[#A3A39E]"
+              selected ? "font-medium text-[#0B3D2B] dark:text-[#F7F7F5]" : "text-[#A3A39E]"
             }`}
           >
             {triggerLabel}
@@ -184,7 +184,7 @@ export default function DatePicker({
             type="button"
             aria-label="Clear date"
             disabled={disabled}
-            className="absolute right-2 top-1/2 -translate-y-1/2 rounded p-1 text-[#737373] hover:bg-[#F0F0ED] hover:text-[#04314A] disabled:opacity-50 dark:hover:bg-[#061824]"
+            className="absolute right-2 top-1/2 -translate-y-1/2 rounded p-1 text-[#737373] hover:bg-[#F0F0ED] hover:text-[#0B3D2B] disabled:opacity-50 dark:hover:bg-[#071713]"
             onClick={() => onChange(null)}
           >
             <X size={13} />
@@ -196,15 +196,15 @@ export default function DatePicker({
         <div
           role="dialog"
           aria-label="Choose date"
-          className="absolute left-0 right-0 z-40 mt-1.5 rounded-xl border border-[#E8E8E5] bg-white p-3 shadow-lg dark:border-[#174261] dark:bg-[#0B2538] sm:left-auto sm:right-auto sm:w-[300px]"
+          className="absolute left-0 right-0 z-40 mt-1.5 rounded-xl border border-[#E8E8E5] bg-white p-3 shadow-lg dark:border-[#1B5039] dark:bg-[#0C2620] sm:left-auto sm:right-auto sm:w-[300px]"
         >
           <div className="mb-2 flex items-center justify-between gap-2">
-            <div className="inline-flex rounded-lg border border-[#E8E8E5] p-0.5 dark:border-[#174261]">
+            <div className="inline-flex rounded-lg border border-[#E8E8E5] p-0.5 dark:border-[#1B5039]">
               <button
                 type="button"
                 aria-pressed={mode === "bs"}
                 className={`rounded-md px-2.5 py-1 text-[11px] font-semibold ${
-                  mode === "bs" ? "bg-[#04314A] text-white" : "text-[#737373] hover:text-[#04314A]"
+                  mode === "bs" ? "bg-[#0B3D2B] text-white" : "text-[#737373] hover:text-[#0B3D2B]"
                 }`}
                 onClick={() => setMode("bs")}
               >
@@ -214,7 +214,7 @@ export default function DatePicker({
                 type="button"
                 aria-pressed={mode === "ad"}
                 className={`rounded-md px-2.5 py-1 text-[11px] font-semibold ${
-                  mode === "ad" ? "bg-[#04314A] text-white" : "text-[#737373] hover:text-[#04314A]"
+                  mode === "ad" ? "bg-[#0B3D2B] text-white" : "text-[#737373] hover:text-[#0B3D2B]"
                 }`}
                 onClick={() => setMode("ad")}
               >
@@ -225,7 +225,7 @@ export default function DatePicker({
               <button
                 type="button"
                 aria-label="Previous month"
-                className="rounded-md p-1 text-[#737373] hover:bg-[#F0F0ED] hover:text-[#04314A] dark:hover:bg-[#061824]"
+                className="rounded-md p-1 text-[#737373] hover:bg-[#F0F0ED] hover:text-[#0B3D2B] dark:hover:bg-[#071713]"
                 onClick={() => shiftMonth(-1)}
               >
                 <ChevronLeft size={16} />
@@ -233,7 +233,7 @@ export default function DatePicker({
               <button
                 type="button"
                 aria-label="Next month"
-                className="rounded-md p-1 text-[#737373] hover:bg-[#F0F0ED] hover:text-[#04314A] dark:hover:bg-[#061824]"
+                className="rounded-md p-1 text-[#737373] hover:bg-[#F0F0ED] hover:text-[#0B3D2B] dark:hover:bg-[#071713]"
                 onClick={() => shiftMonth(1)}
               >
                 <ChevronRight size={16} />
@@ -317,10 +317,10 @@ export default function DatePicker({
                   aria-selected={selectedDay}
                   aria-label={label ? `${label.bs}, ${label.ad}` : iso}
                   tabIndex={day === Math.min(focusedDay, length) ? 0 : -1}
-                  className={`h-8 rounded-md text-[12px] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#00AAEB] disabled:opacity-30 ${
+                  className={`h-8 rounded-md text-[12px] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#10B981] disabled:opacity-30 ${
                     selectedDay
-                      ? "bg-[#04314A] font-semibold text-white"
-                      : "text-[#04314A] hover:bg-[#F0F0ED] dark:text-[#F7F7F5] dark:hover:bg-[#061824]"
+                      ? "bg-[#0B3D2B] font-semibold text-white"
+                      : "text-[#0B3D2B] hover:bg-[#F0F0ED] dark:text-[#F7F7F5] dark:hover:bg-[#071713]"
                   }`}
                   onClick={() => selectDay(day)}
                   onFocus={() => setFocusedDay(day)}

@@ -97,9 +97,9 @@ export function AddActivityModal({
           <SelectField value={user} onChange={setUser} options={userOptions.map((s) => ({ value: s, label: s }))} />
         </Field>
       </div>
-      {error && subject.trim() && <p className="mt-4 text-[12px] text-[#00AAEB]">{error}</p>}
+      {error && subject.trim() && <p className="mt-4 text-[12px] text-[#10B981]">{error}</p>}
       <div data-modal-actions className="mt-6 flex justify-end gap-3">
-        <button onClick={onClose} className="px-4 py-2.5 text-[12px] font-semibold uppercase tracking-[0.04em] text-[#737373] hover:text-[#04314A] transition-colors">
+        <button onClick={onClose} className="px-4 py-2.5 text-[12px] font-semibold uppercase tracking-[0.04em] text-[#737373] hover:text-[#0B3D2B] transition-colors">
           Cancel
         </button>
         <button onClick={submit} disabled={saving} className={primaryBtnCls}>
@@ -187,7 +187,7 @@ export function ScheduleTestDriveModal({
             <label className="block text-[11px] font-bold uppercase tracking-[0.08em] text-[#737373] mb-1">
               Connected Lead
             </label>
-            <div className="px-3.5 py-2.5 bg-[#FAFAF8] border border-[#E8E8E5] rounded-xl text-[13px] font-semibold text-[#04314A]">
+            <div className="px-3.5 py-2.5 bg-[#FAFAF8] border border-[#E8E8E5] rounded-xl text-[13px] font-semibold text-[#0B3D2B]">
               {leadName || `Lead #${leadId}`} (Unconverted Lead)
             </div>
           </div>
@@ -230,9 +230,9 @@ export function ScheduleTestDriveModal({
           </Field>
         </div>
       </div>
-      {error && <p className="mt-4 text-[12px] text-[#00AAEB]">{error}</p>}
+      {error && <p className="mt-4 text-[12px] text-[#10B981]">{error}</p>}
       <div data-modal-actions className="mt-6 flex justify-end gap-3">
-        <button onClick={onClose} className="px-4 py-2.5 text-[12px] font-semibold uppercase tracking-[0.04em] text-[#737373] hover:text-[#04314A] transition-colors">
+        <button onClick={onClose} className="px-4 py-2.5 text-[12px] font-semibold uppercase tracking-[0.04em] text-[#737373] hover:text-[#0B3D2B] transition-colors">
           Cancel
         </button>
         <button onClick={submit} disabled={saving} className={primaryBtnCls}>
@@ -731,7 +731,7 @@ export function QuotationModal({
             <label className="block text-[11px] font-bold uppercase tracking-[0.08em] text-[#737373] mb-1">
               Connected Lead
             </label>
-            <div className="px-3.5 py-2.5 bg-[#FAFAF8] border border-[#E8E8E5] rounded-xl text-[13px] font-semibold text-[#04314A]">
+            <div className="px-3.5 py-2.5 bg-[#FAFAF8] border border-[#E8E8E5] rounded-xl text-[13px] font-semibold text-[#0B3D2B]">
               {leadName || `Lead #${leadId}`}
             </div>
           </div>
@@ -818,18 +818,18 @@ export function QuotationModal({
         {/* Contact from customer is read-only; lead-only quotes can still set PAN. */}
         {customerId ? (
           <div className="sm:col-span-2 rounded-xl border border-[#E8E8E5] bg-[#FAFAF8] px-4 py-3 text-[12px]">
-            <div className="font-semibold text-[#04314A] mb-1.5">Contact from customer</div>
+            <div className="font-semibold text-[#0B3D2B] mb-1.5">Contact from customer</div>
             <div className="grid grid-cols-1 sm:grid-cols-3 gap-x-4 gap-y-1 text-[#737373]">
               <div>
-                <span className="font-medium text-[#04314A]">PAN / VAT:</span>{" "}
+                <span className="font-medium text-[#0B3D2B]">PAN / VAT:</span>{" "}
                 {panNumber || "—"}
               </div>
               <div>
-                <span className="font-medium text-[#04314A]">Phone:</span>{" "}
+                <span className="font-medium text-[#0B3D2B]">Phone:</span>{" "}
                 {customerPhone || "—"}
               </div>
               <div>
-                <span className="font-medium text-[#04314A]">Address:</span>{" "}
+                <span className="font-medium text-[#0B3D2B]">Address:</span>{" "}
                 {customerAddress || "—"}
               </div>
             </div>
@@ -914,7 +914,7 @@ export function QuotationModal({
           <button
             type="button"
             onClick={() => setShowAdvancedSpecs(!showAdvancedSpecs)}
-            className="text-[12px] font-semibold text-[#04314A] hover:underline flex items-center gap-1.5 py-1"
+            className="text-[12px] font-semibold text-[#0B3D2B] hover:underline flex items-center gap-1.5 py-1"
           >
             <span>{showAdvancedSpecs ? "Hide" : "Show"} Specifications and Terms (Letterhead Defaults)</span>
           </button>
@@ -1009,7 +1009,7 @@ export function QuotationModal({
                 <button
                   type="button"
                   onClick={() => setExtraSpecs((rows) => [...rows, { label: "", value: "" }])}
-                  className="text-[12px] font-semibold text-[#00AAEB] hover:text-[#04314A]"
+                  className="text-[12px] font-semibold text-[#10B981] hover:text-[#0B3D2B]"
                 >
                   Add field
                 </button>
@@ -1056,14 +1056,14 @@ export function QuotationModal({
 
       <div className="mt-5 border border-[#E8E8E5] rounded-xl bg-[#FAFAF8] px-5 py-4 flex items-center justify-between">
         <span className="text-[11px] font-semibold tracking-[0.12em] uppercase text-[#737373]">Total (incl. VAT)</span>
-        <span className="text-[20px] font-black text-[#04314A]">{formatNpr(totals.total)}</span>
+        <span className="text-[20px] font-black text-[#0B3D2B]">{formatNpr(totals.total)}</span>
       </div>
 
       {error || variantsError ? (
         <p className="mt-4 text-[12px] text-[#DC2626] font-medium">{error || variantsError}</p>
       ) : null}
       <div data-modal-actions className="mt-6 flex justify-end gap-3">
-        <button onClick={onClose} className="px-4 py-2.5 text-[12px] font-semibold uppercase tracking-[0.04em] text-[#737373] hover:text-[#04314A] transition-colors">
+        <button onClick={onClose} className="px-4 py-2.5 text-[12px] font-semibold uppercase tracking-[0.04em] text-[#737373] hover:text-[#0B3D2B] transition-colors">
           Cancel
         </button>
         <button onClick={() => submit(true)} disabled={saving} className={primaryBtnCls}>

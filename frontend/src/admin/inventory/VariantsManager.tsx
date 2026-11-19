@@ -255,8 +255,8 @@ export default function VariantsManager({
           }}
           className={`px-5 py-3 text-[13px] font-semibold tracking-[0.02em] border-b-2 transition-colors flex items-center gap-2 ${
             tab === "variants"
-              ? "border-[#00AAEB] text-[#04314A]"
-              : "border-transparent text-[#737373] hover:text-[#04314A]"
+              ? "border-[#10B981] text-[#0B3D2B]"
+              : "border-transparent text-[#737373] hover:text-[#0B3D2B]"
           }`}
         >
           <Truck size={16} />
@@ -264,7 +264,7 @@ export default function VariantsManager({
           <span
             className={`text-[10px] px-2 py-0.5 rounded-full ${
               tab === "variants"
-                ? "bg-[#04314A] text-white"
+                ? "bg-[#0B3D2B] text-white"
                 : "bg-[#F0F0ED] text-[#737373]"
             }`}
           >
@@ -279,15 +279,15 @@ export default function VariantsManager({
           }}
           className={`px-5 py-3 text-[13px] font-semibold tracking-[0.02em] border-b-2 transition-colors flex items-center gap-2 ${
             tab === "battery"
-              ? "border-[#00AAEB] text-[#04314A]"
-              : "border-transparent text-[#737373] hover:text-[#04314A]"
+              ? "border-[#10B981] text-[#0B3D2B]"
+              : "border-transparent text-[#737373] hover:text-[#0B3D2B]"
           }`}
         >
           <Layers size={16} />
           <span>Battery Capacity</span>
           <span
             className={`text-[10px] px-2 py-0.5 rounded-full ${
-              tab === "battery" ? "bg-[#04314A] text-white" : "bg-[#F0F0ED] text-[#737373]"
+              tab === "battery" ? "bg-[#0B3D2B] text-white" : "bg-[#F0F0ED] text-[#737373]"
             }`}
           >
             {specs.filter((row) => row.kind === "battery").length}
@@ -300,15 +300,15 @@ export default function VariantsManager({
           }}
           className={`px-5 py-3 text-[13px] font-semibold tracking-[0.02em] border-b-2 transition-colors flex items-center gap-2 ${
             tab === "cargo"
-              ? "border-[#00AAEB] text-[#04314A]"
-              : "border-transparent text-[#737373] hover:text-[#04314A]"
+              ? "border-[#10B981] text-[#0B3D2B]"
+              : "border-transparent text-[#737373] hover:text-[#0B3D2B]"
           }`}
         >
           <Layers size={16} />
           <span>Cargo Length</span>
           <span
             className={`text-[10px] px-2 py-0.5 rounded-full ${
-              tab === "cargo" ? "bg-[#04314A] text-white" : "bg-[#F0F0ED] text-[#737373]"
+              tab === "cargo" ? "bg-[#0B3D2B] text-white" : "bg-[#F0F0ED] text-[#737373]"
             }`}
           >
             {specs.filter((row) => row.kind === "cargo_length").length}
@@ -360,7 +360,7 @@ export default function VariantsManager({
             <div className="overflow-x-auto">
               <table className="w-full text-left border-collapse min-w-[880px]">
                 <thead>
-                  <tr className="border-b border-[#E8E8E5] bg-[#FAFAF8] text-[11px] font-semibold text-[#04314A] tracking-[0.02em]">
+                  <tr className="border-b border-[#E8E8E5] bg-[#FAFAF8] text-[11px] font-semibold text-[#0B3D2B] tracking-[0.02em]">
                     <th className="px-5 py-3">Variant Name</th>
                     <th className="px-5 py-3">Vehicle Model</th>
                     <th className="px-5 py-3">Key Specs</th>
@@ -393,7 +393,7 @@ export default function VariantsManager({
                         className="hover:bg-[#FAFAF8] transition-colors"
                       >
                         <td className="px-5 py-3.5">
-                          <div className="text-[13px] font-bold text-[#04314A]">
+                          <div className="text-[13px] font-bold text-[#0B3D2B]">
                             {v.name}
                           </div>
                           {v.product_code && (
@@ -494,7 +494,7 @@ export default function VariantsManager({
             <div className="overflow-x-auto">
               <table className="w-full text-left border-collapse min-w-[640px]">
                 <thead>
-                  <tr className="border-b border-[#E8E8E5] bg-[#FAFAF8] text-[11px] font-semibold text-[#04314A] tracking-[0.02em]">
+                  <tr className="border-b border-[#E8E8E5] bg-[#FAFAF8] text-[11px] font-semibold text-[#0B3D2B] tracking-[0.02em]">
                     <th className="px-5 py-3">Body Type Name</th>
                     <th className="px-5 py-3">Description</th>
                     <th className="px-5 py-3">Sort Order</th>
@@ -527,7 +527,7 @@ export default function VariantsManager({
                         className="hover:bg-[#FAFAF8] transition-colors"
                       >
                         <td className="px-5 py-3.5">
-                          <div className="text-[13px] font-bold text-[#04314A]">
+                          <div className="text-[13px] font-bold text-[#0B3D2B]">
                             {b.name}
                           </div>
                         </td>
@@ -805,9 +805,9 @@ function VariantModal({
             id="variant_is_active"
             checked={isActive}
             onChange={(e) => setIsActive(e.target.checked)}
-            className="h-4 w-4 rounded border-[#E8E8E5] text-[#00AAEB] focus:ring-0"
+            className="h-4 w-4 rounded border-[#E8E8E5] text-[#10B981] focus:ring-0"
           />
-          <span className="text-[12px] font-semibold text-[#04314A]">
+          <span className="text-[12px] font-semibold text-[#0B3D2B]">
             Variant is active and available for selection
           </span>
         </label>
@@ -926,11 +926,11 @@ function BodyTypeModal({
             id="body_type_is_active"
             checked={isActive}
             onChange={(e) => setIsActive(e.target.checked)}
-            className="h-4 w-4 rounded border-[#E8E8E5] text-[#00AAEB] focus:ring-0"
+            className="h-4 w-4 rounded border-[#E8E8E5] text-[#10B981] focus:ring-0"
           />
           <label
             htmlFor="body_type_is_active"
-            className="text-[12px] font-semibold text-[#04314A] cursor-pointer"
+            className="text-[12px] font-semibold text-[#0B3D2B] cursor-pointer"
           >
             Body type is active
           </label>
@@ -1001,7 +1001,7 @@ function ModelSpecTable({
       <div className="bg-white border border-[#E8E8E5] rounded-xl overflow-hidden">
         <table className="w-full text-left border-collapse min-w-[640px]">
           <thead>
-            <tr className="border-b border-[#E8E8E5] bg-[#FAFAF8] text-[11px] font-semibold text-[#04314A]">
+            <tr className="border-b border-[#E8E8E5] bg-[#FAFAF8] text-[11px] font-semibold text-[#0B3D2B]">
               <th className="px-5 py-3">Vehicle model</th>
               <th className="px-5 py-3">{title}</th>
               <th className="px-5 py-3">Status</th>
@@ -1018,8 +1018,8 @@ function ModelSpecTable({
             ) : (
               rows.map((row) => (
                 <tr key={row.id} className="border-b border-[#F0F0ED] last:border-0">
-                  <td className="px-5 py-3.5 text-[13px] font-semibold text-[#04314A]">{row.vehicle_model_name}</td>
-                  <td className="px-5 py-3.5 text-[13px] text-[#04314A]">{row.label}</td>
+                  <td className="px-5 py-3.5 text-[13px] font-semibold text-[#0B3D2B]">{row.vehicle_model_name}</td>
+                  <td className="px-5 py-3.5 text-[13px] text-[#0B3D2B]">{row.label}</td>
                   <td className="px-5 py-3.5">
                     <Badge variant={row.is_active ? "success" : "neutral"} size="sm">{row.is_active ? "Active" : "Inactive"}</Badge>
                   </td>

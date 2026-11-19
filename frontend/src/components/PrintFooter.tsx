@@ -74,7 +74,7 @@ export function PrintFooter({
     >
       <span>
         Printed by:{" "}
-        <strong className="font-semibold text-[#04314A]">{userName}</strong>,{" "}
+        <strong className="font-semibold text-[#0B3D2B]">{userName}</strong>,{" "}
         {formattedDateTime}
       </span>
       {pageInfo ? <span>{pageInfo}</span> : <span />}

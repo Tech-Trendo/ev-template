@@ -52,11 +52,11 @@ export default function ConditionDetail({
   if (!report) {
     return (
       <div className="max-w-lg mx-auto mt-16 bg-white border border-[#E8E8E5] rounded-2xl p-8 text-center">
-        <p className="text-[15px] font-bold text-[#04314A] mb-2">Report not found</p>
+        <p className="text-[15px] font-bold text-[#0B3D2B] mb-2">Report not found</p>
         <p className="text-[13px] text-[#737373] mb-6">{error}</p>
         <button
           onClick={() => onNavigate(`units/${unitId}`)}
-          className="px-6 py-3 rounded-full bg-[#04314A] text-white text-[12px] font-semibold"
+          className="px-6 py-3 rounded-full bg-[#0B3D2B] text-white text-[12px] font-semibold"
         >
           Back to Unit
         </button>
@@ -90,28 +90,28 @@ export default function ConditionDetail({
       <div className="no-print flex flex-wrap items-center justify-between gap-3 mb-4">
         <button
           onClick={() => onNavigate(`units/${unitId}`)}
-          className="flex items-center gap-1.5 text-[12px] font-semibold text-[#737373] hover:text-[#00AAEB] transition-colors"
+          className="flex items-center gap-1.5 text-[12px] font-semibold text-[#737373] hover:text-[#10B981] transition-colors"
         >
           <ArrowLeft size={14} /> Back to Unit
         </button>
         <button
           onClick={() => window.print()}
-          className="inline-flex items-center gap-1.5 px-4 py-2.5 rounded-full bg-[#04314A] text-white text-[12px] font-bold tracking-[0.04em] uppercase hover:bg-[#00AAEB] transition-colors"
+          className="inline-flex items-center gap-1.5 px-4 py-2.5 rounded-full bg-[#0B3D2B] text-white text-[12px] font-bold tracking-[0.04em] uppercase hover:bg-[#10B981] transition-colors"
         >
           <Printer size={14} /> Download PDF
         </button>
       </div>
 
       <div className="print-area bg-white border border-[#E8E8E5] rounded-2xl p-5 sm:p-8 print:border-0 print:rounded-none">
-        <div className="text-center border-b-2 border-[#04314A] pb-4 mb-5">
+        <div className="text-center border-b-2 border-[#0B3D2B] pb-4 mb-5">
           <p className="text-[11px] font-bold tracking-[0.24em] uppercase text-[#737373]">
             Vehicle Full Condition Report
           </p>
-          <h1 className="text-[22px] sm:text-[26px] font-black tracking-tight text-[#04314A] mt-1">
+          <h1 className="text-[22px] sm:text-[26px] font-black tracking-tight text-[#0B3D2B] mt-1">
             {report.vehicle_vin}
           </h1>
           <div className="mt-2 flex items-center justify-center gap-3">
-            <span className="text-[13px] font-bold text-[#04314A]">
+            <span className="text-[13px] font-bold text-[#0B3D2B]">
               {report.report_type.replace(/_/g, " ")}
             </span>
             <Badge status="completed" />
@@ -135,7 +135,7 @@ export default function ConditionDetail({
             <p className="text-[10px] font-bold tracking-[0.14em] uppercase text-[#737373] mb-1">
               Notes
             </p>
-            <p className="text-[13px] text-[#04314A] leading-relaxed whitespace-pre-wrap">
+            <p className="text-[13px] text-[#0B3D2B] leading-relaxed whitespace-pre-wrap">
               {report.notes}
             </p>
           </div>
@@ -143,10 +143,10 @@ export default function ConditionDetail({
 
         {bySection.map((group) => (
           <div key={`${group.key}-${group.sub ?? ""}`} className="mb-5 break-inside-avoid">
-            <h3 className="text-[12px] font-black tracking-[0.14em] uppercase text-white bg-[#04314A] rounded-lg px-3 py-2 mb-1">
+            <h3 className="text-[12px] font-black tracking-[0.14em] uppercase text-white bg-[#0B3D2B] rounded-lg px-3 py-2 mb-1">
               {sectionLabel(group.key)}
               {group.sub && (
-                <span className="text-[#00AAEB]"> · {sectionTitle(group.key, group.sub, {})}</span>
+                <span className="text-[#10B981]"> · {sectionTitle(group.key, group.sub, {})}</span>
               )}
             </h3>
             <div className="grid md:grid-cols-2 gap-x-6">
@@ -155,7 +155,7 @@ export default function ConditionDetail({
                   key={r.id}
                   className="flex items-start justify-between gap-3 py-1.5 border-b border-[#F0F0ED] text-[12px]"
                 >
-                  <div className="text-[#04314A] font-medium leading-snug flex-1 min-w-0 pr-2">
+                  <div className="text-[#0B3D2B] font-medium leading-snug flex-1 min-w-0 pr-2">
                     <span>
                       <span className="text-[#B0B0AA] mr-1.5">{idx + 1}.</span>
                       {r.label}
@@ -176,9 +176,9 @@ export default function ConditionDetail({
                               subtitle: r.remark || `Item ${idx + 1} inspection photo`,
                             })
                           }
-                          className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded bg-[#F7F7F5] hover:bg-[#E8E8E5] text-[#04314A] hover:text-[#00AAEB] text-[11px] font-semibold border border-[#E8E8E5] transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-[#00AAEB]"
+                          className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded bg-[#F7F7F5] hover:bg-[#E8E8E5] text-[#0B3D2B] hover:text-[#10B981] text-[11px] font-semibold border border-[#E8E8E5] transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-[#10B981]"
                         >
-                          <Camera size={13} className="text-[#00AAEB]" />
+                          <Camera size={13} className="text-[#10B981]" />
                           <span>View Photo</span>
                         </button>
                       </div>
@@ -187,9 +187,9 @@ export default function ConditionDetail({
                   <span
                     className={`shrink-0 w-6 h-6 rounded-md border flex items-center justify-center text-[13px] font-black ${
                       r.result === "OK"
-                        ? "border-[#04314A] text-[#04314A]"
+                        ? "border-[#0B3D2B] text-[#0B3D2B]"
                         : r.result === "NOT_OK"
-                          ? "border-[#04314A] text-[#04314A] bg-[#F7F7F5]"
+                          ? "border-[#0B3D2B] text-[#0B3D2B] bg-[#F7F7F5]"
                           : "border-[#B0B0AA] text-[#B0B0AA]"
                     }`}
                   >
@@ -203,7 +203,7 @@ export default function ConditionDetail({
 
         {report.photos.length > 0 && (
           <div className="mt-6 break-inside-avoid">
-            <h3 className="text-[12px] font-black tracking-[0.14em] uppercase text-[#04314A] mb-3">
+            <h3 className="text-[12px] font-black tracking-[0.14em] uppercase text-[#0B3D2B] mb-3">
               Condition Gallery ({report.photos.length})
             </h3>
             <div className="grid grid-cols-2 sm:grid-cols-3 gap-3">
@@ -217,7 +217,7 @@ export default function ConditionDetail({
                       subtitle: report.vehicle_vin,
                     })
                   }
-                  className="border border-[#E8E8E5] rounded-xl overflow-hidden cursor-pointer hover:border-[#00AAEB] transition-colors group bg-[#FAFAF8]"
+                  className="border border-[#E8E8E5] rounded-xl overflow-hidden cursor-pointer hover:border-[#10B981] transition-colors group bg-[#FAFAF8]"
                 >
                   <div className="relative aspect-[4/3] w-full overflow-hidden">
                     <img
@@ -226,9 +226,9 @@ export default function ConditionDetail({
                       loading="lazy"
                       className="w-full h-full object-cover"
                     />
-                    <div className="absolute inset-0 bg-[#04314A]/30 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
-                      <span className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-[#04314A] text-white text-[11px] font-bold">
-                        <Camera size={13} className="text-[#00AAEB]" />
+                    <div className="absolute inset-0 bg-[#0B3D2B]/30 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+                      <span className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-[#0B3D2B] text-white text-[11px] font-bold">
+                        <Camera size={13} className="text-[#10B981]" />
                         <span>View Photo</span>
                       </span>
                     </div>
@@ -251,7 +251,7 @@ export default function ConditionDetail({
           role="dialog"
           aria-modal="true"
           aria-label="Photo Preview"
-          className="fixed inset-0 z-50 flex items-center justify-center p-4 sm:p-6 bg-[#04314A]/75"
+          className="fixed inset-0 z-50 flex items-center justify-center p-4 sm:p-6 bg-[#0B3D2B]/75"
           onClick={() => setActivePhoto(null)}
         >
           <div
@@ -261,7 +261,7 @@ export default function ConditionDetail({
             {/* Header */}
             <div className="flex items-center justify-between px-5 py-3 border-b border-[#E8E8E5] bg-[#FAFAF8]">
               <div className="min-w-0 pr-4">
-                <p className="text-[13px] font-bold text-[#04314A] truncate">
+                <p className="text-[13px] font-bold text-[#0B3D2B] truncate">
                   {activePhoto.title}
                 </p>
                 {activePhoto.subtitle && (
@@ -275,7 +275,7 @@ export default function ConditionDetail({
                   href={activePhoto.url}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="p-1.5 rounded-lg text-[#737373] hover:text-[#04314A] hover:bg-[#F0F0ED] transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-[#00AAEB]"
+                  className="p-1.5 rounded-lg text-[#737373] hover:text-[#0B3D2B] hover:bg-[#F0F0ED] transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-[#10B981]"
                   title="Open original in new tab"
                 >
                   <ExternalLink size={16} />
@@ -283,7 +283,7 @@ export default function ConditionDetail({
                 <button
                   type="button"
                   onClick={() => setActivePhoto(null)}
-                  className="p-1.5 rounded-lg text-[#737373] hover:text-[#04314A] hover:bg-[#F0F0ED] transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-[#00AAEB]"
+                  className="p-1.5 rounded-lg text-[#737373] hover:text-[#0B3D2B] hover:bg-[#F0F0ED] transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-[#10B981]"
                   title="Close preview (Esc)"
                   aria-label="Close photo preview"
                 >
@@ -293,7 +293,7 @@ export default function ConditionDetail({
             </div>
 
             {/* Photo viewport */}
-            <div className="flex-1 bg-[#04314A]/5 flex items-center justify-center p-4 overflow-auto min-h-[280px] max-h-[70vh]">
+            <div className="flex-1 bg-[#0B3D2B]/5 flex items-center justify-center p-4 overflow-auto min-h-[280px] max-h-[70vh]">
               <img
                 src={activePhoto.url}
                 alt={activePhoto.title}
@@ -307,7 +307,7 @@ export default function ConditionDetail({
               <button
                 type="button"
                 onClick={() => setActivePhoto(null)}
-                className="px-4 py-1.5 rounded bg-[#04314A] text-white font-semibold text-[11px] hover:bg-[#00AAEB] transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-[#00AAEB]"
+                className="px-4 py-1.5 rounded bg-[#0B3D2B] text-white font-semibold text-[11px] hover:bg-[#10B981] transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-[#10B981]"
               >
                 Close
               </button>
@@ -323,7 +323,7 @@ function InfoRow({ label, value, strong }: { label: string; value: string; stron
   return (
     <div className="flex justify-between gap-3 border-b border-dotted border-[#E8E8E5] pb-1.5">
       <span className="text-[#737373] font-medium shrink-0">{label}</span>
-      <span className={`text-right ${strong ? "font-black text-[#04314A]" : "font-semibold text-[#04314A]"}`}>
+      <span className={`text-right ${strong ? "font-black text-[#0B3D2B]" : "font-semibold text-[#0B3D2B]"}`}>
         {value || "-"}
       </span>
     </div>

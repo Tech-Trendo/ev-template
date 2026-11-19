@@ -201,7 +201,7 @@ export function LazySelect<T>({
       {label && (
         <label className="block text-[11px] font-bold uppercase tracking-[0.08em] text-[#737373]">
           {label}
-          {required && <span className="text-[#00AAEB]"> *</span>}
+          {required && <span className="text-[#10B981]"> *</span>}
         </label>
       )}
 
@@ -220,10 +220,10 @@ export function LazySelect<T>({
           disabled
             ? "bg-[#FAFAF8] text-[#A0A09C] border-[#E8E8E5] cursor-not-allowed"
             : isOpen
-            ? "border-[#00AAEB] ring-1 ring-[#00AAEB]"
+            ? "border-[#10B981] ring-1 ring-[#10B981]"
             : error
             ? "border-[#D9383A]"
-            : "border-[#E8E8E5] hover:border-[#00AAEB]"
+            : "border-[#E8E8E5] hover:border-[#10B981]"
         }`}
       >
         <div className="flex-1 min-w-0 overflow-hidden">
@@ -232,7 +232,7 @@ export function LazySelect<T>({
               renderSelected(selected)
             ) : (
               <span
-                className={`${compact ? "text-[12px]" : "text-[13px]"} font-medium text-[#04314A] truncate block whitespace-nowrap`}
+                className={`${compact ? "text-[12px]" : "text-[13px]"} font-medium text-[#0B3D2B] truncate block whitespace-nowrap`}
               >
                 {getItemLabel(selected)}
               </span>
@@ -251,7 +251,7 @@ export function LazySelect<T>({
             <button
               type="button"
               onClick={handleClear}
-              className="p-1 rounded text-[#737373] hover:text-[#04314A] hover:bg-[#F0F0ED] transition-colors"
+              className="p-1 rounded text-[#737373] hover:text-[#0B3D2B] hover:bg-[#F0F0ED] transition-colors"
               title="Clear selection"
             >
               <X size={14} />
@@ -259,7 +259,7 @@ export function LazySelect<T>({
           )}
           <ChevronDown
             size={16}
-            className={`text-[#737373] transition-transform ${isOpen ? "rotate-180 text-[#00AAEB]" : ""}`}
+            className={`text-[#737373] transition-transform ${isOpen ? "rotate-180 text-[#10B981]" : ""}`}
           />
         </div>
       </div>
@@ -292,13 +292,13 @@ export function LazySelect<T>({
                     value={query}
                     onChange={(e) => setQuery(e.target.value)}
                     placeholder={searchPlaceholder}
-                    className="w-full pl-8 pr-7 py-1.5 bg-white border border-[#E8E8E5] rounded-lg text-[12px] text-[#04314A] placeholder:text-[#A0A09C] focus:outline-none focus:border-[#00AAEB]"
+                    className="w-full pl-8 pr-7 py-1.5 bg-white border border-[#E8E8E5] rounded-lg text-[12px] text-[#0B3D2B] placeholder:text-[#A0A09C] focus:outline-none focus:border-[#10B981]"
                   />
                   {query && (
                     <button
                       type="button"
                       onClick={() => setQuery("")}
-                      className="absolute right-2.5 top-1/2 -translate-y-1/2 text-[#737373] hover:text-[#04314A]"
+                      className="absolute right-2.5 top-1/2 -translate-y-1/2 text-[#737373] hover:text-[#0B3D2B]"
                     >
                       <X size={12} />
                     </button>
@@ -316,7 +316,7 @@ export function LazySelect<T>({
           >
             {loading ? (
               <div className="py-8 flex flex-col items-center justify-center gap-2 text-[12px] text-[#737373]">
-                <Loader2 size={16} className="animate-spin text-[#00AAEB]" />
+                <Loader2 size={16} className="animate-spin text-[#10B981]" />
                 <span>Loading options...</span>
               </div>
             ) : options.length === 0 ? (
@@ -336,7 +336,7 @@ export function LazySelect<T>({
                       onClick={() => handleSelect(item)}
                       className={`px-3.5 py-2.5 cursor-pointer flex items-center justify-between gap-3 text-left transition-colors ${
                         isSelected
-                          ? "bg-[#F7FCFE] border-l-2 border-[#00AAEB]"
+                          ? "bg-[#F7FCFE] border-l-2 border-[#10B981]"
                           : "hover:bg-[#FAFAF8]"
                       }`}
                     >
@@ -344,7 +344,7 @@ export function LazySelect<T>({
                         {renderItem ? renderItem(item, isSelected) : (
                           <span
                             className={`text-[12px] block truncate ${
-                              isSelected ? "font-bold text-[#04314A]" : "text-[#04314A]"
+                              isSelected ? "font-bold text-[#0B3D2B]" : "text-[#0B3D2B]"
                             }`}
                           >
                             {getItemLabel(item)}
@@ -352,7 +352,7 @@ export function LazySelect<T>({
                         )}
                       </div>
                       {isSelected && (
-                        <Check size={14} className="text-[#00AAEB] shrink-0" />
+                        <Check size={14} className="text-[#10B981] shrink-0" />
                       )}
                     </div>
                   );
@@ -361,7 +361,7 @@ export function LazySelect<T>({
                 {/* Bottom Sentinel / Loading More */}
                 {loadingMore && (
                   <div className="py-3 flex items-center justify-center gap-2 text-[11px] text-[#737373] bg-[#FAFAF8]">
-                    <Loader2 size={13} className="animate-spin text-[#00AAEB]" />
+                    <Loader2 size={13} className="animate-spin text-[#10B981]" />
                     <span>Loading more items...</span>
                   </div>
                 )}

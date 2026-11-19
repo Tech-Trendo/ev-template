@@ -87,7 +87,7 @@ export function VehicleModelPicker({
       pageSize={10}
       renderItem={(m) => (
         <div className="flex flex-col">
-          <span className="text-[12px] font-bold text-[#04314A]">
+          <span className="text-[12px] font-bold text-[#0B3D2B]">
             {m.brand} {m.model_name}
           </span>
           <div className="flex items-center gap-2 text-[10px] text-[#737373]">
@@ -98,7 +98,7 @@ export function VehicleModelPicker({
         </div>
       )}
       renderSelected={(m) => (
-        <span className="text-[13px] font-medium text-[#04314A] truncate block whitespace-nowrap">
+        <span className="text-[13px] font-medium text-[#0B3D2B] truncate block whitespace-nowrap">
           {m.brand} {m.model_name}
         </span>
       )}

@@ -188,11 +188,11 @@ export default function PDIDetail({
   if (!pdi) {
     return (
       <div className="max-w-lg mx-auto mt-16 bg-white border border-[#E8E8E5] rounded-2xl p-8 text-center">
-        <p className="text-[15px] font-bold text-[#04314A] mb-2">PDI not found</p>
+        <p className="text-[15px] font-bold text-[#0B3D2B] mb-2">PDI not found</p>
         <p className="text-[13px] text-[#737373] mb-6">{error}</p>
         <button
           onClick={() => onNavigate(`units/${unitId}`)}
-          className="px-6 py-3 rounded-full bg-[#04314A] text-white text-[12px] font-semibold"
+          className="px-6 py-3 rounded-full bg-[#0B3D2B] text-white text-[12px] font-semibold"
         >
           Back to Unit
         </button>
@@ -249,7 +249,7 @@ export default function PDIDetail({
     return (
       <div key={r.id} className="flex items-center justify-between px-2 py-1 gap-2">
         <div className="flex items-center gap-1.5 min-w-0 flex-1">
-          <span className="uppercase font-semibold text-[#04314A] truncate">
+          <span className="uppercase font-semibold text-[#0B3D2B] truncate">
             {r.label}
             {r.remark && (
               <span className="block text-[9px] text-[#8B0000] italic font-normal">
@@ -290,7 +290,7 @@ export default function PDIDetail({
                   setItemPhotoFile(null);
                   setItemPhotoError("");
                 }}
-                className="p-1 text-[#737373] hover:text-[#00AAEB] hover:bg-[#F0F9FF] rounded transition-colors"
+                className="p-1 text-[#737373] hover:text-[#10B981] hover:bg-[#F0F9FF] rounded transition-colors"
                 title={hasPhoto ? "Replace photo" : "Attach photo evidence"}
               >
                 <Camera size={12} />
@@ -309,11 +309,11 @@ export default function PDIDetail({
           )}
 
           <span
-            className={`w-4 h-4 border border-[#04314A] flex items-center justify-center text-[10px] font-bold ${
+            className={`w-4 h-4 border border-[#0B3D2B] flex items-center justify-center text-[10px] font-bold ${
               r.result === "OK"
-                ? "text-[#04314A]"
+                ? "text-[#0B3D2B]"
                 : r.result === "NOT_OK"
-                ? "text-[#04314A] bg-[#F7F7F5]"
+                ? "text-[#0B3D2B] bg-[#F7F7F5]"
                 : ""
             }`}
           >
@@ -329,7 +329,7 @@ export default function PDIDetail({
         <div className="no-print flex flex-wrap items-center justify-between gap-3 mb-4">
           <button
             onClick={() => onNavigate(`units/${unitId}`)}
-            className="flex items-center gap-1.5 text-[12px] font-semibold text-[#737373] hover:text-[#00AAEB] transition-colors"
+            className="flex items-center gap-1.5 text-[12px] font-semibold text-[#737373] hover:text-[#10B981] transition-colors"
           >
             <ArrowLeft size={14} /> Back to Unit
           </button>
@@ -340,7 +340,7 @@ export default function PDIDetail({
             {pdi.status === "DRAFT" && canReview && (
               <button
                 onClick={() => onNavigate(`units/${unitId}/${isVei ? "vei" : "pdi"}/${pdi.id}/edit`)}
-                className="px-4 py-2.5 rounded-full border border-[#04314A] text-[#04314A] text-[12px] font-bold tracking-[0.04em] uppercase hover:bg-[#04314A] hover:text-white transition-colors"
+                className="px-4 py-2.5 rounded-full border border-[#0B3D2B] text-[#0B3D2B] text-[12px] font-bold tracking-[0.04em] uppercase hover:bg-[#0B3D2B] hover:text-white transition-colors"
               >
                 Continue Editing
               </button>
@@ -350,14 +350,14 @@ export default function PDIDetail({
                 <button
                   onClick={() => run(() => approvePdi(pdi.id), `${pdi.inspection_type} approved`)}
                   disabled={busy}
-                  className="inline-flex items-center gap-1.5 px-4 py-2.5 rounded-full bg-[#04314A] text-white text-[12px] font-bold tracking-[0.04em] uppercase hover:bg-[#00AAEB] transition-colors disabled:opacity-50"
+                  className="inline-flex items-center gap-1.5 px-4 py-2.5 rounded-full bg-[#0B3D2B] text-white text-[12px] font-bold tracking-[0.04em] uppercase hover:bg-[#10B981] transition-colors disabled:opacity-50"
                 >
                   <Check size={14} /> Approve
                 </button>
                 <button
                   onClick={() => setRejectOpen(true)}
                   disabled={busy}
-                  className="inline-flex items-center gap-1.5 px-4 py-2.5 rounded-full border border-[#E8E8E5] text-[#737373] text-[12px] font-bold tracking-[0.04em] uppercase hover:border-[#04314A] hover:text-[#04314A] bg-white transition-colors disabled:opacity-50"
+                  className="inline-flex items-center gap-1.5 px-4 py-2.5 rounded-full border border-[#E8E8E5] text-[#737373] text-[12px] font-bold tracking-[0.04em] uppercase hover:border-[#0B3D2B] hover:text-[#0B3D2B] bg-white transition-colors disabled:opacity-50"
                 >
                   <X size={14} /> Reject
                 </button>
@@ -367,7 +367,7 @@ export default function PDIDetail({
               <button
                 onClick={() => run(() => lockPdi(pdi.id), `${pdi.inspection_type} locked`)}
                 disabled={busy}
-                className="inline-flex items-center gap-1.5 px-4 py-2.5 rounded-full border border-[#04314A] text-[#04314A] text-[12px] font-bold tracking-[0.04em] uppercase hover:bg-[#04314A] hover:text-white transition-colors disabled:opacity-50"
+                className="inline-flex items-center gap-1.5 px-4 py-2.5 rounded-full border border-[#0B3D2B] text-[#0B3D2B] text-[12px] font-bold tracking-[0.04em] uppercase hover:bg-[#0B3D2B] hover:text-white transition-colors disabled:opacity-50"
               >
                 <Lock size={14} /> Lock
               </button>
@@ -384,14 +384,14 @@ export default function PDIDetail({
             {(pdi.status === "APPROVED" || pdi.status === "REJECTED" || pdi.status === "SUBMITTED" || pdi.status === "COMPLETED" || pdi.status === "LOCKED") && canReview && (
               <button
                 onClick={() => onNavigate(`units/${unitId}/${isVei ? "vei" : "pdi"}/new`)}
-                className="inline-flex items-center gap-1.5 px-4 py-2.5 rounded-full border border-[#E8E8E5] bg-white text-[#04314A] text-[12px] font-bold tracking-[0.04em] uppercase hover:border-[#04314A] transition-colors"
+                className="inline-flex items-center gap-1.5 px-4 py-2.5 rounded-full border border-[#E8E8E5] bg-white text-[#0B3D2B] text-[12px] font-bold tracking-[0.04em] uppercase hover:border-[#0B3D2B] transition-colors"
               >
                 <RotateCcw size={14} /> Re-inspect
               </button>
             )}
             <button
               onClick={handlePrint}
-              className="inline-flex items-center gap-1.5 px-4 py-2.5 rounded-full bg-[#04314A] text-white text-[12px] font-bold tracking-[0.04em] uppercase hover:bg-[#00AAEB] transition-colors"
+              className="inline-flex items-center gap-1.5 px-4 py-2.5 rounded-full bg-[#0B3D2B] text-white text-[12px] font-bold tracking-[0.04em] uppercase hover:bg-[#10B981] transition-colors"
             >
               <Printer size={14} /> Download PDF
             </button>
@@ -409,14 +409,14 @@ export default function PDIDetail({
           <div className="no-print mb-6 bg-white border border-[#E8E8E5] rounded-xl p-5">
             <div className="flex items-center justify-between mb-3">
               <div className="flex items-center gap-2">
-                <Truck size={16} className="text-[#04314A]" />
-                <h3 className="font-bold text-[14px] text-[#04314A]">
+                <Truck size={16} className="text-[#0B3D2B]" />
+                <h3 className="font-bold text-[14px] text-[#0B3D2B]">
                   Arrival Consignment / Import Batch
                 </h3>
               </div>
               <button
                 onClick={() => onNavigate(`batches/${pdi.import_batch_detail?.id}`)}
-                className="text-[12px] font-semibold text-[#04314A] hover:underline"
+                className="text-[12px] font-semibold text-[#0B3D2B] hover:underline"
               >
                 View Batch {pdi.import_batch_detail.batch_no} &rarr;
               </button>
@@ -424,19 +424,19 @@ export default function PDIDetail({
             <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 text-[12px]">
               <div>
                 <span className="text-[#737373] block text-[11px]">Batch Number</span>
-                <span className="font-semibold text-[#04314A]">{pdi.import_batch_detail.batch_no}</span>
+                <span className="font-semibold text-[#0B3D2B]">{pdi.import_batch_detail.batch_no}</span>
               </div>
               <div>
                 <span className="text-[#737373] block text-[11px]">Consignment Status</span>
-                <span className="font-semibold text-[#04314A]">{pdi.import_batch_detail.transport_status}</span>
+                <span className="font-semibold text-[#0B3D2B]">{pdi.import_batch_detail.transport_status}</span>
               </div>
               <div>
                 <span className="text-[#737373] block text-[11px]">Border Entry</span>
-                <span className="font-semibold text-[#04314A]">{pdi.import_batch_detail.border_crossing || "—"}</span>
+                <span className="font-semibold text-[#0B3D2B]">{pdi.import_batch_detail.border_crossing || "—"}</span>
               </div>
               <div>
                 <span className="text-[#737373] block text-[11px]">Container / Truck</span>
-                <span className="font-semibold text-[#04314A]">{pdi.import_batch_detail.container_or_truck_no || "—"}</span>
+                <span className="font-semibold text-[#0B3D2B]">{pdi.import_batch_detail.container_or_truck_no || "—"}</span>
               </div>
             </div>
           </div>
@@ -447,7 +447,7 @@ export default function PDIDetail({
           <div className="flex items-center justify-between mb-3">
             <div className="flex items-center gap-2">
               <AlertTriangle size={16} className={pdi.open_issues_count ? "text-[#DC2626]" : "text-[#737373]"} />
-              <h3 className="font-bold text-[14px] text-[#04314A]">
+              <h3 className="font-bold text-[14px] text-[#0B3D2B]">
                 Checklist Issues & Defects
               </h3>
               <span className={`text-[11px] font-semibold px-2 py-0.5 rounded border ${
@@ -483,7 +483,7 @@ export default function PDIDetail({
                         </span>
                       )}
                     </div>
-                    <p className="text-[13px] font-medium text-[#04314A]">
+                    <p className="text-[13px] font-medium text-[#0B3D2B]">
                       {issue.description}
                     </p>
                     {issue.item_label && (
@@ -505,7 +505,7 @@ export default function PDIDetail({
                           setResolveIssueModal(issue);
                           setResolutionNotes("");
                         }}
-                        className="px-3.5 py-1.5 text-[11px] font-semibold rounded-full bg-[#04314A] text-white hover:bg-[#00AAEB] transition-colors"
+                        className="px-3.5 py-1.5 text-[11px] font-semibold rounded-full bg-[#0B3D2B] text-white hover:bg-[#10B981] transition-colors"
                       >
                         Resolve Defect
                       </button>
@@ -521,8 +521,8 @@ export default function PDIDetail({
         <div className="no-print mb-6 bg-white border border-[#E8E8E5] rounded-xl p-5">
           <div className="flex items-center justify-between mb-3">
             <div className="flex items-center gap-2">
-              <ImageIcon size={16} className="text-[#04314A]" />
-              <h3 className="font-bold text-[14px] text-[#04314A]">
+              <ImageIcon size={16} className="text-[#0B3D2B]" />
+              <h3 className="font-bold text-[14px] text-[#0B3D2B]">
                 General Inspection Photos
               </h3>
               <span className="text-[11px] text-[#737373]">
@@ -537,7 +537,7 @@ export default function PDIDetail({
                   setPhotoCaption("");
                   setPhotoUploadError("");
                 }}
-                className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full border border-[#04314A] text-[#04314A] text-[11px] font-bold tracking-[0.03em] uppercase hover:bg-[#04314A] hover:text-white transition-colors"
+                className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full border border-[#0B3D2B] text-[#0B3D2B] text-[11px] font-bold tracking-[0.03em] uppercase hover:bg-[#0B3D2B] hover:text-white transition-colors"
               >
                 <Upload size={12} /> Add Photo
               </button>
@@ -554,7 +554,7 @@ export default function PDIDetail({
                 <div
                   key={ph.id}
                   onClick={() => setPreviewPhoto(ph)}
-                  className="cursor-pointer group border border-[#E8E8E5] rounded-lg overflow-hidden bg-[#FAFAF8] hover:border-[#04314A] transition-colors"
+                  className="cursor-pointer group border border-[#E8E8E5] rounded-lg overflow-hidden bg-[#FAFAF8] hover:border-[#0B3D2B] transition-colors"
                 >
                   <img
                     src={ph.photo_display || ph.photo}
@@ -562,7 +562,7 @@ export default function PDIDetail({
                     className="w-full h-32 object-cover group-hover:scale-105 transition-transform"
                   />
                   {ph.caption && (
-                    <div className="p-2 text-[11px] text-[#04314A] font-medium truncate">
+                    <div className="p-2 text-[11px] text-[#0B3D2B] font-medium truncate">
                       {ph.caption}
                     </div>
                   )}
@@ -573,60 +573,60 @@ export default function PDIDetail({
         </div>
 
         {/* Paper-form rendering matching physical sheet */}
-        <div className="print-area bg-white border border-[#04314A] rounded-xl p-4 sm:p-7 print:p-2 print:border-2 print:border-[#04314A] shadow-sm text-[#04314A]">
+        <div className="print-area bg-white border border-[#0B3D2B] rounded-xl p-4 sm:p-7 print:p-2 print:border-2 print:border-[#0B3D2B] shadow-sm text-[#0B3D2B]">
           {/* Document Header */}
-          <div className="text-center pb-3 mb-3 border-b-2 border-[#04314A]">
-            <h2 className="text-[13px] sm:text-[15px] font-black tracking-[0.14em] uppercase text-[#04314A]">
-              VEHICLE TEMPLATE
+          <div className="text-center pb-3 mb-3 border-b-2 border-[#0B3D2B]">
+            <h2 className="text-[13px] sm:text-[15px] font-black tracking-[0.14em] uppercase text-[#0B3D2B]">
+              EV OS
             </h2>
-            <h1 className="text-[12px] sm:text-[14px] font-extrabold uppercase text-[#04314A] tracking-wider mt-0.5">
+            <h1 className="text-[12px] sm:text-[14px] font-extrabold uppercase text-[#0B3D2B] tracking-wider mt-0.5">
               {docTitle}
             </h1>
           </div>
 
           {/* Header Metadata Table */}
-          <table className="w-full border-collapse border border-[#04314A] text-[11px] mb-3">
+          <table className="w-full border-collapse border border-[#0B3D2B] text-[11px] mb-3">
             <tbody>
-              <tr className="border-b border-[#04314A]">
-                <td className="border-r border-[#04314A] px-2.5 py-1 font-bold w-1/2">
+              <tr className="border-b border-[#0B3D2B]">
+                <td className="border-r border-[#0B3D2B] px-2.5 py-1 font-bold w-1/2">
                   <span className="text-[#555]">EV COMPANY NAME: </span>
-                  <span className="text-[#04314A] uppercase">{pdi.ev_company_name || "VEHICLE TEMPLATE"}</span>
+                  <span className="text-[#0B3D2B] uppercase">{pdi.ev_company_name || "EV OS"}</span>
                 </td>
                 <td className="px-2.5 py-1 font-bold w-1/2">
                   <span className="text-[#555]">{docNoLabel}</span>
-                  <span className="text-[#04314A]">{pdi.pdi_no} / {formatDate(pdi.inspection_date)}</span>
+                  <span className="text-[#0B3D2B]">{pdi.pdi_no} / {formatDate(pdi.inspection_date)}</span>
                 </td>
               </tr>
-            <tr className="border-b border-[#04314A]">
-              <td className="border-r border-[#04314A] px-2.5 py-1 font-bold">
+            <tr className="border-b border-[#0B3D2B]">
+              <td className="border-r border-[#0B3D2B] px-2.5 py-1 font-bold">
                 <span className="text-[#555]">VIN/CHASSIS No.: </span>
-                <span className="text-[#04314A] font-semibold">{pdi.vin_chassis_no}</span>
+                <span className="text-[#0B3D2B] font-semibold">{pdi.vin_chassis_no}</span>
               </td>
               <td className="px-2.5 py-1 font-bold">
                 <span className="text-[#555]">MANUFACTURE DATE: </span>
-                <span className="text-[#04314A]">{formatDate(pdi.manufacture_date_snapshot) || "—"}</span>
+                <span className="text-[#0B3D2B]">{formatDate(pdi.manufacture_date_snapshot) || "—"}</span>
               </td>
             </tr>
-            <tr className="border-b border-[#04314A]">
-              <td className="border-r border-[#04314A] px-2.5 py-1 font-bold">
+            <tr className="border-b border-[#0B3D2B]">
+              <td className="border-r border-[#0B3D2B] px-2.5 py-1 font-bold">
                 <span className="text-[#555]">MODEL & BATTERY POWER(KW): </span>
-                <span className="text-[#04314A]">{pdi.model_snapshot}{pdi.variant_name ? ` · ${pdi.variant_name}` : ""}{pdi.battery_power_snapshot ? ` · ${pdi.battery_power_snapshot} kW` : ""}</span>
+                <span className="text-[#0B3D2B]">{pdi.model_snapshot}{pdi.variant_name ? ` · ${pdi.variant_name}` : ""}{pdi.battery_power_snapshot ? ` · ${pdi.battery_power_snapshot} kW` : ""}</span>
               </td>
               <td className="px-2.5 py-1 font-bold">
                 <span className="text-[#555]">VEHICLE COLOR: </span>
-                <span className="text-[#04314A]">{pdi.color_snapshot || "—"}</span>
+                <span className="text-[#0B3D2B]">{pdi.color_snapshot || "—"}</span>
               </td>
             </tr>
             <tr>
-              <td className="border-r border-[#04314A] px-2.5 py-1 font-bold">
+              <td className="border-r border-[#0B3D2B] px-2.5 py-1 font-bold">
                 <span className="text-[#555]">MOTOR POWER(KW)/MOTOR NO.: </span>
-                <span className="text-[#04314A]">
+                <span className="text-[#0B3D2B]">
                   {pdi.motor_power_snapshot ? `${pdi.motor_power_snapshot} kW / ` : ""}{pdi.motor_no_snapshot || "—"}
                 </span>
               </td>
               <td className="px-2.5 py-1 font-bold">
                 <span className="text-[#555]">VEHICLE RUN(KM): </span>
-                <span className="text-[#04314A]">{pdi.odometer_km_snapshot} KM</span>
+                <span className="text-[#0B3D2B]">{pdi.odometer_km_snapshot} KM</span>
               </td>
             </tr>
           </tbody>
@@ -640,17 +640,17 @@ export default function PDIDetail({
           const rightRows = group.rows.slice(midpoint);
 
           return (
-            <div key={`${group.key}-${group.sub ?? ""}`} className="mb-3 break-inside-avoid border border-[#04314A]">
+            <div key={`${group.key}-${group.sub ?? ""}`} className="mb-3 break-inside-avoid border border-[#0B3D2B]">
               {/* Section Header */}
-              <div className="bg-[#EAEAEA] border-b border-[#04314A] py-1 text-center font-black text-[11px] tracking-[0.14em] uppercase text-[#04314A]">
+              <div className="bg-[#EAEAEA] border-b border-[#0B3D2B] py-1 text-center font-black text-[11px] tracking-[0.14em] uppercase text-[#0B3D2B]">
                 {sectionLabel(group.key)}
               </div>
 
               {isAppearance ? (
                 // Appearance & Condition has 2 distinct sub-tables: Interior & Exterior
-                <div className="grid grid-cols-2 divide-x divide-[#04314A] text-[10px]">
+                <div className="grid grid-cols-2 divide-x divide-[#0B3D2B] text-[10px]">
                   <div>
-                    <div className="bg-[#F3F3F3] border-b border-[#04314A] py-1 px-2 text-center font-bold text-[10px] tracking-wider uppercase">
+                    <div className="bg-[#F3F3F3] border-b border-[#0B3D2B] py-1 px-2 text-center font-bold text-[10px] tracking-wider uppercase">
                       INTERIOR CLEANLINESS
                     </div>
                     <div className="divide-y divide-[#E0E0E0]">
@@ -661,7 +661,7 @@ export default function PDIDetail({
                   </div>
 
                   <div>
-                    <div className="bg-[#F3F3F3] border-b border-[#04314A] py-1 px-2 text-center font-bold text-[10px] tracking-wider uppercase">
+                    <div className="bg-[#F3F3F3] border-b border-[#0B3D2B] py-1 px-2 text-center font-bold text-[10px] tracking-wider uppercase">
                       EXTERIOR BODY PARTS
                     </div>
                     <div className="divide-y divide-[#E0E0E0]">
@@ -673,7 +673,7 @@ export default function PDIDetail({
                 </div>
               ) : (
                 // 2-Column Checklist for Tools & Functionality
-                <div className="grid grid-cols-2 divide-x divide-[#04314A] text-[10px]">
+                <div className="grid grid-cols-2 divide-x divide-[#0B3D2B] text-[10px]">
                   <div className="divide-y divide-[#E0E0E0]">
                     {leftRows.map(renderChecklistRow)}
                   </div>
@@ -689,8 +689,8 @@ export default function PDIDetail({
 
         {/* Checklist Item Photo Evidence Gallery (Print & Screen) */}
         {pdi.results.some((r) => r.photo_display || r.photo) && (
-          <div className="mb-3 border border-[#04314A] p-3 break-inside-avoid">
-            <div className="bg-[#EAEAEA] border-b border-[#04314A] py-1 px-2 text-center font-black text-[11px] tracking-[0.14em] uppercase text-[#04314A] mb-3">
+          <div className="mb-3 border border-[#0B3D2B] p-3 break-inside-avoid">
+            <div className="bg-[#EAEAEA] border-b border-[#0B3D2B] py-1 px-2 text-center font-black text-[11px] tracking-[0.14em] uppercase text-[#0B3D2B] mb-3">
               CHECKLIST ITEM PHOTO EVIDENCE
             </div>
             <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
@@ -709,14 +709,14 @@ export default function PDIDetail({
                         created_at: "",
                       })
                     }
-                    className="border border-[#04314A] rounded p-2 text-[10px] cursor-pointer hover:bg-[#FAFAF8] transition-colors"
+                    className="border border-[#0B3D2B] rounded p-2 text-[10px] cursor-pointer hover:bg-[#FAFAF8] transition-colors"
                   >
                     <img
                       src={r.photo_display || r.photo || ""}
                       alt={r.label}
                       className="w-full h-24 object-cover rounded mb-1.5"
                     />
-                    <div className="font-bold text-[#04314A] uppercase truncate">{r.label}</div>
+                    <div className="font-bold text-[#0B3D2B] uppercase truncate">{r.label}</div>
                     <div className="text-[#737373] text-[9px] truncate">
                       {r.section_snapshot ? r.section_snapshot.replace(/_/g, " ") : ""}
                     </div>
@@ -732,12 +732,12 @@ export default function PDIDetail({
         )}
 
         {/* Bottom Verdict & Sign-off Box */}
-        <div className="border border-[#04314A] p-3 text-[11px] grid sm:grid-cols-2 gap-4 items-center">
+        <div className="border border-[#0B3D2B] p-3 text-[11px] grid sm:grid-cols-2 gap-4 items-center">
           {/* Rating Rectangles */}
           <div className="flex items-center gap-6">
             <div className="flex items-center gap-2">
-              <div className={`w-9 h-6 border-2 border-[#04314A] flex items-center justify-center font-black text-[13px] ${
-                pdi.overall_rating === "VERY_GOOD" ? "bg-[#04314A] text-white" : ""
+              <div className={`w-9 h-6 border-2 border-[#0B3D2B] flex items-center justify-center font-black text-[13px] ${
+                pdi.overall_rating === "VERY_GOOD" ? "bg-[#0B3D2B] text-white" : ""
               }`}>
                 {pdi.overall_rating === "VERY_GOOD" ? "✓" : ""}
               </div>
@@ -745,8 +745,8 @@ export default function PDIDetail({
             </div>
 
             <div className="flex items-center gap-2">
-              <div className={`w-9 h-6 border-2 border-[#04314A] flex items-center justify-center font-black text-[13px] ${
-                pdi.overall_rating === "GOOD" ? "bg-[#04314A] text-white" : ""
+              <div className={`w-9 h-6 border-2 border-[#0B3D2B] flex items-center justify-center font-black text-[13px] ${
+                pdi.overall_rating === "GOOD" ? "bg-[#0B3D2B] text-white" : ""
               }`}>
                 {pdi.overall_rating === "GOOD" ? "✓" : ""}
               </div>
@@ -754,8 +754,8 @@ export default function PDIDetail({
             </div>
 
             <div className="flex items-center gap-2">
-              <div className={`w-9 h-6 border-2 border-[#04314A] flex items-center justify-center font-black text-[13px] ${
-                pdi.overall_rating === "POOR" ? "bg-[#04314A] text-white" : ""
+              <div className={`w-9 h-6 border-2 border-[#0B3D2B] flex items-center justify-center font-black text-[13px] ${
+                pdi.overall_rating === "POOR" ? "bg-[#0B3D2B] text-white" : ""
               }`}>
                 {pdi.overall_rating === "POOR" ? "✓" : ""}
               </div>
@@ -767,17 +767,17 @@ export default function PDIDetail({
           <div className="sm:text-right font-bold text-[11px]">
             <div>
               <span className="text-[#555]">CHECK STAFF/ REPRESENTATIVE : </span>
-              <span className="text-[#04314A] uppercase underline">{pdi.checked_by || "SHAILENDRA KUMAR YADAV"}</span>
+              <span className="text-[#0B3D2B] uppercase underline">{pdi.checked_by || "SHAILENDRA KUMAR YADAV"}</span>
             </div>
             <div className="mt-1">
               <span className="text-[#555]">DATE: </span>
-              <span className="text-[#04314A]">{formatDate(pdi.inspection_date)}</span>
+              <span className="text-[#0B3D2B]">{formatDate(pdi.inspection_date)}</span>
             </div>
           </div>
         </div>
 
         {/* Signatures Row */}
-        <div className="mt-4 pt-3 border-t border-dashed border-[#04314A] grid grid-cols-2 gap-6 text-[11px]">
+        <div className="mt-4 pt-3 border-t border-dashed border-[#0B3D2B] grid grid-cols-2 gap-6 text-[11px]">
           <div>
             <span className="text-[10px] font-bold uppercase text-[#555] block mb-1">
               Inspector Signature
@@ -785,7 +785,7 @@ export default function PDIDetail({
             {pdi.signature_display ? (
               <img src={pdi.signature_display} alt="Inspector signature" className="h-12 w-auto object-contain" />
             ) : (
-              <div className="h-10 border-b border-dotted border-[#04314A] w-48 mt-2" />
+              <div className="h-10 border-b border-dotted border-[#0B3D2B] w-48 mt-2" />
             )}
             <span className="text-[10px] text-[#737373] mt-1 block">Authorized Inspector: {pdi.checked_by || "Shailendra Kumar Yadav"}</span>
           </div>
@@ -794,7 +794,7 @@ export default function PDIDetail({
             <span className="text-[10px] font-bold uppercase text-[#555] block mb-1">
               Customer / Receiver Signature
             </span>
-            <div className="h-10 border-b border-dotted border-[#04314A] w-48 mt-2" />
+            <div className="h-10 border-b border-dotted border-[#0B3D2B] w-48 mt-2" />
             <span className="text-[10px] text-[#737373] mt-1 block">Vehicle Received in Satisfactory Condition</span>
           </div>
         </div>
@@ -822,7 +822,7 @@ export default function PDIDetail({
           <div data-modal-actions className="flex gap-3 justify-end mt-6">
             <button
               onClick={() => setRejectOpen(false)}
-              className="px-6 py-2.5 border border-[#E8E8E5] rounded-full text-[12px] font-semibold text-[#737373] hover:border-[#04314A] hover:text-[#04314A] transition-colors"
+              className="px-6 py-2.5 border border-[#E8E8E5] rounded-full text-[12px] font-semibold text-[#737373] hover:border-[#0B3D2B] hover:text-[#0B3D2B] transition-colors"
             >
               Cancel
             </button>
@@ -853,14 +853,14 @@ export default function PDIDetail({
           <div data-modal-actions className="flex gap-3 justify-end mt-6">
             <button
               onClick={() => setReopenOpen(false)}
-              className="px-6 py-2.5 border border-[#E8E8E5] rounded-full text-[12px] font-semibold text-[#737373] hover:border-[#04314A] hover:text-[#04314A] transition-colors"
+              className="px-6 py-2.5 border border-[#E8E8E5] rounded-full text-[12px] font-semibold text-[#737373] hover:border-[#0B3D2B] hover:text-[#0B3D2B] transition-colors"
             >
               Cancel
             </button>
             <button
               onClick={() => run(() => reopenPdi(pdi.id, reopenNote), `${pdi.inspection_type} reopened to Draft`)}
               disabled={busy}
-              className="px-6 py-2.5 rounded-full bg-[#04314A] text-white text-[12px] font-semibold hover:bg-[#00AAEB] transition-colors disabled:opacity-50"
+              className="px-6 py-2.5 rounded-full bg-[#0B3D2B] text-white text-[12px] font-semibold hover:bg-[#10B981] transition-colors disabled:opacity-50"
             >
               {busy ? "Reopening…" : "Reopen to Draft"}
             </button>
@@ -874,7 +874,7 @@ export default function PDIDetail({
           <div className="space-y-4">
             <div className="p-3 bg-[#FAFAF8] border border-[#E8E8E5] rounded-lg text-[12px]">
               <span className="text-[#737373] block text-[11px]">Defect description:</span>
-              <p className="font-semibold text-[#04314A] mt-0.5">{resolveIssueModal.description}</p>
+              <p className="font-semibold text-[#0B3D2B] mt-0.5">{resolveIssueModal.description}</p>
               {resolveIssueModal.item_label && (
                 <p className="text-[#737373] text-[11px] mt-1">Checklist item: {resolveIssueModal.item_label}</p>
               )}
@@ -886,7 +886,7 @@ export default function PDIDetail({
                 onChange={(e) => setResolutionNotes(e.target.value)}
                 placeholder="Explain what repair or adjustment was made to rectify this defect…"
                 rows={3}
-                className="w-full px-3 py-2 text-[12px] border border-[#E8E8E5] rounded-lg focus:outline-none focus:border-[#04314A]"
+                className="w-full px-3 py-2 text-[12px] border border-[#E8E8E5] rounded-lg focus:outline-none focus:border-[#0B3D2B]"
               />
             </Field>
 
@@ -894,7 +894,7 @@ export default function PDIDetail({
               <button
                 type="button"
                 onClick={() => setResolveIssueModal(null)}
-                className="px-5 py-2 rounded-full border border-[#E8E8E5] text-[12px] font-semibold text-[#737373] hover:text-[#04314A]"
+                className="px-5 py-2 rounded-full border border-[#E8E8E5] text-[12px] font-semibold text-[#737373] hover:text-[#0B3D2B]"
               >
                 Cancel
               </button>
@@ -902,7 +902,7 @@ export default function PDIDetail({
                 type="button"
                 onClick={handleResolveIssue}
                 disabled={resolveBusy}
-                className="px-6 py-2 rounded-full bg-[#04314A] text-white text-[12px] font-semibold hover:bg-[#00AAEB] transition-colors disabled:opacity-50"
+                className="px-6 py-2 rounded-full bg-[#0B3D2B] text-white text-[12px] font-semibold hover:bg-[#10B981] transition-colors disabled:opacity-50"
               >
                 {resolveBusy ? "Saving…" : "Mark Resolved"}
               </button>
@@ -928,7 +928,7 @@ export default function PDIDetail({
                   setPhotoFile(file);
                   setPhotoUploadError("");
                 }}
-                className="block w-full text-[12px] text-[#737373] file:mr-4 file:py-2 file:px-4 file:rounded-full file:border-0 file:text-[11px] file:font-semibold file:bg-[#FAFAF8] file:text-[#04314A] hover:file:bg-[#E8E8E5]"
+                className="block w-full text-[12px] text-[#737373] file:mr-4 file:py-2 file:px-4 file:rounded-full file:border-0 file:text-[11px] file:font-semibold file:bg-[#FAFAF8] file:text-[#0B3D2B] hover:file:bg-[#E8E8E5]"
               />
             </Field>
 
@@ -950,7 +950,7 @@ export default function PDIDetail({
               <button
                 type="button"
                 onClick={() => setUploadPhotoModal(false)}
-                className="px-5 py-2 rounded-full border border-[#E8E8E5] text-[12px] font-semibold text-[#737373] hover:text-[#04314A]"
+                className="px-5 py-2 rounded-full border border-[#E8E8E5] text-[12px] font-semibold text-[#737373] hover:text-[#0B3D2B]"
               >
                 Cancel
               </button>
@@ -958,7 +958,7 @@ export default function PDIDetail({
                 type="button"
                 onClick={handleUploadPhoto}
                 disabled={uploadBusy || !photoFile}
-                className="px-6 py-2 rounded-full bg-[#04314A] text-white text-[12px] font-semibold hover:bg-[#00AAEB] transition-colors disabled:opacity-50"
+                className="px-6 py-2 rounded-full bg-[#0B3D2B] text-white text-[12px] font-semibold hover:bg-[#10B981] transition-colors disabled:opacity-50"
               >
                 {uploadBusy ? "Uploading…" : "Upload Photo"}
               </button>
@@ -1004,7 +1004,7 @@ export default function PDIDetail({
                   setItemPhotoFile(file);
                   setItemPhotoError("");
                 }}
-                className="block w-full text-[12px] text-[#737373] file:mr-4 file:py-2 file:px-4 file:rounded-full file:border-0 file:text-[11px] file:font-semibold file:bg-[#FAFAF8] file:text-[#04314A] hover:file:bg-[#E8E8E5]"
+                className="block w-full text-[12px] text-[#737373] file:mr-4 file:py-2 file:px-4 file:rounded-full file:border-0 file:text-[11px] file:font-semibold file:bg-[#FAFAF8] file:text-[#0B3D2B] hover:file:bg-[#E8E8E5]"
                 required
               />
             </Field>
@@ -1017,14 +1017,14 @@ export default function PDIDetail({
               <button
                 type="button"
                 onClick={() => setUploadItemPhotoModal(null)}
-                className="px-5 py-2 rounded-full border border-[#E8E8E5] text-[12px] font-semibold text-[#737373] hover:text-[#04314A]"
+                className="px-5 py-2 rounded-full border border-[#E8E8E5] text-[12px] font-semibold text-[#737373] hover:text-[#0B3D2B]"
               >
                 Cancel
               </button>
               <button
                 type="submit"
                 disabled={itemPhotoBusy || !itemPhotoFile}
-                className="px-6 py-2 rounded-full bg-[#04314A] text-white text-[12px] font-semibold hover:bg-[#00AAEB] transition-colors disabled:opacity-50"
+                className="px-6 py-2 rounded-full bg-[#0B3D2B] text-white text-[12px] font-semibold hover:bg-[#10B981] transition-colors disabled:opacity-50"
               >
                 {itemPhotoBusy ? "Uploading…" : "Upload Evidence Photo"}
               </button>

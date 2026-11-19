@@ -1,5 +1,5 @@
 /**
- * Vehicle Template Design Tokens
+ * EV OS Design Tokens
  * 
  * Strict solid color palette, neutral greys, one brand accent,
  * status colours, spacing scale, radius, subtle shadows, and Poppins font scale.
@@ -24,12 +24,12 @@ export const tokens = {
     },
     // Brand
     brand: {
-      primary: '#04314A',       // Primary Navy
-      primaryHover: '#032437',
-      primaryActive: '#021927',
-      accent: '#00AAEB',        // Electric Cyan Accent
-      accentHover: '#0096D1',
-      accentLight: '#E6F7FD',
+      primary: '#0B3D2B',       // Primary Forest Green
+      primaryHover: '#082E20',
+      primaryActive: '#06241A',
+      accent: '#10B981',        // Electric Emerald Accent
+      accentHover: '#0EA372',
+      accentLight: '#E8F8F0',
     },
     // Clear functional status colors
     status: {

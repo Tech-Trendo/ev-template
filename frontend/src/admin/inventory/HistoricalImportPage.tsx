@@ -226,18 +226,18 @@ export default function HistoricalImportPage() {
                 setFile(e.target.files?.[0] ?? null);
                 setPreview(null);
               }}
-              className="block w-full text-[13px] text-[#04314A] file:mr-3 file:rounded-lg file:border-0 file:bg-[#F0F0ED] file:px-3 file:py-2 file:text-[12px] file:font-semibold"
+              className="block w-full text-[13px] text-[#0B3D2B] file:mr-3 file:rounded-lg file:border-0 file:bg-[#F0F0ED] file:px-3 file:py-2 file:text-[12px] file:font-semibold"
             />
           </div>
         </div>
 
         <div className="rounded-xl bg-[#F7F7F5] border border-[#E8E8E5] p-4 space-y-2">
-          <p className="text-[13px] font-semibold text-[#04314A]">
+          <p className="text-[13px] font-semibold text-[#0B3D2B]">
             Step {help.order}: {help.label}
           </p>
           <p className="text-[13px] text-[#525252]">{help.help}</p>
           <p className="text-[12px] text-[#737373]">
-            Required columns: <span className="font-medium text-[#04314A]">{help.columns}</span>
+            Required columns: <span className="font-medium text-[#0B3D2B]">{help.columns}</span>
           </p>
           <p className="text-[12px] text-[#737373]">
             {calendar === "bs"
@@ -276,7 +276,7 @@ export default function HistoricalImportPage() {
               }}
             />
           </FormField>
-          <label className="flex items-center gap-2 pb-2 text-[13px] text-[#04314A]">
+          <label className="flex items-center gap-2 pb-2 text-[13px] text-[#0B3D2B]">
             <input
               type="checkbox"
               checked={updateExisting}
@@ -285,7 +285,7 @@ export default function HistoricalImportPage() {
             />
             Update existing (fill blank fields only)
           </label>
-          <label className="flex items-center gap-2 text-[13px] text-[#04314A]">
+          <label className="flex items-center gap-2 text-[13px] text-[#0B3D2B]">
             <input
               type="checkbox"
               checked={skipInvalid}
@@ -315,7 +315,7 @@ export default function HistoricalImportPage() {
         <div className="bg-white border border-[#E8E8E5] rounded-2xl p-5 sm:p-6 space-y-4">
           <div className="flex flex-wrap items-start justify-between gap-3">
             <div>
-              <h2 className="text-[16px] font-bold text-[#04314A]">Dry run preview</h2>
+              <h2 className="text-[16px] font-bold text-[#0B3D2B]">Dry run preview</h2>
               <p className="text-[13px] text-[#737373] mt-1">
                 {preview.filename} · {preview.rows_read} rows · create {preview.rows_create} ·
                 update {preview.rows_update} · skip {preview.rows_skip} · error {preview.rows_error}
@@ -346,7 +346,7 @@ export default function HistoricalImportPage() {
               <tbody>
                 {preview.preview_rows.map((r) => (
                   <tr key={r.row} className="border-t border-[#E8E8E5]">
-                    <td className="px-3 py-2 text-[#04314A] font-medium">{r.row}</td>
+                    <td className="px-3 py-2 text-[#0B3D2B] font-medium">{r.row}</td>
                     <td className="px-3 py-2">
                       <Badge variant={rowStatusVariant(r.status)} size="sm">
                         {r.status === "SKIP" ? "Skip existing" : r.status}
@@ -379,7 +379,7 @@ export default function HistoricalImportPage() {
       )}
 
       <div className="bg-white border border-[#E8E8E5] rounded-2xl p-5 sm:p-6 space-y-4">
-        <h2 className="text-[16px] font-bold text-[#04314A]">Import history</h2>
+        <h2 className="text-[16px] font-bold text-[#0B3D2B]">Import history</h2>
         {loadingJobs ? (
           <p className="text-[13px] text-[#737373]">Loading…</p>
         ) : jobs.length === 0 ? (
@@ -401,7 +401,7 @@ export default function HistoricalImportPage() {
               <tbody>
                 {jobs.map((job) => (
                   <tr key={job.id} className="border-t border-[#E8E8E5]">
-                    <td className="px-3 py-2 font-medium text-[#04314A]">#{job.id}</td>
+                    <td className="px-3 py-2 font-medium text-[#0B3D2B]">#{job.id}</td>
                     <td className="px-3 py-2">{job.import_type_display}</td>
                     <td className="px-3 py-2 max-w-[180px] truncate">{job.original_filename}</td>
                     <td className="px-3 py-2 text-[#525252]">

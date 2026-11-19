@@ -94,7 +94,7 @@ export function CmsImageField({
               type="button"
               onClick={() => onChange(defaultValue)}
               title="Reset to default image"
-              className="text-[10px] font-semibold text-[#737373] hover:text-[#00AAEB] flex items-center gap-1 transition-colors"
+              className="text-[10px] font-semibold text-[#737373] hover:text-[#10B981] flex items-center gap-1 transition-colors"
             >
               <RefreshCw size={10} /> Default
             </button>
@@ -105,7 +105,7 @@ export function CmsImageField({
               setShowUrlInput(!showUrlInput);
               if (!showUrlInput) setUrlInput(value || "");
             }}
-            className="text-[10px] font-semibold text-[#00AAEB] hover:text-[#04314A] flex items-center gap-1 transition-colors"
+            className="text-[10px] font-semibold text-[#10B981] hover:text-[#0B3D2B] flex items-center gap-1 transition-colors"
           >
             <LinkIcon size={10} /> {showUrlInput ? "Hide URL" : "Paste URL"}
           </button>
@@ -119,12 +119,12 @@ export function CmsImageField({
             value={urlInput}
             onChange={(e) => setUrlInput(e.target.value)}
             placeholder="https://... or /static/images/..."
-            className="flex-1 bg-white border border-[#E8E8E5] rounded-lg px-3 py-1.5 text-[12px] text-[#04314A] focus:outline-none focus:border-[#00AAEB]"
+            className="flex-1 bg-white border border-[#E8E8E5] rounded-lg px-3 py-1.5 text-[12px] text-[#0B3D2B] focus:outline-none focus:border-[#10B981]"
           />
           <button
             type="button"
             onClick={handleApplyUrl}
-            className="px-3 py-1.5 rounded-lg bg-[#00AAEB] text-white text-[11px] font-bold tracking-[0.04em] uppercase flex items-center gap-1 hover:bg-[#04314A] transition-colors"
+            className="px-3 py-1.5 rounded-lg bg-[#10B981] text-white text-[11px] font-bold tracking-[0.04em] uppercase flex items-center gap-1 hover:bg-[#0B3D2B] transition-colors"
           >
             <Check size={12} /> Apply
           </button>
@@ -153,7 +153,7 @@ export function CmsImageField({
 
           <div className="flex-1 min-w-0 flex flex-col justify-between self-stretch py-1">
             <div>
-              <p className="text-[12px] font-semibold text-[#04314A] truncate max-w-full" title={value}>
+              <p className="text-[12px] font-semibold text-[#0B3D2B] truncate max-w-full" title={value}>
                 {value.split("/").pop() || value}
               </p>
               <p className="text-[11px] text-[#737373] truncate mt-0.5" title={value}>
@@ -166,7 +166,7 @@ export function CmsImageField({
                 type="button"
                 onClick={() => fileInputRef.current?.click()}
                 disabled={uploading || disabled}
-                className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg border border-[#E8E8E5] bg-white text-[11px] font-bold text-[#04314A] hover:border-[#00AAEB] hover:text-[#00AAEB] transition-colors disabled:opacity-50"
+                className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg border border-[#E8E8E5] bg-white text-[11px] font-bold text-[#0B3D2B] hover:border-[#10B981] hover:text-[#10B981] transition-colors disabled:opacity-50"
               >
                 {uploading ? <Loader2 size={12} className="animate-spin" /> : <Upload size={12} />}
                 Replace Image
@@ -191,21 +191,21 @@ export function CmsImageField({
           onClick={() => !uploading && fileInputRef.current?.click()}
           className={`border-2 border-dashed rounded-2xl p-6 sm:p-8 flex flex-col items-center justify-center text-center cursor-pointer transition-all ${
             isDragging
-              ? "border-[#00AAEB] bg-[#00AAEB]/5 scale-[0.99]"
-              : "border-[#E0E0DC] hover:border-[#00AAEB] bg-[#FAFAF8] hover:bg-[#F4F4F0]"
+              ? "border-[#10B981] bg-[#10B981]/5 scale-[0.99]"
+              : "border-[#E0E0DC] hover:border-[#10B981] bg-[#FAFAF8] hover:bg-[#F4F4F0]"
           }`}
         >
           {uploading ? (
-            <div className="flex flex-col items-center gap-2 text-[#00AAEB]">
+            <div className="flex flex-col items-center gap-2 text-[#10B981]">
               <Loader2 size={24} className="animate-spin" />
               <span className="text-[12px] font-bold tracking-[0.04em] uppercase">Uploading image…</span>
             </div>
           ) : (
             <>
-              <div className="w-10 h-10 rounded-full bg-white border border-[#E8E8E5] shadow-xs flex items-center justify-center text-[#04314A] mb-3">
+              <div className="w-10 h-10 rounded-full bg-white border border-[#E8E8E5] shadow-xs flex items-center justify-center text-[#0B3D2B] mb-3">
                 <ImagePlus size={20} />
               </div>
-              <p className="text-[12px] font-bold text-[#04314A] tracking-[0.02em]">
+              <p className="text-[12px] font-bold text-[#0B3D2B] tracking-[0.02em]">
                 Click to upload or drag & drop
               </p>
               <p className="text-[11px] text-[#737373] mt-1">
@@ -246,11 +246,11 @@ export function CmsImageField({
               className="max-h-[75vh] w-auto object-contain rounded-xl"
             />
             <div className="p-3 flex items-center justify-between">
-              <span className="text-[12px] font-bold text-[#04314A] truncate">{label}</span>
+              <span className="text-[12px] font-bold text-[#0B3D2B] truncate">{label}</span>
               <button
                 type="button"
                 onClick={() => setPreviewOpen(false)}
-                className="px-3 py-1 bg-[#04314A] text-white text-[11px] font-bold rounded-full hover:bg-[#00AAEB] transition-colors"
+                className="px-3 py-1 bg-[#0B3D2B] text-white text-[11px] font-bold rounded-full hover:bg-[#10B981] transition-colors"
               >
                 Close
               </button>

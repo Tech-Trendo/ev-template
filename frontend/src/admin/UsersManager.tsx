@@ -110,26 +110,26 @@ function EmployeeSummary({
   joined?: string | null;
 }) {
   return (
-    <div className="rounded-lg border border-[#E8E8E5] bg-[#FAFAF8] px-4 py-3 text-[12px] text-[#04314A]">
+    <div className="rounded-lg border border-[#E8E8E5] bg-[#FAFAF8] px-4 py-3 text-[12px] text-[#0B3D2B]">
       <div className="font-semibold mb-1.5">From employee record</div>
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-4 gap-y-1 text-[#737373]">
         <div>
-          <span className="font-medium text-[#04314A]">Name:</span> {name || "—"}
+          <span className="font-medium text-[#0B3D2B]">Name:</span> {name || "—"}
         </div>
         <div>
-          <span className="font-medium text-[#04314A]">Sign-in:</span> {code || "—"}
+          <span className="font-medium text-[#0B3D2B]">Sign-in:</span> {code || "—"}
         </div>
         <div>
-          <span className="font-medium text-[#04314A]">Phone:</span> {phone || "—"}
+          <span className="font-medium text-[#0B3D2B]">Phone:</span> {phone || "—"}
         </div>
         <div>
-          <span className="font-medium text-[#04314A]">Department:</span> {department || "—"}
+          <span className="font-medium text-[#0B3D2B]">Department:</span> {department || "—"}
         </div>
         <div>
-          <span className="font-medium text-[#04314A]">Designation:</span> {designation || "—"}
+          <span className="font-medium text-[#0B3D2B]">Designation:</span> {designation || "—"}
         </div>
         <div>
-          <span className="font-medium text-[#04314A]">Joined:</span> {joined || "—"}
+          <span className="font-medium text-[#0B3D2B]">Joined:</span> {joined || "—"}
         </div>
       </div>
       <p className="mt-2 text-[11px] text-[#A3A39E]">
@@ -366,7 +366,7 @@ function UserForm({
                 type="email"
                 value={form.email}
                 onChange={(e) => setForm({ ...form, email: e.target.value })}
-                placeholder="john@vehicletemplate.example.com"
+                placeholder="john@evos.example.com"
                 autoComplete="email"
                 error={Boolean(fieldErrors.email)}
               />
@@ -433,7 +433,7 @@ function UserForm({
           </div>
 
           <div>
-            <span className="text-[11px] font-semibold text-[#04314A] tracking-[0.02em] block mb-1.5">
+            <span className="text-[11px] font-semibold text-[#0B3D2B] tracking-[0.02em] block mb-1.5">
               Role Assignment <span className="text-[#DC2626]">*</span>
             </span>
             {fieldErrors.roles && (
@@ -460,8 +460,8 @@ function UserForm({
                       }}
                       className={`px-3 py-1.5 rounded-lg text-[11px] font-semibold border transition-colors ${
                         on
-                          ? "bg-[#04314A] text-white border-[#04314A]"
-                          : "bg-white text-[#737373] border-[#E8E8E5] hover:border-[#04314A]"
+                          ? "bg-[#0B3D2B] text-white border-[#0B3D2B]"
+                          : "bg-white text-[#737373] border-[#E8E8E5] hover:border-[#0B3D2B]"
                       }`}
                     >
                       {on ? "[x] " : "[ ] "}
@@ -474,9 +474,9 @@ function UserForm({
             {form.roles.length === 0 && (
               <div
                 role="alert"
-                className="mt-2.5 flex items-start gap-2 rounded-lg border border-[#E8E8E5] bg-[#F7F7F5] px-3 py-2 text-[12px] font-medium leading-relaxed text-[#04314A]"
+                className="mt-2.5 flex items-start gap-2 rounded-lg border border-[#E8E8E5] bg-[#F7F7F5] px-3 py-2 text-[12px] font-medium leading-relaxed text-[#0B3D2B]"
               >
-                <ShieldAlert size={14} className="mt-0.5 shrink-0 text-[#00AAEB]" />
+                <ShieldAlert size={14} className="mt-0.5 shrink-0 text-[#10B981]" />
                 <span>At least one role must be assigned to grant system permissions.</span>
               </div>
             )}
@@ -510,9 +510,9 @@ function UserForm({
               type="checkbox"
               checked={form.is_active}
               onChange={(e) => setForm({ ...form, is_active: e.target.checked })}
-              className="w-4 h-4 accent-[#00AAEB]"
+              className="w-4 h-4 accent-[#10B981]"
             />
-            <span className="text-[12px] font-semibold text-[#04314A]">Active (can sign in)</span>
+            <span className="text-[12px] font-semibold text-[#0B3D2B]">Active (can sign in)</span>
             {!form.is_active && (
               <span className="text-[11px] text-[#737373]">(inactive users cannot log in)</span>
             )}
@@ -655,7 +655,7 @@ export default function UsersManager() {
         <div className="overflow-x-auto">
           <table className="w-full text-left border-collapse">
             <thead>
-              <tr className="border-b border-[#E8E8E5] bg-[#FAFAF8] text-[11px] font-semibold text-[#04314A] tracking-[0.02em]">
+              <tr className="border-b border-[#E8E8E5] bg-[#FAFAF8] text-[11px] font-semibold text-[#0B3D2B] tracking-[0.02em]">
                 <th className="px-5 py-3">User</th>
                 <th className="px-5 py-3">Email</th>
                 <th className="px-5 py-3">Status</th>
@@ -690,11 +690,11 @@ export default function UsersManager() {
                     <tr key={u.id} className="hover:bg-[#FAFAF8] transition-colors">
                       <td className="px-5 py-3.5">
                         <div className="flex items-center gap-3">
-                          <div className="w-8 h-8 rounded-full bg-[#04314A] text-white flex items-center justify-center text-[11px] font-bold shrink-0">
+                          <div className="w-8 h-8 rounded-full bg-[#0B3D2B] text-white flex items-center justify-center text-[11px] font-bold shrink-0">
                             {u.username.slice(0, 2).toUpperCase()}
                           </div>
                           <div>
-                            <div className="text-[13px] font-semibold text-[#04314A] flex items-center gap-2">
+                            <div className="text-[13px] font-semibold text-[#0B3D2B] flex items-center gap-2">
                               {u.username}
                               {isSelf && (
                                 <Badge variant="info" size="sm">
@@ -722,7 +722,7 @@ export default function UsersManager() {
                             <Shield size={11} className="mr-1 inline" /> Super Admin
                           </Badge>
                         ) : (u.role_names ?? []).length > 0 ? (
-                          <div className="text-[12px] font-medium text-[#04314A]">
+                          <div className="text-[12px] font-medium text-[#0B3D2B]">
                             {(u.role_names ?? []).join(", ")}
                             {u.dealer_name && (
                               <span className="block text-[11px] font-normal text-[#737373]">

@@ -25,7 +25,7 @@ export default function SignaturePad({
       ctx.scale(scale, scale);
       ctx.lineWidth = 2;
       ctx.lineCap = "round";
-      ctx.strokeStyle = "#04314A";
+      ctx.strokeStyle = "#0B3D2B";
     }
   }, []);
 
@@ -49,7 +49,7 @@ export default function SignaturePad({
             <button
               type="button"
               onClick={() => setHasInk(true)}
-              className="mt-2 w-full text-[11px] font-bold text-[#00AAEB] hover:text-[#04314A] transition-colors"
+              className="mt-2 w-full text-[11px] font-bold text-[#10B981] hover:text-[#0B3D2B] transition-colors"
             >
               Re-sign
             </button>

@@ -106,7 +106,7 @@ export function CustomerPicker({
             <button
               type="button"
               onClick={() => setModalOpen(true)}
-              className="inline-flex items-center gap-1 text-[11px] font-bold text-[#00AAEB] hover:text-[#04314A] transition-colors"
+              className="inline-flex items-center gap-1 text-[11px] font-bold text-[#10B981] hover:text-[#0B3D2B] transition-colors"
             >
               <Plus size={13} /> Add new customer
             </button>
@@ -117,8 +117,8 @@ export function CustomerPicker({
           if (compact) {
             return (
               <div className="flex items-center justify-between gap-2 py-0.5">
-                <span className="text-[12px] font-bold text-[#04314A] truncate">{c.name}</span>
-                <span className="text-[10px] font-bold px-1.5 py-0.5 rounded bg-[#F4F7F9] text-[#04314A] border border-[#E8E8E5] shrink-0">
+                <span className="text-[12px] font-bold text-[#0B3D2B] truncate">{c.name}</span>
+                <span className="text-[10px] font-bold px-1.5 py-0.5 rounded bg-[#F4F7F9] text-[#0B3D2B] border border-[#E8E8E5] shrink-0">
                   {code}
                 </span>
               </div>
@@ -127,8 +127,8 @@ export function CustomerPicker({
           return (
             <div className="flex flex-col gap-0.5">
               <div className="flex items-center gap-2 flex-wrap">
-                <span className="text-[12px] font-bold text-[#04314A]">{c.name}</span>
-                <span className="text-[10px] font-bold px-1.5 py-0.5 rounded bg-[#F4F7F9] text-[#04314A] border border-[#E8E8E5]">
+                <span className="text-[12px] font-bold text-[#0B3D2B]">{c.name}</span>
+                <span className="text-[10px] font-bold px-1.5 py-0.5 rounded bg-[#F4F7F9] text-[#0B3D2B] border border-[#E8E8E5]">
                   {code}
                 </span>
                 {c.type && (
@@ -138,7 +138,7 @@ export function CustomerPicker({
                 )}
               </div>
               <div className="flex items-center gap-2 text-[11px] text-[#737373] flex-wrap">
-                {c.company && <span className="font-medium text-[#04314A]">{c.company}</span>}
+                {c.company && <span className="font-medium text-[#0B3D2B]">{c.company}</span>}
                 {c.phone && <span>· {c.phone}</span>}
                 {c.email && <span>· {c.email}</span>}
                 {c.location && <span>· {c.location}</span>}
@@ -150,8 +150,8 @@ export function CustomerPicker({
           const code = c.code || c.display_id || `CU-${c.id}`;
           return (
             <div className="flex items-center gap-1.5 min-w-0 overflow-hidden whitespace-nowrap">
-              <span className="text-[13px] font-medium text-[#04314A] truncate">{c.name}</span>
-              <span className="text-[10px] font-bold px-1.5 py-0.5 rounded bg-[#F4F7F9] text-[#04314A] border border-[#E8E8E5] shrink-0">
+              <span className="text-[13px] font-medium text-[#0B3D2B] truncate">{c.name}</span>
+              <span className="text-[10px] font-bold px-1.5 py-0.5 rounded bg-[#F4F7F9] text-[#0B3D2B] border border-[#E8E8E5] shrink-0">
                 {code}
               </span>
               {!compact && c.company && (
@@ -239,7 +239,7 @@ export function NewCustomerModal({
   return (
     <Modal title="Add New Customer" onClose={onClose}>
       <form onSubmit={handleSubmit} className="space-y-4">
-        {error && <p className="text-[12px] text-[#00AAEB]">{error}</p>}
+        {error && <p className="text-[12px] text-[#10B981]">{error}</p>}
 
         {duplicateMatches.length > 0 && (
           <div className="p-3.5 bg-[#FFFBEB] border border-[#FDE68A] rounded-xl text-[#92400E] space-y-2.5">
@@ -267,7 +267,7 @@ export function NewCustomerModal({
                     type: match.type,
                   });
                 }}
-                className="px-3.5 py-2 min-h-[44px] bg-[#04314A] text-white text-[12px] font-semibold rounded-lg hover:bg-[#064263] focus-visible:ring-2 focus-visible:ring-[#00AAEB] transition-colors"
+                className="px-3.5 py-2 min-h-[44px] bg-[#0B3D2B] text-white text-[12px] font-semibold rounded-lg hover:bg-[#064263] focus-visible:ring-2 focus-visible:ring-[#10B981] transition-colors"
               >
                 Use Existing
               </button>
@@ -364,7 +364,7 @@ export function NewCustomerModal({
           <button
             type="button"
             onClick={onClose}
-            className="px-4 py-2.5 text-[12px] font-semibold uppercase tracking-[0.04em] text-[#737373] hover:text-[#04314A] transition-colors"
+            className="px-4 py-2.5 text-[12px] font-semibold uppercase tracking-[0.04em] text-[#737373] hover:text-[#0B3D2B] transition-colors"
           >
             Cancel
           </button>

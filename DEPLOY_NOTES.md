@@ -1,4 +1,4 @@
-# Vehicle Template — VPS deployment
+# EV OS — VPS deployment
 
 This repository is a **white-label admin dashboard template** for vehicle / fleet
 management. The public marketing website has been removed; only the authenticated
@@ -155,7 +155,7 @@ docker compose down -v       # DELETES the database and uploaded files
 | `ALLOWED_HOSTS` | `*` | Restrict to your domain / IP when known |
 | `CORS_ALLOWED_ORIGINS` | `http://localhost:3001` | Add your public origin if needed |
 | `SEED_ON_START` | `true` | Seeds demo data once; set `false` for an empty database |
-| `COMPANY_NAME` / `COMPANY_TAGLINE` | `Vehicle Template` | Used in generated documents and API schema |
+| `COMPANY_NAME` / `COMPANY_TAGLINE` | `EV OS` | Used in generated documents and API schema |
 | `AWS_*` | empty | Optional S3-compatible storage; local volumes used when blank |
 
 ## Data / storage
@@ -189,7 +189,7 @@ normal use.
 
 ## Customising the template
 
-- Brand name/text: search for `Vehicle Template` in `frontend/src/admin/` and
+- Brand name/text: search for `EV OS` in `frontend/src/admin/` and
   `backend/config/settings.py` (`COMPANY_NAME`).
 - Logo mark: `frontend/src/admin/AdminApp.tsx` and `frontend/src/admin/Login.tsx`
   (currently a simple `VT` text mark). Favicon: `frontend/public/favicon.svg`.
@@ -204,5 +204,5 @@ normal use.
 activity-log cleanup. Add to the host crontab, e.g. every 15 minutes:
 
 ```cron
-*/15 * * * * /opt/ev-template/scripts/cron_tasks.sh >> /var/log/vehicle_template_cron.log 2>&1
+*/15 * * * * /opt/ev-template/scripts/cron_tasks.sh >> /var/log/ev_os_cron.log 2>&1
 ```

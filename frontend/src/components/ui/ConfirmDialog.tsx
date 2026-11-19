@@ -58,13 +58,13 @@ export function ConfirmDialog({
 
   return (
     <div
-      className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-[#04314A]/60"
+      className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-[#0B3D2B]/60"
       role="alertdialog"
       aria-modal="true"
       aria-labelledby="confirm-dialog-title"
       aria-describedby="confirm-dialog-desc"
     >
-      <div className="w-full max-w-md bg-white rounded-xl border border-[#E8E8E5] shadow-lg p-5 dark:bg-[#0B2538] dark:border-[#174261]">
+      <div className="w-full max-w-md bg-white rounded-xl border border-[#E8E8E5] shadow-lg p-5 dark:bg-[#0C2620] dark:border-[#1B5039]">
         <div className="flex items-start gap-3.5">
           <div
             className={`p-2 rounded-lg shrink-0 ${
@@ -78,7 +78,7 @@ export function ConfirmDialog({
           <div className="flex-1">
             <h3
               id="confirm-dialog-title"
-              className="text-[14px] font-semibold text-[#04314A] dark:text-[#F7F7F5]"
+              className="text-[14px] font-semibold text-[#0B3D2B] dark:text-[#F7F7F5]"
             >
               {title}
             </h3>

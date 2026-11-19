@@ -23,9 +23,9 @@ import { Field, inputCls, Modal, useToast } from "../crm/ui";
 import ChecklistSection, { type CheckValue } from "./ChecklistSection";
 
 const paperRowLabel =
-  "shrink-0 text-[11px] font-bold tracking-[0.06em] uppercase text-[#04314A] whitespace-nowrap";
+  "shrink-0 text-[11px] font-bold tracking-[0.06em] uppercase text-[#0B3D2B] whitespace-nowrap";
 const paperInput =
-  "flex-1 min-w-[8rem] bg-transparent border-0 border-b border-[#D4D4CE] rounded-none px-0 py-1 text-[13px] font-semibold text-[#04314A] placeholder:text-[#B0B0AA] focus:outline-none focus:border-[#00AAEB]";
+  "flex-1 min-w-[8rem] bg-transparent border-0 border-b border-[#D4D4CE] rounded-none px-0 py-1 text-[13px] font-semibold text-[#0B3D2B] placeholder:text-[#B0B0AA] focus:outline-none focus:border-[#10B981]";
 const paperInputReadOnly = `${paperInput} border-[#E8E8E5] cursor-default`;
 
 function PaperFieldRow({ label, children }: { label: string; children: React.ReactNode }) {
@@ -136,7 +136,7 @@ export default function PDIForm({
           }
           setInspection(pdi);
           setHeader({
-            ev_company_name: pdi.ev_company_name || "VEHICLE TEMPLATE",
+            ev_company_name: pdi.ev_company_name || "EV OS",
             vin_chassis_no: pdi.vin_chassis_no,
             model_snapshot: pdi.model_snapshot,
             battery_power_snapshot: pdi.battery_power_snapshot,
@@ -162,7 +162,7 @@ export default function PDIForm({
               ? `${me.first_name} ${me.last_name}`.trim()
               : (me?.username ?? "");
           setHeader({
-            ev_company_name: "VEHICLE TEMPLATE",
+            ev_company_name: "EV OS",
             vin_chassis_no: u.vin_chassis_no,
             model_snapshot: `${u.model_detail.brand} ${u.model_detail.model_name}`,
             battery_power_snapshot: u.effective_battery_kw ?? "",
@@ -407,11 +407,11 @@ export default function PDIForm({
       <div className="py-24 text-center text-[13px] text-[#737373]">
         {error ? (
           <>
-            <p className="font-bold text-[#04314A] mb-2">Couldn&apos;t load PDI form</p>
+            <p className="font-bold text-[#0B3D2B] mb-2">Couldn&apos;t load PDI form</p>
             <p className="mb-4">{error}</p>
             <button
               onClick={() => onNavigate(`units/${unitId}`)}
-              className="px-6 py-3 rounded-full bg-[#04314A] text-white text-[12px] font-semibold"
+              className="px-6 py-3 rounded-full bg-[#0B3D2B] text-white text-[12px] font-semibold"
             >
               Back to Unit
             </button>
@@ -431,23 +431,23 @@ export default function PDIForm({
             .then(() => onNavigate(`units/${unit.id}`))
             .catch(() => undefined);
         }}
-        className="flex items-center gap-1.5 text-[12px] font-semibold text-[#737373] hover:text-[#00AAEB] transition-colors mb-4"
+        className="flex items-center gap-1.5 text-[12px] font-semibold text-[#737373] hover:text-[#10B981] transition-colors mb-4"
       >
         <ArrowLeft size={14} /> Back to Unit
       </button>
 
       <div className="bg-white border border-[#E8E8E5] rounded-2xl p-5 sm:p-7">
-        <div className="text-center pb-5 mb-6 border-b-2 border-[#04314A]">
-          <p className="text-[13px] sm:text-[15px] font-black tracking-[0.18em] uppercase text-[#04314A]">
-            VEHICLE TEMPLATE
+        <div className="text-center pb-5 mb-6 border-b-2 border-[#0B3D2B]">
+          <p className="text-[13px] sm:text-[15px] font-black tracking-[0.18em] uppercase text-[#0B3D2B]">
+            EV OS
           </p>
-          <h1 className="text-[18px] sm:text-[22px] font-black tracking-tight text-[#04314A] mt-1">
+          <h1 className="text-[18px] sm:text-[22px] font-black tracking-tight text-[#0B3D2B] mt-1">
             PRE-DELIVERY INSPECTION/VEHICLE DELIVERY CHECK LIST
           </h1>
         </div>
 
         {error && (
-          <p className="mb-4 text-[13px] text-[#00AAEB] bg-[#00AAEB]/5 border-l-2 border-[#00AAEB] px-3 py-2">
+          <p className="mb-4 text-[13px] text-[#10B981] bg-[#10B981]/5 border-l-2 border-[#10B981] px-3 py-2">
             {error}
           </p>
         )}
@@ -585,8 +585,8 @@ export default function PDIForm({
                 onClick={() => patch({ overall_rating: v })}
                 className={`flex-1 py-2.5 rounded-xl border text-[12px] font-bold transition-all ${
                   header.overall_rating === v
-                    ? "bg-[#04314A] text-white border-[#04314A]"
-                    : "bg-white text-[#737373] border-[#E8E8E5] hover:border-[#04314A]"
+                    ? "bg-[#0B3D2B] text-white border-[#0B3D2B]"
+                    : "bg-white text-[#737373] border-[#E8E8E5] hover:border-[#0B3D2B]"
                 }`}
               >
                 {label}
@@ -607,14 +607,14 @@ export default function PDIForm({
           <button
             onClick={saveDraft}
             disabled={busy}
-            className="inline-flex items-center gap-2 px-6 py-3 rounded-full border border-[#04314A] text-[#04314A] text-[12px] font-bold tracking-[0.06em] uppercase hover:bg-[#04314A] hover:text-white transition-colors disabled:opacity-50"
+            className="inline-flex items-center gap-2 px-6 py-3 rounded-full border border-[#0B3D2B] text-[#0B3D2B] text-[12px] font-bold tracking-[0.06em] uppercase hover:bg-[#0B3D2B] hover:text-white transition-colors disabled:opacity-50"
           >
             <Save size={14} /> {busy ? "Saving…" : "Save Draft"}
           </button>
           <button
             onClick={() => setConfirmSubmit(true)}
             disabled={busy}
-            className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-[#00AAEB] text-white text-[12px] font-bold tracking-[0.06em] uppercase hover:bg-[#04314A] transition-colors disabled:opacity-50"
+            className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-[#10B981] text-white text-[12px] font-bold tracking-[0.06em] uppercase hover:bg-[#0B3D2B] transition-colors disabled:opacity-50"
           >
             <Send size={14} /> Submit PDI
           </button>
@@ -629,12 +629,12 @@ export default function PDIForm({
                 This inspection has{" "}
                 <span className="font-bold text-[#8B0000]">{stats.notOk} Not OK item(s)</span>{" "}
                 — the vehicle will move to{" "}
-                <span className="font-bold text-[#04314A]">PDI Failed</span>.
+                <span className="font-bold text-[#0B3D2B]">PDI Failed</span>.
               </>
             ) : (
               <>
                 All clear — the vehicle will move to{" "}
-                <span className="font-bold text-[#04314A]">PDI Passed</span>.
+                <span className="font-bold text-[#0B3D2B]">PDI Passed</span>.
               </>
             )}
           </p>
@@ -644,14 +644,14 @@ export default function PDIForm({
           <div data-modal-actions className="flex gap-3 justify-end">
             <button
               onClick={() => setConfirmSubmit(false)}
-              className="px-6 py-2.5 border border-[#E8E8E5] rounded-full text-[12px] font-semibold text-[#737373] hover:border-[#04314A] hover:text-[#04314A] transition-colors"
+              className="px-6 py-2.5 border border-[#E8E8E5] rounded-full text-[12px] font-semibold text-[#737373] hover:border-[#0B3D2B] hover:text-[#0B3D2B] transition-colors"
             >
               Review
             </button>
             <button
               onClick={doSubmit}
               disabled={busy}
-              className="px-6 py-2.5 rounded-full bg-[#00AAEB] text-white text-[12px] font-semibold hover:bg-[#04314A] transition-colors disabled:opacity-50"
+              className="px-6 py-2.5 rounded-full bg-[#10B981] text-white text-[12px] font-semibold hover:bg-[#0B3D2B] transition-colors disabled:opacity-50"
             >
               {busy ? "Submitting…" : "Submit"}
             </button>

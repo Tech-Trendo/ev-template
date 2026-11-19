@@ -140,7 +140,7 @@ export default function StoriesManager({
   };
 
   const input =
-    "border border-[#E8E8E5] rounded-xl bg-white px-3 py-2 text-[12px] font-medium text-[#04314A] placeholder:text-[#B0B0AA] focus:outline-none focus:border-[#00AAEB] transition-colors";
+    "border border-[#E8E8E5] rounded-xl bg-white px-3 py-2 text-[12px] font-medium text-[#0B3D2B] placeholder:text-[#B0B0AA] focus:outline-none focus:border-[#10B981] transition-colors";
 
   return (
     <div>
@@ -156,7 +156,7 @@ export default function StoriesManager({
         action={
           <button
             onClick={() => onNavigate(`${basePath}/new`)}
-            className="flex items-center gap-2 px-5 py-3 rounded-full bg-[#04314A] text-white text-[12px] font-semibold tracking-[0.06em] uppercase hover:bg-[#00AAEB] transition-colors"
+            className="flex items-center gap-2 px-5 py-3 rounded-full bg-[#0B3D2B] text-white text-[12px] font-semibold tracking-[0.06em] uppercase hover:bg-[#10B981] transition-colors"
           >
             <Plus size={14} /> New Story
           </button>
@@ -178,7 +178,7 @@ export default function StoriesManager({
           <option value="archived">Archived</option>
         </select>
         {lockedCategory ? (
-          <span className="inline-block px-3 py-2 rounded-xl bg-[#04314A] text-white text-[11px] font-bold tracking-[0.1em] uppercase whitespace-nowrap">
+          <span className="inline-block px-3 py-2 rounded-xl bg-[#0B3D2B] text-white text-[11px] font-bold tracking-[0.1em] uppercase whitespace-nowrap">
             {initialCategory || category}
           </span>
         ) : (
@@ -210,7 +210,7 @@ export default function StoriesManager({
               setDateFrom("");
               setDateTo("");
             }}
-            className="text-[11px] font-semibold text-[#00AAEB] hover:underline flex items-center gap-1 px-2"
+            className="text-[11px] font-semibold text-[#10B981] hover:underline flex items-center gap-1 px-2"
           >
             <X size={12} /> Clear
           </button>
@@ -218,7 +218,7 @@ export default function StoriesManager({
       </div>
 
       {error && (
-        <p className="mb-4 text-[13px] text-[#00AAEB] bg-[#00AAEB]/5 border-l-2 border-[#00AAEB] px-3 py-2">{error}</p>
+        <p className="mb-4 text-[13px] text-[#10B981] bg-[#10B981]/5 border-l-2 border-[#10B981] px-3 py-2">{error}</p>
       )}
 
       <div className="bg-white border border-[#E8E8E5] rounded-xl overflow-x-auto">
@@ -246,14 +246,14 @@ export default function StoriesManager({
                         <div className="w-14 h-10 bg-[#F7F7F5] flex items-center justify-center rounded-lg"><Newspaper size={14} className="text-[#B0B0AA]" /></div>
                       )}
                       <div className="max-w-[320px]">
-                        <div className="text-[13px] font-bold text-[#04314A] truncate">{s.title}</div>
+                        <div className="text-[13px] font-bold text-[#0B3D2B] truncate">{s.title}</div>
                         <div className="text-[10px] text-[#B0B0AA] truncate">{publicBase}/{s.slug}</div>
                       </div>
                     </div>
                   </td>
                   <td className="px-5 py-3.5">
                     {s.category ? (
-                      <span className="text-[11px] font-semibold text-[#04314A] uppercase tracking-[0.04em] whitespace-nowrap">{s.category}</span>
+                      <span className="text-[11px] font-semibold text-[#0B3D2B] uppercase tracking-[0.04em] whitespace-nowrap">{s.category}</span>
                     ) : (
                       <span className="text-[12px] text-[#B0B0AA]">—</span>
                     )}
@@ -267,8 +267,8 @@ export default function StoriesManager({
                       title={s.status === "published" ? "Click to unpublish" : "Click to publish"}
                       className={`inline-flex items-center gap-1 text-[11px] font-semibold uppercase tracking-[0.04em] whitespace-nowrap transition-colors ${
                         s.status === "published"
-                          ? "text-[#00AAEB] hover:text-[#04314A]"
-                          : "text-[#737373] hover:text-[#00AAEB]"
+                          ? "text-[#10B981] hover:text-[#0B3D2B]"
+                          : "text-[#737373] hover:text-[#10B981]"
                       }`}
                     >
                       {s.status === "published" ? <Eye size={12} /> : <EyeOff size={12} />}
@@ -289,21 +289,21 @@ export default function StoriesManager({
                           e.preventDefault();
                           window.open(`${publicBase}/${s.slug}?all=1`, "_blank");
                         }}
-                        className="w-8 h-8 border border-[#E8E8E5] rounded-xl flex items-center justify-center text-[#00AAEB] hover:bg-[#00AAEB] hover:text-white transition-colors"
+                        className="w-8 h-8 border border-[#E8E8E5] rounded-xl flex items-center justify-center text-[#10B981] hover:bg-[#10B981] hover:text-white transition-colors"
                         title="View / Preview"
                       >
                         <ExternalLink size={13} />
                       </a>
                       <button
                         onClick={() => onNavigate(`${basePath}/${s.id}`)}
-                        className="w-8 h-8 border border-[#E8E8E5] rounded-xl flex items-center justify-center text-[#04314A] hover:bg-[#04314A] hover:text-white transition-colors"
+                        className="w-8 h-8 border border-[#E8E8E5] rounded-xl flex items-center justify-center text-[#0B3D2B] hover:bg-[#0B3D2B] hover:text-white transition-colors"
                         title="Edit"
                       >
                         <Pencil size={13} />
                       </button>
                       <button
                         onClick={() => setDeleting(s)}
-                        className="w-8 h-8 border border-[#E8E8E5] rounded-xl flex items-center justify-center text-[#00AAEB] hover:bg-[#00AAEB] hover:text-white transition-colors"
+                        className="w-8 h-8 border border-[#E8E8E5] rounded-xl flex items-center justify-center text-[#10B981] hover:bg-[#10B981] hover:text-white transition-colors"
                         title="Delete"
                       >
                         <Trash2 size={13} />
@@ -323,14 +323,14 @@ export default function StoriesManager({
         <Modal title="Delete Story?" onClose={() => setDeleting(null)}>
           <p className="text-[13px] text-[#737373] leading-relaxed mb-6">
             Are you sure you want to delete{" "}
-            <span className="font-bold text-[#04314A]">&ldquo;{deleting.title}&rdquo;</span>?
+            <span className="font-bold text-[#0B3D2B]">&ldquo;{deleting.title}&rdquo;</span>?
             <br />
             This action cannot be undone.
           </p>
           <div data-modal-actions className="flex gap-3 justify-end">
             <button
               onClick={() => setDeleting(null)}
-              className="px-6 py-2.5 border border-[#E8E8E5] rounded-full text-[12px] font-semibold text-[#737373] hover:border-[#04314A] hover:text-[#04314A] transition-colors"
+              className="px-6 py-2.5 border border-[#E8E8E5] rounded-full text-[12px] font-semibold text-[#737373] hover:border-[#0B3D2B] hover:text-[#0B3D2B] transition-colors"
             >
               Cancel
             </button>

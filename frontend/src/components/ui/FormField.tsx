@@ -29,7 +29,7 @@ export function FormField({
         <div className="flex items-center justify-between">
           <label
             htmlFor={htmlFor}
-            className="block text-[11px] font-semibold text-[#04314A] tracking-[0.02em] dark:text-[#F7F7F5]"
+            className="block text-[11px] font-semibold text-[#0B3D2B] tracking-[0.02em] dark:text-[#F7F7F5]"
           >
             {label}
             {required && (

@@ -1,4 +1,4 @@
-# Self-contained stack for the Vehicle Template admin dashboard.
+# Self-contained stack for the EV OS admin dashboard.
 #
 # Local use builds both images on this machine:
 #   cp .env.example .env
@@ -51,7 +51,7 @@ services:
       POSTGRES_HOST: db
       POSTGRES_PORT: 5432
       CORS_ALLOWED_ORIGINS: ${CORS_ALLOWED_ORIGINS:-http://localhost:3000}
-      COMPANY_NAME: ${COMPANY_NAME:-Vehicle Template}
+      COMPANY_NAME: ${COMPANY_NAME:-EV OS}
       COMPANY_TAGLINE: ${COMPANY_TAGLINE:-Commercial Vehicle and Fleet Solutions}
       SEED_ON_START: ${SEED_ON_START:-true}
       # Optional S3-compatible storage. Leave empty to store uploads on the local volume.

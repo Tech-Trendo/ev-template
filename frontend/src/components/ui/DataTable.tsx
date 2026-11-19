@@ -183,13 +183,13 @@ export function DataTable<T extends Record<string, any>>({
 
   return (
     <div
-      className={`w-full flex flex-col bg-white rounded-xl border border-[#E8E8E5] overflow-hidden dark:bg-[#0B2538] dark:border-[#174261] ${className}`}
+      className={`w-full flex flex-col bg-white rounded-xl border border-[#E8E8E5] overflow-hidden dark:bg-[#0C2620] dark:border-[#1B5039] ${className}`}
     >
       <div className="w-full overflow-x-auto">
         <table className="w-full text-left border-collapse">
           <thead>
             <tr
-              className={`border-b border-[#E8E8E5] bg-[#FAFAF8] text-[11px] font-semibold text-[#04314A] tracking-[0.02em] dark:bg-[#061824] dark:border-[#174261] dark:text-[#F7F7F5] ${
+              className={`border-b border-[#E8E8E5] bg-[#FAFAF8] text-[11px] font-semibold text-[#0B3D2B] tracking-[0.02em] dark:bg-[#071713] dark:border-[#1B5039] dark:text-[#F7F7F5] ${
                 stickyHeader ? "sticky top-0 z-10" : ""
               }`}
             >
@@ -203,7 +203,7 @@ export function DataTable<T extends Record<string, any>>({
                     style={{ width: col.width }}
                     className={`px-4 py-3 select-none ${alignClass} ${
                       sortInteractive(col)
-                        ? "cursor-pointer hover:bg-[#F0F0ED] transition-colors dark:hover:bg-[#10334C]"
+                        ? "cursor-pointer hover:bg-[#F0F0ED] transition-colors dark:hover:bg-[#113A2B]"
                         : ""
                     }`}
                     onClick={() => sortInteractive(col) && handleSort(col.key)}
@@ -218,9 +218,9 @@ export function DataTable<T extends Record<string, any>>({
                         <span className="text-[#A3A39E]">
                           {sortKey === col.key ? (
                             sortDir === "asc" ? (
-                              <ChevronUp size={14} className="text-[#04314A] dark:text-[#F7F7F5]" />
+                              <ChevronUp size={14} className="text-[#0B3D2B] dark:text-[#F7F7F5]" />
                             ) : (
-                              <ChevronDown size={14} className="text-[#04314A] dark:text-[#F7F7F5]" />
+                              <ChevronDown size={14} className="text-[#0B3D2B] dark:text-[#F7F7F5]" />
                             )
                           ) : (
                             <ChevronsUpDown size={14} />
@@ -238,18 +238,18 @@ export function DataTable<T extends Record<string, any>>({
             </tr>
           </thead>
 
-          <tbody className="divide-y divide-[#E8E8E5] dark:divide-[#174261]">
+          <tbody className="divide-y divide-[#E8E8E5] dark:divide-[#1B5039]">
             {loading ? (
               Array.from({ length: Math.min(pageSize, 5) }).map((_, rIdx) => (
                 <tr key={`skeleton-${rIdx}`}>
                   {columns.map((col, cIdx) => (
                     <td key={`s-col-${cIdx}`} className="px-4 py-3.5">
-                      <div className="h-4 bg-[#F0F0ED] rounded max-w-[80%] dark:bg-[#10334C]" />
+                      <div className="h-4 bg-[#F0F0ED] rounded max-w-[80%] dark:bg-[#113A2B]" />
                     </td>
                   ))}
                   {rowActions && (
                     <td className="px-4 py-3.5 text-right">
-                      <div className="h-6 w-14 bg-[#F0F0ED] rounded ml-auto dark:bg-[#10334C]" />
+                      <div className="h-6 w-14 bg-[#F0F0ED] rounded ml-auto dark:bg-[#113A2B]" />
                     </td>
                   )}
                 </tr>
@@ -272,7 +272,7 @@ export function DataTable<T extends Record<string, any>>({
                 <tr
                   key={String(keyExtractor(row, rIdx))}
                   onClick={() => onRowClick && onRowClick(row)}
-                  className={`transition-colors hover:bg-[#FAFAF8] dark:hover:bg-[#10334C] ${
+                  className={`transition-colors hover:bg-[#FAFAF8] dark:hover:bg-[#113A2B] ${
                     onRowClick ? "cursor-pointer" : ""
                   }`}
                 >
@@ -287,7 +287,7 @@ export function DataTable<T extends Record<string, any>>({
                     return (
                       <td
                         key={col.key}
-                        className={`px-4 py-3 text-[12px] text-[#04314A] dark:text-[#F7F7F5] ${alignClass}`}
+                        className={`px-4 py-3 text-[12px] text-[#0B3D2B] dark:text-[#F7F7F5] ${alignClass}`}
                       >
                         {col.render
                           ? col.render(row, rIdx)
@@ -311,19 +311,19 @@ export function DataTable<T extends Record<string, any>>({
       </div>
 
       {showPagination && !loading && recordCount > 0 && (
-        <div className="flex flex-wrap items-center justify-between gap-3 px-4 py-3 border-t border-[#E8E8E5] bg-[#FAFAF8] text-[11px] text-[#737373] dark:bg-[#061824] dark:border-[#174261] dark:text-[#94A3B8]">
+        <div className="flex flex-wrap items-center justify-between gap-3 px-4 py-3 border-t border-[#E8E8E5] bg-[#FAFAF8] text-[11px] text-[#737373] dark:bg-[#071713] dark:border-[#1B5039] dark:text-[#94A3B8]">
           <div className="flex flex-wrap items-center gap-3">
             <div>
-              Showing <strong className="text-[#04314A] dark:text-[#F7F7F5]">{startRecord}</strong> to{" "}
-              <strong className="text-[#04314A] dark:text-[#F7F7F5]">{endRecord}</strong> of{" "}
-              <strong className="text-[#04314A] dark:text-[#F7F7F5]">{recordCount}</strong> records
+              Showing <strong className="text-[#0B3D2B] dark:text-[#F7F7F5]">{startRecord}</strong> to{" "}
+              <strong className="text-[#0B3D2B] dark:text-[#F7F7F5]">{endRecord}</strong> of{" "}
+              <strong className="text-[#0B3D2B] dark:text-[#F7F7F5]">{recordCount}</strong> records
             </div>
             <label className="inline-flex items-center gap-1.5 text-[11px] text-[#737373]">
               <span className="whitespace-nowrap">Rows per page</span>
               <select
                 value={pageSize}
                 onChange={(event) => changePageSize(Number(event.target.value))}
-                className="h-8 rounded-lg border border-[#E8E8E5] bg-white px-2 text-[11px] font-medium text-[#04314A] focus:outline-none focus:ring-1 focus:ring-[#00AAEB] dark:border-[#174261] dark:bg-[#0B2538] dark:text-[#F7F7F5]"
+                className="h-8 rounded-lg border border-[#E8E8E5] bg-white px-2 text-[11px] font-medium text-[#0B3D2B] focus:outline-none focus:ring-1 focus:ring-[#10B981] dark:border-[#1B5039] dark:bg-[#0C2620] dark:text-[#F7F7F5]"
                 aria-label="Rows per page"
               >
                 {pageSizeOptions.map((size) => (
@@ -347,7 +347,7 @@ export function DataTable<T extends Record<string, any>>({
               Previous
             </Button>
 
-            <span className="min-w-[5.5rem] text-center text-[11px] font-medium tabular-nums text-[#04314A] dark:text-[#F7F7F5]">
+            <span className="min-w-[5.5rem] text-center text-[11px] font-medium tabular-nums text-[#0B3D2B] dark:text-[#F7F7F5]">
               Page {currentPage} of {totalPages}
             </span>
 

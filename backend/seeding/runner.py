@@ -1,4 +1,4 @@
-"""Orchestration for the complete Vehicle Template demo seed."""
+"""Orchestration for the complete EV OS demo seed."""
 
 from __future__ import annotations
 
@@ -97,7 +97,7 @@ def _verify() -> list[str]:
 
 
 def run_seed() -> dict[str, object]:
-    log("Seeding complete Vehicle Template demo data...")
+    log("Seeding complete EV OS demo data...")
     state: dict[str, object] = {}
     failures: list[tuple[str, BaseException]] = []
 

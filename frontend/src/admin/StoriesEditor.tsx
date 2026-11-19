@@ -396,7 +396,7 @@ export default function StoriesEditor({
   if (loading) {
     return (
       <div className="flex flex-col items-center justify-center py-32 text-[#737373] gap-3">
-        <Loader2 size={24} className="animate-spin text-[#00AAEB]" />
+        <Loader2 size={24} className="animate-spin text-[#10B981]" />
         <span className="text-[14px] font-medium">Loading story details…</span>
       </div>
     );
@@ -417,7 +417,7 @@ export default function StoriesEditor({
           <div className="flex items-center gap-3 min-w-0">
             <button
               onClick={() => onNavigate(basePathResolved)}
-              className="w-9 h-9 border border-[#E8E8E5] bg-white rounded-xl flex items-center justify-center text-[#04314A] hover:bg-[#04314A] hover:text-white transition-all shadow-xs shrink-0"
+              className="w-9 h-9 border border-[#E8E8E5] bg-white rounded-xl flex items-center justify-center text-[#0B3D2B] hover:bg-[#0B3D2B] hover:text-white transition-all shadow-xs shrink-0"
               title="Back to stories list"
             >
               <ArrowLeft size={16} />
@@ -426,21 +426,21 @@ export default function StoriesEditor({
               <div className="flex items-center gap-2 text-[11px] font-semibold text-[#737373] mb-0.5">
                 <button
                   onClick={() => onNavigate(basePathResolved)}
-                  className="hover:text-[#00AAEB] transition-colors"
+                  className="hover:text-[#10B981] transition-colors"
                 >
                   {basePathResolved === "servicing-stories" ? "Stories" : "Blog"}
                 </button>
                 <span>/</span>
-                <span className="text-[#04314A] font-bold truncate max-w-[200px] sm:max-w-[320px]">
+                <span className="text-[#0B3D2B] font-bold truncate max-w-[200px] sm:max-w-[320px]">
                   {form.title ? form.title : isNew ? "Create New Story" : "Untitled"}
                 </span>
                 <span className={`text-[11px] font-semibold uppercase tracking-[0.04em] ${
-                  status === "published" ? "text-[#00AAEB]" : "text-[#737373]"
+                  status === "published" ? "text-[#10B981]" : "text-[#737373]"
                 }`}>
                   {status}
                 </span>
               </div>
-              <h1 className="text-[20px] sm:text-[22px] font-black tracking-tight text-[#04314A] leading-none truncate">
+              <h1 className="text-[20px] sm:text-[22px] font-black tracking-tight text-[#0B3D2B] leading-none truncate">
                 {isNew ? "Create Story" : "Story Editor"}
               </h1>
             </div>
@@ -453,7 +453,7 @@ export default function StoriesEditor({
                 <button
                   type="button"
                   onClick={preview}
-                  className="flex items-center gap-1.5 px-3.5 py-2 bg-white border border-[#E8E8E5] rounded-xl text-[12px] font-semibold text-[#04314A] hover:border-[#00AAEB] hover:text-[#00AAEB] shadow-xs transition-colors"
+                  className="flex items-center gap-1.5 px-3.5 py-2 bg-white border border-[#E8E8E5] rounded-xl text-[12px] font-semibold text-[#0B3D2B] hover:border-[#10B981] hover:text-[#10B981] shadow-xs transition-colors"
                   title="Preview story in public layout"
                 >
                   <ExternalLink size={14} /> Preview
@@ -474,7 +474,7 @@ export default function StoriesEditor({
               type="button"
               onClick={() => save(status === "published" ? undefined : "draft")}
               disabled={busy}
-              className="flex items-center gap-1.5 px-4 py-2 bg-white border border-[#04314A]/20 text-[#04314A] rounded-xl text-[12px] font-bold hover:bg-[#04314A] hover:text-white shadow-xs transition-all disabled:opacity-50"
+              className="flex items-center gap-1.5 px-4 py-2 bg-white border border-[#0B3D2B]/20 text-[#0B3D2B] rounded-xl text-[12px] font-bold hover:bg-[#0B3D2B] hover:text-white shadow-xs transition-all disabled:opacity-50"
             >
               {busy ? <Loader2 size={14} className="animate-spin" /> : <Save size={14} />}
               {status === "published" ? "Save Changes" : "Save Draft"}
@@ -485,7 +485,7 @@ export default function StoriesEditor({
                 type="button"
                 onClick={() => save("published")}
                 disabled={busy}
-                className="flex items-center gap-1.5 px-5 py-2 bg-[#00AAEB] text-white rounded-xl text-[12px] font-bold hover:bg-[#04314A] shadow-sm transition-all disabled:opacity-50"
+                className="flex items-center gap-1.5 px-5 py-2 bg-[#10B981] text-white rounded-xl text-[12px] font-bold hover:bg-[#0B3D2B] shadow-sm transition-all disabled:opacity-50"
               >
                 {busy ? <Loader2 size={14} className="animate-spin" /> : <Send size={14} />}
                 Publish Now
@@ -495,7 +495,7 @@ export default function StoriesEditor({
                 type="button"
                 onClick={() => save("published")}
                 disabled={busy}
-                className="flex items-center gap-1.5 px-5 py-2 bg-[#04314A] text-white rounded-xl text-[12px] font-bold hover:bg-[#00AAEB] shadow-sm transition-all disabled:opacity-50"
+                className="flex items-center gap-1.5 px-5 py-2 bg-[#0B3D2B] text-white rounded-xl text-[12px] font-bold hover:bg-[#10B981] shadow-sm transition-all disabled:opacity-50"
               >
                 {busy ? <Loader2 size={14} className="animate-spin" /> : <Check size={14} />}
                 Update Story
@@ -541,7 +541,7 @@ export default function StoriesEditor({
                   <button
                     type="button"
                     onClick={() => setActiveTab("media")}
-                    className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-white/90 text-[#04314A] hover:bg-white text-[11px] font-bold shadow-md transition-colors"
+                    className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-white/90 text-[#0B3D2B] hover:bg-white text-[11px] font-bold shadow-md transition-colors"
                   >
                     <ImageIcon size={13} /> Change Cover
                   </button>
@@ -553,12 +553,12 @@ export default function StoriesEditor({
             <div className="p-6 sm:p-8 pb-4">
               {/* Category Pill Tag */}
               <div className="flex items-center gap-2 mb-3">
-                <span className="inline-flex items-center gap-1.5 text-[#00AAEB] text-[11px] font-semibold uppercase tracking-wider">
+                <span className="inline-flex items-center gap-1.5 text-[#10B981] text-[11px] font-semibold uppercase tracking-wider">
                   <Folder size={12} /> {form.category || "General"}
                 </span>
                 {form.is_featured && (
-                  <span className="inline-flex items-center gap-1 text-[#04314A] text-[11px] font-semibold uppercase tracking-wider">
-                    <Flame size={12} className="text-[#00AAEB]" /> Featured
+                  <span className="inline-flex items-center gap-1 text-[#0B3D2B] text-[11px] font-semibold uppercase tracking-wider">
+                    <Flame size={12} className="text-[#10B981]" /> Featured
                   </span>
                 )}
               </div>
@@ -569,7 +569,7 @@ export default function StoriesEditor({
                 value={form.title}
                 onChange={(e) => setTitle(e.target.value)}
                 placeholder="Story Title…"
-                className="w-full text-[24px] sm:text-[32px] font-black tracking-tight text-[#04314A] placeholder:text-[#04314A]/25 border-0 focus:outline-none focus:ring-0 p-0 resize-none leading-tight"
+                className="w-full text-[24px] sm:text-[32px] font-black tracking-tight text-[#0B3D2B] placeholder:text-[#0B3D2B]/25 border-0 focus:outline-none focus:ring-0 p-0 resize-none leading-tight"
               />
 
               {/* Excerpt / Lead deck */}
@@ -605,8 +605,8 @@ export default function StoriesEditor({
               onClick={() => setActiveTab("settings")}
               className={`flex-1 flex items-center justify-center gap-1.5 py-2 text-[12px] font-bold rounded-lg transition-all ${
                 activeTab === "settings"
-                  ? "bg-[#04314A] text-white shadow-xs"
-                  : "text-[#737373] hover:text-[#04314A]"
+                  ? "bg-[#0B3D2B] text-white shadow-xs"
+                  : "text-[#737373] hover:text-[#0B3D2B]"
               }`}
             >
               <Settings size={14} /> Settings
@@ -616,8 +616,8 @@ export default function StoriesEditor({
               onClick={() => setActiveTab("media")}
               className={`flex-1 flex items-center justify-center gap-1.5 py-2 text-[12px] font-bold rounded-lg transition-all ${
                 activeTab === "media"
-                  ? "bg-[#04314A] text-white shadow-xs"
-                  : "text-[#737373] hover:text-[#04314A]"
+                  ? "bg-[#0B3D2B] text-white shadow-xs"
+                  : "text-[#737373] hover:text-[#0B3D2B]"
               }`}
             >
               <ImageIcon size={14} /> Media
@@ -627,8 +627,8 @@ export default function StoriesEditor({
               onClick={() => setActiveTab("seo")}
               className={`flex-1 flex items-center justify-center gap-1.5 py-2 text-[12px] font-bold rounded-lg transition-all ${
                 activeTab === "seo"
-                  ? "bg-[#04314A] text-white shadow-xs"
-                  : "text-[#737373] hover:text-[#04314A]"
+                  ? "bg-[#0B3D2B] text-white shadow-xs"
+                  : "text-[#737373] hover:text-[#0B3D2B]"
               }`}
             >
               <Globe size={14} /> SEO & Social
@@ -641,13 +641,13 @@ export default function StoriesEditor({
               {/* Publishing & Visibility */}
               <div className="bg-white border border-[#E8E8E5] rounded-2xl p-5 shadow-xs space-y-4">
                 <div className="flex items-center justify-between pb-3 border-b border-[#E8E8E5]">
-                  <h3 className="text-[12px] font-bold uppercase tracking-wider text-[#04314A] flex items-center gap-2">
-                    <Calendar size={14} className="text-[#00AAEB]" /> Publishing
+                  <h3 className="text-[12px] font-bold uppercase tracking-wider text-[#0B3D2B] flex items-center gap-2">
+                    <Calendar size={14} className="text-[#10B981]" /> Publishing
                   </h3>
                   <span
                     className={`text-[11px] font-semibold uppercase tracking-wider ${
                       status === "published"
-                        ? "text-[#00AAEB]"
+                        ? "text-[#10B981]"
                         : "text-[#737373]"
                     }`}
                   >
@@ -663,7 +663,7 @@ export default function StoriesEditor({
                     <select
                       value={form.status}
                       onChange={(e) => patch({ status: e.target.value as StoryStatus })}
-                      className="w-full border border-[#E8E8E5] rounded-xl bg-white px-3 py-2 text-[13px] font-semibold text-[#04314A] focus:outline-none focus:border-[#00AAEB] cursor-pointer"
+                      className="w-full border border-[#E8E8E5] rounded-xl bg-white px-3 py-2 text-[13px] font-semibold text-[#0B3D2B] focus:outline-none focus:border-[#10B981] cursor-pointer"
                     >
                       <option value="draft">Draft (Private)</option>
                       <option value="published">Published (Public)</option>
@@ -679,7 +679,7 @@ export default function StoriesEditor({
                       <button
                         type="button"
                         onClick={() => patch({ published_date: new Date().toISOString().slice(0, 10) })}
-                        className="text-[10px] font-bold text-[#00AAEB] hover:underline"
+                        className="text-[10px] font-bold text-[#10B981] hover:underline"
                       >
                         Set to Today
                       </button>
@@ -688,7 +688,7 @@ export default function StoriesEditor({
                       type="date"
                       value={form.published_date}
                       onChange={(e) => patch({ published_date: e.target.value })}
-                      className="w-full border border-[#E8E8E5] rounded-xl bg-white px-3 py-2 text-[13px] font-medium text-[#04314A] focus:outline-none focus:border-[#00AAEB]"
+                      className="w-full border border-[#E8E8E5] rounded-xl bg-white px-3 py-2 text-[13px] font-medium text-[#0B3D2B] focus:outline-none focus:border-[#10B981]"
                     />
                   </div>
 
@@ -700,7 +700,7 @@ export default function StoriesEditor({
                       <select
                         value={form.author}
                         onChange={(e) => patch({ author: e.target.value })}
-                        className="w-full border border-[#E8E8E5] rounded-xl bg-white px-3 py-2 text-[13px] font-medium text-[#04314A] focus:outline-none focus:border-[#00AAEB] cursor-pointer"
+                        className="w-full border border-[#E8E8E5] rounded-xl bg-white px-3 py-2 text-[13px] font-medium text-[#0B3D2B] focus:outline-none focus:border-[#10B981] cursor-pointer"
                       >
                         <option value="">(Current User)</option>
                         {users.map((u) => (
@@ -715,7 +715,7 @@ export default function StoriesEditor({
                   {/* Featured story toggle */}
                   <label className="flex items-center justify-between p-3 bg-[#FAFAF8] border border-[#E8E8E5] rounded-xl cursor-pointer select-none hover:bg-[#F0F0ED] transition-colors">
                     <div>
-                      <span className="text-[12px] font-bold text-[#04314A] block">
+                      <span className="text-[12px] font-bold text-[#0B3D2B] block">
                         Featured Story
                       </span>
                       <span className="text-[10px] text-[#737373]">
@@ -726,7 +726,7 @@ export default function StoriesEditor({
                       type="checkbox"
                       checked={form.is_featured}
                       onChange={(e) => patch({ is_featured: e.target.checked })}
-                      className="w-4 h-4 rounded text-[#00AAEB] focus:ring-[#00AAEB]"
+                      className="w-4 h-4 rounded text-[#10B981] focus:ring-[#10B981]"
                     />
                   </label>
                 </div>
@@ -735,8 +735,8 @@ export default function StoriesEditor({
               {/* Taxonomy (Category & Tags) */}
               <div className="bg-white border border-[#E8E8E5] rounded-2xl p-5 shadow-xs space-y-4">
                 <div className="flex items-center justify-between pb-3 border-b border-[#E8E8E5]">
-                  <h3 className="text-[12px] font-bold uppercase tracking-wider text-[#04314A] flex items-center gap-2">
-                    <Tag size={14} className="text-[#00AAEB]" /> Taxonomy
+                  <h3 className="text-[12px] font-bold uppercase tracking-wider text-[#0B3D2B] flex items-center gap-2">
+                    <Tag size={14} className="text-[#10B981]" /> Taxonomy
                   </h3>
                 </div>
 
@@ -754,8 +754,8 @@ export default function StoriesEditor({
                         onClick={() => patch({ category: cat })}
                         className={`px-2.5 py-1 rounded-lg text-[11px] font-semibold transition-colors ${
                           form.category.toLowerCase() === cat.toLowerCase()
-                            ? "bg-[#04314A] text-white"
-                            : "bg-[#F0F0ED] text-[#04314A] hover:bg-[#E8E8E5]"
+                            ? "bg-[#0B3D2B] text-white"
+                            : "bg-[#F0F0ED] text-[#0B3D2B] hover:bg-[#E8E8E5]"
                         }`}
                       >
                         {cat}
@@ -767,7 +767,7 @@ export default function StoriesEditor({
                     onChange={(e) => patch({ category: e.target.value })}
                     placeholder="Enter or select category…"
                     list="category-suggestions"
-                    className="w-full border border-[#E8E8E5] rounded-xl bg-white px-3 py-2 text-[13px] font-medium text-[#04314A] focus:outline-none focus:border-[#00AAEB]"
+                    className="w-full border border-[#E8E8E5] rounded-xl bg-white px-3 py-2 text-[13px] font-medium text-[#0B3D2B] focus:outline-none focus:border-[#10B981]"
                   />
                   <datalist id="category-suggestions">
                     {categories.map((c) => (
@@ -781,11 +781,11 @@ export default function StoriesEditor({
                   <label className="text-[10px] font-bold uppercase tracking-wider text-[#737373] block mb-1.5">
                     Tags ({currentTags.length})
                   </label>
-                  <div className="border border-[#E8E8E5] rounded-xl bg-white p-2 min-h-[44px] flex flex-wrap items-center gap-1.5 focus-within:border-[#00AAEB] transition-colors">
+                  <div className="border border-[#E8E8E5] rounded-xl bg-white p-2 min-h-[44px] flex flex-wrap items-center gap-1.5 focus-within:border-[#10B981] transition-colors">
                     {currentTags.map((tag) => (
                       <span
                         key={tag}
-                        className="inline-flex items-center gap-1 bg-[#00AAEB]/10 text-[#00AAEB] px-2.5 py-0.5 rounded-lg text-[11px] font-bold"
+                        className="inline-flex items-center gap-1 bg-[#10B981]/10 text-[#10B981] px-2.5 py-0.5 rounded-lg text-[11px] font-bold"
                       >
                         #{tag}
                         <button
@@ -803,7 +803,7 @@ export default function StoriesEditor({
                       onKeyDown={handleTagKeyDown}
                       onBlur={() => tagInput.trim() && addTag(tagInput)}
                       placeholder={currentTags.length === 0 ? "Type tag & hit enter…" : "Add more…"}
-                      className="flex-1 min-w-[100px] border-0 text-[12px] font-medium text-[#04314A] placeholder:text-[#B0B0AA] focus:outline-none p-1"
+                      className="flex-1 min-w-[100px] border-0 text-[12px] font-medium text-[#0B3D2B] placeholder:text-[#B0B0AA] focus:outline-none p-1"
                     />
                   </div>
 
@@ -820,7 +820,7 @@ export default function StoriesEditor({
                             key={pt}
                             type="button"
                             onClick={() => addTag(pt)}
-                            className="text-[10px] font-medium px-2 py-0.5 rounded-md bg-[#F7F7F5] border border-[#E8E8E5] text-[#737373] hover:border-[#00AAEB] hover:text-[#00AAEB] transition-colors"
+                            className="text-[10px] font-medium px-2 py-0.5 rounded-md bg-[#F7F7F5] border border-[#E8E8E5] text-[#737373] hover:border-[#10B981] hover:text-[#10B981] transition-colors"
                           >
                             + {pt}
                           </button>
@@ -833,8 +833,8 @@ export default function StoriesEditor({
               {/* URL & Permalink */}
               <div className="bg-white border border-[#E8E8E5] rounded-2xl p-5 shadow-xs space-y-3">
                 <div className="flex items-center justify-between pb-2 border-b border-[#E8E8E5]">
-                  <h3 className="text-[12px] font-bold uppercase tracking-wider text-[#04314A] flex items-center gap-2">
-                    <Globe size={14} className="text-[#00AAEB]" /> Public Permalink
+                  <h3 className="text-[12px] font-bold uppercase tracking-wider text-[#0B3D2B] flex items-center gap-2">
+                    <Globe size={14} className="text-[#10B981]" /> Public Permalink
                   </h3>
                   <button
                     type="button"
@@ -844,21 +844,21 @@ export default function StoriesEditor({
                       toast.push("Slug regenerated from title");
                     }}
                     title="Regenerate slug from title"
-                    className="text-[10px] font-bold text-[#00AAEB] hover:underline flex items-center gap-1"
+                    className="text-[10px] font-bold text-[#10B981] hover:underline flex items-center gap-1"
                   >
                     <RefreshCw size={10} /> Auto-Generate
                   </button>
                 </div>
 
                 {/* URL preview pill */}
-                <div className="flex items-center justify-between bg-[#F7F7F5] border border-[#E8E8E5] rounded-xl px-3 py-2 text-[12px] text-[#04314A]">
+                <div className="flex items-center justify-between bg-[#F7F7F5] border border-[#E8E8E5] rounded-xl px-3 py-2 text-[12px] text-[#0B3D2B]">
                   <span className="truncate text-[11px] text-[#737373]">
                     {publicUrl}
                   </span>
                   <button
                     type="button"
                     onClick={copyPublicUrl}
-                    className="flex items-center gap-1 text-[11px] font-bold text-[#00AAEB] hover:text-[#04314A] ml-2 shrink-0"
+                    className="flex items-center gap-1 text-[11px] font-bold text-[#10B981] hover:text-[#0B3D2B] ml-2 shrink-0"
                   >
                     {copiedUrl ? <Check size={13} /> : <Copy size={13} />}
                     {copiedUrl ? "Copied" : "Copy"}
@@ -876,7 +876,7 @@ export default function StoriesEditor({
                       patch({ slug: slugifyTitle(e.target.value) });
                     }}
                     placeholder="custom-story-slug"
-                    className="w-full border border-[#E8E8E5] rounded-xl bg-white px-3 py-2 text-[12px] text-[#04314A] focus:outline-none focus:border-[#00AAEB]"
+                    className="w-full border border-[#E8E8E5] rounded-xl bg-white px-3 py-2 text-[12px] text-[#0B3D2B] focus:outline-none focus:border-[#10B981]"
                   />
                 </div>
               </div>
@@ -887,12 +887,12 @@ export default function StoriesEditor({
                   className="flex items-center justify-between cursor-pointer select-none"
                   onClick={() => setShowAuthorOverride(!showAuthorOverride)}
                 >
-                  <h3 className="text-[12px] font-bold uppercase tracking-wider text-[#04314A] flex items-center gap-2">
-                    <User size={14} className="text-[#00AAEB]" /> Custom Author Info
+                  <h3 className="text-[12px] font-bold uppercase tracking-wider text-[#0B3D2B] flex items-center gap-2">
+                    <User size={14} className="text-[#10B981]" /> Custom Author Info
                   </h3>
                   <button
                     type="button"
-                    className="text-[11px] font-semibold text-[#00AAEB]"
+                    className="text-[11px] font-semibold text-[#10B981]"
                   >
                     {showAuthorOverride ? "Collapse" : "Edit"}
                   </button>
@@ -908,7 +908,7 @@ export default function StoriesEditor({
                         value={form.author_role}
                         onChange={(e) => patch({ author_role: e.target.value })}
                         placeholder="e.g. Field Operations Lead"
-                        className="w-full border border-[#E8E8E5] rounded-xl bg-white px-3 py-2 text-[12px] font-medium text-[#04314A] focus:outline-none focus:border-[#00AAEB]"
+                        className="w-full border border-[#E8E8E5] rounded-xl bg-white px-3 py-2 text-[12px] font-medium text-[#0B3D2B] focus:outline-none focus:border-[#10B981]"
                       />
                     </div>
                     <div>
@@ -920,7 +920,7 @@ export default function StoriesEditor({
                         value={form.author_bio}
                         onChange={(e) => patch({ author_bio: e.target.value })}
                         placeholder="Brief bio shown at the footer of the story…"
-                        className="w-full border border-[#E8E8E5] rounded-xl bg-white px-3 py-2 text-[12px] font-medium text-[#04314A] focus:outline-none focus:border-[#00AAEB] resize-none"
+                        className="w-full border border-[#E8E8E5] rounded-xl bg-white px-3 py-2 text-[12px] font-medium text-[#0B3D2B] focus:outline-none focus:border-[#10B981] resize-none"
                       />
                     </div>
                   </div>
@@ -932,7 +932,7 @@ export default function StoriesEditor({
                   type="button"
                   onClick={togglePublish}
                   disabled={busy}
-                  className="w-full py-3 bg-white border border-[#E8E8E5] hover:border-[#04314A] rounded-xl text-[12px] font-bold text-[#04314A] shadow-xs transition-colors"
+                  className="w-full py-3 bg-white border border-[#E8E8E5] hover:border-[#0B3D2B] rounded-xl text-[12px] font-bold text-[#0B3D2B] shadow-xs transition-colors"
                 >
                   {status === "published"
                     ? "Unpublish (Move back to Draft)"
@@ -948,8 +948,8 @@ export default function StoriesEditor({
               {/* Featured Cover Image */}
               <div className="bg-white border border-[#E8E8E5] rounded-2xl p-5 shadow-xs space-y-4">
                 <div className="flex items-center justify-between pb-3 border-b border-[#E8E8E5]">
-                  <h3 className="text-[12px] font-bold uppercase tracking-wider text-[#04314A] flex items-center gap-2">
-                    <ImageIcon size={14} className="text-[#00AAEB]" /> Featured Image
+                  <h3 className="text-[12px] font-bold uppercase tracking-wider text-[#0B3D2B] flex items-center gap-2">
+                    <ImageIcon size={14} className="text-[#10B981]" /> Featured Image
                   </h3>
                   {imagePreview && (
                     <button
@@ -999,7 +999,7 @@ export default function StoriesEditor({
                     onClick={() => setMediaUploadTab("upload")}
                     className={`flex-1 py-1.5 text-[11px] font-bold rounded-lg transition-colors ${
                       mediaUploadTab === "upload"
-                        ? "bg-white text-[#04314A] shadow-xs"
+                        ? "bg-white text-[#0B3D2B] shadow-xs"
                         : "text-[#737373]"
                     }`}
                   >
@@ -1010,7 +1010,7 @@ export default function StoriesEditor({
                     onClick={() => setMediaUploadTab("url")}
                     className={`flex-1 py-1.5 text-[11px] font-bold rounded-lg transition-colors ${
                       mediaUploadTab === "url"
-                        ? "bg-white text-[#04314A] shadow-xs"
+                        ? "bg-white text-[#0B3D2B] shadow-xs"
                         : "text-[#737373]"
                     }`}
                   >
@@ -1035,10 +1035,10 @@ export default function StoriesEditor({
                     />
                     <label
                       htmlFor="sidebar-image-upload"
-                      className="flex flex-col items-center justify-center p-4 border border-dashed border-[#D0D0CB] hover:border-[#00AAEB] bg-white rounded-xl cursor-pointer text-center transition-colors"
+                      className="flex flex-col items-center justify-center p-4 border border-dashed border-[#D0D0CB] hover:border-[#10B981] bg-white rounded-xl cursor-pointer text-center transition-colors"
                     >
-                      <Upload size={20} className="text-[#00AAEB] mb-1" />
-                      <span className="text-[12px] font-bold text-[#04314A]">
+                      <Upload size={20} className="text-[#10B981] mb-1" />
+                      <span className="text-[12px] font-bold text-[#0B3D2B]">
                         {imageFile ? imageFile.name : "Choose an image file"}
                       </span>
                       <span className="text-[10px] text-[#A0A09A] mt-0.5">
@@ -1058,7 +1058,7 @@ export default function StoriesEditor({
                         patch({ image_url: e.target.value });
                       }}
                       placeholder="https://images.unsplash.com/..."
-                      className="w-full border border-[#E8E8E5] rounded-xl bg-white px-3 py-2 text-[12px] font-medium text-[#04314A] focus:outline-none focus:border-[#00AAEB]"
+                      className="w-full border border-[#E8E8E5] rounded-xl bg-white px-3 py-2 text-[12px] font-medium text-[#0B3D2B] focus:outline-none focus:border-[#10B981]"
                     />
                   </div>
                 )}
@@ -1072,7 +1072,7 @@ export default function StoriesEditor({
                     value={form.alt_text}
                     onChange={(e) => patch({ alt_text: e.target.value })}
                     placeholder="e.g. VT Cargo 10T truck on a highway"
-                    className="w-full border border-[#E8E8E5] rounded-xl bg-white px-3 py-2 text-[12px] font-medium text-[#04314A] focus:outline-none focus:border-[#00AAEB]"
+                    className="w-full border border-[#E8E8E5] rounded-xl bg-white px-3 py-2 text-[12px] font-medium text-[#0B3D2B] focus:outline-none focus:border-[#10B981]"
                   />
                 </div>
               </div>
@@ -1080,8 +1080,8 @@ export default function StoriesEditor({
               {/* Social / Open Graph Image */}
               <div className="bg-white border border-[#E8E8E5] rounded-2xl p-5 shadow-xs space-y-3">
                 <div className="flex items-center justify-between pb-2 border-b border-[#E8E8E5]">
-                  <h3 className="text-[12px] font-bold uppercase tracking-wider text-[#04314A] flex items-center gap-2">
-                    <Share2 size={14} className="text-[#00AAEB]" /> Social / OG Image
+                  <h3 className="text-[12px] font-bold uppercase tracking-wider text-[#0B3D2B] flex items-center gap-2">
+                    <Share2 size={14} className="text-[#10B981]" /> Social / OG Image
                   </h3>
                 </div>
 
@@ -1097,7 +1097,7 @@ export default function StoriesEditor({
                     value={form.og_image_url}
                     onChange={(e) => patch({ og_image_url: e.target.value })}
                     placeholder="Defaults to featured image"
-                    className="w-full border border-[#E8E8E5] rounded-xl bg-white px-3 py-2 text-[12px] font-medium text-[#04314A] focus:outline-none focus:border-[#00AAEB]"
+                    className="w-full border border-[#E8E8E5] rounded-xl bg-white px-3 py-2 text-[12px] font-medium text-[#0B3D2B] focus:outline-none focus:border-[#10B981]"
                   />
                 </div>
 
@@ -1111,7 +1111,7 @@ export default function StoriesEditor({
                   />
                   <label
                     htmlFor="sidebar-og-upload"
-                    className="flex items-center justify-center gap-2 py-2 px-3 border border-[#E8E8E5] rounded-xl text-[11px] font-semibold text-[#04314A] hover:bg-[#F7F7F5] cursor-pointer transition-colors"
+                    className="flex items-center justify-center gap-2 py-2 px-3 border border-[#E8E8E5] rounded-xl text-[11px] font-semibold text-[#0B3D2B] hover:bg-[#F7F7F5] cursor-pointer transition-colors"
                   >
                     <Upload size={13} /> {ogImageFile ? ogImageFile.name : "…or upload custom social image"}
                   </label>
@@ -1126,8 +1126,8 @@ export default function StoriesEditor({
               {/* Google Search Result Preview */}
               <div className="bg-white border border-[#E8E8E5] rounded-2xl p-5 shadow-xs space-y-3">
                 <div className="flex items-center justify-between pb-2 border-b border-[#E8E8E5]">
-                  <h3 className="text-[12px] font-bold uppercase tracking-wider text-[#04314A] flex items-center gap-2">
-                    <Globe size={14} className="text-[#00AAEB]" /> Google Search Snippet
+                  <h3 className="text-[12px] font-bold uppercase tracking-wider text-[#0B3D2B] flex items-center gap-2">
+                    <Globe size={14} className="text-[#10B981]" /> Google Search Snippet
                   </h3>
                   <span className="text-[10px] font-medium text-[#737373]">Live Preview</span>
                 </div>
@@ -1135,10 +1135,10 @@ export default function StoriesEditor({
                 {/* Google SERP Card Mockup */}
                 <div className="bg-[#F8F9FA] p-3.5 rounded-xl border border-[#E8E8E5] space-y-1 font-sans">
                   <div className="flex items-center gap-1.5 text-[11px] text-[#202124]">
-                    <div className="w-4 h-4 rounded-full bg-[#04314A] text-white flex items-center justify-center text-[8px] font-bold">
+                    <div className="w-4 h-4 rounded-full bg-[#0B3D2B] text-white flex items-center justify-center text-[8px] font-bold">
                       F
                     </div>
-                    <span className="text-[#202124] font-medium">Vehicle Template</span>
+                    <span className="text-[#202124] font-medium">EV OS</span>
                     <span className="text-[#5f6368]">› stories › {form.slug || "story"}</span>
                   </div>
                   <h4 className="text-[15px] font-medium text-[#1a0dab] hover:underline cursor-pointer leading-snug line-clamp-1">
@@ -1147,7 +1147,7 @@ export default function StoriesEditor({
                   <p className="text-[12px] text-[#4d5156] line-clamp-2 leading-normal">
                     {form.seo_description ||
                       form.excerpt ||
-                      "Read the latest fleet updates, technology breakthroughs, and commercial EV stories from Vehicle Template."}
+                      "Read the latest fleet updates, technology breakthroughs, and commercial EV stories from EV OS."}
                   </p>
                 </div>
               </div>
@@ -1168,13 +1168,13 @@ export default function StoriesEditor({
                     maxLength={70}
                     onChange={(e) => patch({ seo_title: e.target.value })}
                     placeholder={form.title ? form.title : "Defaults to story title"}
-                    className="w-full border border-[#E8E8E5] rounded-xl bg-white px-3 py-2 text-[12px] font-medium text-[#04314A] focus:outline-none focus:border-[#00AAEB]"
+                    className="w-full border border-[#E8E8E5] rounded-xl bg-white px-3 py-2 text-[12px] font-medium text-[#0B3D2B] focus:outline-none focus:border-[#10B981]"
                   />
                   <div className="flex justify-end mt-1">
                     <button
                       type="button"
                       onClick={() => patch({ seo_title: form.title })}
-                      className="text-[10px] font-bold text-[#00AAEB] hover:underline"
+                      className="text-[10px] font-bold text-[#10B981] hover:underline"
                     >
                       Copy story title
                     </button>
@@ -1197,13 +1197,13 @@ export default function StoriesEditor({
                     value={form.seo_description}
                     onChange={(e) => patch({ seo_description: e.target.value })}
                     placeholder={form.excerpt ? form.excerpt : "Defaults to story excerpt…"}
-                    className="w-full border border-[#E8E8E5] rounded-xl bg-white px-3 py-2 text-[12px] font-medium text-[#04314A] focus:outline-none focus:border-[#00AAEB] resize-none"
+                    className="w-full border border-[#E8E8E5] rounded-xl bg-white px-3 py-2 text-[12px] font-medium text-[#0B3D2B] focus:outline-none focus:border-[#10B981] resize-none"
                   />
                   <div className="flex justify-end mt-1">
                     <button
                       type="button"
                       onClick={() => patch({ seo_description: form.excerpt })}
-                      className="text-[10px] font-bold text-[#00AAEB] hover:underline"
+                      className="text-[10px] font-bold text-[#10B981] hover:underline"
                     >
                       Copy story excerpt
                     </button>
@@ -1214,8 +1214,8 @@ export default function StoriesEditor({
               {/* Social Card Preview */}
               <div className="bg-white border border-[#E8E8E5] rounded-2xl p-5 shadow-xs space-y-3">
                 <div className="flex items-center justify-between pb-2 border-b border-[#E8E8E5]">
-                  <h3 className="text-[12px] font-bold uppercase tracking-wider text-[#04314A] flex items-center gap-2">
-                    <Share2 size={14} className="text-[#00AAEB]" /> Social Card Preview
+                  <h3 className="text-[12px] font-bold uppercase tracking-wider text-[#0B3D2B] flex items-center gap-2">
+                    <Share2 size={14} className="text-[#10B981]" /> Social Card Preview
                   </h3>
                   <span className="text-[10px] font-medium text-[#737373]">Facebook / LinkedIn</span>
                 </div>
@@ -1228,19 +1228,19 @@ export default function StoriesEditor({
                       className="w-full h-32 object-cover border-b border-[#E8E8E5]"
                     />
                   ) : (
-                    <div className="w-full h-24 bg-[#04314A] flex items-center justify-center text-white/50 text-[11px] font-semibold">
-                      Vehicle Template Commercial EVs
+                    <div className="w-full h-24 bg-[#0B3D2B] flex items-center justify-center text-white/50 text-[11px] font-semibold">
+                      EV OS Commercial EVs
                     </div>
                   )}
                   <div className="p-3 bg-[#F8FAFC]">
                     <span className="text-[10px] font-bold uppercase tracking-wider text-[#737373] block mb-0.5">
-                      vehicletemplate.example.com
+                      evos.example.com
                     </span>
-                    <h5 className="text-[12px] font-bold text-[#04314A] line-clamp-1 leading-snug">
+                    <h5 className="text-[12px] font-bold text-[#0B3D2B] line-clamp-1 leading-snug">
                       {form.seo_title || form.title || "Story Title"}
                     </h5>
                     <p className="text-[11px] text-[#64748B] line-clamp-1 mt-0.5">
-                      {form.seo_description || form.excerpt || "Read more at Vehicle Template."}
+                      {form.seo_description || form.excerpt || "Read more at EV OS."}
                     </p>
                   </div>
                 </div>
@@ -1256,14 +1256,14 @@ export default function StoriesEditor({
           <div className="space-y-4">
             <p className="text-[13px] text-[#737373] leading-relaxed">
               Are you sure you want to permanently delete{" "}
-              <span className="font-bold text-[#04314A]">&ldquo;{form.title}&rdquo;</span>?
+              <span className="font-bold text-[#0B3D2B]">&ldquo;{form.title}&rdquo;</span>?
               This action cannot be undone and will remove the story from the live website.
             </p>
             <div data-modal-actions className="flex gap-2.5 justify-end pt-3">
               <button
                 type="button"
                 onClick={() => setDeleting(false)}
-                className="px-5 py-2.5 border border-[#E8E8E5] rounded-xl text-[12px] font-semibold text-[#737373] hover:border-[#04314A] hover:text-[#04314A] transition-colors"
+                className="px-5 py-2.5 border border-[#E8E8E5] rounded-xl text-[12px] font-semibold text-[#737373] hover:border-[#0B3D2B] hover:text-[#0B3D2B] transition-colors"
               >
                 Cancel
               </button>

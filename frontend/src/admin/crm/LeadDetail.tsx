@@ -38,7 +38,7 @@ function InfoRow({ label, value }: { label: string; value: React.ReactNode }) {
   return (
     <div>
       <span className="block text-[10px] font-semibold tracking-[0.12em] uppercase text-[#737373] mb-1">{label}</span>
-      <span className="text-[13px] font-medium text-[#04314A]">{value || "-"}</span>
+      <span className="text-[13px] font-medium text-[#0B3D2B]">{value || "-"}</span>
     </div>
   );
 }
@@ -62,16 +62,16 @@ function ActivityTimeline({ activities }: { activities: Activity[] }) {
           <div className="border-l-2 border-[#F0F0ED] pl-4 flex flex-col gap-4">
             {items.map((a) => (
               <div key={a.id} className="relative">
-                <span className="absolute -left-[21px] top-1 w-2.5 h-2.5 rounded-full bg-[#00AAEB]" />
+                <span className="absolute -left-[21px] top-1 w-2.5 h-2.5 rounded-full bg-[#10B981]" />
                 <div className="flex items-center gap-2 mb-0.5">
-                  <span className={`text-[9px] font-bold tracking-[0.1em] uppercase px-2 py-0.5 rounded-full ${a.type === "status_change" || a.type === "lead_created" ? "bg-[#04314A] text-white" : "bg-[#F0F0ED] text-[#04314A]"}`}>
+                  <span className={`text-[9px] font-bold tracking-[0.1em] uppercase px-2 py-0.5 rounded-full ${a.type === "status_change" || a.type === "lead_created" ? "bg-[#0B3D2B] text-white" : "bg-[#F0F0ED] text-[#0B3D2B]"}`}>
                     {a.type === "lead_created" ? "Lead Created" : meta.activityLabels[a.type] ?? a.type}
                   </span>
                   <span className="text-[11px] text-[#737373]">
                     {new Date(a.datetime).toLocaleTimeString("en-US", { hour: "numeric", minute: "2-digit" })} · {a.user}
                   </span>
                 </div>
-                <p className="text-[13px] font-bold text-[#04314A]">{a.subject}</p>
+                <p className="text-[13px] font-bold text-[#0B3D2B]">{a.subject}</p>
                 {a.description && <p className="text-[12px] text-[#737373] leading-relaxed">{a.description}</p>}
               </div>
             ))}
@@ -112,7 +112,7 @@ function LeadPipelineStepper({
         {onSelectStatus && (
           <button
             onClick={() => onSelectStatus("new")}
-            className="text-[11px] font-bold text-[#00AAEB] hover:text-[#04314A]"
+            className="text-[11px] font-bold text-[#10B981] hover:text-[#0B3D2B]"
           >
             Re-open Lead →
           </button>
@@ -131,7 +131,7 @@ function LeadPipelineStepper({
           <span className="text-[10px] font-bold tracking-[0.14em] uppercase text-[#737373] block mb-0.5">
             Lead Qualification Stage
           </span>
-          <span className="text-[13px] font-black text-[#04314A]">
+          <span className="text-[13px] font-black text-[#0B3D2B]">
             {steps[currentIndex]?.label || "New Lead"}
           </span>
         </div>
@@ -153,22 +153,22 @@ function LeadPipelineStepper({
               onClick={() => onSelectStatus?.(step.key)}
               className={`p-3.5 rounded-xl border text-left transition-colors ${
                 isCurrent
-                  ? "border-[#00AAEB] bg-[#F7FCFE]"
+                  ? "border-[#10B981] bg-[#F7FCFE]"
                   : isCompleted
-                  ? "border-[#04314A] bg-[#F4F7F9] hover:border-[#00AAEB]"
-                  : "border-[#E8E8E5] bg-white opacity-70 hover:opacity-100 hover:border-[#00AAEB]"
+                  ? "border-[#0B3D2B] bg-[#F4F7F9] hover:border-[#10B981]"
+                  : "border-[#E8E8E5] bg-white opacity-70 hover:opacity-100 hover:border-[#10B981]"
               }`}
             >
               <div className="flex items-center gap-1.5 mb-1.5">
                 {isCompleted ? (
-                  <span className="w-4 h-4 rounded-full bg-[#04314A] text-white flex items-center justify-center text-[10px] font-bold">
+                  <span className="w-4 h-4 rounded-full bg-[#0B3D2B] text-white flex items-center justify-center text-[10px] font-bold">
                     ✓
                   </span>
                 ) : (
                   <span
                     className={`w-4 h-4 rounded-full flex items-center justify-center text-[10px] font-bold ${
                       isCurrent
-                        ? "bg-[#00AAEB] text-white"
+                        ? "bg-[#10B981] text-white"
                         : "bg-[#E8E8E5] text-[#737373]"
                     }`}
                   >
@@ -182,9 +182,9 @@ function LeadPipelineStepper({
               <div
                 className={`text-[12px] font-bold ${
                   isCurrent
-                    ? "text-[#00AAEB]"
+                    ? "text-[#10B981]"
                     : isCompleted
-                    ? "text-[#04314A]"
+                    ? "text-[#0B3D2B]"
                     : "text-[#737373]"
                 }`}
               >
@@ -302,7 +302,7 @@ export default function LeadDetail({
   }, [toastMsg]);
 
   if (loading) return <p className="text-[13px] text-[#737373]">Loading lead…</p>;
-  if (error) return <p className="text-[13px] text-[#00AAEB]">{error}</p>;
+  if (error) return <p className="text-[13px] text-[#10B981]">{error}</p>;
   if (!lead)
     return (
       <div>
@@ -414,18 +414,18 @@ export default function LeadDetail({
             <UserCheck size={14} /> Convert to Customer (Ready to Buy)
           </button>
         )}
-        <button onClick={handleDelete} className="inline-flex items-center gap-2 px-4 py-2.5 border border-[#E8E8E5] rounded-full text-[12px] font-semibold text-[#00AAEB] hover:bg-[#00AAEB] hover:text-white transition-colors">
+        <button onClick={handleDelete} className="inline-flex items-center gap-2 px-4 py-2.5 border border-[#E8E8E5] rounded-full text-[12px] font-semibold text-[#10B981] hover:bg-[#10B981] hover:text-white transition-colors">
           <Trash2 size={14} /> Delete Lead
         </button>
       </div>
 
       {convertedCustomer && (
-        <div className="mb-6 p-4 bg-[#F4F7F9] border border-[#04314A]/20 rounded-xl flex flex-wrap items-center justify-between gap-4">
+        <div className="mb-6 p-4 bg-[#F4F7F9] border border-[#0B3D2B]/20 rounded-xl flex flex-wrap items-center justify-between gap-4">
           <div>
-            <span className="text-[10px] font-bold uppercase tracking-[0.12em] text-[#04314A] block mb-0.5">
+            <span className="text-[10px] font-bold uppercase tracking-[0.12em] text-[#0B3D2B] block mb-0.5">
               Converted Customer Active
             </span>
-            <p className="text-[13px] text-[#04314A]">
+            <p className="text-[13px] text-[#0B3D2B]">
               This lead was converted to customer <span className="font-bold">{convertedCustomer.name}</span>. Test drives, quotations, unit reservations, and vehicle sales are conducted on the Customer profile.
             </p>
           </div>
@@ -439,7 +439,7 @@ export default function LeadDetail({
       )}
 
       {toastMsg && (
-        <p className="mb-6 text-[12px] font-semibold text-white bg-[#04314A] border-l-2 border-[#00AAEB] px-4 py-3 inline-block">
+        <p className="mb-6 text-[12px] font-semibold text-white bg-[#0B3D2B] border-l-2 border-[#10B981] px-4 py-3 inline-block">
           {toastMsg}
         </p>
       )}
@@ -448,11 +448,11 @@ export default function LeadDetail({
         {/* Lead information */}
         <div className="bg-white border border-[#E8E8E5] rounded-xl">
           <div className="px-6 py-4 border-b border-[#E8E8E5]">
-            <h2 className="text-[13px] font-black tracking-[0.12em] uppercase text-[#04314A]">Lead Information</h2>
+            <h2 className="text-[13px] font-black tracking-[0.12em] uppercase text-[#0B3D2B]">Lead Information</h2>
           </div>
           <div className="grid grid-cols-2 gap-x-4 gap-y-5 p-6">
-            <InfoRow label="Phone" value={<a href={`tel:${lead.phone}`} className="hover:text-[#00AAEB]">{lead.phone}</a>} />
-            <InfoRow label="Email" value={<a href={`mailto:${lead.email}`} className="break-all hover:text-[#00AAEB]">{lead.email}</a>} />
+            <InfoRow label="Phone" value={<a href={`tel:${lead.phone}`} className="hover:text-[#10B981]">{lead.phone}</a>} />
+            <InfoRow label="Email" value={<a href={`mailto:${lead.email}`} className="break-all hover:text-[#10B981]">{lead.email}</a>} />
             <InfoRow label="Company" value={lead.company} />
             <InfoRow label="Location" value={lead.address} />
             <InfoRow label="Lead Source" value={lead.source} />
@@ -469,7 +469,7 @@ export default function LeadDetail({
           {lead.notes && (
             <div className="border-t border-[#E8E8E5] px-6 py-5">
               <span className="block text-[10px] font-semibold tracking-[0.12em] uppercase text-[#737373] mb-2">Notes</span>
-              <p className="text-[13px] text-[#04314A] leading-relaxed">{lead.notes}</p>
+              <p className="text-[13px] text-[#0B3D2B] leading-relaxed">{lead.notes}</p>
             </div>
           )}
         </div>
@@ -477,8 +477,8 @@ export default function LeadDetail({
         {/* Activity timeline */}
         <div className="xl:col-span-2 bg-white border border-[#E8E8E5] rounded-xl">
           <div className="flex items-center justify-between px-6 py-4 border-b border-[#E8E8E5]">
-            <h2 className="text-[13px] font-black tracking-[0.12em] uppercase text-[#04314A]">Activity Timeline</h2>
-            <button onClick={() => setModal("activity")} className="text-[11px] font-semibold tracking-[0.08em] uppercase text-[#00AAEB] hover:text-[#04314A] transition-colors">
+            <h2 className="text-[13px] font-black tracking-[0.12em] uppercase text-[#0B3D2B]">Activity Timeline</h2>
+            <button onClick={() => setModal("activity")} className="text-[11px] font-semibold tracking-[0.08em] uppercase text-[#10B981] hover:text-[#0B3D2B] transition-colors">
               + Add Activity
             </button>
           </div>
@@ -496,8 +496,8 @@ export default function LeadDetail({
         <div className="mt-6 bg-white border border-[#E8E8E5] rounded-xl overflow-hidden">
           <div className="flex items-center justify-between px-6 py-4 border-b border-[#E8E8E5]">
             <div>
-              <h2 className="text-[13px] font-black tracking-[0.12em] uppercase text-[#04314A] flex items-center gap-2">
-                <Car size={16} className="text-[#00AAEB]" /> Purchased Vehicle & Finance Report
+              <h2 className="text-[13px] font-black tracking-[0.12em] uppercase text-[#0B3D2B] flex items-center gap-2">
+                <Car size={16} className="text-[#10B981]" /> Purchased Vehicle & Finance Report
               </h2>
               <p className="text-[12px] text-[#737373] mt-0.5">
                 Physical inventory vehicle unit sold to this lead with banking & financing records.
@@ -505,7 +505,7 @@ export default function LeadDetail({
             </div>
             <button
               onClick={() => onNavigate("units")}
-              className="text-[11px] font-bold text-[#00AAEB] hover:text-[#04314A]"
+              className="text-[11px] font-bold text-[#10B981] hover:text-[#0B3D2B]"
             >
               All Units →
             </button>
@@ -525,7 +525,7 @@ export default function LeadDetail({
               <tbody>
                 {purchasedUnits.map((u) => (
                   <tr key={u.id} className="border-b border-[#F0F0ED] last:border-0 hover:bg-[#FAFAF8]">
-                    <td className="px-5 py-3 text-[12px] font-bold text-[#04314A]">
+                    <td className="px-5 py-3 text-[12px] font-bold text-[#0B3D2B]">
                       <EntityLink type="unit" id={u.id} label={u.vin_chassis_no} onNavigate={onNavigate} />
                     </td>
                     <td className="px-5 py-3 text-[12px] text-[#737373]">
@@ -535,10 +535,10 @@ export default function LeadDetail({
                     <td className="px-5 py-3 text-[12px] text-[#737373]">
                       {u.sold_date ? formatDate(u.sold_date) : "-"}
                     </td>
-                    <td className="px-5 py-3 text-[12px] font-bold text-[#04314A]">
+                    <td className="px-5 py-3 text-[12px] font-bold text-[#0B3D2B]">
                       {formatNPR(u.sold_price || u.selling_price || 0)}
                     </td>
-                    <td className="px-5 py-3 text-[12px] text-[#04314A]">
+                    <td className="px-5 py-3 text-[12px] text-[#0B3D2B]">
                       <span className="px-2 py-0.5 rounded-full text-[10px] font-bold bg-[#F0F0ED]">
                         {u.payment_mode ? u.payment_mode.replace(/_/g, " ") : "CASH"}
                       </span>
@@ -546,7 +546,7 @@ export default function LeadDetail({
                     <td className="px-5 py-3 text-[12px] text-[#737373]">
                       {u.finance_bank_name ? (
                         <div>
-                          <div className="font-semibold text-[#04314A]">{u.finance_bank_name}</div>
+                          <div className="font-semibold text-[#0B3D2B]">{u.finance_bank_name}</div>
                         </div>
                       ) : (
                         "-"
@@ -558,7 +558,7 @@ export default function LeadDetail({
                     <td className="px-5 py-3 text-right">
                       <button
                         onClick={() => onNavigate(`units/${u.id}`)}
-                        className="text-[12px] font-bold text-[#00AAEB] hover:text-[#04314A]"
+                        className="text-[12px] font-bold text-[#10B981] hover:text-[#0B3D2B]"
                       >
                         Unit Profile →
                       </button>
@@ -576,8 +576,8 @@ export default function LeadDetail({
         <div className="mt-6 bg-white border border-[#E8E8E5] rounded-xl overflow-hidden">
           <div className="flex items-center justify-between px-6 py-4 border-b border-[#E8E8E5]">
             <div>
-              <h2 className="text-[13px] font-black tracking-[0.12em] uppercase text-[#04314A] flex items-center gap-2">
-                <Wrench size={16} className="text-[#00AAEB]" /> Servicing History & Vehicle Repair Orders (VRO)
+              <h2 className="text-[13px] font-black tracking-[0.12em] uppercase text-[#0B3D2B] flex items-center gap-2">
+                <Wrench size={16} className="text-[#10B981]" /> Servicing History & Vehicle Repair Orders (VRO)
               </h2>
               <p className="text-[12px] text-[#737373] mt-0.5">
                 Service visits recorded for this lead&apos;s vehicle(s).
@@ -585,7 +585,7 @@ export default function LeadDetail({
             </div>
             <button
               onClick={() => onNavigate("servicing")}
-              className="text-[11px] font-bold text-[#00AAEB] hover:text-[#04314A]"
+              className="text-[11px] font-bold text-[#10B981] hover:text-[#0B3D2B]"
             >
               Servicing Desk →
             </button>
@@ -605,7 +605,7 @@ export default function LeadDetail({
               <tbody>
                 {serviceRecords.map((srv) => (
                   <tr key={srv.id} className="border-b border-[#F0F0ED] last:border-0 hover:bg-[#FAFAF8]">
-                    <td className="px-5 py-3 text-[12px] font-bold text-[#04314A]">
+                    <td className="px-5 py-3 text-[12px] font-bold text-[#0B3D2B]">
                       <EntityLink type="vro" id={srv.vro_no || srv.id} label={srv.vro_no || `SRV-${srv.id}`} onNavigate={onNavigate} />
                     </td>
                     <td className="px-5 py-3 text-[12px] text-[#737373]">
@@ -621,16 +621,16 @@ export default function LeadDetail({
                     <td className="px-5 py-3 text-[12px] text-[#737373]">
                       {srv.actual_delivered_at ? formatDateTime(srv.actual_delivered_at) : "-"}
                     </td>
-                    <td className="px-5 py-3 text-[12px] font-semibold text-[#04314A]">
+                    <td className="px-5 py-3 text-[12px] font-semibold text-[#0B3D2B]">
                       {srv.duration_display || "-"}
                     </td>
                     <td className="px-5 py-3">
                       <Badge status={srv.status.toLowerCase()} />
                     </td>
-                    <td className="px-5 py-3 text-[12px] text-[#04314A] max-w-xs truncate">
+                    <td className="px-5 py-3 text-[12px] text-[#0B3D2B] max-w-xs truncate">
                       {srv.job_description || srv.notes || "-"}
                     </td>
-                    <td className="px-5 py-3 text-[12px] font-bold text-[#04314A]">
+                    <td className="px-5 py-3 text-[12px] font-bold text-[#0B3D2B]">
                       {formatNPR(srv.total_cost || 0)}
                     </td>
                   </tr>
@@ -646,8 +646,8 @@ export default function LeadDetail({
         <div className="mt-6 bg-white border border-[#E8E8E5] rounded-xl overflow-hidden">
           <div className="flex items-center justify-between px-6 py-4 border-b border-[#E8E8E5]">
             <div>
-              <h2 className="text-[13px] font-black tracking-[0.12em] uppercase text-[#04314A] flex items-center gap-2">
-                <FileText size={16} className="text-[#00AAEB]" /> Quotations
+              <h2 className="text-[13px] font-black tracking-[0.12em] uppercase text-[#0B3D2B] flex items-center gap-2">
+                <FileText size={16} className="text-[#10B981]" /> Quotations
               </h2>
               <p className="text-[12px] text-[#737373] mt-0.5">
                 Sales price proposals prepared for this lead.
@@ -655,7 +655,7 @@ export default function LeadDetail({
             </div>
             <button
               onClick={() => onNavigate("crm-quotations")}
-              className="text-[11px] font-bold text-[#00AAEB] hover:text-[#04314A]"
+              className="text-[11px] font-bold text-[#10B981] hover:text-[#0B3D2B]"
             >
               All Quotations
             </button>
@@ -675,13 +675,13 @@ export default function LeadDetail({
               <tbody>
                 {quotations.map((q) => (
                   <tr key={q.id} className="border-b border-[#F0F0ED] last:border-0 hover:bg-[#FAFAF8]">
-                    <td className="px-5 py-3 text-[12px] font-bold text-[#04314A]">
+                    <td className="px-5 py-3 text-[12px] font-bold text-[#0B3D2B]">
                       <EntityLink type="quotation" id={q.id} label={q.id} onNavigate={onNavigate} />
                     </td>
-                    <td className="px-5 py-3 text-[12px] text-[#04314A]">
+                    <td className="px-5 py-3 text-[12px] text-[#0B3D2B]">
                       {q.vehicle}
                     </td>
-                    <td className="px-5 py-3 text-[12px] font-bold text-[#04314A]">
+                    <td className="px-5 py-3 text-[12px] font-bold text-[#0B3D2B]">
                       {formatNpr(crm.quotationTotals(q.item).total)}
                     </td>
                     <td className="px-5 py-3">
@@ -693,7 +693,7 @@ export default function LeadDetail({
                     <td className="px-5 py-3 text-right">
                       <button
                         onClick={() => onNavigate(`crm-quotations/${q.id}`)}
-                        className="text-[12px] font-bold text-[#00AAEB] hover:text-[#04314A]"
+                        className="text-[12px] font-bold text-[#10B981] hover:text-[#0B3D2B]"
                       >
                         View Details
                       </button>
@@ -711,8 +711,8 @@ export default function LeadDetail({
         <div className="mt-6 bg-white border border-[#E8E8E5] rounded-xl overflow-hidden">
           <div className="flex items-center justify-between px-6 py-4 border-b border-[#E8E8E5]">
             <div>
-              <h2 className="text-[13px] font-black tracking-[0.12em] uppercase text-[#04314A] flex items-center gap-2">
-                <CalendarCheck size={16} className="text-[#00AAEB]" /> Scheduled and Completed Test Drives
+              <h2 className="text-[13px] font-black tracking-[0.12em] uppercase text-[#0B3D2B] flex items-center gap-2">
+                <CalendarCheck size={16} className="text-[#10B981]" /> Scheduled and Completed Test Drives
               </h2>
               <p className="text-[12px] text-[#737373] mt-0.5">
                 Trial runs and feedback recorded for this lead.
@@ -720,7 +720,7 @@ export default function LeadDetail({
             </div>
             <button
               onClick={() => onNavigate("crm-testdrives")}
-              className="text-[11px] font-bold text-[#00AAEB] hover:text-[#04314A]"
+              className="text-[11px] font-bold text-[#10B981] hover:text-[#0B3D2B]"
             >
               All Test Drives
             </button>
@@ -740,10 +740,10 @@ export default function LeadDetail({
               <tbody>
                 {testDrives.map((td) => (
                   <tr key={td.id} className="border-b border-[#F0F0ED] last:border-0 hover:bg-[#FAFAF8]">
-                    <td className="px-5 py-3 text-[12px] font-bold text-[#04314A]">
+                    <td className="px-5 py-3 text-[12px] font-bold text-[#0B3D2B]">
                       {td.time ? `${formatDate(td.date)} ${td.time}` : formatDate(td.date)}
                     </td>
-                    <td className="px-5 py-3 text-[12px] text-[#04314A]">
+                    <td className="px-5 py-3 text-[12px] text-[#0B3D2B]">
                       {td.vehicle}
                     </td>
                     <td className="px-5 py-3 text-[12px] text-[#737373]">

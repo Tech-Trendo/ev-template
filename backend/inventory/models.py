@@ -1568,7 +1568,7 @@ class PDIInspection(AuditTrackedModel):
     # Vehicle snapshots at inspection time (header fields of the paper form).
     ev_company_name = models.CharField(
         max_length=200,
-        default="Vehicle Template",
+        default="EV OS",
         blank=True,
     )
     vin_chassis_no = models.CharField(max_length=100, blank=True)
@@ -1963,7 +1963,7 @@ class VehicleReceiveCheckList(models.Model):
     rep_signature = models.CharField(max_length=150, blank=True)
     ev_company = models.CharField(
         max_length=200,
-        default="Vehicle Template, Your Address, Your City | +1 555 0100",
+        default="EV OS, Your Address, Your City | +1 555 0100",
         blank=True,
     )
     vehicle_run_km = models.PositiveIntegerField(default=0)

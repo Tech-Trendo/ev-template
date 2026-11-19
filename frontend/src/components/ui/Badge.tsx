@@ -72,7 +72,7 @@ export function Badge({
 
   const variantClasses = {
     neutral:
-      "bg-[#F7F7F5] text-[#525252] border border-[#E8E8E5] dark:bg-[#10334C] dark:text-[#94A3B8] dark:border-[#174261]",
+      "bg-[#F7F7F5] text-[#525252] border border-[#E8E8E5] dark:bg-[#113A2B] dark:text-[#94A3B8] dark:border-[#1B5039]",
     success:
       "bg-[#F0FDF4] text-[#166534] border border-[#BBF7D0] dark:bg-[#062814] dark:text-[#4ADE80] dark:border-[#166534]",
     warning:

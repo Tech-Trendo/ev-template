@@ -109,7 +109,7 @@ export default function ServiceDuePage({
       {/* Header */}
       <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 border-b border-[#E8E8E5] pb-5">
         <div>
-          <h1 className="text-[22px] font-bold text-[#04314A] tracking-tight">
+          <h1 className="text-[22px] font-bold text-[#0B3D2B] tracking-tight">
             Service Due & Overdue
           </h1>
           <p className="text-[13px] text-[#737373] mt-0.5">
@@ -120,14 +120,14 @@ export default function ServiceDuePage({
           <button
             onClick={() => loadData()}
             disabled={loading}
-            className="inline-flex items-center gap-1.5 px-3 py-1.5 border border-[#E8E8E5] text-[12px] font-medium text-[#04314A] bg-white hover:bg-[#F7F7F5] transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-[#00AAEB]"
+            className="inline-flex items-center gap-1.5 px-3 py-1.5 border border-[#E8E8E5] text-[12px] font-medium text-[#0B3D2B] bg-white hover:bg-[#F7F7F5] transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-[#10B981]"
           >
             <RefreshCw size={14} className={loading ? "animate-spin" : ""} />
             Refresh
           </button>
           <button
             onClick={() => onNavigate("servicing")}
-            className="inline-flex items-center gap-1.5 px-3.5 py-1.5 bg-[#04314A] text-white text-[12px] font-semibold hover:bg-[#00AAEB] transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-[#00AAEB]"
+            className="inline-flex items-center gap-1.5 px-3.5 py-1.5 bg-[#0B3D2B] text-white text-[12px] font-semibold hover:bg-[#10B981] transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-[#10B981]"
           >
             <Wrench size={14} />
             Go to Servicing
@@ -164,9 +164,9 @@ export default function ServiceDuePage({
             <span className="text-[11px] uppercase tracking-wider font-semibold text-[#737373]">
               Total Scheduled
             </span>
-            <CheckCircle2 size={16} className="text-[#04314A]" />
+            <CheckCircle2 size={16} className="text-[#0B3D2B]" />
           </div>
-          <p className="text-[26px] font-bold text-[#04314A] mt-1">{units.length}</p>
+          <p className="text-[26px] font-bold text-[#0B3D2B] mt-1">{units.length}</p>
           <p className="text-[11px] text-[#737373] mt-0.5">Active vehicles with scheduled intervals</p>
         </div>
       </div>
@@ -185,7 +185,7 @@ export default function ServiceDuePage({
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
               placeholder="Search by VIN, license plate, customer name, phone, or model..."
-              className="w-full pl-9 pr-3 py-1.5 border border-[#E8E8E5] text-[13px] bg-white text-[#04314A] placeholder-[#737373] focus:outline-none focus:border-[#00AAEB]"
+              className="w-full pl-9 pr-3 py-1.5 border border-[#E8E8E5] text-[13px] bg-white text-[#0B3D2B] placeholder-[#737373] focus:outline-none focus:border-[#10B981]"
             />
           </div>
 
@@ -195,8 +195,8 @@ export default function ServiceDuePage({
               onClick={() => setFilterOverdueOnly(false)}
               className={`px-3 py-1 text-[12px] font-medium transition-colors ${
                 !filterOverdueOnly
-                  ? "bg-white text-[#04314A] font-bold shadow-sm"
-                  : "text-[#737373] hover:text-[#04314A]"
+                  ? "bg-white text-[#0B3D2B] font-bold shadow-sm"
+                  : "text-[#737373] hover:text-[#0B3D2B]"
               }`}
             >
               All Due
@@ -219,7 +219,7 @@ export default function ServiceDuePage({
             <select
               value={filterDays}
               onChange={(e) => setFilterDays(e.target.value)}
-              className="border border-[#E8E8E5] px-2.5 py-1.5 text-[12px] bg-white text-[#04314A] focus:outline-none focus:border-[#00AAEB]"
+              className="border border-[#E8E8E5] px-2.5 py-1.5 text-[12px] bg-white text-[#0B3D2B] focus:outline-none focus:border-[#10B981]"
             >
               <option value="all">All Horizons</option>
               <option value="7">Due in &le; 7 Days</option>
@@ -235,7 +235,7 @@ export default function ServiceDuePage({
               <select
                 value={selectedDealer}
                 onChange={(e) => setSelectedDealer(e.target.value)}
-                className="border border-[#E8E8E5] px-2.5 py-1.5 text-[12px] bg-white text-[#04314A] focus:outline-none focus:border-[#00AAEB]"
+                className="border border-[#E8E8E5] px-2.5 py-1.5 text-[12px] bg-white text-[#0B3D2B] focus:outline-none focus:border-[#10B981]"
               >
                 <option value="">All Dealers</option>
                 {dealers.map((d) => (
@@ -262,7 +262,7 @@ export default function ServiceDuePage({
         ) : filteredUnits.length === 0 ? (
           <div className="p-12 text-center">
             <CheckCircle2 size={36} className="mx-auto text-[#059669] mb-3" />
-            <h3 className="text-[15px] font-bold text-[#04314A]">No units currently due</h3>
+            <h3 className="text-[15px] font-bold text-[#0B3D2B]">No units currently due</h3>
             <p className="text-[13px] text-[#737373] mt-1 max-w-sm mx-auto">
               No vehicles match the selected filter criteria or require immediate routine service.
             </p>
@@ -289,7 +289,7 @@ export default function ServiceDuePage({
                   const isOd = due.is_overdue;
                   const days = due.days_until_due;
 
-                  let badgeColor = "bg-[#F0F0ED] text-[#04314A]";
+                  let badgeColor = "bg-[#F0F0ED] text-[#0B3D2B]";
                   let badgeText = "Upcoming";
 
                   if (isOd) {
@@ -317,7 +317,7 @@ export default function ServiceDuePage({
                       key={item.unit_id}
                       className="hover:bg-[#FAFAF8] transition-colors"
                     >
-                      <td className="py-3 px-4 font-medium text-[#04314A]">
+                      <td className="py-3 px-4 font-medium text-[#0B3D2B]">
                         <EntityLink
                           type="unit"
                           id={item.unit_id}
@@ -330,7 +330,7 @@ export default function ServiceDuePage({
                           </div>
                         )}
                       </td>
-                      <td className="py-3 px-4 text-[#04314A] font-medium">
+                      <td className="py-3 px-4 text-[#0B3D2B] font-medium">
                         {item.model_name}
                       </td>
                       <td className="py-3 px-4">
@@ -342,7 +342,7 @@ export default function ServiceDuePage({
                             onNavigate={onNavigate}
                           />
                         ) : (
-                          <span className="text-[#04314A] font-medium">
+                          <span className="text-[#0B3D2B] font-medium">
                             {item.customer_name || "Unassigned"}
                           </span>
                         )}
@@ -363,7 +363,7 @@ export default function ServiceDuePage({
                           </div>
                         )}
                       </td>
-                      <td className="py-3 px-4 text-[#04314A]">
+                      <td className="py-3 px-4 text-[#0B3D2B]">
                         <span className="font-semibold">
                           {item.current_odometer.toLocaleString()} km
                         </span>
@@ -373,7 +373,7 @@ export default function ServiceDuePage({
                           </span>
                         )}
                       </td>
-                      <td className="py-3 px-4 font-medium text-[#04314A]">
+                      <td className="py-3 px-4 font-medium text-[#0B3D2B]">
                         {due.due_date || "By mileage only"}
                       </td>
                       <td className="py-3 px-4">
@@ -392,7 +392,7 @@ export default function ServiceDuePage({
                               )}`
                             )
                           }
-                          className="px-2.5 py-1 border border-[#04314A] text-[#04314A] text-[11px] font-semibold hover:bg-[#04314A] hover:text-white transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-[#00AAEB]"
+                          className="px-2.5 py-1 border border-[#0B3D2B] text-[#0B3D2B] text-[11px] font-semibold hover:bg-[#0B3D2B] hover:text-white transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-[#10B981]"
                         >
                           Create VRO
                         </button>

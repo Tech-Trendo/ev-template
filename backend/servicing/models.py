@@ -14,7 +14,7 @@ logger = logging.getLogger(__name__)
 class ServiceRecord(AuditTrackedModel):
     """Vehicle Repair Order (VRO) / workshop service visit for a vehicle.
 
-    Replicates the physical Vehicle Repair Order form from Vehicle Template
+    Replicates the physical Vehicle Repair Order form from EV OS
     Interlinks with physical VehicleUnits, CRM Leads, and Customers.
     """
 
@@ -99,7 +99,7 @@ class ServiceRecord(AuditTrackedModel):
     motor_no = models.CharField(max_length=100, blank=True)
     date_of_sale = models.DateField(null=True, blank=True)
     ev_company = models.CharField(
-        max_length=150, default="Vehicle Template", blank=True
+        max_length=150, default="EV OS", blank=True
     )
 
     # Customer info snapshot (read-only snapshots copied from customer)

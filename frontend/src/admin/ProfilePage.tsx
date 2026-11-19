@@ -30,9 +30,9 @@ function InfoRow({
   isSensitive?: boolean;
 }) {
   return (
-    <div className="flex flex-col gap-1 py-3 border-b border-[#E8E8E5] last:border-0 dark:border-[#174261]">
+    <div className="flex flex-col gap-1 py-3 border-b border-[#E8E8E5] last:border-0 dark:border-[#1B5039]">
       <span className="text-[11px] font-semibold text-[#737373] dark:text-[#94A3B8] inline-flex items-center gap-1.5">
-        {Icon && <Icon size={13} className="text-[#00AAEB]" />}
+        {Icon && <Icon size={13} className="text-[#10B981]" />}
         {label}
         {isSensitive && (
           <span title="Sensitive field">
@@ -40,7 +40,7 @@ function InfoRow({
           </span>
         )}
       </span>
-      <div className="text-[13px] font-medium text-[#04314A] dark:text-[#F7F7F5]">
+      <div className="text-[13px] font-medium text-[#0B3D2B] dark:text-[#F7F7F5]">
         {value || <span className="text-[#A3A39E] font-normal">Not provided</span>}
       </div>
     </div>
@@ -84,13 +84,13 @@ export default function ProfilePage() {
         }
       />
 
-      <div className="flex gap-2 border-b border-[#E8E8E5] pb-2 dark:border-[#174261]">
+      <div className="flex gap-2 border-b border-[#E8E8E5] pb-2 dark:border-[#1B5039]">
         <button
           onClick={() => setActiveTab("profile")}
           className={`px-4 py-2 rounded-lg text-[12px] font-bold uppercase tracking-wider transition-colors ${
             activeTab === "profile"
-              ? "bg-[#04314A] text-white"
-              : "bg-[#F7F7F5] text-[#737373] hover:text-[#04314A] dark:bg-[#0B2538] dark:text-[#94A3B8]"
+              ? "bg-[#0B3D2B] text-white"
+              : "bg-[#F7F7F5] text-[#737373] hover:text-[#0B3D2B] dark:bg-[#0C2620] dark:text-[#94A3B8]"
           }`}
         >
           Profile Details
@@ -99,8 +99,8 @@ export default function ProfilePage() {
           onClick={() => setActiveTab("activity")}
           className={`px-4 py-2 rounded-lg text-[12px] font-bold uppercase tracking-wider transition-colors flex items-center gap-1.5 ${
             activeTab === "activity"
-              ? "bg-[#04314A] text-white"
-              : "bg-[#F7F7F5] text-[#737373] hover:text-[#04314A] dark:bg-[#0B2538] dark:text-[#94A3B8]"
+              ? "bg-[#0B3D2B] text-white"
+              : "bg-[#F7F7F5] text-[#737373] hover:text-[#0B3D2B] dark:bg-[#0C2620] dark:text-[#94A3B8]"
           }`}
         >
           <ActivityIcon size={14} /> My Activity
@@ -110,22 +110,22 @@ export default function ProfilePage() {
       {activeTab === "profile" ? (
         <>
           {/* Profile Summary Card */}
-      <div className="bg-white border border-[#E8E8E5] rounded-xl p-5 sm:p-6 dark:bg-[#0B2538] dark:border-[#174261]">
-        <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pb-5 border-b border-[#E8E8E5] dark:border-[#174261]">
+      <div className="bg-white border border-[#E8E8E5] rounded-xl p-5 sm:p-6 dark:bg-[#0C2620] dark:border-[#1B5039]">
+        <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pb-5 border-b border-[#E8E8E5] dark:border-[#1B5039]">
           <div className="flex items-center gap-4">
             {me.photo_url ? (
               <img
                 src={me.photo_url}
                 alt={fullName}
-                className="w-14 h-14 rounded-full object-cover border border-[#E8E8E5] dark:border-[#174261] shrink-0"
+                className="w-14 h-14 rounded-full object-cover border border-[#E8E8E5] dark:border-[#1B5039] shrink-0"
               />
             ) : (
-              <span className="w-14 h-14 rounded-full bg-[#04314A] text-white flex items-center justify-center text-[20px] font-semibold shrink-0 select-none">
+              <span className="w-14 h-14 rounded-full bg-[#0B3D2B] text-white flex items-center justify-center text-[20px] font-semibold shrink-0 select-none">
                 {initial}
               </span>
             )}
             <div>
-              <h2 className="text-[18px] font-semibold text-[#04314A] dark:text-[#F7F7F5]">
+              <h2 className="text-[18px] font-semibold text-[#0B3D2B] dark:text-[#F7F7F5]">
                 {fullName}
               </h2>
               <p className="text-[12px] text-[#737373] dark:text-[#94A3B8]">
@@ -147,7 +147,7 @@ export default function ProfilePage() {
         <div className="grid md:grid-cols-2 gap-8 pt-5">
           {/* Section 1: Account & Contact */}
           <div className="space-y-1">
-            <h3 className="text-[12px] font-semibold uppercase tracking-wider text-[#00AAEB] mb-3">
+            <h3 className="text-[12px] font-semibold uppercase tracking-wider text-[#10B981] mb-3">
               Account & Contact
             </h3>
             <InfoRow icon={Mail} label="Work Email" value={me.email} />
@@ -162,7 +162,7 @@ export default function ProfilePage() {
 
           {/* Section 2: Employment */}
           <div className="space-y-1">
-            <h3 className="text-[12px] font-semibold uppercase tracking-wider text-[#00AAEB] mb-3">
+            <h3 className="text-[12px] font-semibold uppercase tracking-wider text-[#10B981] mb-3">
               Employment Details
             </h3>
             <InfoRow icon={Briefcase} label="Department" value={me.department} />
@@ -185,7 +185,7 @@ export default function ProfilePage() {
 
           {/* Section 3: Addresses */}
           <div className="space-y-1">
-            <h3 className="text-[12px] font-semibold uppercase tracking-wider text-[#00AAEB] mb-3">
+            <h3 className="text-[12px] font-semibold uppercase tracking-wider text-[#10B981] mb-3">
               Addresses
             </h3>
             <InfoRow icon={MapPin} label="Current / Temporary Address" value={me.temporary_address} />
@@ -195,7 +195,7 @@ export default function ProfilePage() {
           {/* Section 4: Sensitive Government ID */}
           <div className="space-y-1">
             <div className="flex items-center justify-between mb-3">
-              <h3 className="text-[12px] font-semibold uppercase tracking-wider text-[#00AAEB]">
+              <h3 className="text-[12px] font-semibold uppercase tracking-wider text-[#10B981]">
                 Government Identification
               </h3>
               {!me.can_view_sensitive && (
@@ -226,8 +226,8 @@ export default function ProfilePage() {
 
           {/* Section 5: Emergency Contact */}
           {(me.emergency_contact_name || me.emergency_contact_phone) && (
-            <div className="space-y-1 md:col-span-2 pt-2 border-t border-[#E8E8E5] dark:border-[#174261]">
-              <h3 className="text-[12px] font-semibold uppercase tracking-wider text-[#00AAEB] mb-3">
+            <div className="space-y-1 md:col-span-2 pt-2 border-t border-[#E8E8E5] dark:border-[#1B5039]">
+              <h3 className="text-[12px] font-semibold uppercase tracking-wider text-[#10B981] mb-3">
                 Emergency Contact
               </h3>
               <div className="grid sm:grid-cols-2 gap-4">
@@ -255,23 +255,23 @@ export default function ProfilePage() {
         <>
           {/* Summary Cards */}
           <div className="grid grid-cols-2 sm:grid-cols-3 gap-4">
-            <div className="bg-white border border-[#E8E8E5] rounded-xl p-5 dark:bg-[#0B2538] dark:border-[#174261]">
+            <div className="bg-white border border-[#E8E8E5] rounded-xl p-5 dark:bg-[#0C2620] dark:border-[#1B5039]">
               <span className="text-[10px] font-bold tracking-wider uppercase text-[#737373] block mb-1">
                 Actions Today
               </span>
-              <div className="text-[24px] font-black text-[#04314A] dark:text-[#F7F7F5]">
+              <div className="text-[24px] font-black text-[#0B3D2B] dark:text-[#F7F7F5]">
                 {myActivity.today_total || 0}
               </div>
-              <span className="text-[11px] text-[#00AAEB] font-semibold mt-1 block">
+              <span className="text-[11px] text-[#10B981] font-semibold mt-1 block">
                 Recorded today
               </span>
             </div>
 
-            <div className="bg-white border border-[#E8E8E5] rounded-xl p-5 dark:bg-[#0B2538] dark:border-[#174261]">
+            <div className="bg-white border border-[#E8E8E5] rounded-xl p-5 dark:bg-[#0C2620] dark:border-[#1B5039]">
               <span className="text-[10px] font-bold tracking-wider uppercase text-[#737373] block mb-1">
                 Past 30 Days
               </span>
-              <div className="text-[24px] font-black text-[#04314A] dark:text-[#F7F7F5]">
+              <div className="text-[24px] font-black text-[#0B3D2B] dark:text-[#F7F7F5]">
                 {myActivity.month_total || 0}
               </div>
               <span className="text-[11px] text-[#737373] mt-1 block">
@@ -279,11 +279,11 @@ export default function ProfilePage() {
               </span>
             </div>
 
-            <div className="bg-white border border-[#E8E8E5] rounded-xl p-5 dark:bg-[#0B2538] dark:border-[#174261] col-span-2 sm:col-span-1">
+            <div className="bg-white border border-[#E8E8E5] rounded-xl p-5 dark:bg-[#0C2620] dark:border-[#1B5039] col-span-2 sm:col-span-1">
               <span className="text-[10px] font-bold tracking-wider uppercase text-[#737373] block mb-1">
                 Dealership
               </span>
-              <div className="text-[16px] font-black text-[#04314A] dark:text-[#F7F7F5] truncate">
+              <div className="text-[16px] font-black text-[#0B3D2B] dark:text-[#F7F7F5] truncate">
                 {myActivity.dealer_name || "Central Office"}
               </div>
               <span className="text-[11px] text-[#737373] mt-1 block">
@@ -293,8 +293,8 @@ export default function ProfilePage() {
           </div>
 
           {/* Monthly Action Breakdown */}
-          <div className="bg-white border border-[#E8E8E5] rounded-xl p-5 dark:bg-[#0B2538] dark:border-[#174261]">
-            <h3 className="text-[12px] font-bold tracking-[0.1em] uppercase text-[#04314A] dark:text-[#F7F7F5] mb-4">
+          <div className="bg-white border border-[#E8E8E5] rounded-xl p-5 dark:bg-[#0C2620] dark:border-[#1B5039]">
+            <h3 className="text-[12px] font-bold tracking-[0.1em] uppercase text-[#0B3D2B] dark:text-[#F7F7F5] mb-4">
               Past 30 Days Breakdown
             </h3>
             <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
@@ -308,11 +308,11 @@ export default function ProfilePage() {
                 ["Inspections", myActivity.month_counts?.["INSPECTION_DONE"] || 0],
                 ["Units Entered", myActivity.month_counts?.["UNIT_ENTERED"] || 0],
               ].map(([label, val]) => (
-                <div key={label as string} className="p-3 bg-[#F7F7F5] dark:bg-[#04314A]/40 rounded-lg">
+                <div key={label as string} className="p-3 bg-[#F7F7F5] dark:bg-[#0B3D2B]/40 rounded-lg">
                   <span className="text-[10px] font-bold uppercase tracking-wider text-[#737373] dark:text-[#94A3B8] block">
                     {label}
                   </span>
-                  <span className="text-[16px] font-black text-[#04314A] dark:text-[#F7F7F5]">
+                  <span className="text-[16px] font-black text-[#0B3D2B] dark:text-[#F7F7F5]">
                     {val}
                   </span>
                 </div>
@@ -321,8 +321,8 @@ export default function ProfilePage() {
           </div>
 
           {/* Recent Activity Timeline */}
-          <div className="bg-white border border-[#E8E8E5] rounded-xl p-5 dark:bg-[#0B2538] dark:border-[#174261]">
-            <h3 className="text-[12px] font-bold tracking-[0.1em] uppercase text-[#04314A] dark:text-[#F7F7F5] mb-4">
+          <div className="bg-white border border-[#E8E8E5] rounded-xl p-5 dark:bg-[#0C2620] dark:border-[#1B5039]">
+            <h3 className="text-[12px] font-bold tracking-[0.1em] uppercase text-[#0B3D2B] dark:text-[#F7F7F5] mb-4">
               Recent Activity Timeline
             </h3>
             {myActivity.recent_activities?.length === 0 ? (
@@ -334,18 +334,18 @@ export default function ProfilePage() {
                 {myActivity.recent_activities?.map((item: any) => (
                   <div
                     key={item.id}
-                    className="p-3 border border-[#E8E8E5] dark:border-[#174261] rounded-lg flex items-start justify-between gap-3 text-[12px]"
+                    className="p-3 border border-[#E8E8E5] dark:border-[#1B5039] rounded-lg flex items-start justify-between gap-3 text-[12px]"
                   >
                     <div>
                       <div className="flex items-center gap-2 mb-1">
-                        <span className="px-2 py-0.5 rounded text-[9px] font-bold bg-[#04314A] text-white uppercase">
+                        <span className="px-2 py-0.5 rounded text-[9px] font-bold bg-[#0B3D2B] text-white uppercase">
                           {item.action}
                         </span>
                         <span className="text-[10px] font-bold uppercase text-[#737373] dark:text-[#94A3B8]">
                           {item.object_type} #{item.object_id}
                         </span>
                       </div>
-                      <p className="text-[#04314A] dark:text-[#F7F7F5] font-medium">
+                      <p className="text-[#0B3D2B] dark:text-[#F7F7F5] font-medium">
                         {item.summary}
                       </p>
                     </div>

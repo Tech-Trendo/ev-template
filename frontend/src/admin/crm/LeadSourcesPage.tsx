@@ -8,7 +8,7 @@ import { Modal, Pagination, TableState, ghostBtnCls, primaryBtnCls, useToast } f
 import { DEFAULT_PAGE_SIZE } from "@/lib/pagination";
 
 const input =
-  "w-full border border-[#E8E8E5] rounded-xl bg-white px-3 py-2.5 text-[13px] font-medium text-[#04314A] placeholder:text-[#B0B0AA] focus:outline-none focus:border-[#00AAEB] transition-colors";
+  "w-full border border-[#E8E8E5] rounded-xl bg-white px-3 py-2.5 text-[13px] font-medium text-[#0B3D2B] placeholder:text-[#B0B0AA] focus:outline-none focus:border-[#10B981] transition-colors";
 const labelCls = "text-[10px] font-semibold tracking-[0.12em] uppercase text-[#737373] block mb-1.5";
 
 function SourceForm({
@@ -67,12 +67,12 @@ function SourceForm({
               type="checkbox"
               checked={form.is_active}
               onChange={(e) => setForm({ ...form, is_active: e.target.checked })}
-              className="w-4 h-4 accent-[#00AAEB]"
+              className="w-4 h-4 accent-[#10B981]"
             />
-            <span className="text-[13px] font-semibold text-[#04314A]">Active</span>
+            <span className="text-[13px] font-semibold text-[#0B3D2B]">Active</span>
           </label>
         </div>
-        {error && <p className="text-[12px] text-[#00AAEB] bg-[#00AAEB]/5 border-l-2 border-[#00AAEB] px-3 py-2">{error}</p>}
+        {error && <p className="text-[12px] text-[#10B981] bg-[#10B981]/5 border-l-2 border-[#10B981] px-3 py-2">{error}</p>}
         <div data-modal-actions className="mt-6 flex justify-end gap-3">
           <button type="button" onClick={onClose} className={ghostBtnCls}>Cancel</button>
           <button type="submit" disabled={busy} className={primaryBtnCls}>
@@ -142,7 +142,7 @@ function TypeForm({
             required
             autoFocus
           />
-          <p className="mt-1.5 text-[11px] text-[#00AAEB] bg-[#00AAEB]/5 px-2 py-1.5 rounded-lg border-l-2 border-[#00AAEB]">
+          <p className="mt-1.5 text-[11px] text-[#10B981] bg-[#10B981]/5 px-2 py-1.5 rounded-lg border-l-2 border-[#10B981]">
             System name: <span className="font-semibold">{generatedName || "-"}</span>
           </p>
         </div>
@@ -152,12 +152,12 @@ function TypeForm({
               type="checkbox"
               checked={is_active}
               onChange={(e) => setIsActive(e.target.checked)}
-              className="w-4 h-4 accent-[#00AAEB]"
+              className="w-4 h-4 accent-[#10B981]"
             />
-            <span className="text-[13px] font-semibold text-[#04314A]">Active</span>
+            <span className="text-[13px] font-semibold text-[#0B3D2B]">Active</span>
           </label>
         </div>
-        {error && <p className="text-[12px] text-[#00AAEB] bg-[#00AAEB]/5 border-l-2 border-[#00AAEB] px-3 py-2">{error}</p>}
+        {error && <p className="text-[12px] text-[#10B981] bg-[#10B981]/5 border-l-2 border-[#10B981] px-3 py-2">{error}</p>}
         <div data-modal-actions className="mt-6 flex justify-end gap-3">
           <button type="button" onClick={onClose} className={ghostBtnCls}>Cancel</button>
           <button type="submit" disabled={busy} className={primaryBtnCls}>
@@ -260,7 +260,7 @@ export default function LeadSourcesPage() {
   return (
     <div className="space-y-8">
       {error && (
-        <div className="mb-2 text-[12px] text-[#00AAEB] bg-[#00AAEB]/5 border-l-2 border-[#00AAEB] px-3 py-2 rounded-r-lg">
+        <div className="mb-2 text-[12px] text-[#10B981] bg-[#10B981]/5 border-l-2 border-[#10B981] px-3 py-2 rounded-r-lg">
           {error}
         </div>
       )}
@@ -269,28 +269,28 @@ export default function LeadSourcesPage() {
       <div className="flex items-center gap-1 border-b border-[#E8E8E5] overflow-x-auto">
         <button
           onClick={() => setActiveTab("sources")}
-          className={`flex items-center gap-2 px-5 py-3 text-[12px] font-semibold tracking-[0.02em] border-b-2 transition-colors ${activeTab === "sources" ? "border-[#00AAEB] text-[#04314A]" : "border-transparent text-[#737373] hover:text-[#04314A]"}`}
+          className={`flex items-center gap-2 px-5 py-3 text-[12px] font-semibold tracking-[0.02em] border-b-2 transition-colors ${activeTab === "sources" ? "border-[#10B981] text-[#0B3D2B]" : "border-transparent text-[#737373] hover:text-[#0B3D2B]"}`}
         >
           <RadioTower size={15} />
           Lead Sources
         </button>
         <button
           onClick={() => setActiveTab("types")}
-          className={`flex items-center gap-2 px-5 py-3 text-[12px] font-semibold tracking-[0.02em] border-b-2 transition-colors ${activeTab === "types" ? "border-[#00AAEB] text-[#04314A]" : "border-transparent text-[#737373] hover:text-[#04314A]"}`}
+          className={`flex items-center gap-2 px-5 py-3 text-[12px] font-semibold tracking-[0.02em] border-b-2 transition-colors ${activeTab === "types" ? "border-[#10B981] text-[#0B3D2B]" : "border-transparent text-[#737373] hover:text-[#0B3D2B]"}`}
         >
           <ActivityIcon size={15} />
           Activity Types
         </button>
         <button
           onClick={() => setActiveTab("banks")}
-          className={`flex items-center gap-2 px-5 py-3 text-[12px] font-semibold tracking-[0.02em] border-b-2 transition-colors ${activeTab === "banks" ? "border-[#00AAEB] text-[#04314A]" : "border-transparent text-[#737373] hover:text-[#04314A]"}`}
+          className={`flex items-center gap-2 px-5 py-3 text-[12px] font-semibold tracking-[0.02em] border-b-2 transition-colors ${activeTab === "banks" ? "border-[#10B981] text-[#0B3D2B]" : "border-transparent text-[#737373] hover:text-[#0B3D2B]"}`}
         >
           <Building2 size={15} />
           Banks
         </button>
         <button
           onClick={() => setActiveTab("branches")}
-          className={`flex items-center gap-2 px-5 py-3 text-[12px] font-semibold tracking-[0.02em] border-b-2 transition-colors ${activeTab === "branches" ? "border-[#00AAEB] text-[#04314A]" : "border-transparent text-[#737373] hover:text-[#04314A]"}`}
+          className={`flex items-center gap-2 px-5 py-3 text-[12px] font-semibold tracking-[0.02em] border-b-2 transition-colors ${activeTab === "branches" ? "border-[#10B981] text-[#0B3D2B]" : "border-transparent text-[#737373] hover:text-[#0B3D2B]"}`}
         >
           <MapPin size={15} />
           Bank Branches
@@ -302,14 +302,14 @@ export default function LeadSourcesPage() {
         <div>
           <div className="flex items-center justify-between mb-5">
             <div className="flex items-center gap-4">
-              <div className="flex items-center gap-2.5 text-[#04314A]">
+              <div className="flex items-center gap-2.5 text-[#0B3D2B]">
                 <RadioTower size={18} />
                 <span className="text-[13px] font-semibold">Lead Sources</span>
               </div>
               <div className="h-5 w-px bg-[#E8E8E5]" />
               <div className="flex items-center gap-4 text-[12px] text-[#737373]">
                 <span className="flex items-center gap-1.5">
-                  <span className="w-2.5 h-2.5 rounded-full bg-[#00AAEB]" />
+                  <span className="w-2.5 h-2.5 rounded-full bg-[#10B981]" />
                   {sources.filter(s => s.is_active).length} Active
                 </span>
                 <span className="flex items-center gap-1.5">
@@ -337,10 +337,10 @@ export default function LeadSourcesPage() {
                 {visibleSources.map((s) => (
                   <tr key={s.id} className="border-b border-[#F0F0ED] last:border-0 hover:bg-[#FAFAF8] transition-colors">
                     <td className="px-5 py-3.5">
-                      <span className="text-[13px] font-semibold text-[#04314A]">{s.name}</span>
+                      <span className="text-[13px] font-semibold text-[#0B3D2B]">{s.name}</span>
                     </td>
                     <td className="px-5 py-3.5">
-                      <span className={`inline-flex items-center gap-1 px-2.5 py-1 text-[9px] font-bold tracking-[0.12em] uppercase rounded-full ${s.is_active ? "bg-[#00AAEB] text-white" : "bg-[#F0F0ED] text-[#737373]"}`}>
+                      <span className={`inline-flex items-center gap-1 px-2.5 py-1 text-[9px] font-bold tracking-[0.12em] uppercase rounded-full ${s.is_active ? "bg-[#10B981] text-white" : "bg-[#F0F0ED] text-[#737373]"}`}>
                         {s.is_active ? <CheckCircle size={10} /> : <XCircle size={10} />}
                         {s.is_active ? "Active" : "Inactive"}
                       </span>
@@ -349,10 +349,10 @@ export default function LeadSourcesPage() {
                     <td className="px-5 py-3.5 text-[12px] text-[#737373] whitespace-nowrap">{formatDate(s.created_at)}</td>
                     <td className="px-5 py-3.5 text-right">
                       <div className="flex items-center justify-end gap-1">
-                        <button onClick={() => setEditingSource(s)} title="Edit" className="p-1.5 rounded-lg text-[#737373] hover:text-[#04314A] hover:bg-[#F0F0ED] transition-colors">
+                        <button onClick={() => setEditingSource(s)} title="Edit" className="p-1.5 rounded-lg text-[#737373] hover:text-[#0B3D2B] hover:bg-[#F0F0ED] transition-colors">
                           <Pencil size={14} />
                         </button>
-                        <button onClick={() => toggleSourceActive(s)} title={s.is_active ? "Deactivate" : "Activate"} className="p-1.5 rounded-lg text-[#737373] hover:text-[#04314A] hover:bg-[#F0F0ED] transition-colors">
+                        <button onClick={() => toggleSourceActive(s)} title={s.is_active ? "Deactivate" : "Activate"} className="p-1.5 rounded-lg text-[#737373] hover:text-[#0B3D2B] hover:bg-[#F0F0ED] transition-colors">
                           {s.is_active ? <EyeOff size={14} /> : <Eye size={14} />}
                         </button>
                         <button onClick={() => removeSource(s)} title="Delete" className="p-1.5 rounded-lg text-[#737373] hover:text-red-600 hover:bg-red-50 transition-colors">
@@ -381,14 +381,14 @@ export default function LeadSourcesPage() {
         <div>
           <div className="flex items-center justify-between mb-5">
             <div className="flex items-center gap-4">
-              <div className="flex items-center gap-2.5 text-[#04314A]">
+              <div className="flex items-center gap-2.5 text-[#0B3D2B]">
                 <ActivityIcon size={18} />
                 <span className="text-[13px] font-semibold">Activity Types</span>
               </div>
               <div className="h-5 w-px bg-[#E8E8E5]" />
               <div className="flex items-center gap-4 text-[12px] text-[#737373]">
                 <span className="flex items-center gap-1.5">
-                  <span className="w-2.5 h-2.5 rounded-full bg-[#00AAEB]" />
+                  <span className="w-2.5 h-2.5 rounded-full bg-[#10B981]" />
                   {types.filter(t => t.is_active).length} Active
                 </span>
                 <span className="flex items-center gap-1.5">
@@ -416,11 +416,11 @@ export default function LeadSourcesPage() {
                 {visibleTypes.map((t) => (
                   <tr key={t.id} className="border-b border-[#F0F0ED] last:border-0 hover:bg-[#FAFAF8] transition-colors">
                     <td className="px-5 py-3.5">
-                      <span className="text-[13px] font-semibold text-[#04314A]">{t.name}</span>
+                      <span className="text-[13px] font-semibold text-[#0B3D2B]">{t.name}</span>
                     </td>
                     <td className="px-5 py-3.5 text-[12px] text-[#737373]">{t.label || "—"}</td>
                     <td className="px-5 py-3.5">
-                      <span className={`inline-flex items-center gap-1 px-2.5 py-1 text-[9px] font-bold tracking-[0.12em] uppercase rounded-full ${t.is_active ? "bg-[#00AAEB] text-white" : "bg-[#F0F0ED] text-[#737373]"}`}>
+                      <span className={`inline-flex items-center gap-1 px-2.5 py-1 text-[9px] font-bold tracking-[0.12em] uppercase rounded-full ${t.is_active ? "bg-[#10B981] text-white" : "bg-[#F0F0ED] text-[#737373]"}`}>
                         {t.is_active ? <CheckCircle size={10} /> : <XCircle size={10} />}
                         {t.is_active ? "Active" : "Inactive"}
                       </span>
@@ -429,10 +429,10 @@ export default function LeadSourcesPage() {
                     <td className="px-5 py-3.5 text-[12px] text-[#737373] whitespace-nowrap">{formatDate(t.created_at)}</td>
                     <td className="px-5 py-3.5 text-right">
                       <div className="flex items-center justify-end gap-1">
-                        <button onClick={() => setEditingType(t)} title="Edit" className="p-1.5 rounded-lg text-[#737373] hover:text-[#04314A] hover:bg-[#F0F0ED] transition-colors">
+                        <button onClick={() => setEditingType(t)} title="Edit" className="p-1.5 rounded-lg text-[#737373] hover:text-[#0B3D2B] hover:bg-[#F0F0ED] transition-colors">
                           <Pencil size={14} />
                         </button>
-                        <button onClick={() => toggleTypeActive(t)} title={t.is_active ? "Deactivate" : "Activate"} className="p-1.5 rounded-lg text-[#737373] hover:text-[#04314A] hover:bg-[#F0F0ED] transition-colors">
+                        <button onClick={() => toggleTypeActive(t)} title={t.is_active ? "Deactivate" : "Activate"} className="p-1.5 rounded-lg text-[#737373] hover:text-[#0B3D2B] hover:bg-[#F0F0ED] transition-colors">
                           {t.is_active ? <EyeOff size={14} /> : <Eye size={14} />}
                         </button>
                         <button onClick={() => removeType(t)} title="Delete" className="p-1.5 rounded-lg text-[#737373] hover:text-red-600 hover:bg-red-50 transition-colors">
