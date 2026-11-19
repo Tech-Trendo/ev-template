@@ -16,12 +16,12 @@ this repo ships the authenticated operations console only.
 
 ```bash
 cp .env.example .env
-# edit SECRET_KEY and POSTGRES_PASSWORD in .env
+# edit SECRET_KEY, POSTGRES_PASSWORD, HOST_PORT and COMPOSE_PROJECT_NAME
 docker compose up -d --build
 docker compose logs -f backend
 ```
 
-Open `http://<server-ip>:3000/auth/login`.
+Open `http://<server-ip>:3001/auth/login` (port from `HOST_PORT`).
 
 Demo logins (seeded on first boot):
 
@@ -42,6 +42,14 @@ cd frontend
 npm install
 npm run dev
 ```
+
+## Automated deployment (GitHub Actions)
+
+On every push to `main`, GitHub Actions builds both images, pushes them to GHCR
+and pulls them on the VPS (`/opt/ev-template`), then restarts the stack. Set the
+`VPS_HOST`, `VPS_PORT`, `VPS_USER`, `VPS_SSH_KEY` secrets, plus
+`GHCR_DEPLOY_TOKEN` / `GHCR_USERNAME` for a private repo. See
+[DEPLOY_NOTES.md](DEPLOY_NOTES.md#automated-deploy-github-actions).
 
 ## Customising
 

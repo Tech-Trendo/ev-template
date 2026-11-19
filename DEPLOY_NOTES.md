@@ -4,7 +4,7 @@ This repository is a **white-label admin dashboard template** for vehicle / flee
 management. The public marketing website has been removed; only the authenticated
 admin console remains.
 
-- **Dashboard:** `http://<server-ip>:3000/auth/login`
+- **Dashboard:** `http://<server-ip>:3001/auth/login` (port from `HOST_PORT`)
 - **Root URL:** redirects to `/dashboard`
 - **Default admin login:** `template@ev.com` / `evtemplate` (or `admin` / `admin123`)
 
@@ -16,8 +16,12 @@ admin console remains.
 | `backend` | Django 6 + DRF API, Gunicorn. Runs migrations, collects static files and seeds demo data on first boot. |
 | `frontend` | Next.js admin dashboard. Proxies `/api/`, `/media/` and `/static/` to the backend. |
 
-Both application images are **built from source on the VPS** by Docker Compose.
-No GitHub Container Registry, CI workflow or external image pull is required.
+Two deployment modes are supported:
+
+- **Local build:** Docker Compose builds both images from source on the VPS.
+- **GitHub Actions:** the workflow builds the images, pushes them to GHCR, then
+  pulls and restarts them on the VPS. See
+  [Automated deploy (GitHub Actions)](#automated-deploy-github-actions).
 
 ## First-time setup on a fresh VPS
 
@@ -39,7 +43,70 @@ docker compose up -d --build
 docker compose logs -f backend
 ```
 
-Open `http://<server-ip>:3000/auth/login` and sign in with `template@ev.com` / `evtemplate` (or `admin` / `admin123`).
+Open `http://<server-ip>:3001/auth/login` and sign in with `template@ev.com` / `evtemplate` (or `admin` / `admin123`).
+
+## Automated deploy (GitHub Actions)
+
+`.github/workflows/deploy.yml` runs on every push to `main` (and manually via
+`workflow_dispatch`):
+
+1. builds the `backend` and `frontend` images,
+2. pushes them to GHCR as `ghcr.io/tech-trendo/ev-template-backend` and
+   `ghcr.io/tech-trendo/ev-template-frontend` (`latest` + commit SHA),
+3. copies `docker-compose.yml` to the VPS,
+4. logs in to GHCR, pulls the images and runs `docker compose up -d`,
+5. waits for the backend healthcheck and prunes dangling images.
+
+Images are published as multi-arch manifests (`linux/amd64` + `linux/arm64`).
+If the VPS is known to be amd64, you can delete the `platforms:` lines in the
+workflow to build faster.
+
+### One-time VPS preparation
+
+```bash
+# From a machine that has this repo checked out:
+mkdir -p /opt/ev-template        # run on the VPS
+scp .env.example $VPS_USER@$VPS_HOST:/opt/ev-template/.env
+ssh $VPS_USER@$VPS_HOST 'cd /opt/ev-template && nano .env'
+```
+
+`docker-compose.yml` is uploaded by the workflow; `.env` stays on the VPS.
+
+Set in `.env`:
+
+- `SECRET_KEY`, `POSTGRES_PASSWORD` — strong random values.
+- `COMPOSE_PROJECT_NAME` — **must be unique** among the sites on this VPS
+  (e.g. `ev-template`). Compose prefixes container, network and volume names
+  with it, so this stack never touches the other site's containers.
+- `HOST_PORT` — a free host port (e.g. `3001`). Check with
+  `ss -ltnp | grep -E ':(3000|3001|8080)'`.
+- `CORS_ALLOWED_ORIGINS` / `ALLOWED_HOSTS` if you put a domain in front.
+
+The SSH user must be able to run `docker` (member of the `docker` group) and
+have write access to `/opt/ev-template`.
+
+### GitHub repo secrets
+
+| Secret | Value |
+| --- | --- |
+| `VPS_HOST` | VPS IP / hostname |
+| `VPS_PORT` | SSH port (default `22`) |
+| `VPS_USER` | SSH user |
+| `VPS_SSH_KEY` | private SSH key (PEM/OpenSSH) |
+| `GHCR_DEPLOY_TOKEN` | GitHub PAT with `read:packages` (needed for a private repo/package) |
+| `GHCR_USERNAME` | GitHub username that owns `GHCR_DEPLOY_TOKEN` |
+
+The workflow uses its short-lived `GITHUB_TOKEN` to push images; the VPS uses
+`GHCR_DEPLOY_TOKEN` only to pull them. If the repository and package are
+public, the GHCR login is skipped.
+
+### Running beside another site
+
+This stack is self-contained: only the frontend publishes a host port, the
+backend is reached over the internal Compose network, and every volume is
+project-scoped. As long as `COMPOSE_PROJECT_NAME` and `HOST_PORT` differ from
+the other site, both run side by side. `docker image prune -f` in the workflow
+only removes dangling images, so it will not delete the other site's images.
 
 ## Health check
 
@@ -78,20 +145,25 @@ docker compose down -v       # DELETES the database and uploaded files
 
 | Variable | Default | Notes |
 | --- | --- | --- |
-| `HOST_PORT` | `3000` | Host port mapped to the dashboard |
+| `COMPOSE_PROJECT_NAME` | `ev-template` | Unique per site on the VPS; prefixes containers, network and volumes |
+| `HOST_PORT` | `3001` | Host port mapped to the dashboard; must be free |
+| `BACKEND_IMAGE` / `FRONTEND_IMAGE` | local build | Set by the Actions workflow to the GHCR `latest` images |
 | `SECRET_KEY` | — | Required. Generate with `python3 -c "import secrets; print(secrets.token_urlsafe(50))"` |
 | `POSTGRES_PASSWORD` | — | Required |
 | `POSTGRES_DB` / `POSTGRES_USER` | `vehicle_template_db` / `vehicle_template` | Database names |
 | `DEBUG` | `False` | Keep `False` in production |
 | `ALLOWED_HOSTS` | `*` | Restrict to your domain / IP when known |
-| `CORS_ALLOWED_ORIGINS` | `http://localhost:3000` | Add your public origin if needed |
+| `CORS_ALLOWED_ORIGINS` | `http://localhost:3001` | Add your public origin if needed |
 | `SEED_ON_START` | `true` | Seeds demo data once; set `false` for an empty database |
 | `COMPANY_NAME` / `COMPANY_TAGLINE` | `Vehicle Template` | Used in generated documents and API schema |
 | `AWS_*` | empty | Optional S3-compatible storage; local volumes used when blank |
 
 ## Data / storage
 
-- PostgreSQL data: named volume `postgres_data`
+Compose prefixes volume names with `COMPOSE_PROJECT_NAME`, e.g.
+`ev-template_postgres_data`:
+
+- PostgreSQL data: `postgres_data`
 - Public uploads: `media_data` (`/app/media`)
 - Private documents: `private_media_data` (`/app/private_media`)
 - Static files: `static_data` (`/app/staticfiles`), rebuilt by `collectstatic` on each start
@@ -132,5 +204,5 @@ normal use.
 activity-log cleanup. Add to the host crontab, e.g. every 15 minutes:
 
 ```cron
-*/15 * * * * /opt/vehicle-template/scripts/cron_tasks.sh >> /var/log/vehicle_template_cron.log 2>&1
+*/15 * * * * /opt/ev-template/scripts/cron_tasks.sh >> /var/log/vehicle_template_cron.log 2>&1
 ```
