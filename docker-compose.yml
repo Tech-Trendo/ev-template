@@ -1,16 +1,19 @@
 # Self-contained stack for the Vehicle Template admin dashboard.
-# Builds both images from source on the VPS — no registry / CI required.
 #
+# Local use builds both images on this machine:
 #   cp .env.example .env
-#   # edit SECRET_KEY and POSTGRES_PASSWORD in .env
+#   # edit SECRET_KEY, POSTGRES_PASSWORD, HOST_PORT and COMPOSE_PROJECT_NAME
 #   docker compose up -d --build
 #
-# Dashboard: http://<server-ip>:${HOST_PORT:-3000}/auth/login
+# The GitHub Actions workflow builds the images, pushes them to GHCR and runs
+# `docker compose pull && up -d` on the VPS. In that mode set BACKEND_IMAGE and
+# FRONTEND_IMAGE (the workflow exports them for you).
+#
+# Dashboard: http://<server-ip>:${HOST_PORT:-3001}/auth/login
 
 services:
   db:
     image: postgres:16-alpine
-    container_name: vehicle_template_db
     restart: unless-stopped
     environment:
       POSTGRES_DB: ${POSTGRES_DB:-vehicle_template_db}
@@ -29,11 +32,10 @@ services:
       retries: 10
 
   backend:
+    image: ${BACKEND_IMAGE:-vehicle-template-backend:local}
     build:
       context: ./backend
       dockerfile: Dockerfile
-    image: vehicle-template-backend:local
-    container_name: vehicle_template_backend
     restart: unless-stopped
     depends_on:
       db:
@@ -78,23 +80,22 @@ services:
       start_period: 30s
 
   frontend:
+    image: ${FRONTEND_IMAGE:-vehicle-template-frontend:local}
     build:
       context: ./frontend
       dockerfile: Dockerfile
       args:
-        NEXT_PUBLIC_API_URL: http://backend:8000
-    image: vehicle-template-frontend:local
-    container_name: vehicle_template_frontend
+        NEXT_PUBLIC_API_URL: ${NEXT_PUBLIC_API_URL:-http://backend:8000}
     restart: unless-stopped
     depends_on:
       backend:
         condition: service_healthy
     environment:
       NODE_ENV: production
-      NEXT_PUBLIC_API_URL: http://backend:8000
+      NEXT_PUBLIC_API_URL: ${NEXT_PUBLIC_API_URL:-http://backend:8000}
       PORT: 3000
     ports:
-      - "${HOST_PORT:-3000}:3000"
+      - "${HOST_PORT:-3001}:3000"
     healthcheck:
       test:
         [
