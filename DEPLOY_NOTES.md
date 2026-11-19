@@ -27,8 +27,8 @@ Two deployment modes are supported:
 
 ```bash
 # 1. Install Docker + Compose plugin, then:
-git clone <your-repository-url> /opt/vehicle-template
-cd /opt/vehicle-template
+git clone <your-repository-url> /opt/ev-template
+cd /opt/ev-template
 
 # 2. Create your environment file
 cp .env.example .env
